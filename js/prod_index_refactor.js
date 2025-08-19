@@ -1,7 +1,17 @@
 /* File: prod_index.refactor.js
-   Purpose: Clean, single-source JS that restores search + modal from prototype, 
+   Purpose: Clean, single-source JS that restores search + modal from prototype,
    removes hard-coded data coupling, and works with Supabase.
-   Drop this <script> after supabase-js and remove old duplicate inline scripts. */
+   Drop this <script> after supabase-js and remove old duplicate inline scripts.
+   
+   QA fixes in this revision:
+   - Current week: compute badges (earned) client-side and reflect in modal/rows.
+   - Last week: suppress motivational copy (only earned badges shown).
+   - Search: data-driven + deduped in active tab; correct single-result message; 
+     highlight in both desktop + mobile without double counting.
+   - Magic cursor: lightweight init.
+   - Countdown + week progress: initialize + tick; support segmented UI (days/hours/minutes/seconds)
+     and #weekProgress/#progressPercentage.
+*/
 
 // ===== 0) SUPABASE CLIENT (reuse your prod keys via env/HTML) =====
 // IMPORTANT: If you already define `sb` elsewhere, remove it there and keep this one.
@@ -22,6 +32,22 @@ function trophyForRank(rank) {
   return '';
 }
 
+function deriveBadges(p) {
+  // thresholds
+  const chestHero = (p.treats || 0) >= 100;
+  const legend = (p.score || 0) >= 2000;
+  const consistent = (p.treats || 0) >= 70 && (p.score || 0) >= 1000;
+  let badges = '';
+  if (chestHero)  badges += '<span class="achievement-badge chest-hero">Chest Hero</span>';
+  if (legend)     badges += '<span class="achievement-badge score-legend">Legend</span>';
+  if (consistent) badges += '<span class="achievement-badge consistent-warrior">Consistent</span>';
+  return { badges, chestHero, legend, consistent };
+}
+
+function getActiveTabContainer() {
+  return document.querySelector('.tab-content.active') || document;
+}
+
 // ===== 2) RENDER (desktop rows + mobile cards) =====
 function renderLeaderboard(list, targetId) {
   const host = $(targetId);
@@ -34,6 +60,9 @@ function renderLeaderboard(list, targetId) {
       </div>`;
     return;
   }
+
+  // context for click handlers + modal behavior
+  const context = targetId === 'leaderboardContentLast' ? 'last' : 'current';
 
   const rowsHTML = list.map((p, i) => {
     const r = Number(p.rank ?? i + 1);
@@ -48,6 +77,7 @@ function renderLeaderboard(list, targetId) {
 
     return `
       <div class="player-row ${isTop3 ? 'top-3' : ''}"
+           data-context="${context}"
            data-rank="${r}" data-name="${name.replace(/"/g, '&quot;')}"
            data-score="${score}" data-chests="${treats}"
            data-badges="${badgesHTML.replace(/"/g, '&quot;')}"
@@ -64,7 +94,8 @@ function renderLeaderboard(list, targetId) {
         <div class="stat">🍪 ${fmt(treats)}</div>
       </div>
       <!-- Mobile card mirror -->
-      <div class="mobile-card" 
+      <div class="mobile-card"
+           data-context="${context}"
            data-rank="${r}" data-name="${name.replace(/"/g, '&quot;')}"
            data-score="${score}" data-chests="${treats}"
            data-badges="${badgesHTML.replace(/"/g, '&quot;')}"
@@ -91,7 +122,7 @@ function renderLeaderboard(list, targetId) {
   setupDesktopRowHandlers();
 }
 
-// ===== 3) SEARCH (from prototype, decoupled) =====
+// ===== 3) SEARCH (data-driven, active-tab, deduped) =====
 function setupSearch(players) {
   const searchInput = $('nameSearch');
   const clearBtn = $('clearBtn');
@@ -101,69 +132,105 @@ function setupSearch(players) {
   function handle(term) {
     const t = term.trim().toLowerCase();
     if (t) {
-      clearBtn && (clearBtn.style.display = 'flex');
+      if (clearBtn) clearBtn.style.display = 'flex';
       performSearch(t, players);
     } else {
-      clearBtn && (clearBtn.style.display = 'none');
+      if (clearBtn) clearBtn.style.display = 'none';
       clearSearch();
     }
   }
 
   // idempotent listeners
   searchInput.oninput = (e) => handle(e.target.value || '');
-  searchInput.onkeypress = (e) => {
-    if (e.key === 'Enter') handle(searchInput.value || '');
-  };
+  searchInput.onkeypress = (e) => { if (e.key === 'Enter') handle(searchInput.value || ''); };
   if (clearBtn) clearBtn.onclick = () => clearSearch();
 }
 
 function performSearch(searchTerm, players) {
+  const container = getActiveTabContainer();
   const searchResults = $('searchResults');
-  const playerRows = document.querySelectorAll('.player-row');
-  if (!searchResults || !playerRows.length) return;
+  if (!container || !searchResults) return;
 
-  // store original row html once
-  if (!window.originalRowHTML) {
-    window.originalRowHTML = new Map();
-    playerRows.forEach((row, idx) => {
-      window.originalRowHTML.set(idx, row.querySelector('.player-name')?.innerHTML || '');
-    });
-  }
-  // reset any highlights
-  playerRows.forEach((row, idx) => {
+  // reset any previous highlights (rows)
+  const rows = container.querySelectorAll('.player-row');
+  rows.forEach(row => {
     row.classList.remove('search-match');
     const nameEl = row.querySelector('.player-name');
-    if (nameEl && window.originalRowHTML.has(idx)) nameEl.innerHTML = window.originalRowHTML.get(idx);
+    if (nameEl && nameEl.dataset.originalHtml) nameEl.innerHTML = nameEl.dataset.originalHtml;
+    else if (nameEl) nameEl.dataset.originalHtml = nameEl.innerHTML;
+  });
+  // reset mobile cards
+  const cards = container.querySelectorAll('.mobile-card');
+  cards.forEach(card => {
+    const nameEl = card.querySelector('.mobile-name');
+    if (nameEl && nameEl.dataset.originalText) nameEl.innerHTML = nameEl.dataset.originalText;
+    else if (nameEl) nameEl.dataset.originalText = nameEl.innerHTML;
   });
 
-  // compute matches
-  const matches = [];
-  playerRows.forEach((row, idx) => {
-    const nameEl = row.querySelector('.player-name');
-    if (!nameEl) return;
-    const text = nameEl.textContent || '';
-    const afterEmoji = text.replace('🧁', '').trim();
-    const p = players.find(x => afterEmoji.includes(x.name));
-    if (p && p.name.toLowerCase().includes(searchTerm)) {
-      matches.push({ row, playerName: p.name, index: idx });
-      row.classList.add('search-match');
-      const regex = new RegExp(`(${searchTerm})`, 'gi');
-      const highlighted = p.name.replace(regex, '<span class="highlight-match">$1</span>');
-      const currentHTML = nameEl.innerHTML;
-      nameEl.innerHTML = currentHTML.replace(p.name, highlighted);
-    }
-  });
+  // matches from DATA (deduped by name)
+  const matches = players.filter(p => (p.name || '').toLowerCase().includes(searchTerm));
 
-  if (matches.length) {
-    if (matches.length === 1) {
-      const rank = matches[0].index + 1;
-      searchResults.innerHTML = `🎯 Found "${matches[0].playerName}" at rank #${rank}!`;
-      setTimeout(() => matches[0].row.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
-    } else {
-      searchResults.innerHTML = `🔍 Found ${matches.length} pancakes matching "${searchTerm}"`;
+  if (matches.length === 0) {
+    searchResults.innerHTML = `😔 No players found matching "${searchTerm}"`;
+    return;
+  }
+
+  // highlight & maybe scroll
+  if (matches.length === 1) {
+    const name = matches[0].name;
+    const row = container.querySelector(`.player-row[data-name="${CSS.escape(name)}"]`);
+    const card = container.querySelector(`.mobile-card[data-name="${CSS.escape(name)}"]`);
+
+    // highlight desktop row name
+    if (row) {
+      const nameEl = row.querySelector('.player-name');
+      if (nameEl) {
+        if (!nameEl.dataset.originalHtml) nameEl.dataset.originalHtml = nameEl.innerHTML;
+        const rx = new RegExp(`(${searchTerm})`, 'gi');
+        nameEl.innerHTML = nameEl.innerHTML.replace(rx, '<span class="highlight-match">$1</span>');
+        row.classList.add('search-match');
+        setTimeout(() => row.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+      }
     }
+    // highlight mobile card name too
+    if (card) {
+      const nameEl = card.querySelector('.mobile-name');
+      if (nameEl) {
+        if (!nameEl.dataset.originalText) nameEl.dataset.originalText = nameEl.innerHTML;
+        const rx = new RegExp(`(${searchTerm})`, 'gi');
+        nameEl.innerHTML = nameEl.innerHTML.replace(rx, '<span class="highlight-match">$1</span>');
+      }
+    }
+
+    // rank from row if present, else from data order (1-based)
+    let rank = 1 + players.findIndex(p => p.name === name);
+    if (row && row.dataset.rank) rank = Number(row.dataset.rank);
+    searchResults.innerHTML = `🎯 Found "${name}" at rank #${rank}!`;
   } else {
-    searchResults.innerHTML = `😔 No pancakes found matching "${searchTerm}"`;
+    // multiple
+    searchResults.innerHTML = `🔍 Found ${matches.length} players matching "${searchTerm}"`;
+    // light highlight all found
+    matches.forEach(m => {
+      const row = container.querySelector(`.player-row[data-name="${CSS.escape(m.name)}"]`);
+      const card = container.querySelector(`.mobile-card[data-name="${CSS.escape(m.name)}"]`);
+      if (row) {
+        const nameEl = row.querySelector('.player-name');
+        if (nameEl) {
+          if (!nameEl.dataset.originalHtml) nameEl.dataset.originalHtml = nameEl.innerHTML;
+          const rx = new RegExp(`(${searchTerm})`, 'gi');
+          nameEl.innerHTML = nameEl.innerHTML.replace(rx, '<span class="highlight-match">$1</span>');
+          row.classList.add('search-match');
+        }
+      }
+      if (card) {
+        const nameEl = card.querySelector('.mobile-name');
+        if (nameEl) {
+          if (!nameEl.dataset.originalText) nameEl.dataset.originalText = nameEl.innerHTML;
+          const rx = new RegExp(`(${searchTerm})`, 'gi');
+          nameEl.innerHTML = nameEl.innerHTML.replace(rx, '<span class="highlight-match">$1</span>');
+        }
+      }
+    });
   }
 }
 
@@ -171,23 +238,24 @@ function clearSearch() {
   const searchInput = $('nameSearch');
   const clearBtn = $('clearBtn');
   const searchResults = $('searchResults');
-  const playerRows = document.querySelectorAll('.player-row');
+  const container = getActiveTabContainer();
   if (searchInput) searchInput.value = '';
   if (clearBtn) clearBtn.style.display = 'none';
   if (searchResults) searchResults.innerHTML = '';
-  playerRows.forEach((row, idx) => {
+  container.querySelectorAll('.player-row').forEach(row => {
     row.classList.remove('search-match');
     const nameEl = row.querySelector('.player-name');
-    if (nameEl && window.originalRowHTML && window.originalRowHTML.has(idx)) {
-      nameEl.innerHTML = window.originalRowHTML.get(idx);
-    }
+    if (nameEl && nameEl.dataset.originalHtml) nameEl.innerHTML = nameEl.dataset.originalHtml;
+  });
+  container.querySelectorAll('.mobile-card').forEach(card => {
+    const nameEl = card.querySelector('.mobile-name');
+    if (nameEl && nameEl.dataset.originalText) nameEl.innerHTML = nameEl.dataset.originalText;
   });
 }
 
 // ===== 4) CLICK HANDLERS + MODAL =====
 function setupMobileCardHandlers() {
   document.querySelectorAll('.mobile-card').forEach(card => {
-    // avoid duplicate listeners
     card.onclick = () => {
       const rank = Number(card.getAttribute('data-rank'));
       const name = card.getAttribute('data-name') || '';
@@ -195,7 +263,8 @@ function setupMobileCardHandlers() {
       const chests = Number(card.getAttribute('data-chests')) || 0;
       const badges = card.getAttribute('data-badges') || '';
       const badgeProgress = card.getAttribute('data-badge-progress') || '';
-      showPlayerModal(rank, name, score, chests, badges, badgeProgress);
+      const context = card.getAttribute('data-context') || 'current';
+      showPlayerModal(rank, name, score, chests, badges, badgeProgress, context);
     };
   });
 }
@@ -213,12 +282,13 @@ function setupDesktopRowHandlers() {
       const chests = Number(row.getAttribute('data-chests')) || 0;
       const badges = row.getAttribute('data-badges') || '';
       const badgeProgress = row.getAttribute('data-badge-progress') || '';
-      showPlayerModal(rank, name, score, chests, badges, badgeProgress);
+      const context = row.getAttribute('data-context') || 'current';
+      showPlayerModal(rank, name, score, chests, badges, badgeProgress, context);
     };
   });
 }
 
-function showPlayerModal(rank, playerName, score, chests, badges, badgeProgress) {
+function showPlayerModal(rank, playerName, score, chests, badges, badgeProgress, context = 'current') {
   const modal = $('playerModal');
   if (!modal) return;
   const modalRank = $('modalRank');
@@ -234,46 +304,50 @@ function showPlayerModal(rank, playerName, score, chests, badges, badgeProgress)
   if (modalChests) modalChests.textContent = fmt(chests);
   if (modalBadges) modalBadges.innerHTML = badges || '<span style="opacity:.6;font-style:italic;">No badges earned yet</span>';
 
-  // Detailed badge progress (same rules as prototype)
-  let progressHTML = '<h4>🎯 Badge Progress</h4>';
-  const hasChestHero = (badges || '').includes('Chest Hero');
-  const hasLegend = (badges || '').includes('Legend');
-  const hasConsistent = (badges || '').includes('Consistent');
-
-  if (hasChestHero) {
-    progressHTML += '<div class="progress-item earned">🍪 <strong>Chest Hero</strong> - ✅ Earned! (100+ chests)</div>';
+  // Progress copy behavior depends on context
+  if (!modalProgress) {
+    // nothing to update
+  } else if (context === 'last') {
+    // Last week → no motivational copy
+    modalProgress.innerHTML = '';
   } else {
-    const need = Math.max(0, 100 - chests);
-    progressHTML += need === 0
-      ? '<div class="progress-item earned">🍪 <strong>Chest Hero</strong> - ✅ Ready to earn!</div>'
-      : `<div class="progress-item needed">🍪 <strong>Chest Hero</strong> - Need ${need} more chests (currently ${fmt(chests)}/100)</div>`;
-  }
+    // Current week → show progress, but mark Earned when thresholds met
+    let progressHTML = '<h4>🎯 Badge Progress</h4>';
+    const hasChestHero = (badges || '').includes('Chest Hero');
+    const hasLegend = (badges || '').includes('Legend');
+    const hasConsistent = (badges || '').includes('Consistent');
 
-  if (hasLegend) {
-    progressHTML += '<div class="progress-item earned">⭐ <strong>Legend</strong> - ✅ Earned! (2000+ points)</div>';
-  } else {
-    const need = Math.max(0, 2000 - score);
-    progressHTML += need === 0
-      ? '<div class="progress-item earned">⭐ <strong>Legend</strong> - ✅ Ready to earn!</div>'
-      : `<div class="progress-item needed">⭐ <strong>Legend</strong> - Need ${need} more points (currently ${fmt(score)}/2000)</div>`;
-  }
-
-  if (hasConsistent) {
-    progressHTML += '<div class="progress-item earned">🎯 <strong>Consistent</strong> - ✅ Earned! (≥70 chests & ≥1000 points)</div>';
-  } else {
-    const chN = Math.max(0, 70 - chests);
-    const ptN = Math.max(0, 1000 - score);
-    if (chN === 0 && ptN === 0) {
-      progressHTML += '<div class="progress-item earned">🎯 <strong>Consistent</strong> - ✅ Ready to earn!</div>';
-    } else if (chN === 0) {
-      progressHTML += `<div class="progress-item needed">🎯 <strong>Consistent</strong> - Need ${ptN} more points (chests: ✅ ${fmt(chests)}/70, points: ${fmt(score)}/1000)</div>`;
-    } else if (ptN === 0) {
-      progressHTML += `<div class="progress-item needed">🎯 <strong>Consistent</strong> - Need ${chN} more chests (chests: ${fmt(chests)}/70, points: ✅ ${fmt(score)}/1000)</div>`;
+    if (hasChestHero) {
+      progressHTML += '<div class="progress-item earned">🍪 <strong>Chest Hero</strong> - ✅ Earned! (100+ chests)</div>';
     } else {
-      progressHTML += `<div class="progress-item needed">🎯 <strong>Consistent</strong> - Need ${chN} chests AND ${ptN} points (currently ${fmt(chests)}/70, ${fmt(score)}/1000)</div>`;
+      const need = Math.max(0, 100 - chests);
+      progressHTML += `<div class="progress-item ${need===0?'earned':'needed'}">🍪 <strong>Chest Hero</strong> - ${need===0?'✅ Earned!':`Need ${need} more chests (currently ${fmt(chests)}/100)`}</div>`;
     }
+
+    if (hasLegend) {
+      progressHTML += '<div class="progress-item earned">⭐ <strong>Legend</strong> - ✅ Earned! (2000+ points)</div>';
+    } else {
+      const need = Math.max(0, 2000 - score);
+      progressHTML += `<div class="progress-item ${need===0?'earned':'needed'}">⭐ <strong>Legend</strong> - ${need===0?'✅ Earned!':`Need ${need} more points (currently ${fmt(score)}/2000)`}</div>`;
+    }
+
+    if (hasConsistent) {
+      progressHTML += '<div class="progress-item earned">🎯 <strong>Consistent</strong> - ✅ Earned! (≥70 chests & ≥1000 points)</div>';
+    } else {
+      const chN = Math.max(0, 70 - chests);
+      const ptN = Math.max(0, 1000 - score);
+      if (chN === 0 && ptN === 0) {
+        progressHTML += '<div class="progress-item earned">🎯 <strong>Consistent</strong> - ✅ Earned!</div>';
+      } else if (chN === 0) {
+        progressHTML += `<div class="progress-item needed">🎯 <strong>Consistent</strong> - Need ${ptN} more points (chests: ✅ ${fmt(chests)}/70, points: ${fmt(score)}/1000)</div>`;
+      } else if (ptN === 0) {
+        progressHTML += `<div class="progress-item needed">🎯 <strong>Consistent</strong> - Need ${chN} more chests (chests: ${fmt(chests)}/70, points: ✅ ${fmt(score)}/1000)</div>`;
+      } else {
+        progressHTML += `<div class="progress-item needed">🎯 <strong>Consistent</strong> - Need ${chN} chests AND ${ptN} points (currently ${fmt(chests)}/70, ${fmt(score)}/1000)</div>`;
+      }
+    }
+    modalProgress.innerHTML = progressHTML;
   }
-  if (modalProgress) modalProgress.innerHTML = progressHTML;
 
   modal.classList.add('active');
   document.body.style.overflow = 'hidden'; // UX
@@ -299,7 +373,18 @@ async function loadCurrentWeek() {
     .select('name, score, treats, rank')
     .order('score', { ascending: false });
   if (error) { console.error('players_current error', error); return; }
-  const rows = data || [];
+  const rows = (data || []).slice();
+
+  // decorate ranks + trophies
+  rows.sort((a,b)=> (b.score||0) - (a.score||0))
+      .forEach((p, idx) => { p.rank = idx + 1; p.trophyHTML = trophyForRank(p.rank); });
+
+  // derive badges for CURRENT WEEK (so modal shows Earned and rows show chips)
+  rows.forEach(p => {
+    const d = deriveBadges(p);
+    p.badgesHTML = d.badges;     // show chips
+    p.badgeProgress = '';        // keep rows/cards clean; progress only in modal
+  });
 
   // KPIs
   const total = rows.length;
@@ -308,10 +393,6 @@ async function loadCurrentWeek() {
   setText('totalWarriors', total);
   setText('totalChests',  avgTreats);
   setText('totalScore',   avgScore);
-
-  // optional: decorate simple trophies for top 3
-  rows.sort((a,b)=> (b.score||0) - (a.score||0))
-      .forEach((p, idx) => { p.rank = idx + 1; p.trophyHTML = trophyForRank(p.rank); });
 
   renderLeaderboard(rows, 'leaderboardContent');
 }
@@ -322,37 +403,13 @@ async function loadLastWeek() {
     .select('name, score, treats, rank')
     .order('score', { ascending: false });
   if (error) { console.error('players_last error', error); return; }
-  const rows = data || [];
+  const rows = (data || []).slice();
 
-  // Decorate badges like the prototype (derived client-side)
+  // ONLY earned badges; no motivational copy for last week
   rows.forEach(p => {
-    const earned = [];
-    let badges = '';
-    if ((p.treats||0) >= 100) { badges += '<span class="achievement-badge chest-hero">Chest Hero</span>'; earned.push('chest-hero'); }
-    if ((p.score||0)  >= 2000) { badges += '<span class="achievement-badge score-legend">Legend</span>'; earned.push('legend'); }
-    if ((p.treats||0) >= 70 && (p.score||0) >= 1000) { badges += '<span class="achievement-badge consistent-warrior">Consistent</span>'; earned.push('consistent'); }
-
-    // progress text when not all badges earned
-    let badgeProgress = '';
-    if (earned.length === 0) {
-      const toChest = Math.max(0, 100 - (p.treats||0));
-      const toLegend = Math.max(0, 2000 - (p.score||0));
-      const toConsCh = Math.max(0, 70 - (p.treats||0));
-      const toConsPt = Math.max(0, 1000 - (p.score||0));
-      // pick closest path
-      if (toChest <= toLegend && toChest <= Math.max(toConsCh, toConsPt)) {
-        badgeProgress = `🍪 Only ${toChest} more chests to earn the hero badge!`;
-      } else if (toLegend <= Math.max(toConsCh, toConsPt)) {
-        badgeProgress = `⭐ Only ${toLegend} more points to become a legend!`;
-      } else {
-        badgeProgress = toConsCh > 0 && toConsPt > 0
-          ? `🎯 Only ${toConsCh} chests & ${toConsPt} points to earn consistent badge!`
-          : (toConsCh > 0 ? `🎯 Only ${toConsCh} more chests to earn consistent badge!`
-                          : `🎯 Only ${toConsPt} more points to earn consistent badge!`);
-      }
-    }
-    p.badgesHTML = badges;
-    p.badgeProgress = badgeProgress;
+    const d = deriveBadges(p);
+    p.badgesHTML = d.badges;
+    p.badgeProgress = '';
   });
 
   renderLeaderboard(rows, 'leaderboardContentLast');
@@ -370,7 +427,7 @@ async function loadLastWeek() {
   }
 }
 
-// ===== 6) WEEK CYCLES + COUNTDOWN (unchanged logic) =====
+// ===== 6) WEEK CYCLES + COUNTDOWN + PROGRESS =====
 function calculateWeekCycles() {
   try {
     const now = new Date();
@@ -445,24 +502,68 @@ function updateCountdown() {
     }
 
     const diff = nextSunday.getTime() - mexicoTime.getTime();
-    const el = $('countdown');
-    if (!el) return;
+
+    // Support two UIs: a single #countdown element or a segmented #countdownDisplay with #days/#hours/#minutes/#seconds
+    const single = document.getElementById('countdown');
+    const segmented = document.getElementById('countdownDisplay');
 
     if (diff > 0) {
       const d = Math.floor(diff / (24*60*60*1000));
       const h = Math.floor((diff % (24*60*60*1000)) / (60*60*1000));
       const m = Math.floor((diff % (60*60*1000)) / (60*1000));
       const s = Math.floor((diff % (60*1000)) / 1000);
-      el.textContent = `${d}d ${h}h ${m}m ${s}s`;
+
+      if (single) single.textContent = `${d}d ${h}h ${m}m ${s}s`;
+      if (segmented) {
+        const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = String(val).padStart(2, '0'); };
+        set('days', d);
+        set('hours', h);
+        set('minutes', m);
+        set('seconds', s);
+      }
     } else {
-      el.textContent = 'Cycle ended';
+      if (single) single.textContent = 'Cycle ended';
+      if (segmented) ['days','hours','minutes','seconds'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = '00'; });
     }
   } catch (e) {
     console.error('Countdown error', e);
   }
 }
 
-// ===== 7) TABS =====
+function updateWeekProgress() {
+  try {
+    const cycle = window.__weekCycles?.current;
+    if (!cycle) return;
+    const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Mexico_City' }));
+    const total = cycle.end.getTime() - cycle.start.getTime();
+    const elapsed = Math.max(0, Math.min(total, now.getTime() - cycle.start.getTime()));
+    const pct = total > 0 ? Math.floor((elapsed / total) * 100) : 0;
+    const bar = document.getElementById('weekProgress');
+    const label = document.getElementById('progressPercentage');
+    if (bar) bar.style.width = `${pct}%`;
+    if (label) label.textContent = `${pct}%`;
+  } catch (e) { console.error('Week progress error', e); }
+}
+
+// ===== 7) MAGIC CURSOR (lightweight) =====
+function initMagicCursor() {
+  if ('ontouchstart' in window) return; // avoid on touch devices
+  if (document.querySelector('.magic-cursor')) return;
+  const dot = document.createElement('div');
+  dot.className = 'magic-cursor';
+  Object.assign(dot.style, {
+    position: 'fixed', left: '0px', top: '0px', width: '14px', height: '14px',
+    borderRadius: '50%', transform: 'translate(-50%, -50%)', pointerEvents: 'none',
+    zIndex: 9999, background: 'rgba(255,255,255,0.6)', boxShadow: '0 0 12px rgba(255,255,255,0.6)'
+  });
+  document.body.appendChild(dot);
+  window.addEventListener('mousemove', (e) => {
+    dot.style.left = e.clientX + 'px';
+    dot.style.top  = e.clientY + 'px';
+  }, { passive: true });
+}
+
+// ===== 8) TABS =====
 function showTab(tabName) {
   document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
   const tab = document.getElementById(`${tabName}-tab`);
@@ -473,10 +574,13 @@ function showTab(tabName) {
   if (tabName === 'lastweek') loadLastWeek();
 }
 
-// ===== 8) BOOT =====
+// ===== 9) BOOT =====
 document.addEventListener('DOMContentLoaded', () => {
-  calculateWeekCycles();
-  setInterval(updateCountdown, 1000);
+  window.__weekCycles = calculateWeekCycles();
+  updateCountdown();
+  updateWeekProgress();
+  setInterval(() => { updateCountdown(); updateWeekProgress(); }, 1000);
+  initMagicCursor();
   // default tab
   showTab('leaderboard');
 });
