@@ -128,39 +128,7 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.3)"/><circle cx="80" cy="30" r="1.5" fill="rgba(255,255,255,0.2)"/><circle cx="60" cy="70" r="1" fill="rgba(255,255,255,0.4)"/><circle cx="30" cy="80" r="1.5" fill="rgba(255,255,255,0.3)"/></svg>');
             pointer-events: none;
         }
-        .text-badge {
-  display: inline-block;
-  padding: 6px 14px;
-  margin-left: 8px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: .3px;
-  line-height: 1.2;
-  vertical-align: middle;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-  text-transform: uppercase;
-}
-
-/* Canva vibes */
-.badge-chest-hero {
-  background: linear-gradient(45deg, #F5B642, #FFD700);
-  color: #2d3436;
-  font-weight: 700;
-}
-
-.badge-legend {
-  background: linear-gradient(45deg, #F5B642, #FF6F91);
-  color: #fff;
-  font-weight: 700;
-}
-
-.badge-consistent {
-  background: linear-gradient(45deg, #4ECDC4, #44A08D);
-  color: #fff;
-  font-weight: 700;
-}
-
+        
         .clan-name {
             font-family: 'Fredoka', cursive;
             font-size: 3rem;
@@ -183,16 +151,107 @@
             z-index: 1;
         }
         
-        .week-info {
+        .week-cycle-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .current-cycle {
+            background: linear-gradient(135deg, rgba(245, 182, 66, 0.2), rgba(255, 215, 0, 0.1));
+            border: 2px solid rgba(245, 182, 66, 0.4);
+            padding: 15px 20px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        
+        .last-week-cycle {
+            background: linear-gradient(135deg, rgba(255, 111, 145, 0.2), rgba(238, 90, 36, 0.1));
+            border: 2px solid rgba(255, 111, 145, 0.4);
+            padding: 15px 20px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .cycle-label {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #F5B642;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .cycle-dates {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #FFF9F0;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .general-info {
             background: rgba(255, 255, 255, 0.2);
             padding: 12px 20px;
             border-radius: 20px;
-            display: inline-block;
+            text-align: center;
             font-weight: 500;
             font-size: 0.95rem;
-            position: relative;
-            z-index: 1;
-            margin-bottom: 20px;
+        }
+        
+        .last-week-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+        
+        .last-week-leaderboard {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .achievement-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .achievement-category {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .achievement-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .achievement-count {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #FFD700;
+            opacity: 0.9;
+        }
+        
+        .achievement-names {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #FFF9F0;
+            opacity: 0.9;
+            font-style: italic;
         }
         
         .countdown-container {
@@ -497,6 +556,30 @@
             transform: scale(1.1);
             color: #FFD700;
             text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+        }
+        
+        .clickable-name {
+            position: relative;
+        }
+        
+        .clickable-name:hover {
+            color: #FFD700 !important;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6) !important;
+        }
+        
+        .clickable-name:hover::after {
+            content: '👆';
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+            animation: pointBounce 0.6s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pointBounce {
+            0% { transform: translateY(-50%) scale(1); }
+            100% { transform: translateY(-50%) scale(1.2); }
         }
         
         .clan-emblem {
@@ -1776,6 +1859,53 @@
             .progress-percentage {
                 font-size: 0.7rem;
             }
+            
+            .week-cycle-info {
+                gap: 12px;
+            }
+            
+            .current-cycle, .last-week-cycle {
+                padding: 12px 15px;
+            }
+            
+            .cycle-label {
+                font-size: 0.9rem;
+                margin-bottom: 6px;
+            }
+            
+            .cycle-dates {
+                font-size: 1rem;
+            }
+            
+            .general-info {
+                padding: 10px 15px;
+                font-size: 0.85rem;
+            }
+            
+            .last-week-stats {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+            
+            .last-week-leaderboard {
+                padding: 20px 15px;
+                margin-bottom: 25px;
+            }
+            
+            .achievement-category {
+                padding: 15px;
+            }
+            
+            .achievement-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .achievement-names {
+                font-size: 0.85rem;
+            }
         }
         
         @media (min-width: 769px) {
@@ -1794,12 +1924,21 @@
         <div class="header">
             <h1 class="clan-name">🧁 STRIKE FOR CAKE 🍰</h1>
 
-            <div class="week-info">
-                📅 Weekly Period: Sunday 11:00 AM - Sunday 10:59 AM (Mexico City Time)
+            <div class="week-cycle-info">
+                <div class="current-cycle">
+                    <div class="cycle-label">📅 Current Week Cycle</div>
+                    <div class="cycle-dates" id="currentCycleDates">
+                        Loading current cycle...
+                    </div>
+                </div>
+                
+                <div class="general-info">
+                    🌎 All times shown in Mexico City timezone (reset to reset)
+                </div>
             </div>
             
             <div style="font-size: 0.7rem; opacity: 0.6; margin-top: 8px; text-align: center;">
-                Last Updated: 11:30 AM Mexico City time
+                Last Updated: 4:00 PM Mexico City time - August 16, 2025
             </div>
             
             <div class="countdown-container">
@@ -1835,11 +1974,13 @@
             </div>
         </div>
         
-        <div class="tab-navigation">
-            <button class="tab-btn active" onclick="showTab('leaderboard')">🏆 Leaderboard</button>
-            <button class="tab-btn" onclick="showTab('badges')">🏅 Badge System</button>
-            <button class="tab-btn" onclick="showTab('scoring')">⭐ Chest Scoring</button>
-        </div>
+<div class="tab-navigation">
+  <button class="tab-btn active" data-tab="leaderboard" onclick="showTab('leaderboard')">🏆 Current Week</button>
+  <button class="tab-btn" data-tab="lastweek"   onclick="showTab('lastweek')">📊 Last Week Results</button>
+  <button class="tab-btn" data-tab="badges"     onclick="showTab('badges')">🏅 Badge System</button>
+  <button class="tab-btn" data-tab="scoring"    onclick="showTab('scoring')">⭐ Chest Scoring</button>
+</div>
+
         
         <div class="motivational-message leaderboard-only">
             <div class="motivational-text">
@@ -1900,6 +2041,89 @@
                     <div class="empty-state">
                         <h3>🎯 Ready for Battle!</h3>
                         <p>Enter your clan's data above to see the leaderboard come to life!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="lastweek-tab">
+            <div class="info-section">
+                <h2 class="section-title">📊 Last Week Results</h2>
+                <div class="last-week-cycle" id="lastWeekCycle">
+                    <div class="cycle-label">📅 Previous Week Cycle</div>
+                    <div class="cycle-dates" id="lastCycleDates">
+                        Loading previous cycle...
+                    </div>
+                </div>
+                
+                <div class="last-week-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-number" id="lastWeekWinner">TBD</div>
+                        <div class="stat-label">Champion</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🥞</div>
+                        <div class="stat-number" id="lastWeekParticipants">0</div>
+                        <div class="stat-label">Active Pancakes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-number" id="lastWeekTopScore">0</div>
+                        <div class="stat-label">Highest Score</div>
+                    </div>
+                </div>
+                
+                <div class="last-week-leaderboard">
+                    <h3 style="text-align: center; color: #F5B642; margin-bottom: 20px; font-size: 1.5rem;">🏅 Final Rankings</h3>
+                    
+                    <div class="leaderboard-header">
+                        <div>RANK</div>
+                        <div>PANCAKE</div>
+                        <div style="color: #FF6F91;">⭐ POINTS</div>
+                        <div style="color: #FFF9F0;">🍪 TREATS</div>
+                    </div>
+                    
+                    <div class="mobile-header">
+                        <div>RANK</div>
+                        <div class="mobile-header-pancake">PANCAKE</div>
+                        <div><span style="color: #FF6F91;">⭐ POINTS</span> / <span style="color: #FFF9F0;">🍪 CHESTS</span></div>
+                    </div>
+                    
+<div id="leaderboardContentLast">
+  <div class="empty-state">
+    <h3>🍰 Last week standings will appear here</h3>
+  </div>
+</div>
+
+                </div>
+                
+                <div class="last-week-achievements">
+                    <h3 style="text-align: center; color: #F5B642; margin: 30px 0 20px 0; font-size: 1.5rem;">🏅 Badge Earners</h3>
+                    <div class="achievement-summary" id="lastWeekAchievements">
+                        <div class="achievement-category">
+                            <div class="achievement-header">
+                                <span class="achievement-badge chest-hero">Chest Hero</span>
+                                <span class="achievement-count" id="lastWeekChestHeroes">0 pancakes</span>
+                            </div>
+                            <div class="achievement-names" id="lastWeekChestHeroNames">TBD</div>
+                        </div>
+                        
+                        <div class="achievement-category">
+                            <div class="achievement-header">
+                                <span class="achievement-badge score-legend">Legend</span>
+                                <span class="achievement-count" id="lastWeekLegends">0 pancakes</span>
+                            </div>
+                            <div class="achievement-names" id="lastWeekLegendNames">TBD</div>
+                        </div>
+                        
+                        <div class="achievement-category">
+                            <div class="achievement-header">
+                                <span class="achievement-badge consistent-warrior">Consistent</span>
+                                <span class="achievement-count" id="lastWeekConsistent">0 pancakes</span>
+                            </div>
+                            <div class="achievement-names" id="lastWeekConsistentNames">TBD</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2533,7 +2757,7 @@
 
 
         // Magical cursor functionality
-        document.addEventListener('DOMContentLoaded', function() {
+  
             // Create magical cursor
             const magicCursor = document.createElement('div');
             magicCursor.className = 'magic-cursor';
@@ -2601,6 +2825,90 @@
             });
         });
 
+        // Week cycle calculation functions
+        function calculateWeekCycles() {
+            try {
+                const now = new Date();
+                const mexicoTime = new Date(now.toLocaleString("en-US", {timeZone: "America/Mexico_City"}));
+                
+                // Find current week cycle
+                let currentWeekStart = new Date(mexicoTime);
+                let currentWeekEnd = new Date(mexicoTime);
+                
+                const currentDay = mexicoTime.getDay(); // 0 = Sunday, 1 = Monday, etc.
+                const currentHour = mexicoTime.getHours();
+                const currentMinute = mexicoTime.getMinutes();
+                
+                if (currentDay === 0) {
+                    // It's Sunday - check if it's before 11:00 AM (start) or after 10:59 AM (end)
+                    if (currentHour < 11) {
+                        // Before 11:00 AM Sunday - we're still in last week's cycle
+                        currentWeekStart.setDate(currentWeekStart.getDate() - 7);
+                        currentWeekStart.setHours(11, 0, 0, 0);
+                        currentWeekEnd.setHours(10, 59, 59, 999);
+                    } else {
+                        // After 11:00 AM Sunday - new week has started
+                        currentWeekStart.setHours(11, 0, 0, 0);
+                        currentWeekEnd.setDate(currentWeekEnd.getDate() + 7);
+                        currentWeekEnd.setHours(10, 59, 59, 999);
+                    }
+                } else {
+                    // Not Sunday - calculate current week
+                    const daysFromLastSunday = currentDay;
+                    currentWeekStart.setDate(currentWeekStart.getDate() - daysFromLastSunday);
+                    currentWeekStart.setHours(11, 0, 0, 0);
+                    
+                    const daysUntilNextSunday = 7 - currentDay;
+                    currentWeekEnd.setDate(currentWeekEnd.getDate() + daysUntilNextSunday);
+                    currentWeekEnd.setHours(10, 59, 59, 999);
+                }
+                
+                // Calculate last week cycle
+                const lastWeekStart = new Date(currentWeekStart.getTime() - (7 * 24 * 60 * 60 * 1000));
+                const lastWeekEnd = new Date(currentWeekStart.getTime() - 1); // 1ms before current week starts
+                
+                // Format dates for display
+                const formatOptions = { 
+                    month: 'short', 
+                    day: 'numeric', 
+                    hour: 'numeric', 
+                    minute: '2-digit',
+                    hour12: true,
+                    timeZone: 'America/Mexico_City'
+                };
+                
+                const currentCycleText = `${currentWeekStart.toLocaleDateString('en-US', formatOptions)} - ${currentWeekEnd.toLocaleDateString('en-US', formatOptions)}`;
+                const lastCycleText = `${lastWeekStart.toLocaleDateString('en-US', formatOptions)} - ${lastWeekEnd.toLocaleDateString('en-US', formatOptions)}`;
+                
+                // Update displays
+                const currentCycleDates = document.getElementById('currentCycleDates');
+                const lastCycleDates = document.getElementById('lastCycleDates');
+                
+                if (currentCycleDates) {
+                    currentCycleDates.textContent = currentCycleText;
+                }
+                
+                if (lastCycleDates) {
+                    lastCycleDates.textContent = lastCycleText;
+                }
+                
+                return {
+                    current: { start: currentWeekStart, end: currentWeekEnd },
+                    last: { start: lastWeekStart, end: lastWeekEnd }
+                };
+                
+            } catch (error) {
+                console.error('Week cycle calculation error:', error);
+                const currentCycleDates = document.getElementById('currentCycleDates');
+                const lastCycleDates = document.getElementById('lastCycleDates');
+                
+                if (currentCycleDates) currentCycleDates.textContent = 'Error calculating current cycle';
+                if (lastCycleDates) lastCycleDates.textContent = 'Error calculating last cycle';
+                
+                return null;
+            }
+        }
+        
         // Countdown timer functionality
         function updateCountdown() {
             try {
@@ -2697,129 +3005,24 @@
             }
         }
         
-        // Hardcoded player data
-        const hardcodedPlayerData = `Abisai,310,22
-Adoragar,178,13
-aghaté tyché,250,20
-Ahhhmeddd,351,16
-AKH,339,23
-Akigrel,165,17
-Andi,1211,41
-Angie,10,1
-AnyaBlu2,200,14
-Apollo Jr,180,13
-Art,305,19
-Beydeland,391,18
-BigT,1118,36
-Breadandroses,699,36
-Brianna,600,30
-Captain LemonBars,305,16
-Cedora,1153,90
-Chirikawa,925,39
-Chrisbreezy,580,32
-Chrisw333,300,15
-Ciditoo,240,13
-De Majico,100,10
-Diabolik zius,30,7
-Eddy,301,13
-Enneen,325,25
-Enzo,60,3
-Eyar Fiery,280,18
-Eyrondef,310,28
-Fankayel,415,18
-Filor,75,3
-Fiorella,122,12
-GAVILAN,90,6
-Gazius,868,64
-Ghodred,150,10
-Gririm,445,27
-guicarde,109,10
-higgowoman,605,40
-IPollo,255,15
-Ironsinger,23,4
-Jack Oswald,634,15
-Jarven,365,18
-Johnny B Goode,1061,43
-JoseA,418,25
-Kalabar,282,11
-Kamil,176,8
-Kantrius,36,1
-Kigam,210,15
-Klaudia,130,6
-Kosak,281,11
-LanZius,120,6
-Lava Lynx Zius,1066,46
-Lebrim,150,11
-Lenochodi CP,350,20
-Lorbrimir,86,3
-Lord Crumble,430,32
-Luuuu IT,522,27
-Mabrinod,77,67
-Mag Ualghairg,370,22
-Magepick,135,9
-Marcelo lord of war,771,53
-Marilune,115,7
-Masa Madre Momuro,745,45
-Mejas,75,3
-Monte,1050,63
-Moogujora,130,7
-Natia Steel,475,16
-Nice n Spicy Sers,206,9
-Nimvenilas,270,19
-ouragan,132,12
-PanekPL,778,27
-Periwyn,120,9
-Prince Charming,220,15
-Ra,125,7
-Ragnar,110,8
-Reiner,228,17
-Sabar,170,15
-Satoru Gojo,748,67
-Showman,1045,92
-Souffleblue,350,19
-SPARTACUS,195,13
-Sudoki,347,15
-Taugal,704,27
-Tera,230,22
-Thorgal,316,56
-TuTo Il,405,27
-Tygonris,120,9
-uzun shapalak,120,8
-VallesDH,180,14
-wiking,123,11
-Yotanka,295,15
-zhasur,230,11
-Zombie Tony,681,30`;
+
 
         // Initialize dashboard
-        document.addEventListener('DOMContentLoaded', function() {
+
+            // Calculate and display week cycles
+            calculateWeekCycles();
+            
             // Start countdown timer
             updateCountdown();
             setInterval(updateCountdown, 1000);
             
-            // Load hardcoded data immediately
-            loadHardcodedData();
+  
             
             // Setup mobile tap effects for player names
             setupMobileTapEffects();
         });
         
-        function loadHardcodedData() {
-            // Parse the hardcoded data
-            const players = [];
-            const lines = hardcodedPlayerData.split('\n');
-            
-            for (let line of lines) {
-                line = line.trim();
-                if (line) {
-                    const parts = line.split(',');
-                    if (parts.length >= 3) {
-                        players.push({
-                            name: parts[0].trim(),
-                            score: parseInt(parts[1].trim()) || 0,
-                            chests: parseInt(parts[2].trim()) || 0
-                        });
-                    }
+     
                 }
             }
             
@@ -2949,27 +3152,35 @@ Zombie Tony,681,30`;
                 const isLongMessage = badgeProgress.length > 50;
                 
                 html += `
-                    <div class="player-row ${rowClass}" ${rank <= 3 ? `onmouseenter="createEmojiExplosion(this, ${rank})"` : ''}>
-                        <div class="rank ${rankClass}">#${rank}</div>
-                        <div class="player-name">
-                            <span class="clan-emblem">🧁</span>
-                            ${player.name}
-                            ${trophy}
-                            ${badges}
-                            ${!isLongMessage ? `<span class="badge-progress">${badgeProgress}</span>` : ''}
-                        </div>
-                        <div class="stat score">⭐ ${player.score.toLocaleString()}</div>
-                        <div class="stat">🍪 ${player.chests}</div>
-                        ${isLongMessage ? `<div class="badge-progress-row"><span class="badge-progress">${badgeProgress}</span></div>` : ''}
-                    </div>
+                    <div class="player-row ${rowClass}" 
+                         ${rank <= 3 ? `onmouseenter="createEmojiExplosion(this, ${rank})"` : ''}
+                         data-rank="${rank}"
+                         data-name="${player.name.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}"
+                         data-score="${player.score}"
+                         data-chests="${player.chests}"
+                         data-badges="${badges.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}"
+                         data-badge-progress="${badgeProgress.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}">
+<div class="rank ${rankClass}">#${rank}</div>
+<div class="player-name clickable-name">
+    <span class="clan-emblem">🧁</span>
+    <span class="player-name-text">${player.name}</span>
+    ${trophy}
+    ${badges}
+    ${!isLongMessage ? `<span class="badge-progress">${badgeProgress}</span>` : ''}
+</div>
+<div class="stat score">⭐ ${player.score.toLocaleString()}</div>
+<div class="stat">🍪 ${player.chests}</div>
+${isLongMessage ? `<div class="badge-progress-row"><span class="badge-progress">${badgeProgress}</span></div>` : ''}
+</div>
+
                     
                     <div class="mobile-card ${rowClass}"
                          data-rank="${rank}"
-                         data-name="${player.name}"
+                         data-name="${player.name.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}"
                          data-score="${player.score}"
                          data-chests="${player.chests}"
-                         data-badges="${badges}"
-                         data-badge-progress="${badgeProgress}">
+                         data-badges="${badges.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}"
+                         data-badge-progress="${badgeProgress.replace(/"/g, '&quot;').replace(/'/g, '&#39;')}">
                         <div class="mobile-card-row1">
                             <div class="mobile-rank ${rankClass}">#${rank}</div>
                             <div class="mobile-player-name">
@@ -2998,6 +3209,9 @@ Zombie Tony,681,30`;
             
             // Setup mobile card click handlers
             setupMobileCardHandlers();
+            
+            // Setup desktop row click handlers
+            setupDesktopRowHandlers();
 
         }
         
@@ -3146,6 +3360,30 @@ Zombie Tony,681,30`;
             });
         }
         
+        function setupDesktopRowHandlers() {
+            // Add click listeners to desktop player rows
+            document.querySelectorAll('.player-row').forEach(row => {
+                const playerNameElement = row.querySelector('.clickable-name');
+                if (playerNameElement) {
+                    playerNameElement.addEventListener('click', function(e) {
+                        e.stopPropagation(); // Prevent row hover effects from interfering
+                        
+                        const rank = row.getAttribute('data-rank');
+                        const name = row.getAttribute('data-name');
+                        const score = row.getAttribute('data-score');
+                        const chests = row.getAttribute('data-chests');
+                        const badges = row.getAttribute('data-badges');
+                        const badgeProgress = row.getAttribute('data-badge-progress');
+                        
+                        showPlayerModal(rank, name, score, chests, badges, badgeProgress);
+                    });
+                    
+                    // Add visual feedback for clickable names
+                    playerNameElement.style.cursor = 'pointer';
+                }
+            });
+        }
+        
         function setupMobileTapEffects() {
             // Mobile tap effects are now handled by the modal onclick events
             // This function is kept for compatibility but no longer needed
@@ -3266,7 +3504,8 @@ Zombie Tony,681,30`;
             
             // Add active class to the correct button
             const buttonTexts = {
-                'leaderboard': '🏆 Leaderboard',
+                'leaderboard': '🏆 Current Week',
+                'lastweek': '📊 Last Week Results',
                 'badges': '🏅 Badge System', 
                 'scoring': '⭐ Chest Scoring'
             };
@@ -3287,256 +3526,655 @@ Zombie Tony,681,30`;
                 }
             });
             
+if (tabName === 'leaderboard') loadCurrentWeek();
+if (tabName === 'lastweek')   loadLastWeek();
+
 
         }
     </script>
-<script type="module">
-  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
-  // ⬇️ Tu proyecto (URL y anon key public) — ya lo teníamos
-  const supabase = createClient(
-    'https://dcxljettjctekbhxcyrw.supabase.co',
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRjeGxqZXR0amN0ZWtiaHhjeXJ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUzMDYyOTgsImV4cCI6MjA3MDg4MjI5OH0.X7OWTobYUQqKJA41BlozsMqqqRd_ndO-uh9gxRv9s7U'
-  )
+<!-- ======= RUNTIME CANVA + SUPABASE (REEMPLAZO COMPLETO) ======= -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* ========= 0) SUPABASE CLIENT ========= */
+const SUPABASE_URL = "https://dcxljettjctekbhxcyrw.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRjeGxqZXR0amN0ZWtiaHhjeXJ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUzMDYyOTgsImV4cCI6MjA3MDg4MjI5OH0.X7OWTobYUQqKJA41BlozsMqqqRd_ndO-uh9gxRv9s7U";
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-  // Lógica de badges (como la tenías)
-  function getTextBadges(score, treats) {
-  const badges = [];
-  // ⭐ Legend: 2000+ puntos
-  if (score >= 2000) {
-    badges.push({ label: 'Legend', class: 'badge-legend' });
-  }
-  // 🥡 Chest Hero: 100+ chests
-  if (treats >= 100) {
-    badges.push({ label: 'Hero', class: 'badge-chest-hero' });
-  }
-  // 🎯 Consistent: 70+ chests AND 1000+ puntos
-  if (treats >= 70 && score >= 1000) {
-    badges.push({ label: 'Consistent', class: 'badge-consistent' });
-  }
-  return badges;
+/* ========= 1) HELPERS ========= */
+const $ = (id) => document.getElementById(id);
+const setText = (id, v) => { const el = $(id); if (el) el.textContent = v; };
+
+/* ========= 2) TABS ========= */
+function showTab(tabName) {
+  // Oculta todo
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  // Activa el tab
+  const tab = document.getElementById(`${tabName}-tab`);
+  if (tab) tab.classList.add('active');
+  // Marca botón activo por data-tab o texto
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  const byData = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+  if (byData) byData.classList.add('active');
 }
 
-  // Render DESKTOP (respeto tus clases/estructura)
-  function renderDesktopRow(p){
-   const txtBadges = getTextBadges(p.score, p.treats)
-  .map(b => `<span class="text-badge ${b.class}">${b.label}</span>`)
-  .join('');
-    return `
-      <div class="player-row ${top3}" data-name="${(p.name||'').toLowerCase()}">
-        <div class="rank ${rankClass}">#${p.rank}</div>
-        <div class="player-name"><span class="clan-emblem">🧁</span>${p.name} ${p.rank<=3?'<span class="trophy">🏆</span>':''}
-         ${txtBadges ? `<span class="badge-progress">${txtBadges}</span>` : ''}
-        </div>
-        <div class="stat score">${p.score.toLocaleString()}</div>
-        <div class="stat">${p.treats}</div>
-      </div>
-    `;
-  }
-
-  // Render MOBILE (respeto tus clases/estructura)
-  function renderMobileCard(p){
-    const txtBadgesM = getTextBadges(p.score, p.treats)
-  .map(b => `<span class="text-badge ${b.class}">${b.label}</span>`)
-  .join('');
-    return `
-      <div class="mobile-card" data-name="${(p.name||'').toLowerCase()}">
-        <div class="mobile-card-row1">
-          <div class="mobile-rank ${rankClass}">#${p.rank}</div>
-          <div class="mobile-player-name"><span class="clan-emblem">🧁</span>${p.name}</div>
-        </div>
-        <div class="mobile-card-row2">
-          <div class="mobile-badges">${txtBadgesM}</div>
-          <div class="mobile-stats">
-            <div class="mobile-score">${p.score.toLocaleString()} ⭐</div>
-            <div class="mobile-chests">${p.treats} 🍪</div>
-          </div>
-        </div>
-      </div>
-    `;
-  }
-
-  async function loadLeaderboard(){
-    const container = document.getElementById('leaderboardContent'); // existe en tu HTML
-    if (!container) return;
-const { data, error } = await supabase
-  .from('players_live')   // ✅ new view
-  .select('name, score, treats, rank')
-  .order('rank', { ascending: true });
-
-
-    if (error){
-      container.innerHTML = `<div class="empty-state"><h3>⚠️ Error</h3><p>No se pudieron cargar los datos.</p></div>`;
-      console.error(error); return;
-    }
-    if (!data?.length){
-      container.innerHTML = `<div class="empty-state"><h3>Sin datos</h3><p>Aún no hay jugadores.</p></div>`;
-      return;
-    }
-
-    container.innerHTML = data.map(p => renderDesktopRow(p) + renderMobileCard(p)).join('');
-
-    // KPIs superiores (si existen)
-    const kWar = document.getElementById('totalWarriors');
-    const kCh  = document.getElementById('totalChests');
-    const kSc  = document.getElementById('totalScore');
-    if (kWar) kWar.textContent = data.length;
-    if (kCh)  kCh.textContent  = Math.round(data.reduce((a,b)=>a+(b.treats||0),0)/data.length);
-    if (kSc)  kSc.textContent  = Math.round(data.reduce((a,b)=>a+(b.score||0),0)/data.length).toLocaleString();
-  }
-
-  // Buscador (usa tus IDs/clases existentes)
-  function setupSearch(){
-    const input = document.getElementById('nameSearch');
-    const out   = document.getElementById('searchResults');
-    const clear = document.getElementById('clearBtn');
-    if (!input) return;
-
-    const run=()=>{
-      const q=(input.value||'').trim().toLowerCase();
-      const rows=document.querySelectorAll('#leaderboardContent .player-row, #leaderboardContent .mobile-card');
-      let hits=0;
-      rows.forEach(el=>{
-        const name=el.getAttribute('data-name')||'';
-        const match=q && name.includes(q);
-        el.classList.toggle('search-match', !!match); // tu CSS ya resalta .search-match
-        if (match) hits++;
-      });
-      if (out) out.textContent = q?`Resultados: ${hits}`:'';
-      if (clear) clear.style.display = q?'inline-flex':'none';
-    };
-    input.addEventListener('input', run);
-    if (clear) clear.addEventListener('click', ()=>{ input.value=''; input.focus(); run(); });
-  }
-
-  // Tabs (tu HTML ya trae botones con onclick="showTab('...')")
-  window.showTab = function(tab){
-    const map = { leaderboard:'leaderboard-tab', badges:'badges-tab', scoring:'scoring-tab' };
-    const target = map[tab];
-    if (!target) return;
-    document.querySelectorAll('.tab-content').forEach(s=>s.classList.remove('active'));
-    document.getElementById(target)?.classList.add('active');
-    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-    const label = tab==='leaderboard'?'🏆 Leaderboard':tab==='badges'?'🏅 Badge System':'⭐ Chest Scoring';
-    [...document.querySelectorAll('.tab-btn')].find(b=>b.textContent.includes(label))?.classList.add('active');
-  }
-
-  // Countdown semanal + progress bar (IDs reales de tu HTML)
-  function setupCountdown(){
-    const daysEl=document.getElementById('days'), hoursEl=document.getElementById('hours'),
-          minsEl=document.getElementById('minutes'), secsEl=document.getElementById('seconds'),
-          fill=document.getElementById('weekProgress'), pctEl=document.getElementById('progressPercentage');
-    if (!hoursEl || !fill) return;
-
-    // Semana: Domingo 11:00 → Domingo 10:59 (hora CDMX aprox desde el cliente)
-    const now=new Date();
-    const day=now.getDay(); // 0=domingo
-    const toSunday=(7-day)%7;
-    const nextSunday=new Date(now); nextSunday.setDate(now.getDate()+toSunday); nextSunday.setHours(11,0,0,0);
-    if (now>=nextSunday) nextSunday.setDate(nextSunday.getDate()+7);
-    const start=new Date(nextSunday); start.setDate(start.getDate()-7);
-
-    function tick(){
-      const t=new Date();
-      const total=nextSunday-start, elapsed=t-start, remain=Math.max(0,nextSunday-t);
-      const d=Math.floor(remain/86400000), h=Math.floor((remain/3600000)%24),
-            m=Math.floor((remain/60000)%60), s=Math.floor((remain/1000)%60);
-      if (daysEl) daysEl.textContent=d; if (hoursEl) hoursEl.textContent=h;
-      if (minsEl) minsEl.textContent=m; if (secsEl) secsEl.textContent=s;
-      const pct=Math.min(100, Math.max(0, (elapsed/total)*100));
-      fill.style.width = `${pct.toFixed(2)}%`;
-      if (pctEl) pctEl.textContent = `${pct.toFixed(0)}%`;
-    }
-    tick(); setInterval(tick, 1000);
-  }
-
-  // Boot
-  await loadLeaderboard();
-  setupSearch();
-  setupCountdown();
-</script>
-<!-- Supabase SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script>
-  // 1) TUS CREDENCIALES (reales)
-  const SUPABASE_URL = "https://dcxljettjctekbhxcyrw.supabase.co";
-  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRjeGxqZXR0amN0ZWtiaHhjeXJ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUzMDYyOTgsImV4cCI6MjA3MDg4MjI5OH0.X7OWTobYUQqKJA41BlozsMqqqRd_ndO-uh9gxRv9s7U";
-  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-  // 2) Carga del leaderboard DESDE la vista agregada
-  async function loadLeaderboard() {
-    const { data, error } = await supabase
-      .from('players_live')                // <- tu vista
-      .select('name, score, treats, rank')
-      .order('score', { ascending: false });
-
-    if (error) {
-      console.error("SELECT error:", error);
-      document.getElementById('leaderboardContent').innerHTML =
-        `<div class="empty-state"><h3>⚠️ Error</h3><p>${error.message}</p></div>`;
-      return;
-    }
-
-    // KPIs
-    const total = data.length;
-    const avgTreats = total ? Math.round(data.reduce((a,b)=>a+b.treats,0)/total) : 0;
-    const avgScore  = total ? Math.round(data.reduce((a,b)=>a+b.score,0)/total) : 0;
-    setText('totalWarriors', total);
-    setText('totalChests',  avgTreats);
-    setText('totalScore',   avgScore);
-
-    // Render filas (corrige el error de 'top3 is not defined' usando isTop3)
-    const rows = (data || []).map(p => {
-      const rankClass = p.rank === 1 ? 'rank-1' : p.rank === 2 ? 'rank-2' : p.rank === 3 ? 'rank-3' : '';
-      const isTop3 = p.rank <= 3;
-
-      return `
-        <div class="player-row ${isTop3 ? 'top-3' : ''}">
-          <div class="rank ${rankClass}">${p.rank}</div>
-          <div class="player-name">${p.name}</div>
-          <div class="stat score">${p.score}</div>
-          <div class="stat">${p.treats}</div>
-        </div>
-
-        <div class="mobile-card ${isTop3 ? 'top-3' : ''}">
-          <div class="mobile-card-row1">
-            <div class="mobile-rank ${rankClass}">${p.rank}</div>
-            <div class="mobile-player-name">${p.name}</div>
-          </div>
-          <div class="mobile-card-row2">
-            <div class="mobile-stats">
-              <div class="mobile-score">⭐ ${p.score}</div>
-              <div class="mobile-chests">🍪 ${p.treats}</div>
-            </div>
-          </div>
-        </div>
-      `;
-    }).join('');
-
-    document.getElementById('leaderboardContent').innerHTML = rows || `
+/* ========= 3) RENDER LEADERBOARD (respeta tu UI Canva) ========= */
+function renderLeaderboard(list, targetId) {
+  const host = $(targetId);
+  if (!host) return;
+  if (!Array.isArray(list) || !list.length) {
+    host.innerHTML = `
       <div class="empty-state">
         <h3>🎯 Ready for Battle!</h3>
-        <p>No hay datos aún.</p>
+        <p>No data yet.</p>
       </div>`;
+    return;
   }
 
-  function setText(id, val){ const el = document.getElementById(id); if (el) el.textContent = val; }
+  host.innerHTML = list.map(p => {
+    const rankClass = p.rank === 1 ? 'rank-1' : p.rank === 2 ? 'rank-2' : p.rank === 3 ? 'rank-3' : '';
+    const isTop3 = p.rank <= 3;
+    return `
+  <div class="player-row ${isTop3 ? 'top-3' : ''}"
+     data-rank="${p.rank}"
+     data-name="${p.name.replace(/"/g,'&quot;')}"
+     data-score="${Number(p.score)||0}"
+     data-chests="${Number(p.treats)||0}"
+     data-badges="${(p.badgesHTML||'').replace(/"/g,'&quot;')}"
+     data-badge-progress="${(p.badgeProgress||'').replace(/"/g,'&quot;')}">
 
-  // 3) Realtime: escucha la TABLA base (raw_chests) y recarga la vista
-  supabase
-    .channel('rt-raw-chests')
-    .on('postgres_changes', { event: '*', schema: 'public', table: 'raw_chests' }, (payload) => {
-      console.log('RT ▶', payload.eventType, payload.new || payload.old);
-      loadLeaderboard();
+  <div class="rank ${rankClass}">#${p.rank}</div>
+
+  <div class="player-name clickable-name">
+    <span class="clan-emblem">🧁</span>
+    <span class="player-name-text">${p.name}</span>
+    ${p.trophyHTML||''}
+    ${p.badgesHTML||''}
+    ${p.badgeProgress ? `<span class="badge-progress">${p.badgeProgress}</span>` : ''}
+  </div>
+
+  <div class="stat score">⭐ ${Number(p.score).toLocaleString()}</div>
+  <div class="stat">🍪 ${Number(p.treats).toLocaleString()}</div>
+</div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+/* ========= 4) LOAD CURRENT WEEK ========= */
+async function loadCurrentWeek() {
+  const { data, error } = await sb
+    .from('players_current')
+    .select('name, score, treats, rank')
+    .order('score', { ascending: false });
+  if (error) { console.error('players_current error', error); return; }
+
+  const rows = data || [];
+  // KPIs
+  const total = rows.length;
+  const avgTreats = total ? Math.round(rows.reduce((a,b)=>a+(b.treats||0),0)/total) : 0;
+  const avgScore  = total ? Math.round(rows.reduce((a,b)=>a+(b.score||0),0)/total)  : 0;
+  setText('totalWarriors', total);
+  setText('totalChests',  avgTreats);
+  setText('totalScore',   avgScore);
+
+  renderLeaderboard(rows, 'leaderboardContent');
+}
+
+/* ========= 5) LOAD LAST WEEK (KPIs + badges + tabla) ========= */
+async function loadLastWeek() {
+  const { data, error } = await sb
+    .from('players_last')
+    .select('name, score, treats, rank')
+    .order('score', { ascending: false });
+  if (error) { console.error('players_last error', error); return; }
+
+  const rows = data || [];
+  renderLeaderboard(rows, 'leaderboardContentLast');
+
+  // KPIs
+  if (!rows.length) {
+    setText('lastWeekWinner', '—');
+    setText('lastWeekParticipants', '0');
+    setText('lastWeekTopScore', '0');
+  } else {
+    setText('lastWeekWinner', rows[0].name);
+    setText('lastWeekParticipants', rows.length);
+    setText('lastWeekTopScore', Math.max(...rows.map(p=>Number(p.score)||0)).toLocaleString());
+  }
+
+  // Badges (mismas reglas Canva)
+  const heroes = rows.filter(p => (p.treats||0) >= 100).map(p => p.name);
+  const legends = rows.filter(p => (p.score||0)  >= 2000).map(p => p.name);
+  const consistent = rows.filter(p => (p.treats||0) >= 70 && (p.score||0) >= 1000).map(p => p.name);
+
+  const put = (countId, namesId, arr) => {
+    setText(countId, `${arr.length} ${arr.length===1?'pancake':'pancakes'}`);
+    setText(namesId, arr.length ? arr.join(', ') : '—');
+  };
+  put('lastWeekChestHeroes',  'lastWeekChestHeroNames',  heroes);
+  put('lastWeekLegends',      'lastWeekLegendNames',     legends);
+  put('lastWeekConsistent',   'lastWeekConsistentNames', consistent);
+}
+
+/* ========= 6) CYCLES + COUNTDOWN (RPC del servidor) ========= */
+async function loadCyclesAndCountdown() {
+  // IMPORTANTE: tu función SQL se llama get_cycle_bounds_mx
+  const { data, error } = await sb.rpc('get_cycle_bounds_mx');
+  if (error) { console.error('get_cycle_bounds_mx error', error); return; }
+  if (!data || !data[0]) return;
+
+  const c = data[0];
+  const fmt = (ts) => new Date(ts).toLocaleString('en-US', {
+    timeZone: 'America/Mexico_City',
+    month:'short', day:'2-digit', hour:'numeric', minute:'2-digit', hour12:true
+  });
+
+  // Fechas visibles
+  const currentRange = `${fmt(c.current_start)} - ${fmt(new Date(new Date(c.current_end) - 60*1000))}`;
+  const lastRange    = `${fmt(c.last_start)} - ${fmt(new Date(new Date(c.last_end)   - 60*1000))}`;
+  setText('currentCycleDates', currentRange);
+  setText('lastCycleDates',    lastRange);
+
+  // Countdown + progreso
+  const endMs   = new Date(c.current_end).getTime();
+  const startMs = new Date(c.current_start).getTime();
+
+  // Auto-detección de IDs de progreso según tu HTML
+  const barEl = $('weekProgress') || $('weekProgressFill');
+  const pctEl = $('progressPercentage') || $('weekProgressPercent');
+
+  function tick() {
+    const now = Date.now();
+    const diff = Math.max(0, endMs - now);
+    const d = Math.floor(diff / (1000*60*60*24));
+    const h = Math.floor((diff / (1000*60*60)) % 24);
+    const m = Math.floor((diff / (1000*60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+    setText('days', d); setText('hours', h); setText('minutes', m); setText('seconds', s);
+
+    const pct = Math.min(100, Math.max(0, ((now - startMs) / (endMs - startMs)) * 100));
+    if (barEl) barEl.style.width = `${pct.toFixed(1)}%`;
+    if (pctEl) pctEl.textContent = `${pct.toFixed(1)}%`;
+  }
+  tick();
+  window.__countdown && clearInterval(window.__countdown);
+  window.__countdown = setInterval(tick, 1000);
+}
+
+/* ========= 7) REALTIME ========= */
+function initRealtime() {
+  sb.channel('rt-raw-chests')
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'raw_chests' }, async () => {
+      await loadCurrentWeek();
+      // refresca last-week sólo si el tab está activo
+      if (document.querySelector('#lastweek-tab.tab-content.active')) {
+        await loadLastWeek();
+      }
     })
-    .subscribe((status) => console.log('Channel status:', status));
+    .subscribe((status)=> console.log('Channel status:', status));
+}
 
-  // 4) Primera carga
-  loadLeaderboard();
+/* ========= 8) INIT ÚNICO ========= */
+document.addEventListener('DOMContentLoaded', async () => {
+  // Enlaza botones de tabs si no traen onclick
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    const t = btn.getAttribute('data-tab');
+    if (t) btn.addEventListener('click', ()=> showTab(t));
+  });
 
-  // (Opcional) Fallback cada 15s por si RT no emite
-  // setInterval(loadLeaderboard, 15000);
+  // Mostrar por defecto el tab principal si nada está activo
+  if (!document.querySelector('.tab-content.active')) showTab('leaderboard');
+
+  // Carga datos
+  await loadCurrentWeek();
+  await loadLastWeek();
+  await loadCyclesAndCountdown();
+
+  // Opcional: search/burbujas si tienes esas funciones ya definidas
+  window.setupSearch?.();
+  window.setupMobileTapEffects?.();
+
+  // Realtime
+  initRealtime();
+});
 </script>
+<!-- ======= /RUNTIME ======= -->
+<script>
+/* =========================================================
+   1) TABS: activación + ocultar elementos de la pestaña
+   ========================================================= */
+function showTab(tabName) {
+  // Ocultar todos los contenidos
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  // Mostrar el tab solicitado
+  const tab = document.getElementById(`${tabName}-tab`);
+  if (tab) tab.classList.add('active');
+
+  // Botones activos (si usas .tab-btn con data-tab)
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  const byData = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+  if (byData) byData.classList.add('active');
+
+  // Mostrar/Ocultar elementos exclusivos del leaderboard (KPIs, buscador, etc.)
+  document.querySelectorAll('.leaderboard-only').forEach(el => {
+    el.style.display = (tabName === 'leaderboard') ? '' : 'none';
+  });
+}
+
+/* =========================================================
+   2) LEADERBOARD: Render con badges + mensaje motivacional
+   ========================================================= */
+function renderLeaderboard(list, targetId) {
+  const host = document.getElementById(targetId);
+  if (!host) return;
+  if (!Array.isArray(list) || !list.length) {
+    host.innerHTML = `
+      <div class="empty-state">
+        <h3>🎯 Ready for Battle!</h3>
+        <p>No data yet.</p>
+      </div>`;
+    return;
+  }
+
+  const rowsHtml = list.map((p, i) => {
+    const rankClass = p.rank === 1 ? 'rank-1' : p.rank === 2 ? 'rank-2' : p.rank === 3 ? 'rank-3' : '';
+    const isTop3 = p.rank <= 3;
+
+    // Badges (mismas reglas que usamos antes)
+    const score  = Number(p.score)||0;
+    const treats = Number(p.treats)||0;
+    const badges = [];
+    if (treats >= 100) badges.push('<span class="achievement-badge chest-hero">Chest Hero</span>');
+    if (score  >= 2000) badges.push('<span class="achievement-badge score-legend">Legend</span>');
+    if (treats >= 70 && score >= 1000) badges.push('<span class="achievement-badge consistent-warrior">Consistent</span>');
+
+    // Mensaje motivacional (si no tiene todos los badges, muestra el más cercano)
+    let badgeProgress = '';
+    if (badges.length < 3) {
+      const toChest   = Math.max(0, 100 - treats);
+      const toLegend  = Math.max(0, 2000 - score);
+      const toConsC   = Math.max(0, 70 - treats);
+      const toConsP   = Math.max(0, 1000 - score);
+
+      // Elegimos el “objetivo” más cercano
+      const candidates = [];
+      if (toChest  > 0) candidates.push({d: toChest,  txt:`🍪 Only ${toChest} more chests to earn the hero badge!`});
+      if (toLegend > 0) candidates.push({d: toLegend, txt:`⭐ Only ${toLegend} more points to become a legend!`});
+      if (toConsC > 0 || toConsP > 0) {
+        const combo = [];
+        if (toConsC > 0) combo.push(`${toConsC} chests`);
+        if (toConsP > 0) combo.push(`${toConsP} points`);
+        candidates.push({d: Math.max(toConsC, toConsP), txt:`🎯 Only ${combo.join(' & ')} to earn consistent badge!`});
+      }
+      if (candidates.length) {
+        candidates.sort((a,b)=>a.d-b.d);
+        badgeProgress = candidates[0].txt;
+      }
+    }
+
+    const longMsg = badgeProgress.length > 50;
+    return `
+      <!-- Desktop row -->
+      <div class="player-row ${isTop3 ? 'top-3' : ''}" 
+           data-rank="${p.rank}"
+           data-name="${p.name.replace(/"/g,'&quot;').replace(/'/g,'&#39;')}"
+           data-score="${score}" data-chests="${treats}">
+        <div class="rank ${rankClass}">#${p.rank}</div>
+        <div class="player-name clickable-name">
+          <span class="clan-emblem">🧁</span>
+          <span class="player-name-text">${p.name}</span>
+          ${badges.join('')}
+          ${!longMsg && badgeProgress ? `<span class="badge-progress">${badgeProgress}</span>` : ''}
+        </div>
+        <div class="stat score">⭐ ${score.toLocaleString()}</div>
+        <div class="stat">🍪 ${treats.toLocaleString()}</div>
+        ${longMsg ? `<div class="badge-progress-row"><span class="badge-progress">${badgeProgress}</span></div>` : ''}
+      </div>
+
+      <!-- Mobile card -->
+      <div class="mobile-card ${isTop3 ? 'top-3' : ''}">
+        <div class="mobile-card-row1">
+          <div class="mobile-rank ${rankClass}">#${p.rank}</div>
+          <div class="mobile-player-name">
+            <span class="clan-emblem">🧁</span>
+            <span class="player-name-text">${p.name}</span>
+          </div>
+        </div>
+        <div class="mobile-card-row2">
+          <div class="mobile-badges">${badges.join('')}</div>
+          <div class="mobile-stats">
+            <div class="mobile-score">⭐ ${score.toLocaleString()}</div>
+            <div class="mobile-chests">🍪 ${treats.toLocaleString()}</div>
+          </div>
+        </div>
+        ${badgeProgress ? `<div class="badge-progress-row"><span class="badge-progress">${badgeProgress}</span></div>` : ''}
+      </div>
+    `;
+  }).join('');
+
+  host.innerHTML = rowsHtml;
+
+  // Habilitar modales en nombres (desktop + mobile)
+  wirePlayerClicks(targetId);
+}
+
+/* =========================================================
+   3) Modales: abrir al hacer click en el nombre
+   ========================================================= */
+function wirePlayerClicks(targetId) {
+  const host = document.getElementById(targetId);
+  if (!host) return;
+ // Desktop
+  host.querySelectorAll('.player-row .player-name').forEach(el => {
+    el.addEventListener('click', () => {
+      const row = el.closest('.player-row');
+      if (!row) return;
+      const rank   = Number(row.dataset.rank)||0;
+      const name   = row.dataset.name || el.querySelector('.player-name-text')?.textContent || '';
+      const score  = Number(row.dataset.score)||0;
+      const chests = Number(row.dataset.chests)||0;
+      const badges = row.dataset.badges || '';
+      const badgeProgress = row.dataset.badgeProgress || '';
+      showPlayerModal(rank, name, score, chests, badges, badgeProgress);
+    });
+  });
+
+}
+
+
+/* =========================================================
+   4) Cursor mágico + explosión en KPI cards
+   ========================================================= */
+function setupMagicCursor() {
+  // Crear cursor si no existe
+  let cursor = document.querySelector('.magic-cursor');
+  if (!cursor) {
+    cursor = document.createElement('div');
+    cursor.className = 'magic-cursor';
+    document.body.appendChild(cursor);
+  }
+
+  // Z-index alto para ir por encima de todo (incluido modal)
+  cursor.style.zIndex = '999999';
+  cursor.style.pointerEvents = 'none';
+  document.body.style.cursor = 'none';
+
+  // Trail
+  function spawnTrail(x, y) {
+    const trail = document.createElement('div');
+    trail.className = 'magic-trail';
+    trail.style.left = (x - 2) + 'px';
+    trail.style.top  = (y - 2) + 'px';
+    trail.style.zIndex = '999998';
+    document.body.appendChild(trail);
+    setTimeout(()=> trail.remove(), 1200);
+  }
+
+  let mx = 0, my = 0, cx = 0, cy = 0;
+  document.addEventListener('mousemove', (e) => {
+    mx = e.clientX; my = e.clientY;
+    spawnTrail(mx, my);
+  });
+
+  function tick() {
+    cx += (mx - cx) * 0.12;
+    cy += (my - cy) * 0.12;
+    cursor.style.transform = `translate(${cx - 8}px, ${cy - 8}px)`;
+    requestAnimationFrame(tick);
+  }
+  tick();
+
+  // Efecto hover para tarjetas KPI (si existen)
+  document.querySelectorAll('.stat-card').forEach(card => {
+    card.onmouseenter = () => createStatCardExplosion(card);
+  });
+}
+
+// Partículas de emojis en KPI cards (para evitar error “no definida”)
+function createStatCardExplosion(container) {
+  if (!container) return;
+  const holder = document.createElement('div');
+  holder.className = 'stat-explosion';
+  holder.style.left = '50%';
+  holder.style.top  = '50%';
+  container.appendChild(holder);
+
+  const emojis = ['🍰','⭐','🍪','🎉','✨','🥞'];
+  for (let i=0; i<12; i++) {
+    const span = document.createElement('span');
+    span.className = 'stat-emoji-particle';
+    span.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    span.style.left = (Math.random()*120 - 60) + 'px';
+    span.style.top  = (Math.random()*80  - 40) + 'px';
+    holder.appendChild(span);
+  }
+  setTimeout(()=> holder.remove(), 2000);
+}
+
+/* =========================================================
+   5) Re-enlazar tabs y cursor al cargar
+   ========================================================= */
+document.addEventListener('DOMContentLoaded', () => {
+  // Enlaza tabs por data-tab
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    const t = btn.getAttribute('data-tab');
+    if (t) btn.addEventListener('click', ()=> showTab(t));
+  });
+
+  // Mostrar leaderboard por defecto si nada activo
+  if (!document.querySelector('.tab-content.active')) showTab('leaderboard');
+
+  // Cursor mágico (único)
+  setupMagicCursor();
+});
+</script>
+<script>
+/* ========== helpers ========== */
+const $ = (id) => document.getElementById(id);
+const escAttr = (s) => String(s||'')
+  .replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+
+/* ========== 1) MODAL COMPLETO (usa tu HTML existente #playerModal) ========== */
+function showPlayerModal(rank, playerName, score, chests, badges, badgeProgress) {
+  const modal = document.getElementById('playerModal');
+  const modalRank = document.getElementById('modalRank');
+  const modalPlayerName = document.getElementById('modalPlayerName');
+  const modalScore = document.getElementById('modalScore');
+  const modalChests = document.getElementById('modalChests');
+  const modalBadges = document.getElementById('modalBadges');
+  const modalProgress = document.getElementById('modalProgress');
+
+  // Básicos
+  modalRank.textContent = `#${rank}`;
+  modalRank.className = `modal-rank ${rank <= 3 ? `rank-${rank}` : ''}`;
+  modalPlayerName.textContent = playerName;
+  modalScore.textContent = Number(score).toLocaleString();
+  modalChests.textContent = Number(chests).toLocaleString();
+
+  // Badges (HTML directo)
+  modalBadges.innerHTML = badges && badges.trim()
+    ? badges
+    : '<span style="opacity:.6;font-style:italic;">No badges earned yet</span>';
+
+  // Progreso (usa el texto que pasamos en data-badge-progress si existe)
+  let progressHTML = '<h4>🎯 Badge Progress</h4>';
+  if (badgeProgress && badgeProgress.trim()) {
+    progressHTML += `<div class="progress-item needed">${badgeProgress}</div>`;
+  } else {
+    // fallback calculado
+    const hasChestHero = /Chest Hero/i.test(badges);
+    const hasLegend    = /Legend/i.test(badges);
+    const hasConsistent= /Consistent/i.test(badges);
+
+    if (hasChestHero) {
+      progressHTML += '<div class="progress-item earned">🍪 <strong>Chest Hero</strong> - ✅ Earned! (100+ chests)</div>';
+    } else {
+      const need = Math.max(0, 100 - Number(chests||0));
+      progressHTML += `<div class="progress-item ${need? 'needed':'earned'}">🍪 <strong>Chest Hero</strong> - ${need?`Need ${need} more chests`:'✅ Ready to earn!'}</div>`;
+    }
+
+    if (hasLegend) {
+      progressHTML += '<div class="progress-item earned">⭐ <strong>Legend</strong> - ✅ Earned! (2000+ points)</div>';
+    } else {
+      const need = Math.max(0, 2000 - Number(score||0));
+      progressHTML += `<div class="progress-item ${need? 'needed':'earned'}">⭐ <strong>Legend</strong> - ${need?`Need ${need} more points`:'✅ Ready to earn!'}</div>`;
+    }
+
+    if (hasConsistent) {
+      progressHTML += '<div class="progress-item earned">🎯 <strong>Consistent</strong> - ✅ Earned! (70+ chests AND 1000+ points)</div>';
+    } else {
+      const needC = Math.max(0, 70 - Number(chests||0));
+      const needS = Math.max(0, 1000 - Number(score||0));
+      if (needC === 0 && needS === 0) {
+        progressHTML += '<div class="progress-item earned">🎯 <strong>Consistent</strong> - ✅ Ready to earn!</div>';
+      } else if (needC === 0) {
+        progressHTML += `<div class="progress-item needed">🎯 <strong>Consistent</strong> - Need ${needS} more points</div>`;
+      } else if (needS === 0) {
+        progressHTML += `<div class="progress-item needed">🎯 <strong>Consistent</strong> - Need ${needC} more chests</div>`;
+      } else {
+        progressHTML += `<div class="progress-item needed">🎯 <strong>Consistent</strong> - Need ${needC} chests & ${needS} points</div>`;
+      }
+    }
+  }
+  modalProgress.innerHTML = progressHTML;
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePlayerModal() {
+  const modal = document.getElementById('playerModal');
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Cerrar al click afuera y con ESC
+document.addEventListener('click', (e) => {
+  const modal = $('playerModal');
+  if (e.target === modal) closePlayerModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closePlayerModal();
+});
+
+/* ========== 2) CLICK EN NOMBRES → abre modal (desktop + mobile) ========== */
+function wirePlayerClicks(targetId) {
+  const host = document.getElementById(targetId);
+  if (!host) return;
+  host.querySelectorAll('.player-name, .mobile-player-name').forEach(el => {
+    el.addEventListener('click', () => {
+      const row = el.closest('.player-row') || el.closest('.mobile-card')?.previousElementSibling;
+      if (!row) return;
+      const rank  = row.getAttribute('data-rank') || '?';
+      const name  = row.getAttribute('data-name') || el.querySelector('.player-name-text')?.textContent || 'Pancake';
+      const score = Number(row.getAttribute('data-score')) || 0;
+      const chests= Number(row.getAttribute('data-chests'))|| 0;
+      const badgesHTML    = (row.getAttribute('data-badges') || '').replace(/&quot;/g,'"').replace(/&#39;/g,"'");
+      const badgeProgress = (row.getAttribute('data-badge-progress') || '').replace(/&quot;/g,'"').replace(/&#39;/g,"'");
+      showPlayerModal(rank, name, score, chests, badgesHTML, badgeProgress);
+    });
+  });
+}
+
+/* ========== 3) RENDER con badges + mensaje + data-* (llama wirePlayerClicks) ========== */
+function renderLeaderboard(list, targetId) {
+  const host = document.getElementById(targetId);
+  if (!host) return;
+  const rows = Array.isArray(list) ? list : [];
+  if (!rows.length) {
+    host.innerHTML = `
+      <div class="empty-state">
+        <h3>🎯 Ready for Battle!</h3>
+        <p>No data yet.</p>
+      </div>`;
+    return;
+  }
+
+  const html = rows.map((p, idx) => {
+    const rank   = Number(p.rank ?? (idx + 1));
+    const score  = Number(p.score||0);
+    const treats = Number(p.treats||0);
+
+    const rankClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
+    const rowClass  = rank <= 3 ? 'top-3' : '';
+
+    // Badges (mismas reglas)
+    let badges = '';
+    if (treats >= 100)                         badges += '<span class="achievement-badge chest-hero">Chest Hero</span>';
+    if (score  >= 2000)                        badges += '<span class="achievement-badge score-legend">Legend</span>';
+    if (treats >= 70 && score >= 1000)         badges += '<span class="achievement-badge consistent-warrior">Consistent</span>';
+
+    // Mensaje (más cercano)
+    let badgeProgress = '';
+    if (!((treats >= 100) && (score >= 2000) && (treats >= 70 && score >= 1000))) {
+      const needChest = Math.max(0, 100  - treats);
+      const needLeg   = Math.max(0, 2000 - score);
+      const needC     = Math.max(0, 70   - treats);
+      const needP     = Math.max(0, 1000 - score);
+      const cands = [];
+      if (needChest > 0) cands.push({d:needChest, txt:`🍪 Only ${needChest} more chests to earn the hero badge!`});
+      if (needLeg   > 0) cands.push({d:needLeg,   txt:`⭐ Only ${needLeg} more points to become a legend!`});
+      if (needC>0 || needP>0) {
+        if (needC>0 && needP>0) cands.push({d:Math.max(needC,needP), txt:`🎯 Only ${needC} chests & ${needP} points to earn consistent badge!`});
+        else if (needC>0)       cands.push({d:needC, txt:`🎯 Only ${needC} more chests to earn consistent badge!`});
+        else                    cands.push({d:needP, txt:`🎯 Only ${needP} more points to earn consistent badge!`});
+      }
+      if (cands.length) {
+        cands.sort((a,b)=>a.d-b.d);
+        badgeProgress = cands[0].txt;
+      }
+    }
+    const isLong = (badgeProgress||'').length > 50;
+
+    return `
+      <!-- Desktop row -->
+      <div class="player-row ${rowClass}"
+           data-rank="${rank}"
+           data-name="${escAttr(p.name)}"
+           data-score="${score}"
+           data-chests="${treats}"
+           data-badges="${escAttr(badges)}"
+           data-badge-progress="${escAttr(badgeProgress)}">
+        <div class="rank ${rankClass}">#${rank}</div>
+        <div class="player-name clickable-name">
+          <span class="clan-emblem">🧁</span>
+          <span class="player-name-text">${p.name}</span>
+          ${badges}
+          ${!isLong && badgeProgress ? `<span class="badge-progress">${badgeProgress}</span>` : ''}
+        </div>
+        <div class="stat score">⭐ ${score.toLocaleString()}</div>
+        <div class="stat">🍪 ${treats.toLocaleString()}</div>
+        ${isLong ? `<div class="badge-progress-row"><span class="badge-progress">${badgeProgress}</span></div>` : ''}
+      </div>
+
+      <!-- Mobile card -->
+      <div class="mobile-card ${rowClass}">
+        <div class="mobile-card-row1">
+          <div class="mobile-rank ${rankClass}">#${rank}</div>
+          <div class="mobile-player-name">
+            <span class="clan-emblem">🧁</span>
+            <span class="player-name-text">${p.name}</span>
+          </div>
+        </div>
+        <div class="mobile-card-row2">
+          <div class="mobile-badges">${badges}</div>
+          <div class="mobile-stats">
+            <div class="mobile-score">⭐ ${score.toLocaleString()}</div>
+            <div class="mobile-chests">🍪 ${treats.toLocaleString()}</div>
+          </div>
+        </div>
+        ${badgeProgress ? `<div class="badge-progress-row"><span class="badge-progress">${badgeProgress}</span></div>` : ''}
+      </div>
+    `;
+  }).join('');
+
+  host.innerHTML = html;
+  // engancha clicks al terminar de pintar
+  wirePlayerClicks(targetId);
+}
+</script>
+
 </body>
 </html>
