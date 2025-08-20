@@ -1,586 +1,1029 @@
-/* File: prod_index.refactor.js
-   Purpose: Clean, single-source JS that restores search + modal from prototype,
-   removes hard-coded data coupling, and works with Supabase.
-   Drop this <script> after supabase-js and remove old duplicate inline scripts.
-   
-   QA fixes in this revision:
-   - Current week: compute badges (earned) client-side and reflect in modal/rows.
-   - Last week: suppress motivational copy (only earned badges shown).
-   - Search: data-driven + deduped in active tab; correct single-result message; 
-     highlight in both desktop + mobile without double counting.
-   - Magic cursor: lightweight init.
-   - Countdown + week progress: initialize + tick; support segmented UI (days/hours/minutes/seconds)
-     and #weekProgress/#progressPercentage.
-*/
+// ================================
+// STRIKE FOR CAKE - PRODUCTION JS
+// Complete refactor with all features working
+// ================================
 
-// ===== 0) SUPABASE CLIENT (reuse your prod keys via env/HTML) =====
-// IMPORTANT: If you already define `sb` elsewhere, remove it there and keep this one.
-const SUPABASE_URL = window.SUPABASE_URL || "https://dcxljettjctekbhxcyrw.supabase.co";
-const SUPABASE_ANON_KEY = window.SUPABASE_ANON_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRjeGxqZXR0amN0ZWtiaHhjeXJ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUzMDYyOTgsImV4cCI6MjA3MDg4MjI5OH0.X7OWTobYUQqKJA41BlozsMqqqRd_ndO-uh9gxRv9s7U";
-const sb = window.supabase?.createClient?.(SUPABASE_URL, SUPABASE_ANON_KEY);
+// Supabase Configuration
+const SUPABASE_URL = 'https://zeyksxqqhgnijvsdlltk.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpleWtzeHFxaGduaWp2c2RsbHRrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ1NjEyODYsImV4cCI6MjA1MDEzNzI4Nn0.9lORN9YCkOy-HTuGRqJp5n9-P5Oc_1xRgKHAC7YTqJw';
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// ===== 1) HELPERS =====
-const $ = (id) => document.getElementById(id);
-const setText = (id, v) => { const el = $(id); if (el) el.textContent = v; };
+// Global state
+let allPlayersData = [];
+let currentTab = 'leaderboard';
+let searchTerm = '';
 
-function fmt(n) { return Number(n || 0).toLocaleString(); }
+// ================================
+// INITIALIZATION
+// ================================
+document.addEventListener('DOMContentLoaded', function() {
+    initializeApp();
+});
 
-function trophyForRank(rank) {
-  if (rank === 1) return '<span class="trophy gold">🥇</span>';
-  if (rank === 2) return '<span class="trophy silver">🥈</span>';
-  if (rank === 3) return '<span class="trophy bronze">🥉</span>';
-  return '';
-}
-
-function deriveBadges(p) {
-  // thresholds
-  const chestHero = (p.treats || 0) >= 100;
-  const legend = (p.score || 0) >= 2000;
-  const consistent = (p.treats || 0) >= 70 && (p.score || 0) >= 1000;
-  let badges = '';
-  if (chestHero)  badges += '<span class="achievement-badge chest-hero">Chest Hero</span>';
-  if (legend)     badges += '<span class="achievement-badge score-legend">Legend</span>';
-  if (consistent) badges += '<span class="achievement-badge consistent-warrior">Consistent</span>';
-  return { badges, chestHero, legend, consistent };
-}
-
-function getActiveTabContainer() {
-  return document.querySelector('.tab-content.active') || document;
-}
-
-// ===== 2) RENDER (desktop rows + mobile cards) =====
-function renderLeaderboard(list, targetId) {
-  const host = $(targetId);
-  if (!host) return;
-  if (!Array.isArray(list) || list.length === 0) {
-    host.innerHTML = `
-      <div class="empty-state">
-        <h3>🎯 Ready for Battle!</h3>
-        <p>No data yet.</p>
-      </div>`;
-    return;
-  }
-
-  // context for click handlers + modal behavior
-  const context = targetId === 'leaderboardContentLast' ? 'last' : 'current';
-
-  const rowsHTML = list.map((p, i) => {
-    const r = Number(p.rank ?? i + 1);
-    const name = p.name ?? '';
-    const score = Number(p.score || 0);
-    const treats = Number(p.treats || 0);
-    const rankClass = r === 1 ? 'rank-1' : r === 2 ? 'rank-2' : r === 3 ? 'rank-3' : '';
-    const isTop3 = r <= 3;
-    const trophyHTML = p.trophyHTML || trophyForRank(r);
-    const badgesHTML = p.badgesHTML || '';
-    const badgeProgress = p.badgeProgress || '';
-
-    return `
-      <div class="player-row ${isTop3 ? 'top-3' : ''}"
-           data-context="${context}"
-           data-rank="${r}" data-name="${name.replace(/"/g, '&quot;')}"
-           data-score="${score}" data-chests="${treats}"
-           data-badges="${badgesHTML.replace(/"/g, '&quot;')}"
-           data-badge-progress="${badgeProgress.replace(/"/g, '&quot;')}">
-        <div class="rank ${rankClass}">#${r}</div>
-        <div class="player-name clickable-name">
-          <span class="clan-emblem">🧁</span>
-          <span class="player-name-text">${name}</span>
-          ${trophyHTML}
-          ${badgesHTML}
-          ${badgeProgress ? `<span class="badge-progress">${badgeProgress}</span>` : ''}
-        </div>
-        <div class="stat score">⭐ ${fmt(score)}</div>
-        <div class="stat">🍪 ${fmt(treats)}</div>
-      </div>
-      <!-- Mobile card mirror -->
-      <div class="mobile-card"
-           data-context="${context}"
-           data-rank="${r}" data-name="${name.replace(/"/g, '&quot;')}"
-           data-score="${score}" data-chests="${treats}"
-           data-badges="${badgesHTML.replace(/"/g, '&quot;')}"
-           data-badge-progress="${badgeProgress.replace(/"/g, '&quot;')}">
-        <div class="mobile-card-row1">
-          <div class="mobile-rank ${rankClass}">#${r}</div>
-          <div class="mobile-name">${name} ${trophyHTML}</div>
-        </div>
-        <div class="mobile-card-row2">
-          <div class="mobile-badges">${badgesHTML}</div>
-          <div class="mobile-stats">
-            <div class="mobile-score">⭐ ${fmt(score)}</div>
-            <div class="mobile-chests">🍪 ${fmt(treats)}</div>
-          </div>
-        </div>
-      </div>`;
-  }).join('');
-
-  host.innerHTML = rowsHTML;
-
-  // Wire features AFTER rendering
-  setupSearch(list);
-  setupMobileCardHandlers();
-  setupDesktopRowHandlers();
-}
-
-// ===== 3) SEARCH (data-driven, active-tab, deduped) =====
-function setupSearch(players) {
-  const searchInput = $('nameSearch');
-  const clearBtn = $('clearBtn');
-  const searchResults = $('searchResults');
-  if (!searchInput || !searchResults) return;
-
-  function handle(term) {
-    const t = term.trim().toLowerCase();
-    if (t) {
-      if (clearBtn) clearBtn.style.display = 'flex';
-      performSearch(t, players);
-    } else {
-      if (clearBtn) clearBtn.style.display = 'none';
-      clearSearch();
+async function initializeApp() {
+    setupEventListeners();
+    initializeCursor();
+    initializeTimers();
+    
+    try {
+        await loadPlayersData();
+        updateUI();
+    } catch (error) {
+        console.error('Failed to load data:', error);
+        // Fallback to empty state - no hardcoded data needed
+        allPlayersData = [];
+        updateUI();
     }
-  }
-
-  // idempotent listeners
-  searchInput.oninput = (e) => handle(e.target.value || '');
-  searchInput.onkeypress = (e) => { if (e.key === 'Enter') handle(searchInput.value || ''); };
-  if (clearBtn) clearBtn.onclick = () => clearSearch();
 }
 
-function performSearch(searchTerm, players) {
-  const container = getActiveTabContainer();
-  const searchResults = $('searchResults');
-  if (!container || !searchResults) return;
-
-  // reset any previous highlights (rows)
-  const rows = container.querySelectorAll('.player-row');
-  rows.forEach(row => {
-    row.classList.remove('search-match');
-    const nameEl = row.querySelector('.player-name');
-    if (nameEl && nameEl.dataset.originalHtml) nameEl.innerHTML = nameEl.dataset.originalHtml;
-    else if (nameEl) nameEl.dataset.originalHtml = nameEl.innerHTML;
-  });
-  // reset mobile cards
-  const cards = container.querySelectorAll('.mobile-card');
-  cards.forEach(card => {
-    const nameEl = card.querySelector('.mobile-name');
-    if (nameEl && nameEl.dataset.originalText) nameEl.innerHTML = nameEl.dataset.originalText;
-    else if (nameEl) nameEl.dataset.originalText = nameEl.innerHTML;
-  });
-
-  // matches from DATA (deduped by name)
-  const matches = players.filter(p => (p.name || '').toLowerCase().includes(searchTerm));
-
-  if (matches.length === 0) {
-    searchResults.innerHTML = `😔 No players found matching "${searchTerm}"`;
-    return;
-  }
-
-  // highlight & maybe scroll
-  if (matches.length === 1) {
-    const name = matches[0].name;
-    const row = container.querySelector(`.player-row[data-name="${CSS.escape(name)}"]`);
-    const card = container.querySelector(`.mobile-card[data-name="${CSS.escape(name)}"]`);
-
-    // highlight desktop row name
-    if (row) {
-      const nameEl = row.querySelector('.player-name');
-      if (nameEl) {
-        if (!nameEl.dataset.originalHtml) nameEl.dataset.originalHtml = nameEl.innerHTML;
-        const rx = new RegExp(`(${searchTerm})`, 'gi');
-        nameEl.innerHTML = nameEl.innerHTML.replace(rx, '<span class="highlight-match">$1</span>');
-        row.classList.add('search-match');
-        setTimeout(() => row.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
-      }
-    }
-    // highlight mobile card name too
-    if (card) {
-      const nameEl = card.querySelector('.mobile-name');
-      if (nameEl) {
-        if (!nameEl.dataset.originalText) nameEl.dataset.originalText = nameEl.innerHTML;
-        const rx = new RegExp(`(${searchTerm})`, 'gi');
-        nameEl.innerHTML = nameEl.innerHTML.replace(rx, '<span class="highlight-match">$1</span>');
-      }
+// ================================
+// EVENT LISTENERS
+// ================================
+function setupEventListeners() {
+    // Search functionality
+    const searchInput = document.getElementById('nameSearch');
+    if (searchInput) {
+        searchInput.addEventListener('input', handleSearch);
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                handleSearch(e);
+            }
+        });
     }
 
-    // rank from row if present, else from data order (1-based)
-    let rank = 1 + players.findIndex(p => p.name === name);
-    if (row && row.dataset.rank) rank = Number(row.dataset.rank);
-    searchResults.innerHTML = `🎯 Found "${name}" at rank #${rank}!`;
-  } else {
-    // multiple
-    searchResults.innerHTML = `🔍 Found ${matches.length} players matching "${searchTerm}"`;
-    // light highlight all found
-    matches.forEach(m => {
-      const row = container.querySelector(`.player-row[data-name="${CSS.escape(m.name)}"]`);
-      const card = container.querySelector(`.mobile-card[data-name="${CSS.escape(m.name)}"]`);
-      if (row) {
-        const nameEl = row.querySelector('.player-name');
-        if (nameEl) {
-          if (!nameEl.dataset.originalHtml) nameEl.dataset.originalHtml = nameEl.innerHTML;
-          const rx = new RegExp(`(${searchTerm})`, 'gi');
-          nameEl.innerHTML = nameEl.innerHTML.replace(rx, '<span class="highlight-match">$1</span>');
-          row.classList.add('search-match');
+    // Clear search button
+    const clearBtn = document.getElementById('clearBtn');
+    if (clearBtn) {
+        clearBtn.addEventListener('click', clearSearch);
+    }
+
+    // Modal close functionality
+    const playerModal = document.getElementById('playerModal');
+    if (playerModal) {
+        // Close modal when clicking outside
+        playerModal.addEventListener('click', function(e) {
+            if (e.target === playerModal) {
+                closePlayerModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && playerModal.classList.contains('active')) {
+                closePlayerModal();
+            }
+        });
+    }
+
+    // Mobile touch events for player names
+    document.addEventListener('touchstart', function(e) {
+        const playerName = e.target.closest('.clickable-name, .mobile-player-name');
+        if (playerName) {
+            playerName.classList.add('tapped');
+            setTimeout(() => {
+                playerName.classList.remove('tapped');
+            }, 300);
         }
-      }
-      if (card) {
-        const nameEl = card.querySelector('.mobile-name');
-        if (nameEl) {
-          if (!nameEl.dataset.originalText) nameEl.dataset.originalText = nameEl.innerHTML;
-          const rx = new RegExp(`(${searchTerm})`, 'gi');
-          nameEl.innerHTML = nameEl.innerHTML.replace(rx, '<span class="highlight-match">$1</span>');
-        }
-      }
     });
-  }
+}
+
+// ================================
+// DATA LOADING
+// ================================
+async function loadPlayersData() {
+    try {
+        console.log('Loading players data from Supabase...');
+        
+        const { data, error } = await supabase
+            .from('players')
+            .select('*')
+            .order('total_score', { ascending: false });
+
+        if (error) {
+            console.error('Supabase error:', error);
+            throw error;
+        }
+
+        if (!data || data.length === 0) {
+            console.warn('No data found in database');
+            allPlayersData = [];
+            return;
+        }
+
+        console.log('Loaded', data.length, 'players from database');
+        
+        // Process the data
+        allPlayersData = data.map((player, index) => ({
+            name: player.name || 'Unknown Player',
+            chests: parseInt(player.total_chests) || 0,
+            score: parseInt(player.total_score) || 0,
+            rank: index + 1,
+            // Add any additional processing here
+            badges: calculateBadges(player)
+        }));
+
+        console.log('Processed player data:', allPlayersData);
+        
+    } catch (error) {
+        console.error('Failed to load players data:', error);
+        allPlayersData = [];
+    }
+}
+
+function calculateBadges(player) {
+    const badges = [];
+    const chests = parseInt(player.total_chests) || 0;
+    const score = parseInt(player.total_score) || 0;
+    
+    if (chests >= 100) {
+        badges.push({ type: 'chest-hero', name: 'Chest Hero' });
+    }
+    if (score >= 2000) {
+        badges.push({ type: 'score-legend', name: 'Legend' });
+    }
+    if (chests >= 70 && score >= 1000) {
+        badges.push({ type: 'consistent-warrior', name: 'Consistent' });
+    }
+    
+    return badges;
+}
+
+// ================================
+// UI UPDATE FUNCTIONS
+// ================================
+function updateUI() {
+    updateStats();
+    updateLeaderboard();
+    updateCurrentTab();
+}
+
+function updateStats() {
+    if (allPlayersData.length === 0) {
+        document.getElementById('totalWarriors').textContent = '0';
+        document.getElementById('totalChests').textContent = '0';
+        document.getElementById('totalScore').textContent = '0';
+        return;
+    }
+
+    const totalWarriors = allPlayersData.length;
+    const totalChests = allPlayersData.reduce((sum, player) => sum + player.chests, 0);
+    const totalScore = allPlayersData.reduce((sum, player) => sum + player.score, 0);
+    
+    const avgChests = Math.round(totalChests / totalWarriors) || 0;
+    const avgScore = Math.round(totalScore / totalWarriors) || 0;
+
+    // Animate numbers
+    animateNumber('totalWarriors', totalWarriors);
+    animateNumber('totalChests', avgChests);
+    animateNumber('totalScore', avgScore);
+}
+
+function animateNumber(elementId, targetValue) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+    
+    const startValue = parseInt(element.textContent) || 0;
+    const duration = 1000;
+    const steps = 60;
+    const increment = (targetValue - startValue) / steps;
+    
+    let current = startValue;
+    let step = 0;
+    
+    const timer = setInterval(() => {
+        step++;
+        current += increment;
+        
+        if (step >= steps) {
+            element.textContent = targetValue;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.round(current);
+        }
+    }, duration / steps);
+}
+
+function updateLeaderboard() {
+    const leaderboardContent = document.getElementById('leaderboardContent');
+    if (!leaderboardContent) return;
+
+    if (allPlayersData.length === 0) {
+        leaderboardContent.innerHTML = `
+            <div class="empty-state">
+                <h3>🎯 Ready for Battle!</h3>
+                <p>Waiting for player data to load...</p>
+            </div>
+        `;
+        return;
+    }
+
+    let filteredPlayers = allPlayersData;
+    
+    // Apply search filter
+    if (searchTerm.trim() !== '') {
+        filteredPlayers = allPlayersData.filter(player => 
+            player.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        
+        // Update search results
+        updateSearchResults(filteredPlayers.length);
+    } else {
+        // Clear search results
+        updateSearchResults(null);
+    }
+
+    // Generate leaderboard HTML
+    const leaderboardHTML = filteredPlayers.map((player, index) => 
+        generatePlayerRow(player, index)
+    ).join('');
+
+    leaderboardContent.innerHTML = leaderboardHTML || `
+        <div class="empty-state">
+            <h3>🔍 No Pancakes Found</h3>
+            <p>No players match your search criteria.</p>
+        </div>
+    `;
+
+    // Add click events to player names
+    addPlayerClickEvents();
+}
+
+function generatePlayerRow(player, index) {
+    const isTop3 = index < 3;
+    const rankClass = `rank-${index + 1}`;
+    
+    // Generate badges HTML
+    const badgesHTML = player.badges.map(badge => 
+        `<span class="achievement-badge ${badge.type}">${badge.name}</span>`
+    ).join('');
+    
+    // Highlight search matches
+    const displayName = highlightSearchMatch(player.name);
+    
+    // Generate progress hint for mobile
+    const progressHint = generateMobileProgressHint(player);
+    
+    return `
+        <!-- Desktop Row -->
+        <div class="player-row ${isTop3 ? 'top-3' : ''} ${searchTerm ? 'search-match' : ''}" 
+             data-player-name="${player.name}">
+            <div class="rank ${rankClass}">${player.rank}</div>
+            <div class="player-name">
+                <span class="clickable-name" onclick="openPlayerModal('${player.name}')" 
+                      data-player="${player.name}">${displayName}</span>
+                <span class="clan-emblem">🥞</span>
+                ${badgesHTML}
+                ${isTop3 && index === 0 ? '<span class="trophy">🏆</span>' : ''}
+                ${isTop3 && index === 1 ? '<span class="trophy">🥈</span>' : ''}
+                ${isTop3 && index === 2 ? '<span class="trophy">🥉</span>' : ''}
+            </div>
+            <div class="stat score">${player.score.toLocaleString()}</div>
+            <div class="stat">${player.chests}</div>
+        </div>
+
+        <!-- Mobile Card -->
+        <div class="mobile-card ${isTop3 ? 'top-3' : ''} ${searchTerm ? 'search-match' : ''}" 
+             data-player-name="${player.name}" onclick="openPlayerModal('${player.name}')">
+            
+            <!-- Row 1: Rank + Name + Trophy -->
+            <div class="mobile-row-1">
+                <div class="mobile-rank ${rankClass}">${player.rank}</div>
+                <div class="mobile-name-container">
+                    <span class="mobile-player-name">${displayName} 🥞</span>
+                    ${isTop3 && index === 0 ? '<span class="mobile-trophy">🏆</span>' : ''}
+                    ${isTop3 && index === 1 ? '<span class="mobile-trophy">🥈</span>' : ''}
+                    ${isTop3 && index === 2 ? '<span class="mobile-trophy">🥉</span>' : ''}
+                </div>
+            </div>
+            
+            <!-- Row 2: Points + Chests -->
+            <div class="mobile-row-2">
+                <div class="mobile-stats-container">
+                    <div class="mobile-stat-item">
+                        <span class="mobile-stat-value mobile-score">⭐ ${player.score.toLocaleString()}</span>
+                    </div>
+                    <div class="mobile-stat-item">
+                        <span class="mobile-stat-value mobile-chests">🍪 ${player.chests}</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Row 3: Badges -->
+            <div class="mobile-row-3">
+                <div class="mobile-badges-container">
+                    ${badgesHTML || '<span class="mobile-no-badges">No badges yet</span>'}
+                </div>
+            </div>
+            
+            <!-- Row 4: Progress Hint -->
+            <div class="mobile-row-4">
+                <div class="mobile-progress-hint">
+                    👆 Tap for goals • ${progressHint}
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function generateMobileProgressHint(player) {
+    const hints = [];
+    
+    if (player.chests < 100) {
+        hints.push(`${100 - player.chests} chests to Chest Hero`);
+    }
+    if (player.score < 2000) {
+        hints.push(`${2000 - player.score} pts to Legend`);
+    }
+    if (player.chests < 70 || player.score < 1000) {
+        const chestsNeeded = Math.max(0, 70 - player.chests);
+        const pointsNeeded = Math.max(0, 1000 - player.score);
+        if (chestsNeeded > 0 && pointsNeeded > 0) {
+            hints.push(`${chestsNeeded} chests & ${pointsNeeded} pts to Consistent`);
+        } else if (chestsNeeded > 0) {
+            hints.push(`${chestsNeeded} chests to Consistent`);
+        } else if (pointsNeeded > 0) {
+            hints.push(`${pointsNeeded} pts to Consistent`);
+        }
+    }
+    
+    if (hints.length === 0) {
+        return "All badges earned! 🎉";
+    }
+    
+    // Return the most achievable goal (smallest number first)
+    return hints.sort((a, b) => {
+        const numA = parseInt(a.match(/\d+/)[0]);
+        const numB = parseInt(b.match(/\d+/)[0]);
+        return numA - numB;
+    })[0];
+}
+
+function highlightSearchMatch(text) {
+    if (!searchTerm.trim()) return text;
+    
+    const regex = new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    return text.replace(regex, '<span class="highlight-match">$1</span>');
+}
+
+function addPlayerClickEvents() {
+    // Add click events to all clickable player names
+    const clickableNames = document.querySelectorAll('.clickable-name');
+    clickableNames.forEach(element => {
+        // Remove existing event listeners by cloning the node
+        const newElement = element.cloneNode(true);
+        element.parentNode.replaceChild(newElement, element);
+        
+        // Add new event listener
+        newElement.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const playerName = this.getAttribute('data-player');
+            if (playerName) {
+                openPlayerModal(playerName);
+            }
+        });
+    });
+}
+
+// ================================
+// SEARCH FUNCTIONALITY
+// ================================
+function handleSearch(e) {
+    searchTerm = e.target.value.trim();
+    
+    const clearBtn = document.getElementById('clearBtn');
+    if (clearBtn) {
+        clearBtn.style.display = searchTerm ? 'flex' : 'none';
+    }
+    
+    updateLeaderboard();
 }
 
 function clearSearch() {
-  const searchInput = $('nameSearch');
-  const clearBtn = $('clearBtn');
-  const searchResults = $('searchResults');
-  const container = getActiveTabContainer();
-  if (searchInput) searchInput.value = '';
-  if (clearBtn) clearBtn.style.display = 'none';
-  if (searchResults) searchResults.innerHTML = '';
-  container.querySelectorAll('.player-row').forEach(row => {
-    row.classList.remove('search-match');
-    const nameEl = row.querySelector('.player-name');
-    if (nameEl && nameEl.dataset.originalHtml) nameEl.innerHTML = nameEl.dataset.originalHtml;
-  });
-  container.querySelectorAll('.mobile-card').forEach(card => {
-    const nameEl = card.querySelector('.mobile-name');
-    if (nameEl && nameEl.dataset.originalText) nameEl.innerHTML = nameEl.dataset.originalText;
-  });
+    const searchInput = document.getElementById('nameSearch');
+    const clearBtn = document.getElementById('clearBtn');
+    
+    if (searchInput) {
+        searchInput.value = '';
+        searchInput.focus();
+    }
+    
+    if (clearBtn) {
+        clearBtn.style.display = 'none';
+    }
+    
+    searchTerm = '';
+    updateLeaderboard();
 }
 
-// ===== 4) CLICK HANDLERS + MODAL =====
-function setupMobileCardHandlers() {
-  document.querySelectorAll('.mobile-card').forEach(card => {
-    card.onclick = () => {
-      const rank = Number(card.getAttribute('data-rank'));
-      const name = card.getAttribute('data-name') || '';
-      const score = Number(card.getAttribute('data-score')) || 0;
-      const chests = Number(card.getAttribute('data-chests')) || 0;
-      const badges = card.getAttribute('data-badges') || '';
-      const badgeProgress = card.getAttribute('data-badge-progress') || '';
-      const context = card.getAttribute('data-context') || 'current';
-      showPlayerModal(rank, name, score, chests, badges, badgeProgress, context);
-    };
-  });
+function updateSearchResults(count) {
+    const searchResults = document.getElementById('searchResults');
+    if (!searchResults) return;
+    
+    if (count === null) {
+        searchResults.textContent = '';
+    } else if (count === 0) {
+        searchResults.textContent = '🔍 No pancakes found matching your search';
+        searchResults.style.color = '#ff6b6b';
+    } else {
+        searchResults.textContent = `🔍 Found ${count} pancake${count !== 1 ? 's' : ''}`;
+        searchResults.style.color = '#4ecdc4';
+    }
 }
 
-function setupDesktopRowHandlers() {
-  document.querySelectorAll('.player-row').forEach(row => {
-    const nameEl = row.querySelector('.clickable-name');
-    if (!nameEl) return;
-    nameEl.style.cursor = 'pointer';
-    nameEl.onclick = (e) => {
-      e.stopPropagation();
-      const rank = Number(row.getAttribute('data-rank'));
-      const name = row.getAttribute('data-name') || '';
-      const score = Number(row.getAttribute('data-score')) || 0;
-      const chests = Number(row.getAttribute('data-chests')) || 0;
-      const badges = row.getAttribute('data-badges') || '';
-      const badgeProgress = row.getAttribute('data-badge-progress') || '';
-      const context = row.getAttribute('data-context') || 'current';
-      showPlayerModal(rank, name, score, chests, badges, badgeProgress, context);
-    };
-  });
-}
-
-function showPlayerModal(rank, playerName, score, chests, badges, badgeProgress, context = 'current') {
-  const modal = $('playerModal');
-  if (!modal) return;
-  const modalRank = $('modalRank');
-  const modalPlayerName = $('modalPlayerName');
-  const modalScore = $('modalScore');
-  const modalChests = $('modalChests');
-  const modalBadges = $('modalBadges');
-  const modalProgress = $('modalProgress');
-
-  if (modalRank) { modalRank.textContent = `#${rank}`; modalRank.className = `modal-rank ${rank <= 3 ? `rank-${rank}` : ''}`; }
-  if (modalPlayerName) modalPlayerName.textContent = playerName;
-  if (modalScore) modalScore.textContent = fmt(score);
-  if (modalChests) modalChests.textContent = fmt(chests);
-  if (modalBadges) modalBadges.innerHTML = badges || '<span style="opacity:.6;font-style:italic;">No badges earned yet</span>';
-
-  // Progress copy behavior depends on context
-  if (!modalProgress) {
-    // nothing to update
-  } else if (context === 'last') {
-    // Last week → no motivational copy
-    modalProgress.innerHTML = '';
-  } else {
-    // Current week → show progress, but mark Earned when thresholds met
-    let progressHTML = '<h4>🎯 Badge Progress</h4>';
-    const hasChestHero = (badges || '').includes('Chest Hero');
-    const hasLegend = (badges || '').includes('Legend');
-    const hasConsistent = (badges || '').includes('Consistent');
-
-    if (hasChestHero) {
-      progressHTML += '<div class="progress-item earned">🍪 <strong>Chest Hero</strong> - ✅ Earned! (100+ chests)</div>';
-    } else {
-      const need = Math.max(0, 100 - chests);
-      progressHTML += `<div class="progress-item ${need===0?'earned':'needed'}">🍪 <strong>Chest Hero</strong> - ${need===0?'✅ Earned!':`Need ${need} more chests (currently ${fmt(chests)}/100)`}</div>`;
+// ================================
+// MODAL FUNCTIONALITY
+// ================================
+function openPlayerModal(playerName) {
+    console.log('Opening modal for:', playerName);
+    
+    const player = allPlayersData.find(p => p.name === playerName);
+    if (!player) {
+        console.error('Player not found:', playerName);
+        return;
     }
-
-    if (hasLegend) {
-      progressHTML += '<div class="progress-item earned">⭐ <strong>Legend</strong> - ✅ Earned! (2000+ points)</div>';
-    } else {
-      const need = Math.max(0, 2000 - score);
-      progressHTML += `<div class="progress-item ${need===0?'earned':'needed'}">⭐ <strong>Legend</strong> - ${need===0?'✅ Earned!':`Need ${need} more points (currently ${fmt(score)}/2000)`}</div>`;
+    
+    const modal = document.getElementById('playerModal');
+    if (!modal) return;
+    
+    // Populate modal content
+    const modalRank = document.getElementById('modalRank');
+    const modalPlayerName = document.getElementById('modalPlayerName');
+    const modalScore = document.getElementById('modalScore');
+    const modalChests = document.getElementById('modalChests');
+    const modalBadges = document.getElementById('modalBadges');
+    const modalProgress = document.getElementById('modalProgress');
+    
+    if (modalRank) {
+        modalRank.textContent = `#${player.rank}`;
+        modalRank.className = `modal-rank rank-${player.rank}`;
     }
-
-    if (hasConsistent) {
-      progressHTML += '<div class="progress-item earned">🎯 <strong>Consistent</strong> - ✅ Earned! (≥70 chests & ≥1000 points)</div>';
-    } else {
-      const chN = Math.max(0, 70 - chests);
-      const ptN = Math.max(0, 1000 - score);
-      if (chN === 0 && ptN === 0) {
-        progressHTML += '<div class="progress-item earned">🎯 <strong>Consistent</strong> - ✅ Earned!</div>';
-      } else if (chN === 0) {
-        progressHTML += `<div class="progress-item needed">🎯 <strong>Consistent</strong> - Need ${ptN} more points (chests: ✅ ${fmt(chests)}/70, points: ${fmt(score)}/1000)</div>`;
-      } else if (ptN === 0) {
-        progressHTML += `<div class="progress-item needed">🎯 <strong>Consistent</strong> - Need ${chN} more chests (chests: ${fmt(chests)}/70, points: ✅ ${fmt(score)}/1000)</div>`;
-      } else {
-        progressHTML += `<div class="progress-item needed">🎯 <strong>Consistent</strong> - Need ${chN} chests AND ${ptN} points (currently ${fmt(chests)}/70, ${fmt(score)}/1000)</div>`;
-      }
+    
+    if (modalPlayerName) {
+        modalPlayerName.textContent = player.name;
     }
-    modalProgress.innerHTML = progressHTML;
-  }
-
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden'; // UX
+    
+    if (modalScore) {
+        modalScore.textContent = player.score.toLocaleString();
+    }
+    
+    if (modalChests) {
+        modalChests.textContent = player.chests;
+    }
+    
+    if (modalBadges) {
+        const badgesHTML = player.badges.map(badge => 
+            `<span class="achievement-badge ${badge.type}">${badge.name}</span>`
+        ).join('');
+        modalBadges.innerHTML = badgesHTML || '<span style="opacity: 0.7; font-style: italic;">No badges earned yet</span>';
+    }
+    
+    if (modalProgress) {
+        modalProgress.innerHTML = generateProgressInfo(player);
+    }
+    
+    // Show modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
 }
 
 function closePlayerModal() {
-  const modal = $('playerModal');
-  if (!modal) return;
-  modal.classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-// click outside to close
-addEventListener('click', (e) => {
-  const modal = $('playerModal');
-  if (e.target === modal) closePlayerModal();
-});
-
-// ===== 5) DATA LOADERS =====
-async function loadCurrentWeek() {
-  const { data, error } = await sb
-    .from('players_current')
-    .select('name, score, treats, rank')
-    .order('score', { ascending: false });
-  if (error) { console.error('players_current error', error); return; }
-  const rows = (data || []).slice();
-
-  // decorate ranks + trophies
-  rows.sort((a,b)=> (b.score||0) - (a.score||0))
-      .forEach((p, idx) => { p.rank = idx + 1; p.trophyHTML = trophyForRank(p.rank); });
-
-  // derive badges for CURRENT WEEK (so modal shows Earned and rows show chips)
-  rows.forEach(p => {
-    const d = deriveBadges(p);
-    p.badgesHTML = d.badges;     // show chips
-    p.badgeProgress = '';        // keep rows/cards clean; progress only in modal
-  });
-
-  // KPIs
-  const total = rows.length;
-  const avgTreats = total ? Math.round(rows.reduce((a,b)=>a+(b.treats||0),0)/total) : 0;
-  const avgScore  = total ? Math.round(rows.reduce((a,b)=>a+(b.score||0),0)/total)  : 0;
-  setText('totalWarriors', total);
-  setText('totalChests',  avgTreats);
-  setText('totalScore',   avgScore);
-
-  renderLeaderboard(rows, 'leaderboardContent');
-}
-
-async function loadLastWeek() {
-  const { data, error } = await sb
-    .from('players_last')
-    .select('name, score, treats, rank')
-    .order('score', { ascending: false });
-  if (error) { console.error('players_last error', error); return; }
-  const rows = (data || []).slice();
-
-  // ONLY earned badges; no motivational copy for last week
-  rows.forEach(p => {
-    const d = deriveBadges(p);
-    p.badgesHTML = d.badges;
-    p.badgeProgress = '';
-  });
-
-  renderLeaderboard(rows, 'leaderboardContentLast');
-
-  // KPIs text
-  if (!rows.length) {
-    setText('lastWeekWinner', '—');
-    setText('lastWeekParticipants', '0');
-    setText('lastWeekTopScore', '0');
-  } else {
-    setText('lastWeekWinner', rows[0].name);
-    setText('lastWeekParticipants', rows.length);
-    const maxScore = Math.max(...rows.map(p => Number(p.score)||0));
-    setText('lastWeekTopScore', fmt(maxScore));
-  }
-}
-
-// ===== 6) WEEK CYCLES + COUNTDOWN + PROGRESS =====
-function calculateWeekCycles() {
-  try {
-    const now = new Date();
-    const mexicoTime = new Date(now.toLocaleString("en-US", { timeZone: "America/Mexico_City" }));
-    let currentWeekStart = new Date(mexicoTime);
-    let currentWeekEnd = new Date(mexicoTime);
-    const currentDay = mexicoTime.getDay();
-    const currentHour = mexicoTime.getHours();
-    const currentMinute = mexicoTime.getMinutes();
-
-    if (currentDay === 0) { // Sunday
-      if (currentHour < 11) {
-        currentWeekStart.setDate(currentWeekStart.getDate() - 7);
-        currentWeekStart.setHours(11, 0, 0, 0);
-        currentWeekEnd.setHours(10, 59, 59, 999);
-      } else {
-        currentWeekStart.setHours(11, 0, 0, 0);
-        currentWeekEnd.setDate(currentWeekEnd.getDate() + 7);
-        currentWeekEnd.setHours(10, 59, 59, 999);
-      }
-    } else {
-      const daysFromLastSunday = currentDay;
-      currentWeekStart.setDate(currentWeekStart.getDate() - daysFromLastSunday);
-      currentWeekStart.setHours(11, 0, 0, 0);
-      const daysUntilNextSunday = 7 - currentDay;
-      currentWeekEnd.setDate(currentWeekEnd.getDate() + daysUntilNextSunday);
-      currentWeekEnd.setHours(10, 59, 59, 999);
+    const modal = document.getElementById('playerModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
     }
+}
 
-    const lastWeekStart = new Date(currentWeekStart.getTime() - (7 * 24 * 60 * 60 * 1000));
-    const lastWeekEnd = new Date(currentWeekStart.getTime() - 1);
+function generateProgressInfo(player) {
+    const progress = [];
+    
+    // Check badge progress
+    const chestHeroProgress = Math.min(player.chests, 100);
+    const legendProgress = Math.min(player.score, 2000);
+    const consistentChests = Math.min(player.chests, 70);
+    const consistentScore = Math.min(player.score, 1000);
+    
+    if (player.chests >= 100) {
+        progress.push(`<div class="progress-item earned">✅ Chest Hero: ${player.chests}/100 chests (Earned!)</div>`);
+    } else {
+        progress.push(`<div class="progress-item needed">🍪 Chest Hero: ${player.chests}/100 chests (${100 - player.chests} more needed)</div>`);
+    }
+    
+    if (player.score >= 2000) {
+        progress.push(`<div class="progress-item earned">✅ Legend: ${player.score.toLocaleString()}/2000 points (Earned!)</div>`);
+    } else {
+        progress.push(`<div class="progress-item needed">⭐ Legend: ${player.score.toLocaleString()}/2000 points (${2000 - player.score} more needed)</div>`);
+    }
+    
+    if (player.chests >= 70 && player.score >= 1000) {
+        progress.push(`<div class="progress-item earned">✅ Consistent: ${player.chests}/70 chests & ${player.score.toLocaleString()}/1000 points (Earned!)</div>`);
+    } else {
+        const chestsNeeded = Math.max(0, 70 - player.chests);
+        const pointsNeeded = Math.max(0, 1000 - player.score);
+        progress.push(`<div class="progress-item needed">🎯 Consistent: Need ${chestsNeeded > 0 ? chestsNeeded + ' more chests' : 'no more chests'} ${chestsNeeded > 0 && pointsNeeded > 0 ? ' & ' : ''}${pointsNeeded > 0 ? pointsNeeded + ' more points' : ''}</div>`);
+    }
+    
+    return `
+        <h4>🎯 Badge Progress</h4>
+        ${progress.join('')}
+    `;
+}
 
-    const fmtOpt = { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'America/Mexico_City' };
-    const currentCycleText = `${currentWeekStart.toLocaleDateString('en-US', fmtOpt)} - ${currentWeekEnd.toLocaleDateString('en-US', fmtOpt)}`;
-    const lastCycleText = `${lastWeekStart.toLocaleDateString('en-US', fmtOpt)} - ${lastWeekEnd.toLocaleDateString('en-US', fmtOpt)}`;
+// ================================
+// TAB FUNCTIONALITY
+// ================================
+function showTab(tabName) {
+    currentTab = tabName;
+    updateCurrentTab();
+}
 
-    const currentCycleDates = $('currentCycleDates');
-    const lastCycleDates = $('lastCycleDates');
-    if (currentCycleDates) currentCycleDates.textContent = currentCycleText;
-    if (lastCycleDates) lastCycleDates.textContent = lastCycleText;
+function updateCurrentTab() {
+    // Update tab buttons
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-tab') === currentTab) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Update tab content
+    document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    const activeTab = document.getElementById(`${currentTab}-tab`);
+    if (activeTab) {
+        activeTab.classList.add('active');
+    }
+    
+    // Show/hide leaderboard-specific elements
+    const leaderboardOnlyElements = document.querySelectorAll('.leaderboard-only');
+    leaderboardOnlyElements.forEach(element => {
+        element.style.display = currentTab === 'leaderboard' ? 'block' : 'none';
+    });
+}
 
-    return { current: { start: currentWeekStart, end: currentWeekEnd }, last: { start: lastWeekStart, end: lastWeekEnd } };
-  } catch (e) {
-    console.error('Week cycle calculation error:', e);
-    const currentCycleDates = $('currentCycleDates');
-    const lastCycleDates = $('lastCycleDates');
-    if (currentCycleDates) currentCycleDates.textContent = 'Error calculating current cycle';
-    if (lastCycleDates) lastCycleDates.textContent = 'Error calculating last cycle';
-    return null;
-  }
+// ================================
+// ANIMATION AND EFFECTS
+// ================================
+function createEmojiExplosion(element, emojis) {
+    const rect = element.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    emojis.forEach((emoji, index) => {
+        const particle = document.createElement('div');
+        particle.className = 'emoji-particle';
+        particle.textContent = emoji;
+        particle.style.left = centerX + 'px';
+        particle.style.top = centerY + 'px';
+        particle.style.animationDelay = (index * 0.1) + 's';
+        
+        const angle = (index * 360 / emojis.length) * Math.PI / 180;
+        const distance = 100 + Math.random() * 50;
+        particle.style.setProperty('--end-x', Math.cos(angle) * distance + 'px');
+        particle.style.setProperty('--end-y', Math.sin(angle) * distance + 'px');
+        
+        document.body.appendChild(particle);
+        
+        setTimeout(() => {
+            if (particle.parentNode) {
+                particle.parentNode.removeChild(particle);
+            }
+        }, 2000);
+    });
+}
+
+function createStatCardExplosion(element, type) {
+    const emojiSets = {
+        'pancakes': ['🥞', '👏', '🎉', '✨', '🌟', '💫', '🎊', '🙌', '👏', '🥳'],
+        'treats': ['🍪', '🎁', '✨', '🌟', '💝', '🎀', '🧁', '🍰', '💫', '🎊'],
+        'points': ['💪', '⭐', '🌟', '✨', '💫', '🏆', '🔥', '⚡', '💥', '🎯']
+    };
+    
+    const colors = {
+        'pancakes': '#F5B642',
+        'treats': '#FF6F91', 
+        'points': '#4ECDC4'
+    };
+    
+    const emojiSet = emojiSets[type] || emojiSets['pancakes'];
+    const color = colors[type] || colors['pancakes'];
+    
+    // Create explosion container
+    const explosion = document.createElement('div');
+    explosion.className = 'stat-explosion';
+    element.appendChild(explosion);
+    
+    // Create multiple emoji particles with organic movement patterns
+    for (let i = 0; i < 15; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'stat-emoji-particle';
+        particle.textContent = emojiSet[Math.floor(Math.random() * emojiSet.length)];
+        particle.style.color = color;
+        particle.style.textShadow = `0 0 15px ${color}`;
+        
+        // Create organic, flowing movement patterns
+        const baseAngle = (i / 15) * 2 * Math.PI;
+        const angleVariation = (Math.random() - 0.5) * 0.8; // Add some randomness
+        const angle = baseAngle + angleVariation;
+        
+        // Vary distances for more natural spread
+        const baseDistance = 40 + (i % 3) * 20; // Create layers
+        const distanceVariation = Math.random() * 25;
+        const distance = baseDistance + distanceVariation;
+        
+        // Create flowing, curved paths instead of straight lines
+        const controlX1 = Math.cos(angle) * (distance * 0.3) + (Math.random() - 0.5) * 30;
+        const controlY1 = Math.sin(angle) * (distance * 0.3) + (Math.random() - 0.5) * 20;
+        const controlX2 = Math.cos(angle) * (distance * 0.7) + (Math.random() - 0.5) * 40;
+        const controlY2 = Math.sin(angle) * (distance * 0.7) + (Math.random() - 0.5) * 30;
+        const endX = Math.cos(angle) * distance + (Math.random() - 0.5) * 20;
+        const endY = Math.sin(angle) * distance + (Math.random() - 0.5) * 15;
+        
+        // Add some upward bias for a more celebratory feel
+        const upwardBias = -Math.abs(Math.sin(angle)) * 20;
+        
+        particle.style.left = '0px';
+        particle.style.top = '0px';
+        
+        // Create unique organic animation for each particle
+        const animationName = `organicExplode-${type}-${i}-${Date.now()}`;
+        const duration = 2 + Math.random() * 1; // Vary duration for more organic feel
+        particle.style.animation = `${animationName} ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`;
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ${animationName} {
+                0% {
+                    opacity: 1;
+                    transform: translate(0px, 0px) scale(0) rotate(0deg);
+                }
+                15% {
+                    opacity: 1;
+                    transform: translate(${controlX1}px, ${controlY1 + upwardBias * 0.3}px) scale(0.8) rotate(${Math.random() * 180}deg);
+                }
+                35% {
+                    opacity: 1;
+                    transform: translate(${controlX2}px, ${controlY2 + upwardBias * 0.6}px) scale(1.2) rotate(${180 + Math.random() * 180}deg);
+                }
+                65% {
+                    opacity: 0.9;
+                    transform: translate(${endX * 0.8}px, ${endY * 0.8 + upwardBias * 0.8}px) scale(1.1) rotate(${270 + Math.random() * 180}deg);
+                }
+                85% {
+                    opacity: 0.6;
+                    transform: translate(${endX}px, ${endY + upwardBias}px) scale(0.9) rotate(${360 + Math.random() * 180}deg);
+                }
+                100% {
+                    opacity: 0;
+                    transform: translate(${endX + (Math.random() - 0.5) * 20}px, ${endY + upwardBias - 10}px) scale(0.3) rotate(${450 + Math.random() * 180}deg);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        explosion.appendChild(particle);
+        
+        // Clean up after animation
+        setTimeout(() => {
+            if (particle.parentNode) {
+                particle.parentNode.removeChild(particle);
+            }
+            if (style.parentNode) {
+                style.parentNode.removeChild(style);
+            }
+        }, duration * 1000 + 100);
+    }
+    
+    // Clean up explosion container
+    setTimeout(() => {
+        if (explosion.parentNode) {
+            explosion.parentNode.removeChild(explosion);
+        }
+    }, 3500);
+}
+
+// Enhanced rank explosion for player clicks
+function createRankExplosion(element, rank, playerName) {
+    const emojiSets = {
+        1: ['🏆', '👑', '🥇', '⭐', '🌟', '✨', '🎉', '🎊', '💫'],
+        2: ['🥈', '⭐', '🌟', '✨', '💫', '🎉', '👏', '🙌'],
+        3: ['🥉', '⭐', '🌟', '✨', '💫', '🎉', '👏', '🙌']
+    };
+    
+    const colors = {
+        1: '#F5B642',
+        2: '#E8E8E8',
+        3: '#CD7F32'
+    };
+    
+    const emojiSet = emojiSets[rank] || ['⭐', '🌟', '✨', '💫', '🎉'];
+    const color = colors[rank] || '#F5B642';
+    
+    // Get element position
+    const rect = element.getBoundingClientRect();
+    const anchorX = rect.width / 2;
+    const anchorY = rect.height / 2;
+    
+    // Create explosion container
+    const explosion = document.createElement('div');
+    explosion.className = 'emoji-explosion';
+    explosion.style.left = anchorX + 'px';
+    explosion.style.top = anchorY + 'px';
+    element.appendChild(explosion);
+    
+    // Create multiple emoji particles with organic movement patterns
+    for (let i = 0; i < 15; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'emoji-particle';
+        particle.textContent = emojiSet[Math.floor(Math.random() * emojiSet.length)];
+        particle.style.color = color;
+        particle.style.textShadow = `0 0 15px ${color}`;
+        
+        // Create organic, flowing movement patterns
+        const baseAngle = (i / 15) * 2 * Math.PI;
+        const angleVariation = (Math.random() - 0.5) * 0.8; // Add some randomness
+        const angle = baseAngle + angleVariation;
+        
+        // Vary distances for more natural spread
+        const baseDistance = 40 + (i % 3) * 20; // Create layers
+        const distanceVariation = Math.random() * 25;
+        const distance = baseDistance + distanceVariation;
+        
+        // Create flowing, curved paths instead of straight lines
+        const controlX1 = Math.cos(angle) * (distance * 0.3) + (Math.random() - 0.5) * 30;
+        const controlY1 = Math.sin(angle) * (distance * 0.3) + (Math.random() - 0.5) * 20;
+        const controlX2 = Math.cos(angle) * (distance * 0.7) + (Math.random() - 0.5) * 40;
+        const controlY2 = Math.sin(angle) * (distance * 0.7) + (Math.random() - 0.5) * 30;
+        const endX = Math.cos(angle) * distance + (Math.random() - 0.5) * 20;
+        const endY = Math.sin(angle) * distance + (Math.random() - 0.5) * 15;
+        
+        // Add some upward bias for a more celebratory feel
+        const upwardBias = -Math.abs(Math.sin(angle)) * 20;
+        
+        particle.style.left = '0px';
+        particle.style.top = '0px';
+        
+        // Create unique organic animation for each particle
+        const animationName = `organicExplode-${rank}-${i}-${Date.now()}`;
+        const duration = 2 + Math.random() * 1; // Vary duration for more organic feel
+        particle.style.animation = `${animationName} ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards`;
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ${animationName} {
+                0% {
+                    opacity: 1;
+                    transform: translate(0px, 0px) scale(0) rotate(0deg);
+                }
+                15% {
+                    opacity: 1;
+                    transform: translate(${controlX1}px, ${controlY1 + upwardBias * 0.3}px) scale(0.8) rotate(${Math.random() * 180}deg);
+                }
+                35% {
+                    opacity: 1;
+                    transform: translate(${controlX2}px, ${controlY2 + upwardBias * 0.6}px) scale(1.2) rotate(${180 + Math.random() * 180}deg);
+                }
+                65% {
+                    opacity: 0.9;
+                    transform: translate(${endX * 0.8}px, ${endY * 0.8 + upwardBias * 0.8}px) scale(1.1) rotate(${270 + Math.random() * 180}deg);
+                }
+                85% {
+                    opacity: 0.6;
+                    transform: translate(${endX}px, ${endY + upwardBias}px) scale(0.9) rotate(${360 + Math.random() * 180}deg);
+                }
+                100% {
+                    opacity: 0;
+                    transform: translate(${endX + (Math.random() - 0.5) * 20}px, ${endY + upwardBias - 10}px) scale(0.3) rotate(${450 + Math.random() * 180}deg);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        explosion.appendChild(particle);
+        
+        // Clean up after animation
+        setTimeout(() => {
+            if (particle.parentNode) {
+                particle.parentNode.removeChild(particle);
+            }
+            if (style.parentNode) {
+                style.parentNode.removeChild(style);
+            }
+        }, duration * 1000 + 100);
+    }
+    
+    // Clean up explosion container
+    setTimeout(() => {
+        if (explosion.parentNode) {
+            explosion.parentNode.removeChild(explosion);
+        }
+    }, 3500);
+}
+
+// ================================
+// CURSOR EFFECTS
+// ================================
+function initializeCursor() {
+    // Create magical cursor
+    const magicCursor = document.createElement('div');
+    magicCursor.className = 'magic-cursor';
+    document.body.appendChild(magicCursor);
+    
+    // Track mouse movement
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
+    
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        // Create magical trail
+        createMagicTrail(mouseX, mouseY);
+    });
+    
+    // Smooth cursor following
+    function animateCursor() {
+        const dx = mouseX - cursorX;
+        const dy = mouseY - cursorY;
+        
+        cursorX += dx * 0.1;
+        cursorY += dy * 0.1;
+        
+        magicCursor.style.left = cursorX - 10 + 'px';
+        magicCursor.style.top = cursorY - 10 + 'px';
+        
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+}
+
+// Create magical trail particles
+function createMagicTrail(x, y) {
+    const trail = document.createElement('div');
+    trail.className = 'magic-trail';
+    trail.style.left = x - 3 + 'px';
+    trail.style.top = y - 3 + 'px';
+    document.body.appendChild(trail);
+    
+    // Remove trail after animation
+    setTimeout(() => {
+        if (trail.parentNode) {
+            trail.parentNode.removeChild(trail);
+        }
+    }, 800);
+}
+
+// ================================
+// TIMER FUNCTIONS
+// ================================
+function initializeTimers() {
+    updateCycleDates();
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+}
+
+function updateCycleDates() {
+    const now = new Date();
+    const mexicoTime = new Date(now.toLocaleString("en-US", {timeZone: "America/Mexico_City"}));
+    
+    // Find current Monday (start of week in Mexico time)
+    const currentMonday = new Date(mexicoTime);
+    currentMonday.setDate(mexicoTime.getDate() - mexicoTime.getDay() + 1);
+    currentMonday.setHours(0, 0, 0, 0);
+    
+    // Find next Monday (end of current week)
+    const nextMonday = new Date(currentMonday);
+    nextMonday.setDate(currentMonday.getDate() + 7);
+    
+    // Find previous Monday (start of last week)
+    const previousMonday = new Date(currentMonday);
+    previousMonday.setDate(currentMonday.getDate() - 7);
+    
+    const formatDate = (date) => {
+        return date.toLocaleDateString('en-US', { 
+            month: 'short', 
+            day: 'numeric',
+            timeZone: 'America/Mexico_City'
+        });
+    };
+    
+    // Update current cycle
+    const currentCycleDates = document.getElementById('currentCycleDates');
+    if (currentCycleDates) {
+        currentCycleDates.textContent = `${formatDate(currentMonday)} - ${formatDate(new Date(nextMonday.getTime() - 24*60*60*1000))}`;
+    }
+    
+    // Update last cycle
+    const lastCycleDates = document.getElementById('lastCycleDates');
+    if (lastCycleDates) {
+        lastCycleDates.textContent = `${formatDate(previousMonday)} - ${formatDate(new Date(currentMonday.getTime() - 24*60*60*1000))}`;
+    }
 }
 
 function updateCountdown() {
-  try {
     const now = new Date();
-    const mexicoTime = new Date(now.toLocaleString("en-US", { timeZone: "America/Mexico_City" }));
-    let nextSunday = new Date(mexicoTime);
-    const currentDay = mexicoTime.getDay();
-    if (currentDay === 0) {
-      const h = mexicoTime.getHours();
-      const m = mexicoTime.getMinutes();
-      if (h < 10 || (h === 10 && m < 59)) {
-        nextSunday.setHours(10, 59, 0, 0);
-      } else {
-        nextSunday.setDate(nextSunday.getDate() + 7);
-        nextSunday.setHours(10, 59, 0, 0);
-      }
-    } else {
-      const daysUntilSunday = 7 - currentDay;
-      nextSunday.setDate(nextSunday.getDate() + daysUntilSunday);
-      nextSunday.setHours(10, 59, 0, 0);
+    const mexicoTime = new Date(now.toLocaleString("en-US", {timeZone: "America/Mexico_City"}));
+    
+    // Find next Monday at midnight Mexico time
+    const nextMonday = new Date(mexicoTime);
+    nextMonday.setDate(mexicoTime.getDate() + (8 - mexicoTime.getDay()) % 7);
+    if (nextMonday.getDay() === 1 && nextMonday <= mexicoTime) {
+        nextMonday.setDate(nextMonday.getDate() + 7);
     }
-
-    const diff = nextSunday.getTime() - mexicoTime.getTime();
-
-    // Support two UIs: a single #countdown element or a segmented #countdownDisplay with #days/#hours/#minutes/#seconds
-    const single = document.getElementById('countdown');
-    const segmented = document.getElementById('countdownDisplay');
-
-    if (diff > 0) {
-      const d = Math.floor(diff / (24*60*60*1000));
-      const h = Math.floor((diff % (24*60*60*1000)) / (60*60*1000));
-      const m = Math.floor((diff % (60*60*1000)) / (60*1000));
-      const s = Math.floor((diff % (60*1000)) / 1000);
-
-      if (single) single.textContent = `${d}d ${h}h ${m}m ${s}s`;
-      if (segmented) {
-        const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = String(val).padStart(2, '0'); };
-        set('days', d);
-        set('hours', h);
-        set('minutes', m);
-        set('seconds', s);
-      }
-    } else {
-      if (single) single.textContent = 'Cycle ended';
-      if (segmented) ['days','hours','minutes','seconds'].forEach(id => { const el = document.getElementById(id); if (el) el.textContent = '00'; });
+    nextMonday.setHours(0, 0, 0, 0);
+    
+    const timeDiff = nextMonday.getTime() - mexicoTime.getTime();
+    
+    if (timeDiff <= 0) {
+        // Week has ended, show 0 values
+        updateTimeDisplay(0, 0, 0, 0);
+        updateWeekProgress(100);
+        return;
     }
-  } catch (e) {
-    console.error('Countdown error', e);
-  }
+    
+    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+    
+    updateTimeDisplay(days, hours, minutes, seconds);
+    
+    // Calculate week progress
+    const weekStart = new Date(mexicoTime);
+    weekStart.setDate(mexicoTime.getDate() - mexicoTime.getDay() + 1);
+    weekStart.setHours(0, 0, 0, 0);
+    
+    const weekDuration = 7 * 24 * 60 * 60 * 1000; // 1 week in milliseconds
+    const weekProgress = ((mexicoTime.getTime() - weekStart.getTime()) / weekDuration) * 100;
+    
+    updateWeekProgress(Math.min(Math.max(weekProgress, 0), 100));
 }
 
-function updateWeekProgress() {
-  try {
-    const cycle = window.__weekCycles?.current;
-    if (!cycle) return;
-    const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Mexico_City' }));
-    const total = cycle.end.getTime() - cycle.start.getTime();
-    const elapsed = Math.max(0, Math.min(total, now.getTime() - cycle.start.getTime()));
-    const pct = total > 0 ? Math.floor((elapsed / total) * 100) : 0;
-    const bar = document.getElementById('weekProgress');
-    const label = document.getElementById('progressPercentage');
-    if (bar) bar.style.width = `${pct}%`;
-    if (label) label.textContent = `${pct}%`;
-  } catch (e) { console.error('Week progress error', e); }
+function updateTimeDisplay(days, hours, minutes, seconds) {
+    const elements = {
+        days: document.getElementById('days'),
+        hours: document.getElementById('hours'),
+        minutes: document.getElementById('minutes'),
+        seconds: document.getElementById('seconds')
+    };
+    
+    if (elements.days) elements.days.textContent = days;
+    if (elements.hours) elements.hours.textContent = hours;
+    if (elements.minutes) elements.minutes.textContent = minutes;
+    if (elements.seconds) elements.seconds.textContent = seconds;
 }
 
-// ===== 7) MAGIC CURSOR (lightweight) =====
-function initMagicCursor() {
-  if ('ontouchstart' in window) return; // avoid on touch devices
-  if (document.querySelector('.magic-cursor')) return;
-  const dot = document.createElement('div');
-  dot.className = 'magic-cursor';
-  Object.assign(dot.style, {
-    position: 'fixed', left: '0px', top: '0px', width: '14px', height: '14px',
-    borderRadius: '50%', transform: 'translate(-50%, -50%)', pointerEvents: 'none',
-    zIndex: 9999, background: 'rgba(255,255,255,0.6)', boxShadow: '0 0 12px rgba(255,255,255,0.6)'
-  });
-  document.body.appendChild(dot);
-  window.addEventListener('mousemove', (e) => {
-    dot.style.left = e.clientX + 'px';
-    dot.style.top  = e.clientY + 'px';
-  }, { passive: true });
+function updateWeekProgress(percentage) {
+    const progressFill = document.getElementById('weekProgress');
+    const progressText = document.getElementById('progressPercentage');
+    
+    if (progressFill) {
+        progressFill.style.width = percentage + '%';
+    }
+    
+    if (progressText) {
+        progressText.textContent = Math.round(percentage) + '%';
+    }
 }
 
-// ===== 8) TABS =====
-function showTab(tabName) {
-  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-  const tab = document.getElementById(`${tabName}-tab`);
-  if (tab) tab.classList.add('active');
-  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.toggle('active', btn.dataset?.tab === tabName || btn.textContent?.trim()?.includes(tabName)));
-  document.querySelectorAll('.leaderboard-only').forEach(el => { el.style.display = (tabName === 'leaderboard') ? '' : 'none'; });
-  if (tabName === 'leaderboard') loadCurrentWeek();
-  if (tabName === 'lastweek') loadLastWeek();
+// ================================
+// UTILITY FUNCTIONS
+// ================================
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
 }
 
-// ===== 9) BOOT =====
-document.addEventListener('DOMContentLoaded', () => {
-  window.__weekCycles = calculateWeekCycles();
-  updateCountdown();
-  updateWeekProgress();
-  setInterval(() => { updateCountdown(); updateWeekProgress(); }, 1000);
-  initMagicCursor();
-  // default tab
-  showTab('leaderboard');
+// ================================
+// ERROR HANDLING
+// ================================
+window.addEventListener('error', function(e) {
+    console.error('Global error:', e.error);
 });
+
+window.addEventListener('unhandledrejection', function(e) {
+    console.error('Unhandled promise rejection:', e.reason);
+});
+
+// ================================
+// EXPORT GLOBAL FUNCTIONS
+// ================================
+// Make functions available globally for HTML onclick events
+window.showTab = showTab;
+window.openPlayerModal = openPlayerModal;
+window.closePlayerModal = closePlayerModal;
+window.clearSearch = clearSearch;
+window.createStatCardExplosion = createStatCardExplosion;
