@@ -1917,7 +1917,381 @@
                 display: none;
             }
         }
-    </style>
+ /* ================================
+   ENHANCED MOBILE CSS - 4-ROW LAYOUT
+   Add this to your existing CSS
+   ================================ */
+
+/* Enhanced Mobile Card Layout */
+.mobile-card {
+    display: none; /* Hidden by default, shown on mobile */
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.mobile-card:nth-child(even) {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.mobile-card:hover,
+.mobile-card:active {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(245, 182, 66, 0.15);
+}
+
+.mobile-card.top-3 {
+    border-left-color: #ffd700;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.mobile-card.search-match {
+    animation: searchGlow 2s ease-in-out infinite alternate;
+    border-left-color: #F5B642 !important;
+    box-shadow: 0 0 15px rgba(245, 182, 66, 0.4) !important;
+}
+
+/* Row 1: Rank + Name + Trophy */
+.mobile-row-1 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+.mobile-rank {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.8rem;
+    text-align: center;
+    letter-spacing: 1px;
+    min-width: 50px;
+    line-height: 1;
+}
+
+.mobile-rank.rank-1 {
+    color: #F5B642;
+    text-shadow: 0 0 20px rgba(245, 182, 66, 0.8);
+    animation: goldShimmer 2s ease-in-out infinite alternate;
+}
+
+.mobile-rank.rank-2 {
+    color: #E8E8E8;
+    text-shadow: 0 0 20px rgba(232, 232, 232, 0.6);
+    animation: silverShimmer 2s ease-in-out infinite alternate;
+}
+
+.mobile-rank.rank-3 {
+    color: #CD7F32;
+    text-shadow: 0 0 20px rgba(205, 127, 50, 0.6);
+    animation: bronzeShimmer 2s ease-in-out infinite alternate;
+}
+
+.mobile-name-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.mobile-player-name {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #FFF9F0;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.mobile-player-name:hover,
+.mobile-player-name:active,
+.mobile-player-name.tapped {
+    color: #FFD700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+.mobile-trophy {
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+    margin-left: 8px;
+}
+
+/* Row 2: Points + Chests */
+.mobile-row-2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.mobile-stats-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+
+.mobile-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mobile-stat-value {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #FFF9F0;
+    white-space: nowrap;
+}
+
+.mobile-score {
+    color: #FF6F91 !important;
+    text-shadow: 0 2px 8px rgba(255, 111, 145, 0.3);
+}
+
+.mobile-chests {
+    color: #FFF9F0 !important;
+}
+
+/* Row 3: Badges */
+.mobile-row-3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    min-height: 24px;
+}
+
+.mobile-badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+
+.mobile-badges-container .achievement-badge {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.mobile-no-badges {
+    font-size: 0.8rem;
+    color: rgba(255, 249, 240, 0.6);
+    font-style: italic;
+}
+
+/* Row 4: Progress Hints */
+.mobile-row-4 {
+    display: flex;
+    align-items: center;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-progress-hint {
+    font-size: 0.75rem;
+    color: rgba(255, 249, 240, 0.8);
+    font-style: italic;
+    line-height: 1.4;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    text-align: center;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    /* Hide desktop elements */
+    .leaderboard-header {
+        display: none !important;
+    }
+    
+    .player-row {
+        display: none !important;
+    }
+    
+    /* Show mobile elements */
+    .mobile-header {
+        display: grid !important;
+        grid-template-columns: 60px 1fr 120px;
+        gap: 15px;
+        padding: 15px 20px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
+        margin-bottom: 20px;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+    
+    .mobile-header-pancake {
+        text-align: left;
+    }
+    
+    .mobile-card {
+        display: flex !important;
+    }
+    
+    /* Adjust mobile card sizing for smaller screens */
+    .mobile-card {
+        padding: 16px;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+    
+    .mobile-rank {
+        font-size: 1.5rem;
+        min-width: 40px;
+    }
+    
+    .mobile-player-name {
+        font-size: 1.1rem;
+    }
+    
+    .mobile-stat-value {
+        font-size: 1rem;
+    }
+    
+    .mobile-stats-container {
+        gap: 15px;
+    }
+    
+    .mobile-progress-hint {
+        font-size: 0.7rem;
+        padding: 5px 8px;
+    }
+    
+    .mobile-trophy {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small mobile adjustments */
+    .mobile-card {
+        padding: 14px;
+        gap: 8px;
+    }
+    
+    .mobile-rank {
+        font-size: 1.3rem;
+        min-width: 35px;
+    }
+    
+    .mobile-player-name {
+        font-size: 1rem;
+    }
+    
+    .mobile-stat-value {
+        font-size: 0.9rem;
+    }
+    
+    .mobile-stats-container {
+        gap: 12px;
+    }
+    
+    .mobile-progress-hint {
+        font-size: 0.65rem;
+        padding: 4px 6px;
+    }
+}
+
+/* Ensure desktop shows properly on larger screens */
+@media (min-width: 769px) {
+    .mobile-card {
+        display: none !important;
+    }
+    
+    .mobile-header {
+        display: none !important;
+    }
+    
+    .leaderboard-header {
+        display: grid !important;
+    }
+    
+    .player-row {
+        display: grid !important;
+    }
+}
+
+/* Enhanced magic trail particles */
+.magic-trail {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.3));
+    pointer-events: none;
+    z-index: 5;
+    animation: trailFade 1.2s ease-out forwards;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes trailFade {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+}
+
+/* Enhanced stat explosion effects */
+.stat-explosion {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.stat-emoji-particle {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Touch feedback for mobile */
+.mobile-card:active {
+    transform: translateY(-1px) scale(0.98);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.mobile-player-name:active {
+    transform: scale(0.95);
+}
+
+/* Improved highlight matching for mobile */
+.mobile-card .highlight-match {
+    background: linear-gradient(45deg, #F5B642, #FFD700);
+    color: #2d3436;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+   </style> 
 </head>
 <body>
     <div class="container">
