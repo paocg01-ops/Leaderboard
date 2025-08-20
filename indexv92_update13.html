@@ -1,0 +1,2900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strike for Cake - Weekly Leaderboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a0033 0%, #2d1b69 25%, #0f0f23 50%, #1a0033 75%, #2d1b69 100%);
+            min-height: 100vh;
+            font-family: 'Baloo 2', cursive;
+            color: #FFF9F0;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+            cursor: none;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(2px 2px at 160px 30px, #fff, transparent),
+                radial-gradient(1px 1px at 200px 90px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(2px 2px at 240px 50px, #fff, transparent),
+                radial-gradient(1px 1px at 280px 10px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 320px 70px, #fff, transparent),
+                radial-gradient(2px 2px at 360px 40px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 400px 20px, #fff, transparent),
+                radial-gradient(1px 1px at 440px 80px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(2px 2px at 480px 60px, #fff, transparent),
+                radial-gradient(1px 1px at 520px 30px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 560px 90px, #fff, transparent),
+                radial-gradient(2px 2px at 600px 10px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 640px 50px, #fff, transparent),
+                radial-gradient(1px 1px at 680px 70px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(2px 2px at 720px 20px, #fff, transparent),
+                radial-gradient(1px 1px at 760px 80px, rgba(255,255,255,0.6), transparent);
+            background-repeat: repeat;
+            background-size: 800px 100px;
+            animation: twinkle 4s ease-in-out infinite alternate, drift 20s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(1px 1px at 50px 60px, #fff, transparent),
+                radial-gradient(2px 2px at 100px 20px, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1px 1px at 150px 90px, #fff, transparent),
+                radial-gradient(1px 1px at 200px 40px, rgba(255,255,255,0.5), transparent),
+                radial-gradient(2px 2px at 250px 70px, #fff, transparent),
+                radial-gradient(1px 1px at 300px 10px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 350px 80px, #fff, transparent),
+                radial-gradient(2px 2px at 400px 50px, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 450px 30px, #fff, transparent),
+                radial-gradient(1px 1px at 500px 90px, rgba(255,255,255,0.7), transparent),
+                radial-gradient(2px 2px at 550px 15px, #fff, transparent),
+                radial-gradient(1px 1px at 600px 75px, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1px 1px at 650px 45px, #fff, transparent),
+                radial-gradient(2px 2px at 700px 85px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 750px 25px, #fff, transparent);
+            background-repeat: repeat;
+            background-size: 800px 100px;
+            animation: twinkle 3s ease-in-out infinite alternate-reverse, drift 25s linear infinite reverse;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+        
+        @keyframes drift {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100px); }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 25px 30px 20px 30px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.3)"/><circle cx="80" cy="30" r="1.5" fill="rgba(255,255,255,0.2)"/><circle cx="60" cy="70" r="1" fill="rgba(255,255,255,0.4)"/><circle cx="30" cy="80" r="1.5" fill="rgba(255,255,255,0.3)"/></svg>');
+            pointer-events: none;
+        }
+        
+        .clan-name {
+            font-family: 'Fredoka', cursive;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #F5B642, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 5px;
+            text-shadow: 0 0 30px rgba(245, 182, 66, 0.6);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .week-cycle-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .current-cycle {
+            background: linear-gradient(135deg, rgba(245, 182, 66, 0.2), rgba(255, 215, 0, 0.1));
+            border: 2px solid rgba(245, 182, 66, 0.4);
+            padding: 15px 20px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        
+        .last-week-cycle {
+            background: linear-gradient(135deg, rgba(255, 111, 145, 0.2), rgba(238, 90, 36, 0.1));
+            border: 2px solid rgba(255, 111, 145, 0.4);
+            padding: 15px 20px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .cycle-label {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #F5B642;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .cycle-dates {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #FFF9F0;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .general-info {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 20px;
+            border-radius: 20px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .last-week-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+        
+        .last-week-leaderboard {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .achievement-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .achievement-category {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .achievement-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .achievement-count {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #FFD700;
+            opacity: 0.9;
+        }
+        
+        .achievement-names {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #FFF9F0;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .countdown-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .countdown-timer {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(238, 90, 36, 0.15));
+            border: 2px solid rgba(255, 107, 107, 0.4);
+            border-radius: 20px;
+            padding: 20px 25px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.2);
+        }
+        
+        .countdown-label {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #FF6B6B;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+        }
+        
+        .countdown-display {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .time-unit {
+            text-align: center;
+            min-width: 60px;
+        }
+        
+        .time-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #FF6B6B;
+            text-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
+            animation: urgentPulse 2s ease-in-out infinite;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        
+        .time-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #FFF9F0;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        @keyframes urgentPulse {
+            0%, 100% { 
+                transform: scale(1);
+                text-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
+            }
+            50% { 
+                transform: scale(1.05);
+                text-shadow: 0 0 30px rgba(255, 107, 107, 0.9);
+            }
+        }
+        
+        .week-progress {
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .progress-label {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #F5B642;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .progress-bar-container {
+            position: relative;
+            width: 100%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid rgba(245, 182, 66, 0.3);
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #F5B642, #FFD700, #FF6F91);
+            border-radius: 8px;
+            transition: width 1s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-bar-fill::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: progressShine 2s linear infinite;
+        }
+        
+        @keyframes progressShine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .progress-percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #2d3436;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+            z-index: 2;
+        }
+        
+        .data-input {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .input-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .data-textarea {
+            width: 100%;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 14px;
+            color: #333;
+            resize: vertical;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .data-textarea::placeholder {
+            color: #666;
+        }
+        
+        .update-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .update-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+        }
+        
+        .leaderboard {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+            border-radius: 25px;
+            padding: 35px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .leaderboard::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(245,182,66,0.2)"/><circle cx="90" cy="20" r="1.5" fill="rgba(255,111,145,0.2)"/><circle cx="70" cy="80" r="1" fill="rgba(245,182,66,0.15)"/><circle cx="20" cy="90" r="1.2" fill="rgba(255,111,145,0.15)"/></svg>');
+            pointer-events: none;
+        }
+        
+        .leaderboard-header {
+            display: grid;
+            grid-template-columns: 80px 1fr 120px 120px;
+            gap: 20px;
+            padding: 20px 25px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .player-row {
+            display: grid;
+            grid-template-columns: 90px 1fr 120px 120px;
+            gap: 20px;
+            padding: 18px 25px;
+            margin-bottom: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .player-row:nth-child(even) {
+            background: rgba(255, 255, 255, 0.12);
+        }
+        
+        .player-row:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(245, 182, 66, 0.15);
+        }
+        
+        .rank {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        
+        .rank-1 {
+            color: #F5B642;
+            text-shadow: 0 0 20px rgba(245, 182, 66, 0.8);
+            animation: goldShimmer 2s ease-in-out infinite alternate;
+        }
+        
+        .rank-2 {
+            color: #E8E8E8;
+            text-shadow: 0 0 20px rgba(232, 232, 232, 0.6);
+            animation: silverShimmer 2s ease-in-out infinite alternate;
+        }
+        
+        .rank-3 {
+            color: #CD7F32;
+            text-shadow: 0 0 20px rgba(205, 127, 50, 0.6);
+            animation: bronzeShimmer 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes goldShimmer {
+            from { text-shadow: 0 0 20px rgba(245, 182, 66, 0.8); }
+            to { text-shadow: 0 0 30px rgba(255, 215, 0, 1); }
+        }
+        
+        @keyframes silverShimmer {
+            from { text-shadow: 0 0 20px rgba(232, 232, 232, 0.6); }
+            to { text-shadow: 0 0 25px rgba(255, 255, 255, 0.8); }
+        }
+        
+        @keyframes bronzeShimmer {
+            from { text-shadow: 0 0 20px rgba(205, 127, 50, 0.6); }
+            to { text-shadow: 0 0 25px rgba(255, 140, 0, 0.8); }
+        }
+        
+        .player-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .player-name:hover {
+            font-size: 1.4rem;
+            transform: scale(1.1);
+            color: #FFD700;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+        }
+        
+        .clickable-name {
+            position: relative;
+        }
+        
+        .clickable-name:hover {
+            color: #FFD700 !important;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6) !important;
+        }
+        
+        .clickable-name:hover::after {
+            content: '👆';
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8rem;
+            animation: pointBounce 0.6s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pointBounce {
+            0% { transform: translateY(-50%) scale(1); }
+            100% { transform: translateY(-50%) scale(1.2); }
+        }
+        
+        .clan-emblem {
+            font-size: 1.2rem;
+        }
+        
+        .stat {
+            text-align: center;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .score {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #FF6F91;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 8px rgba(255, 111, 145, 0.3);
+        }
+        
+        .top-3 {
+            border-left-color: #ffd700;
+            animation: glow 2s ease-in-out infinite alternate;
+            position: relative;
+            overflow: visible;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+            to { box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
+        }
+        
+        .emoji-explosion {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .emoji-particle {
+            position: absolute;
+            font-size: 1.2rem;
+            animation: explode 1.5s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes explode {
+            0% {
+                opacity: 1;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2) rotate(180deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.8) rotate(360deg);
+            }
+        }
+        
+        .trophy {
+            display: inline-block;
+            margin-left: 8px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-5px); }
+            60% { transform: translateY(-3px); }
+        }
+        
+        .achievement-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .badge-progress {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            color: #FFF9F0;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.6rem;
+            font-weight: 500;
+            margin-left: 8px;
+            opacity: 0.8;
+            font-style: italic;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .badge-progress-row {
+            grid-column: 1 / -1;
+            padding: 5px 25px 0 25px;
+            margin-top: -8px;
+        }
+        
+        .badge-progress-row .badge-progress {
+            font-size: 0.55rem;
+            margin-left: 0;
+            padding: 2px 6px;
+        }
+        
+        .chest-hero {
+            background: linear-gradient(45deg, #F5B642, #FFD700);
+            color: #2d3436;
+            font-weight: 600;
+        }
+        
+        .score-legend {
+            background: linear-gradient(45deg, #F5B642, #FF6F91);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .consistent-warrior {
+            background: linear-gradient(45deg, #4ECDC4, #44A08D);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .motivational-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 45px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            border-radius: 20px;
+            padding: 25px 20px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(245, 182, 66, 0.1), transparent 50%);
+            pointer-events: none;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(245, 182, 66, 0.2);
+        }
+        
+        .stat-card {
+            cursor: pointer;
+        }
+        
+        .stat-explosion {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1000;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .stat-emoji-particle {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: statExplode 2s ease-out forwards;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        @keyframes statExplode {
+            0% {
+                opacity: 1;
+                transform: scale(0) rotate(0deg);
+            }
+            30% {
+                opacity: 1;
+                transform: scale(1.3) rotate(120deg);
+            }
+            70% {
+                opacity: 0.8;
+                transform: scale(1.1) rotate(240deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.7) rotate(360deg);
+            }
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .stat-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #FF6F91;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 10px rgba(255, 111, 145, 0.3);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+            color: #FFF9F0;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            margin: 8px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4ecdc4, #44a08d);
+            border-radius: 3px;
+            transition: width 1s ease-out;
+        }
+        
+        .queen-message {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: #FFF9F0;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+        
+        .motivational-message {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            border-radius: 15px;
+            padding: 10px 20px 20px 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 2px solid rgba(255, 182, 193, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .motivational-message::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+            100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+        }
+        
+        .motivational-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .celebration-emoji {
+            font-size: 1.5rem;
+            margin: 0 5px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            opacity: 0.7;
+        }
+        
+        .empty-state h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .search-container {
+            margin-bottom: 25px;
+        }
+        
+        .search-box {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            color: #FFF9F0;
+            font-size: 16px;
+            font-family: 'Baloo 2', cursive;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #F5B642;
+            box-shadow: 0 0 20px rgba(245, 182, 66, 0.3);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .search-input::placeholder {
+            color: rgba(255, 249, 240, 0.7);
+            text-align: center;
+        }
+        
+        .clear-btn {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 107, 107, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .clear-btn:hover {
+            background: rgba(255, 107, 107, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .search-results {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: rgba(255, 249, 240, 0.8);
+        }
+        
+        .highlight-match {
+            background: linear-gradient(45deg, #F5B642, #FFD700);
+            color: #2d3436;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .search-match {
+            animation: searchGlow 2s ease-in-out infinite alternate;
+            border-left-color: #F5B642 !important;
+            box-shadow: 0 0 15px rgba(245, 182, 66, 0.4) !important;
+        }
+        
+        @keyframes searchGlow {
+            from { box-shadow: 0 0 15px rgba(245, 182, 66, 0.4); }
+            to { box-shadow: 0 0 25px rgba(245, 182, 66, 0.6); }
+        }
+        
+        .tab-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 12px 25px;
+            color: #FFF9F0;
+            font-family: 'Baloo 2', cursive;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tab-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .tab-btn:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .tab-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(245, 182, 66, 0.3);
+            border-color: #F5B642;
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(45deg, #F5B642, #FFD700);
+            color: #2d3436;
+            border-color: #FFD700;
+            box-shadow: 0 8px 20px rgba(245, 182, 66, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .tab-btn.active:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(245, 182, 66, 0.5);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .info-section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+            border-radius: 25px;
+            padding: 35px;
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(245,182,66,0.2)"/><circle cx="90" cy="20" r="1.5" fill="rgba(255,111,145,0.2)"/><circle cx="70" cy="80" r="1" fill="rgba(245,182,66,0.15)"/><circle cx="20" cy="90" r="1.2" fill="rgba(255,111,145,0.15)"/></svg>');
+            pointer-events: none;
+        }
+        
+        .section-title {
+            font-family: 'Fredoka', cursive;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #F5B642, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-description {
+            text-align: center;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .badge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+        
+        .badge-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .badge-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(245, 182, 66, 0.2);
+            border-color: rgba(245, 182, 66, 0.5);
+        }
+        
+        .badge-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .badge-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            padding: 8px 16px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+        
+        .badge-requirement {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #FFD700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .badge-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .badge-tips {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .badge-tips h3 {
+            color: #F5B642;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .badge-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .badge-tips li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.5;
+        }
+        
+        .badge-tips li::before {
+            content: '🎯';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .scoring-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+        
+        .scoring-category {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .category-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #F5B642;
+        }
+        
+        .scoring-table {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .scoring-row {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 15px;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .scoring-row:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .scoring-row.header {
+            background: rgba(245, 182, 66, 0.2);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        
+        .scoring-row.header:hover {
+            transform: none;
+        }
+        
+        .points-value {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            color: #FF6F91;
+            font-size: 1.1rem;
+            text-align: right;
+            min-width: 50px;
+        }
+        
+        .scoring-tips {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .scoring-tips h3 {
+            color: #F5B642;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .scoring-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .scoring-tips li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.5;
+        }
+        
+        .scoring-tips li::before {
+            content: '💡';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .magic-cursor {
+            position: fixed;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.3));
+            pointer-events: none;
+            z-index: 10;
+            transition: transform 0.1s ease;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4), 0 0 45px rgba(255, 255, 255, 0.2);
+            animation: softPulse 2.5s ease-in-out infinite alternate;
+        }
+        
+        .magic-cursor::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            width: 32px;
+            height: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: gentleRotate 4s linear infinite;
+        }
+        
+        .magic-cursor::after {
+            content: '🍰';
+            position: absolute;
+            top: -28px;
+            left: -8px;
+            font-size: 14px;
+            animation: cakeFloat 2s ease-in-out infinite;
+        }
+        
+        @keyframes softPulse {
+            0% { 
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4), 0 0 45px rgba(255, 255, 255, 0.2);
+            }
+            100% { 
+                transform: scale(1.1);
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.3);
+            }
+        }
+        
+        @keyframes gentleRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes cakeFloat {
+            0%, 100% { 
+                opacity: 0.9;
+                transform: translateY(0) scale(1);
+            }
+            50% { 
+                opacity: 1;
+                transform: translateY(-3px) scale(1.05);
+            }
+        }
+        
+        .magic-trail {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.3));
+            pointer-events: none;
+            z-index: 5;
+            animation: trailFade 1.2s ease-out forwards;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+        }
+        
+        @keyframes trailFade {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+        }
+        
+        .mobile-card {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 18px;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .mobile-card:nth-child(even) {
+            background: rgba(255, 255, 255, 0.12);
+        }
+        
+        .mobile-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(245, 182, 66, 0.15);
+        }
+        
+        .mobile-card-row1 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .mobile-rank {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 1.3rem;
+            text-align: center;
+            letter-spacing: 1px;
+            min-width: 45px;
+        }
+        
+        .mobile-player-name {
+            font-weight: 600;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex: 1;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .mobile-player-name:hover,
+        .mobile-player-name:active,
+        .mobile-player-name.tapped {
+            color: #FFD700;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+        }
+        
+        .mobile-card-row2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-top: 4px;
+        }
+        
+        .mobile-badges {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+        }
+        
+        .mobile-badges .achievement-badge {
+            font-size: 0.6rem;
+            padding: 2px 6px;
+            display: inline-block;
+            white-space: nowrap;
+        }
+        
+        .mobile-stats {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .mobile-score {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #FF6F91;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 8px rgba(255, 111, 145, 0.3);
+            white-space: nowrap;
+        }
+        
+        .mobile-chests {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+        
+        .player-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            cursor: auto;
+        }
+        
+        .player-modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #1a0033, #2d1b69);
+            border: 3px solid #F5B642;
+            border-radius: 25px;
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9);
+            animation: modalSlideIn 0.3s ease-out;
+            cursor: auto;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: rgba(255, 107, 107, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-close:hover {
+            background: rgba(255, 107, 107, 1);
+            transform: scale(1.1);
+        }
+        
+        .modal-rank {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .modal-rank.rank-1 {
+            color: #F5B642;
+            text-shadow: 0 0 20px rgba(245, 182, 66, 0.8);
+            animation: goldShimmer 2s ease-in-out infinite alternate;
+        }
+        
+        .modal-rank.rank-2 {
+            color: #E8E8E8;
+            text-shadow: 0 0 20px rgba(232, 232, 232, 0.6);
+            animation: silverShimmer 2s ease-in-out infinite alternate;
+        }
+        
+        .modal-rank.rank-3 {
+            color: #CD7F32;
+            text-shadow: 0 0 20px rgba(205, 127, 50, 0.6);
+            animation: bronzeShimmer 2s ease-in-out infinite alternate;
+        }
+        
+        .mobile-player-info {
+            display: grid;
+            grid-template-columns: 60px 1fr 80px;
+            gap: 15px;
+            width: 100%;
+            align-items: center;
+        }
+        
+        .floating-player-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #F5B642;
+            text-shadow: 0 0 15px rgba(245, 182, 66, 0.6);
+            margin-bottom: 15px;
+            animation: floatName 3s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+        
+        @keyframes floatName {
+            0%, 100% { 
+                transform: translateY(0px);
+                text-shadow: 0 0 15px rgba(245, 182, 66, 0.6);
+            }
+            50% { 
+                transform: translateY(-3px);
+                text-shadow: 0 0 20px rgba(245, 182, 66, 0.8);
+            }
+        }
+        
+        .badges-section {
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .badges-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #FFD700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+        
+        .mobile-achievements {
+            margin-bottom: 10px;
+        }
+        
+        .mobile-achievements .achievement-badge {
+            margin: 2px 4px;
+            font-size: 0.6rem;
+            padding: 3px 6px;
+        }
+        
+        .mobile-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .mobile-stat {
+            text-align: center;
+        }
+        
+        .mobile-stat-value {
+            font-weight: 700;
+            color: #FF6F91;
+            font-size: 1.1rem;
+        }
+        
+        .mobile-stat-label {
+            font-size: 0.7rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
+        
+        .badge-progress-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .badge-progress-section h4 {
+            color: #F5B642;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            text-align: center;
+        }
+        
+        .progress-item {
+            margin-bottom: 8px;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        
+        .progress-item.earned {
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid rgba(76, 175, 80, 0.4);
+            color: #4CAF50;
+        }
+        
+        .progress-item.needed {
+            background: rgba(255, 193, 7, 0.2);
+            border: 1px solid rgba(255, 193, 7, 0.4);
+            color: #FFC107;
+        }
+        
+
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .clan-name {
+                font-size: 2rem;
+            }
+            
+            .header {
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+            
+            .tab-navigation {
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+            
+            .tab-btn {
+                padding: 10px 18px;
+                font-size: 14px;
+            }
+            
+            .motivational-stats {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin-bottom: 30px;
+            }
+            
+            .stat-card {
+                padding: 20px 15px;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .leaderboard {
+                padding: 20px 15px;
+            }
+            
+            .info-section {
+                padding: 25px 20px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .badge-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .badge-card {
+                padding: 20px;
+            }
+            
+            .scoring-categories {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .scoring-category {
+                padding: 20px;
+            }
+            
+            .category-title {
+                font-size: 1.2rem;
+            }
+            
+            .scoring-row {
+                padding: 10px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .points-value {
+                font-size: 1rem;
+            }
+            
+            .leaderboard-header {
+                display: none;
+            }
+            
+            .mobile-header {
+                display: grid;
+                grid-template-columns: 60px 1fr 100px;
+                gap: 15px;
+                padding: 15px 20px;
+                background: rgba(255, 255, 255, 0.15);
+                border-radius: 15px;
+                margin-bottom: 20px;
+                font-weight: 600;
+                font-size: 14px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                text-align: center;
+            }
+            
+            .mobile-header-pancake {
+                text-align: left;
+            }
+            
+            .player-row {
+                display: none;
+            }
+            
+            .mobile-card {
+                display: grid;
+            }
+            
+            .rank {
+                font-size: 1.2rem;
+            }
+            
+            .player-name {
+                font-size: 0.95rem;
+                gap: 6px;
+            }
+            
+            .player-name .achievement-badge,
+            .player-name .trophy {
+                display: none;
+            }
+            
+            .stat {
+                font-size: 0.9rem;
+            }
+            
+            .search-input {
+                font-size: 14px;
+                padding: 12px 18px;
+            }
+            
+            .motivational-message {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .motivational-text {
+                font-size: 1rem;
+            }
+            
+            .countdown-container {
+                gap: 15px;
+            }
+            
+            .countdown-timer {
+                padding: 15px 20px;
+            }
+            
+            .countdown-display {
+                gap: 15px;
+            }
+            
+            .time-unit {
+                min-width: 50px;
+            }
+            
+            .time-value {
+                font-size: 1.8rem;
+            }
+            
+            .time-label {
+                font-size: 0.7rem;
+            }
+            
+            .countdown-label {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+            
+            .progress-bar-container {
+                height: 16px;
+            }
+            
+            .progress-percentage {
+                font-size: 0.7rem;
+            }
+            
+            .week-cycle-info {
+                gap: 12px;
+            }
+            
+            .current-cycle, .last-week-cycle {
+                padding: 12px 15px;
+            }
+            
+            .cycle-label {
+                font-size: 0.9rem;
+                margin-bottom: 6px;
+            }
+            
+            .cycle-dates {
+                font-size: 1rem;
+            }
+            
+            .general-info {
+                padding: 10px 15px;
+                font-size: 0.85rem;
+            }
+            
+            .last-week-stats {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+            
+            .last-week-leaderboard {
+                padding: 20px 15px;
+                margin-bottom: 25px;
+            }
+            
+            .achievement-category {
+                padding: 15px;
+            }
+            
+            .achievement-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .achievement-names {
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .mobile-card {
+                display: none;
+            }
+            
+            .mobile-header {
+                display: none;
+            }
+        }
+/* ================================
+   MOBILE UI FIXES FOR LEADERBOARD
+   ================================ */
+
+/* Mobile Card Complete Redesign */
+.mobile-card {
+    display: none; /* Hidden by default, shown only on mobile */
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 18px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-card:nth-child(even) {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.mobile-card:hover,
+.mobile-card:active {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(245, 182, 66, 0.15);
+    border-color: rgba(245, 182, 66, 0.3);
+}
+
+.mobile-card.top-3 {
+    border-left-color: #ffd700;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 255, 255, 0.08));
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.mobile-card.search-match {
+    border-left-color: #F5B642;
+    box-shadow: 0 0 20px rgba(245, 182, 66, 0.3);
+    animation: searchGlowMobile 2s ease-in-out infinite alternate;
+}
+
+@keyframes searchGlowMobile {
+    from { box-shadow: 0 0 20px rgba(245, 182, 66, 0.3); }
+    to { box-shadow: 0 0 30px rgba(245, 182, 66, 0.5); }
+}
+
+/* Row 1: Rank + Name + Trophy */
+.mobile-row-1 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+.mobile-rank {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.6rem;
+    text-align: center;
+    letter-spacing: 1px;
+    min-width: 45px;
+    flex-shrink: 0;
+}
+
+.mobile-rank.rank-1 {
+    color: #F5B642;
+    text-shadow: 0 0 20px rgba(245, 182, 66, 0.8);
+    animation: goldShimmerMobile 2s ease-in-out infinite alternate;
+}
+
+.mobile-rank.rank-2 {
+    color: #E8E8E8;
+    text-shadow: 0 0 20px rgba(232, 232, 232, 0.6);
+    animation: silverShimmerMobile 2s ease-in-out infinite alternate;
+}
+
+.mobile-rank.rank-3 {
+    color: #CD7F32;
+    text-shadow: 0 0 20px rgba(205, 127, 50, 0.6);
+    animation: bronzeShimmerMobile 2s ease-in-out infinite alternate;
+}
+
+@keyframes goldShimmerMobile {
+    from { text-shadow: 0 0 20px rgba(245, 182, 66, 0.8); }
+    to { text-shadow: 0 0 30px rgba(255, 215, 0, 1); }
+}
+
+@keyframes silverShimmerMobile {
+    from { text-shadow: 0 0 20px rgba(232, 232, 232, 0.6); }
+    to { text-shadow: 0 0 25px rgba(255, 255, 255, 0.8); }
+}
+
+@keyframes bronzeShimmerMobile {
+    from { text-shadow: 0 0 20px rgba(205, 127, 50, 0.6); }
+    to { text-shadow: 0 0 25px rgba(255, 140, 0, 0.8); }
+}
+
+.mobile-name-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mobile-player-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #FFF9F0;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.mobile-player-name:hover,
+.mobile-player-name:active,
+.mobile-card:hover .mobile-player-name {
+    color: #FFD700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+.mobile-trophy {
+    font-size: 1.2rem;
+    animation: bounce 2s infinite;
+    margin-left: 5px;
+}
+
+/* Row 2: Points + Chests */
+.mobile-row-2 {
+    margin-bottom: 8px;
+}
+
+.mobile-stats-container {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.mobile-stat-item {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-stat-value {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.mobile-score {
+    color: #FF6F91;
+    text-shadow: 0 2px 8px rgba(255, 111, 145, 0.3);
+}
+
+.mobile-chests {
+    color: #FFF9F0;
+    opacity: 0.9;
+}
+
+/* Row 3: Badges */
+.mobile-row-3 {
+    margin-bottom: 8px;
+}
+
+.mobile-badges-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+
+.mobile-badges-container .achievement-badge {
+    font-size: 0.65rem;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.mobile-no-badges {
+    font-size: 0.8rem;
+    color: rgba(255, 249, 240, 0.6);
+    font-style: italic;
+}
+
+/* Row 4: Progress Hint */
+.mobile-row-4 {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 8px;
+}
+
+.mobile-progress-hint {
+    font-size: 0.75rem;
+    color: rgba(255, 249, 240, 0.7);
+    text-align: center;
+    font-style: italic;
+    line-height: 1.3;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Header Improvements */
+.mobile-header {
+    display: none;
+    grid-template-columns: 60px 1fr;
+    gap: 15px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+.mobile-header-pancake {
+    text-align: left;
+}
+
+/* Mobile Responsive Breakpoints */
+@media (max-width: 768px) {
+    /* Hide desktop elements */
+    .leaderboard-header {
+        display: none;
+    }
+    
+    .player-row {
+        display: none;
+    }
+    
+    /* Show mobile elements */
+    .mobile-header {
+        display: grid;
+    }
+    
+    .mobile-card {
+        display: flex;
+    }
+    
+    /* Adjust leaderboard padding on mobile */
+    .leaderboard {
+        padding: 25px 15px;
+    }
+    
+    /* Search box mobile adjustments */
+    .search-input {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 14px 18px;
+    }
+    
+    /* Modal improvements for mobile */
+    .player-modal {
+        padding: 15px;
+    }
+    
+    .modal-content {
+        padding: 25px 20px;
+        max-width: 95vw;
+    }
+    
+    /* Stats cards mobile adjustments */
+    .motivational-stats {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .stat-card {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small screens */
+    .mobile-card {
+        padding: 16px 14px;
+        gap: 10px;
+    }
+    
+    .mobile-rank {
+        font-size: 1.4rem;
+        min-width: 40px;
+    }
+    
+    .mobile-player-name {
+        font-size: 1rem;
+    }
+    
+    .mobile-stats-container {
+        gap: 18px;
+    }
+    
+    .mobile-stat-value {
+        font-size: 0.9rem;
+    }
+    
+    .mobile-progress-hint {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+    }
+    
+    .achievement-badge {
+        font-size: 0.6rem !important;
+        padding: 3px 6px !important;
+    }
+}
+
+/* Interaction feedback for mobile */
+@media (hover: none) and (pointer: coarse) {
+    /* Touch devices */
+    .mobile-card:active {
+        transform: translateY(-2px) scale(0.98);
+        transition: all 0.1s ease;
+    }
+    
+    .mobile-player-name:active {
+        color: #FFD700;
+        text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    }
+}
+
+/* Desktop - Keep existing behavior */
+@media (min-width: 769px) {
+    .mobile-card {
+        display: none !important;
+    }
+    
+    .mobile-header {
+        display: none !important;
+    }
+    
+    .player-row {
+        display: grid !important;
+    }
+    
+    .leaderboard-header {
+        display: grid !important;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="clan-name">🧁 STRIKE FOR CAKE 🍰</h1>
+
+            <div class="week-cycle-info">
+                <div class="current-cycle">
+                    <div class="cycle-label">📅 Current Week Cycle</div>
+                    <div class="cycle-dates" id="currentCycleDates">
+                        Loading current cycle...
+                    </div>
+                </div>
+                
+                <div class="general-info">
+                    🌎 All times shown in Mexico City timezone (reset to reset)
+                </div>
+            </div>
+            
+            <div style="font-size: 0.7rem; opacity: 0.6; margin-top: 4px; text-align: center;">
+                Last Updated: 11:00 AM Mexico City time - August 19, 2025
+            </div>
+            
+            <div class="countdown-container">
+                <div class="countdown-timer">
+                    <div class="countdown-label">Time Remaining!</div>
+                    <div class="countdown-display" id="countdownDisplay">
+                        <div class="time-unit">
+                            <div class="time-value" id="days">0</div>
+                            <div class="time-label">Days</div>
+                        </div>
+                        <div class="time-unit">
+                            <div class="time-value" id="hours">0</div>
+                            <div class="time-label">Hours</div>
+                        </div>
+                        <div class="time-unit">
+                            <div class="time-value" id="minutes">0</div>
+                            <div class="time-label">Min</div>
+                        </div>
+                        <div class="time-unit">
+                            <div class="time-value" id="seconds">0</div>
+                            <div class="time-label">Sec</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="week-progress">
+                    <div class="progress-label">Week Progress</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" id="weekProgress"></div>
+                        <div class="progress-percentage" id="progressPercentage">0%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+<div class="tab-navigation">
+  <button class="tab-btn active" data-tab="leaderboard" onclick="showTab('leaderboard')">🏆 Current Week</button>
+  <button class="tab-btn" data-tab="lastweek"   onclick="showTab('lastweek')">📊 Last Week</button>
+  <button class="tab-btn" data-tab="badges"     onclick="showTab('badges')">🏅 Badges</button>
+  <button class="tab-btn" data-tab="scoring"    onclick="showTab('scoring')">⭐ Points</button>
+</div>
+
+        
+        <div class="motivational-message leaderboard-only">
+            <div class="motivational-text">
+                <span class="celebration-emoji">🎉</span>
+                <strong>Amazing work, Strike for Cake pancakes!</strong>
+                <span class="celebration-emoji">🧁</span>
+                <br>
+                Every chest counts, every point matters! Keep baking those victories!
+                <span class="celebration-emoji">🍰</span>
+                <br>
+                <span style="font-size: 0.8rem; font-weight: 400; font-style: normal;">Come check out this dashboard daily, Sweet Queen Bera will be updating it every day at about 10pm Mexico City</span>
+            </div>
+        </div>
+        
+        <div class="motivational-stats leaderboard-only">
+            <div class="stat-card" onmouseenter="createStatCardExplosion(this, 'pancakes')" onclick="createStatCardExplosion(this, 'pancakes')">
+                <div class="stat-icon">🥞</div>
+                <div class="stat-number" id="totalWarriors">0</div>
+                <div class="stat-label">Active Pancakes</div>
+            </div>
+            <div class="stat-card" onmouseenter="createStatCardExplosion(this, 'treats')" onclick="createStatCardExplosion(this, 'treats')">
+                <div class="stat-icon">🍪</div>
+                <div class="stat-number" id="totalChests">0</div>
+                <div class="stat-label">Average Sweet Treats Per Player</div>
+            </div>
+            <div class="stat-card" onmouseenter="createStatCardExplosion(this, 'points')" onclick="createStatCardExplosion(this, 'points')">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-number" id="totalScore">0</div>
+                <div class="stat-label">Average Points Per Player</div>
+            </div>
+        </div>
+        
+        <div class="tab-content active" id="leaderboard-tab">
+            
+            <div class="leaderboard">
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" id="nameSearch" placeholder="🔍 Find your pancake name..." class="search-input">
+                        <button onclick="clearSearch()" class="clear-btn" id="clearBtn" style="display: none;">✕</button>
+                    </div>
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+                
+                <div class="leaderboard-header">
+                    <div>RANK</div>
+                    <div>PANCAKE</div>
+                    <div style="color: #FF6F91;">⭐ POINTS</div>
+                    <div style="color: #FFF9F0;">🍪 TREATS</div>
+                </div>
+                
+                <div class="mobile-header">
+                    <div>RANK</div>
+                    <div class="mobile-header-pancake">PANCAKE</div>
+                    <div><span style="color: #FF6F91;">⭐ POINTS</span> / <span style="color: #FFF9F0;">🍪 CHESTS</span></div>
+                </div>
+                
+                <div id="leaderboardContent">
+                    <div class="empty-state">
+                        <h3>🎯 Ready for Battle!</h3>
+                        <p>Enter your clan's data above to see the leaderboard come to life!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="lastweek-tab">
+            <div class="info-section">
+                <h2 class="section-title">📊 Last Week Results</h2>
+                <div class="last-week-cycle" id="lastWeekCycle">
+                    <div class="cycle-label">📅 Previous Week Cycle</div>
+                    <div class="cycle-dates" id="lastCycleDates">
+                        Loading previous cycle...
+                    </div>
+                </div>
+                
+                <div class="last-week-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-number" id="lastWeekWinner">TBD</div>
+                        <div class="stat-label">Champion</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🥞</div>
+                        <div class="stat-number" id="lastWeekParticipants">0</div>
+                        <div class="stat-label">Active Pancakes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-number" id="lastWeekTopScore">0</div>
+                        <div class="stat-label">Highest Score</div>
+                    </div>
+                </div>
+                
+                <div class="last-week-leaderboard">
+                    <h3 style="text-align: center; color: #F5B642; margin-bottom: 20px; font-size: 1.5rem;">🏅 Final Rankings</h3>
+                    
+                    <div class="leaderboard-header">
+                        <div>RANK</div>
+                        <div>PANCAKE</div>
+                        <div style="color: #FF6F91;">⭐ POINTS</div>
+                        <div style="color: #FFF9F0;">🍪 TREATS</div>
+                    </div>
+                    
+                    <div class="mobile-header">
+                        <div>RANK</div>
+                        <div class="mobile-header-pancake">PANCAKE</div>
+                        <div><span style="color: #FF6F91;">⭐ POINTS</span> / <span style="color: #FFF9F0;">🍪 CHESTS</span></div>
+                    </div>
+                    
+<div id="leaderboardContentLast">
+  <div class="empty-state">
+    <h3>🍰 Last week standings will appear here</h3>
+  </div>
+</div>
+
+                </div>
+                
+                <div class="last-week-achievements">
+                    <h3 style="text-align: center; color: #F5B642; margin: 30px 0 20px 0; font-size: 1.5rem;">🏅 Badge Earners</h3>
+                    <div class="achievement-summary" id="lastWeekAchievements">
+                        <div class="achievement-category">
+                            <div class="achievement-header">
+                                <span class="achievement-badge chest-hero">Chest Hero</span>
+                                <span class="achievement-count" id="lastWeekChestHeroes">0 pancakes</span>
+                            </div>
+                            <div class="achievement-names" id="lastWeekChestHeroNames">TBD</div>
+                        </div>
+                        
+                        <div class="achievement-category">
+                            <div class="achievement-header">
+                                <span class="achievement-badge score-legend">Legend</span>
+                                <span class="achievement-count" id="lastWeekLegends">0 pancakes</span>
+                            </div>
+                            <div class="achievement-names" id="lastWeekLegendNames">TBD</div>
+                        </div>
+                        
+                        <div class="achievement-category">
+                            <div class="achievement-header">
+                                <span class="achievement-badge consistent-warrior">Consistent</span>
+                                <span class="achievement-count" id="lastWeekConsistent">0 pancakes</span>
+                            </div>
+                            <div class="achievement-names" id="lastWeekConsistentNames">TBD</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="badges-tab">
+            <div class="info-section">
+                <h2 class="section-title">🏅 Badges Explained</h2>
+                <p class="section-description">Here's how our pancakes earn their sweet achievements!</p>
+                
+                <div class="badge-grid">
+                    <div class="badge-card">
+                        <div class="badge-icon">🍪</div>
+                        <div class="badge-name chest-hero">Chest Hero</div>
+                        <div class="badge-requirement">Bring 100+ chests in a week</div>
+                        <div class="badge-description">For pancakes who never stop collecting sweet treats! These dedicated warriors consistently gather chests day after day.</div>
+                    </div>
+                    
+                    <div class="badge-card">
+                        <div class="badge-icon">⭐</div>
+                        <div class="badge-name score-legend">Legend</div>
+                        <div class="badge-requirement">Score 2000+ points in a week</div>
+                        <div class="badge-description">Reserved for the elite! These pancakes dominate the battlefield with incredible point totals that inspire the whole clan.</div>
+                    </div>
+                    
+                    <div class="badge-card">
+                        <div class="badge-icon">🎯</div>
+                        <div class="badge-name consistent-warrior">Consistent</div>
+                        <div class="badge-requirement">70+ chests AND 1000+ points</div>
+                        <div class="badge-description">The backbone of our clan! These reliable pancakes balance both chest collection and point scoring consistently.</div>
+                    </div>
+                </div>
+                
+                <div class="badge-tips">
+                    <h3>💡 Tips to Earn Badges</h3>
+                    <ul>
+                        <li>Always participate on Tinman and bring home all 13 chests</li>
+                        <li>Always participate on Ragnarok and bring home all 5 chests</li>
+                        <li>Always participate in Olympus and bring home as many Tartaros chests as you can!</li>
+                        <li>In a nutshell: Focus on daily activities, participate in events, and never miss a chest opportunity!</li>
+                        <li>Target high-value activities like Epic Monsters, Epic crypts and always bring chests from citadels or crypts level 15 and above, as level 5 and 10 has no value.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="scoring-tab">
+            <div class="info-section">
+                <h2 class="section-title">⭐ Chest Scoring System</h2>
+                <p class="section-description">Every chest type has a different point value. Here's the complete breakdown!</p>
+                
+                <div class="scoring-categories">
+                    <div class="scoring-category">
+                        <h3 class="category-title">🏛️ Epic Squads & Special</h3>
+                        <div class="scoring-table">
+                            <div class="scoring-row header">
+                                <div>Chest Type</div>
+                                <div>Points</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Epic Undead squad</div>
+                                <div class="points-value">200</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Shadow City</div>
+                                <div class="points-value">200</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Magic Chest</div>
+                                <div class="points-value">100</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Epic Ancient squad</div>
+                                <div class="points-value">50</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Hermes' Store</div>
+                                <div class="points-value">50</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Jormungandr Shop</div>
+                                <div class="points-value">50</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Precious Chest</div>
+                                <div class="points-value">50</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scoring-category">
+                        <h3 class="category-title">🐉 Heroic Monsters</h3>
+                        <div class="scoring-table">
+                            <div class="scoring-row header">
+                                <div>Monster Level</div>
+                                <div>Points</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 31-45 heroic Monster</div>
+                                <div class="points-value">100</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 26-30 heroic Monster</div>
+                                <div class="points-value">60</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 21-25 heroic Monster</div>
+                                <div class="points-value">25</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 16-20 heroic Monster</div>
+                                <div class="points-value">20</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scoring-category">
+                        <h3 class="category-title">🏰 Citadels</h3>
+                        <div class="scoring-table">
+                            <div class="scoring-row header">
+                                <div>Citadel Type</div>
+                                <div>Points</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 30 Citadel</div>
+                                <div class="points-value">60</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 25 Citadel</div>
+                                <div class="points-value">25</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 25 cursed Citadel</div>
+                                <div class="points-value">25</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 20 Citadel</div>
+                                <div class="points-value">15</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 20 cursed Citadel</div>
+                                <div class="points-value">15</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 15 Citadel</div>
+                                <div class="points-value">10</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 10 Citadel</div>
+                                <div class="points-value">1</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scoring-category">
+                        <h3 class="category-title">🗝️ Crypts</h3>
+                        <div class="scoring-table">
+                            <div class="scoring-row header">
+                                <div>Crypt Type</div>
+                                <div>Points</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 35 epic Crypt</div>
+                                <div class="points-value">70</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 30 rare Crypt</div>
+                                <div class="points-value">60</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 25 rare Crypt</div>
+                                <div class="points-value">50</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 30 epic Crypt</div>
+                                <div class="points-value">50</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 25 Crypt</div>
+                                <div class="points-value">36</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 25 epic Crypt</div>
+                                <div class="points-value">36</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 20 rare Crypt</div>
+                                <div class="points-value">35</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 20 epic Crypt</div>
+                                <div class="points-value">25</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Tartaros Crypt</div>
+                                <div class="points-value">25</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 20 Crypt</div>
+                                <div class="points-value">20</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 15 Crypt</div>
+                                <div class="points-value">15</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 15 epic Crypt</div>
+                                <div class="points-value">10</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 15 rare Crypt</div>
+                                <div class="points-value">5</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 10 rare Crypt</div>
+                                <div class="points-value">3</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 10 Crypt</div>
+                                <div class="points-value">1</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 5 Crypt</div>
+                                <div class="points-value">0</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scoring-category">
+                        <h3 class="category-title">🏺 Vault of the Ancients</h3>
+                        <div class="scoring-table">
+                            <div class="scoring-row header">
+                                <div>Vault Level</div>
+                                <div>Points</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 40-44 Vault</div>
+                                <div class="points-value">40</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 35-39 Vault</div>
+                                <div class="points-value">35</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 30-34 Vault</div>
+                                <div class="points-value">30</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 25-29 Vault</div>
+                                <div class="points-value">25</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 20-24 Vault</div>
+                                <div class="points-value">20</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 15-19 Vault</div>
+                                <div class="points-value">15</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 10-14 Vault</div>
+                                <div class="points-value">10</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scoring-category">
+                        <h3 class="category-title">⚔️ Raid & Events</h3>
+                        <div class="scoring-table">
+                            <div class="scoring-row header">
+                                <div>Activity Type</div>
+                                <div>Points</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Lvl 35-39 Raid Runic squad</div>
+                                <div class="points-value">35</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Lvl 30-34 Raid Runic squad</div>
+                                <div class="points-value">30</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Rise of the Ancients event</div>
+                                <div class="points-value">30</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Authority Rush tournament</div>
+                                <div class="points-value">25</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Lvl 25-29 Raid Runic squad</div>
+                                <div class="points-value">20</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Snowman</div>
+                                <div class="points-value">20</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Lvl 20-24 Raid Runic squad</div>
+                                <div class="points-value">10</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Sacred Rituals tournament</div>
+                                <div class="points-value">5</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>The Great Hunt tournament</div>
+                                <div class="points-value">5</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scoring-category">
+                        <h3 class="category-title">📦 Treasure Chests</h3>
+                        <div class="scoring-table">
+                            <div class="scoring-row header">
+                                <div>Chest Type</div>
+                                <div>Points</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Golden Chest</div>
+                                <div class="points-value">25</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Silver Chest</div>
+                                <div class="points-value">20</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Bronze Chest</div>
+                                <div class="points-value">15</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Wooden Chest</div>
+                                <div class="points-value">10</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Conqueror's Chest</div>
+                                <div class="points-value">5</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Mimic Chest</div>
+                                <div class="points-value">5</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scoring-category">
+                        <h3 class="category-title">🎯 Other Activities</h3>
+                        <div class="scoring-table">
+                            <div class="scoring-row header">
+                                <div>Activity Type</div>
+                                <div>Points</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Arena</div>
+                                <div class="points-value">5</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Clan wealth</div>
+                                <div class="points-value">5</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Mercenary Exchange</div>
+                                <div class="points-value">5</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Story</div>
+                                <div class="points-value">5</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Union of Triumph personal reward</div>
+                                <div class="points-value">5</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scoring-tips">
+                    <h3>💡 Scoring Strategy Tips</h3>
+                    <ul>
+                        <li><strong>Focus on Epic Monsters:</strong> 200 points each - the highest value activity! (Try to get the final hit on Doomsday, Armageddon, Ragnarok beasts, etc)</li>
+                        <li><strong>Target Epic and Rare crypts:</strong> Don't ignore medium value, Consistent level 15 crypts or citadels add up quickly.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Player Modal -->
+    <div class="player-modal" id="playerModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closePlayerModal()">✕</button>
+            <div class="modal-rank" id="modalRank">#1</div>
+            <div class="floating-player-name" id="modalPlayerName">Player Name</div>
+            
+            <div class="badges-section">
+                <div class="badges-title">🏅 Achievements</div>
+                <div class="mobile-achievements" id="modalBadges">
+                    <!-- Badges will be inserted here -->
+                </div>
+            </div>
+            
+            <div class="mobile-stats">
+                <div class="mobile-stat">
+                    <div class="mobile-stat-value" id="modalScore">0</div>
+                    <div class="mobile-stat-label">⭐ Points</div>
+                </div>
+                <div class="mobile-stat">
+                    <div class="mobile-stat-value" id="modalChests">0</div>
+                    <div class="mobile-stat-label">🍪 Chests</div>
+                </div>
+            </div>
+            
+            <div class="badge-progress-section" id="modalProgress">
+                <!-- Progress info will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+   
+<!-- ======= RUNTIME CANVA + SUPABASE (REEMPLAZO COMPLETO) ======= -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/js/prod_index_refactor.js"></script>
+
+</body>
+</html>
