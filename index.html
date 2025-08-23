@@ -2101,6 +2101,17 @@
         padding: 4px 6px;
     }
 }   
+/* Emoji rendering fix */
+.clan-emblem, .trophy, .stat-icon, .mobile-trophy {
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Emoji", sans-serif;
+    font-style: normal !important;
+    font-variant: normal !important;
+}
+
+/* Ensure all emojis render properly */
+body {
+    font-family: 'Baloo 2', "Apple Color Emoji", "Segoe UI Emoji", cursive;
+}
  </style>
 </head>
 <body>
@@ -2115,14 +2126,10 @@
                         Loading current cycle...
                     </div>
                 </div>
-                
-                <div class="general-info">
-                    🌎 All times shown in Mexico City timezone (reset to reset)
-                </div>
             </div>
             
-            <div style="font-size: 0.7rem; opacity: 0.6; margin-top: 4px; text-align: center;">
-                Last Updated: 11:00 AM Mexico City time - August 19, 2025
+            <div id="lastUpdatedTimestamp" style="font-size: 0.7rem; opacity: 0.6; margin-top: 4px; text-align: center;">
+                Last Updated: Loading...
             </div>
             
             <div class="countdown-container">
@@ -2730,7 +2737,25 @@
    
 <!-- ======= RUNTIME CANVA + SUPABASE (REEMPLAZO COMPLETO) ======= -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/js/prod_index_refactor.js"></script>
+<script src="js/supabase-init.js"></script>
+<script src="js/missing-functions.js"></script>
+<script src="js/emoji-fix.js"></script>
+<script src="js/timezone-aware-cycles.js"></script>
+<script src="js/dynamic-timestamp.js"></script>
+<script src="js/prod_index_refactor_WORKING.js"></script>
+<script src="js/test-local.js"></script>
+
+<script>
+// Initialize dynamic timestamp when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    // Small delay to ensure Supabase client is ready
+    setTimeout(() => {
+        if (typeof updateLastUpdatedTimestamp === 'function') {
+            updateLastUpdatedTimestamp();
+        }
+    }, 500);
+});
+</script>
 
 </body>
 </html>

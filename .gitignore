@@ -1,0 +1,13 @@
+# Ignore local test/debug files
+js/test-local.js
+
+# Ignore secrets
+.env
+
+# Ignore OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Ignore node packages if added later
+node_modules/
