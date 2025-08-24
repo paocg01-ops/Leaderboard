@@ -1541,6 +1541,31 @@
             opacity: 0.8;
             text-transform: uppercase;
         }
+
+        /* Modal stats - centered layout for popup modals */
+        .modal-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .modal-stat {
+            text-align: center;
+        }
+        
+        .modal-stat-value {
+            font-weight: 700;
+            color: #FF6F91;
+            font-size: 1.1rem;
+        }
+        
+        .modal-stat-label {
+            font-size: 0.7rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
         
         .badge-progress-section {
             background: rgba(255, 255, 255, 0.1);
@@ -2731,14 +2756,14 @@ body {
                 </div>
             </div>
             
-            <div class="mobile-stats">
-                <div class="mobile-stat">
-                    <div class="mobile-stat-value" id="modalScore">0</div>
-                    <div class="mobile-stat-label">⭐ Points</div>
+            <div class="modal-stats">
+                <div class="modal-stat">
+                    <div class="modal-stat-value" id="modalScore">0</div>
+                    <div class="modal-stat-label">⭐ Points</div>
                 </div>
-                <div class="mobile-stat">
-                    <div class="mobile-stat-value" id="modalChests">0</div>
-                    <div class="mobile-stat-label">🍪 Chests</div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value" id="modalChests">0</div>
+                    <div class="modal-stat-label">🍪 Chests</div>
                 </div>
             </div>
             

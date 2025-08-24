@@ -442,6 +442,57 @@ async function loadLastWeek() {
     const maxScore = Math.max(...rows.map(p => Number(p.score)||0));
     setText('lastWeekTopScore', fmt(maxScore));
   }
+  
+  // Badge Earners Analysis
+  updateBadgeEarners(rows);
+}
+
+// Badge Earners Analysis for Last Week
+function updateBadgeEarners(players) {
+  if (!players || players.length === 0) {
+    // Clear badge earners if no data
+    setText('lastWeekChestHeroes', '0 warriors');
+    setText('lastWeekChestHeroNames', 'No one earned this badge');
+    setText('lastWeekLegends', '0 warriors');
+    setText('lastWeekLegendNames', 'No one earned this badge');
+    setText('lastWeekConsistent', '0 warriors');
+    setText('lastWeekConsistentNames', 'No one earned this badge');
+    return;
+  }
+
+  // Analyze badge achievements
+  const chestHeroes = [];
+  const legends = [];
+  const consistentWarriors = [];
+  
+  players.forEach(player => {
+    const badges = deriveBadges(player);
+    
+    if (badges.chestHero) {
+      chestHeroes.push(player.name);
+    }
+    if (badges.legend) {
+      legends.push(player.name);
+    }
+    if (badges.consistent) {
+      consistentWarriors.push(player.name);
+    }
+  });
+
+  // Update Chest Heroes
+  const chestHeroCount = chestHeroes.length;
+  setText('lastWeekChestHeroes', `${chestHeroCount} ${chestHeroCount === 1 ? 'warrior' : 'warriors'}`);
+  setText('lastWeekChestHeroNames', chestHeroes.length > 0 ? chestHeroes.join(', ') : 'No one earned this badge');
+
+  // Update Legends  
+  const legendCount = legends.length;
+  setText('lastWeekLegends', `${legendCount} ${legendCount === 1 ? 'warrior' : 'warriors'}`);
+  setText('lastWeekLegendNames', legends.length > 0 ? legends.join(', ') : 'No one earned this badge');
+
+  // Update Consistent Warriors
+  const consistentCount = consistentWarriors.length;
+  setText('lastWeekConsistent', `${consistentCount} ${consistentCount === 1 ? 'warrior' : 'warriors'}`);
+  setText('lastWeekConsistentNames', consistentWarriors.length > 0 ? consistentWarriors.join(', ') : 'No one earned this badge');
 }
 
 // ===== 6) WEEK CYCLES + COUNTDOWN + PROGRESS =====
