@@ -2791,10 +2791,18 @@ body {
 document.addEventListener('DOMContentLoaded', () => {
     // Small delay to ensure Supabase client is ready
     setTimeout(() => {
+        console.log('🚀 Initializing timestamp functionality...');
         if (typeof updateLastUpdatedTimestamp === 'function') {
             updateLastUpdatedTimestamp();
+            
+            // Start auto-refresh
+            if (typeof startTimestampAutoRefresh === 'function') {
+                startTimestampAutoRefresh();
+            }
+        } else {
+            console.error('❌ updateLastUpdatedTimestamp function not found');
         }
-    }, 500);
+    }, 1000); // Increased delay to ensure all JS files are loaded
 });
 </script>
 

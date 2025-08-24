@@ -10,30 +10,64 @@ function initializeSupabaseClient() {
 }
 async function getLastUpdateTimestamp() {
     try {
-        const supabaseClient = initializeSupabaseClient();
+        // Use the global Supabase client (sb) instead of creating a new one
+        const supabaseClient = window.sb || initializeSupabaseClient();
         if (!supabaseClient) {
-            console.error('Supabase client not available');
+            console.error('❌ Supabase client not available for timestamp query');
+            return null;
+        }
+
+        console.log('🔍 Querying raw_chests for latest timestamp...');
+        
+        // Try multiple column name variations to handle different schemas
+        const possibleColumns = ['DATE', 'date', 'created_at', 'updated_at', 'timestamp'];
+        let result = null;
+        
+        for (const column of possibleColumns) {
+            try {
+                const { data, error } = await supabaseClient
+                    .from('raw_chests')
+                    .select(column)
+                    .order(column, { ascending: false })
+                    .limit(1);
+                
+                if (!error && data && data.length > 0) {
+                    console.log(`✅ Found timestamp using column: ${column}`, data[0]);
+                    result = { data, column };
+                    break;
+                } else if (error) {
+                    console.log(`⚠️ Column '${column}' failed:`, error.message);
+                }
+            } catch (colError) {
+                console.log(`⚠️ Column '${column}' caused error:`, colError.message);
+                continue;
+            }
+        }
+        
+        if (!result) {
+            console.error('❌ No valid date column found in raw_chests table');
+            // Let's also try to get table schema info
+            const { data: schemaData } = await supabaseClient
+                .from('raw_chests')
+                .select('*')
+                .limit(1);
+            console.log('📊 Available columns:', schemaData ? Object.keys(schemaData[0] || {}) : 'Unable to fetch');
             return null;
         }
         
-        const { data, error } = await supabaseClient
-            .from('raw_chests')
-            .select('DATE')
-            .order('DATE', { ascending: false })
-            .limit(1);
+        const dateValue = result.data[0][result.column];
+        const timestamp = new Date(dateValue);
         
-        if (error) {
-            console.error('Error fetching last update:', error);
+        if (isNaN(timestamp.getTime())) {
+            console.error('❌ Invalid date format:', dateValue);
             return null;
         }
         
-        if (data && data.length > 0) {
-            return new Date(data[0].DATE);
-        }
+        console.log('✅ Successfully parsed timestamp:', timestamp);
+        return timestamp;
         
-        return null;
     } catch (e) {
-        console.error('Error querying last update:', e);
+        console.error('❌ Error querying last update:', e);
         return null;
     }
 }
@@ -172,18 +206,65 @@ function isSameDay(date1, date2, timezone) {
 }
 
 async function updateLastUpdatedTimestamp() {
+    console.log('🕒 Updating last updated timestamp...');
     const timestampEl = document.getElementById('lastUpdatedTimestamp');
-    if (!timestampEl) return;
+    if (!timestampEl) {
+        console.error('❌ lastUpdatedTimestamp element not found');
+        return;
+    }
     
     // Show loading state
     timestampEl.textContent = 'Last Updated: Loading...';
+    timestampEl.style.color = '#F5B642'; // Orange while loading
     
-    const lastUpdate = await getLastUpdateTimestamp();
-    
-    if (lastUpdate) {
-        const formattedTime = formatTimestampInUserTimezone(lastUpdate);
-        timestampEl.textContent = `Last Updated: ${formattedTime}`;
-    } else {
-        timestampEl.textContent = 'Last Updated: Unavailable';
+    try {
+        const lastUpdate = await getLastUpdateTimestamp();
+        
+        if (lastUpdate) {
+            const formattedTime = formatTimestampInUserTimezone(lastUpdate);
+            timestampEl.textContent = `Last Updated: ${formattedTime}`;
+            timestampEl.style.color = ''; // Reset color
+            console.log('✅ Timestamp updated successfully:', formattedTime);
+        } else {
+            timestampEl.textContent = 'Last Updated: Unable to fetch';
+            timestampEl.style.color = '#ff6b6b'; // Red for error
+            console.error('❌ Failed to get timestamp - check console for details');
+        }
+    } catch (error) {
+        console.error('❌ Error updating timestamp:', error);
+        timestampEl.textContent = 'Last Updated: Error occurred';
+        timestampEl.style.color = '#ff6b6b'; // Red for error
     }
 }
+
+// Manual refresh function for debugging
+window.refreshTimestamp = function() {
+    console.log('🔄 Manually refreshing timestamp...');
+    updateLastUpdatedTimestamp();
+};
+
+// Auto-refresh every 30 seconds to catch new data
+let timestampRefreshInterval;
+function startTimestampAutoRefresh() {
+    // Clear any existing interval
+    if (timestampRefreshInterval) {
+        clearInterval(timestampRefreshInterval);
+    }
+    
+    // Refresh every 30 seconds
+    timestampRefreshInterval = setInterval(() => {
+        console.log('🔄 Auto-refreshing timestamp...');
+        updateLastUpdatedTimestamp();
+    }, 30000);
+    
+    console.log('✅ Timestamp auto-refresh started (every 30s)');
+}
+
+// Stop auto-refresh (useful for debugging)
+window.stopTimestampRefresh = function() {
+    if (timestampRefreshInterval) {
+        clearInterval(timestampRefreshInterval);
+        timestampRefreshInterval = null;
+        console.log('⏹️ Timestamp auto-refresh stopped');
+    }
+};
