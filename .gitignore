@@ -1,13 +1,28 @@
-# Ignore local test/debug files
+# Development and testing files
 js/test-local.js
+js/prod_index_refactor_WORKING.js
+favicon.ico
 
-# Ignore secrets
+# Archive and backup files
+Archived Versions/
+Finals/
+index_backup_*.html
+leaderboard.txt
+
+# Secrets and environment
 .env
 
-# Ignore OS/editor junk
+# System files
 .DS_Store
 Thumbs.db
-.vscode/
 
-# Ignore node packages if added later
+# IDE files
+.vscode/
+.idea/
+
+# Node packages (if added later)
 node_modules/
+
+# Logs
+*.log
+npm-debug.log*
