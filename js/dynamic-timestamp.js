@@ -18,20 +18,20 @@ async function getLastUpdateTimestamp() {
         
         console.log('🔍 Attempting to fetch last update timestamp...');
         
-        // Query the DATE column (case-sensitive with quotes in your schema)
+        // Query the updated_at column from raw_chests table
         const { data, error } = await supabaseClient
             .from('raw_chests')
-            .select('DATE')
-            .order('DATE', { ascending: false })
+            .select('updated_at')
+            .order('updated_at', { ascending: false })
             .limit(1);
         
         if (error) {
-            console.error(`❌ Error fetching from DATE column:`, error);
+            console.error(`❌ Error fetching from updated_at column:`, error);
             return null;
         }
         
-        if (data && data.length > 0 && data[0].DATE) {
-            const timestamp = new Date(data[0].DATE);
+        if (data && data.length > 0 && data[0].updated_at) {
+            const timestamp = new Date(data[0].updated_at);
             console.log(`✅ Successfully found latest timestamp:`, timestamp);
             return timestamp;
         }
