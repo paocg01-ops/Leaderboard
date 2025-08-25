@@ -12,10 +12,13 @@ async function getLastUpdateTimestamp() {
     try {
         const supabaseClient = initializeSupabaseClient();
         if (!supabaseClient) {
-            console.error('Supabase client not available');
+            console.error('❌ Supabase client not available for timestamp query');
             return null;
         }
         
+        console.log('🔍 Attempting to fetch last update timestamp...');
+        
+        // Query the DATE column (case-sensitive with quotes in your schema)
         const { data, error } = await supabaseClient
             .from('raw_chests')
             .select('DATE')
@@ -23,17 +26,21 @@ async function getLastUpdateTimestamp() {
             .limit(1);
         
         if (error) {
-            console.error('Error fetching last update:', error);
+            console.error(`❌ Error fetching from DATE column:`, error);
             return null;
         }
         
-        if (data && data.length > 0) {
-            return new Date(data[0].DATE);
+        if (data && data.length > 0 && data[0].DATE) {
+            const timestamp = new Date(data[0].DATE);
+            console.log(`✅ Successfully found latest timestamp:`, timestamp);
+            return timestamp;
         }
         
+        console.log('❌ No data found in raw_chests table or DATE column is empty');
         return null;
+        
     } catch (e) {
-        console.error('Error querying last update:', e);
+        console.error('❌ Critical error querying last update:', e);
         return null;
     }
 }
@@ -173,17 +180,68 @@ function isSameDay(date1, date2, timezone) {
 
 async function updateLastUpdatedTimestamp() {
     const timestampEl = document.getElementById('lastUpdatedTimestamp');
-    if (!timestampEl) return;
+    if (!timestampEl) {
+        console.log('⚠️ lastUpdatedTimestamp element not found in DOM');
+        return;
+    }
     
     // Show loading state
     timestampEl.textContent = 'Last Updated: Loading...';
+    console.log('🔄 Updating timestamp display...');
     
     const lastUpdate = await getLastUpdateTimestamp();
     
     if (lastUpdate) {
         const formattedTime = formatTimestampInUserTimezone(lastUpdate);
         timestampEl.textContent = `Last Updated: ${formattedTime}`;
+        console.log('✅ Timestamp updated successfully:', formattedTime);
     } else {
         timestampEl.textContent = 'Last Updated: Unavailable';
+        console.log('⚠️ Timestamp unavailable - no data found');
     }
+}
+
+// ===== AUTO-REFRESH SYSTEM =====
+
+let timestampRefreshInterval = null;
+
+// Start auto-refresh every 30 seconds
+function startTimestampAutoRefresh() {
+    console.log('🚀 Starting timestamp auto-refresh (every 30 seconds)');
+    
+    // Clear any existing interval
+    if (timestampRefreshInterval) {
+        clearInterval(timestampRefreshInterval);
+    }
+    
+    // Set up new interval
+    timestampRefreshInterval = setInterval(() => {
+        console.log('🔄 Auto-refreshing timestamp...');
+        updateLastUpdatedTimestamp();
+    }, 30000); // 30 seconds
+    
+    // Also update immediately
+    updateLastUpdatedTimestamp();
+}
+
+// Stop auto-refresh
+function stopTimestampAutoRefresh() {
+    console.log('🛑 Stopping timestamp auto-refresh');
+    if (timestampRefreshInterval) {
+        clearInterval(timestampRefreshInterval);
+        timestampRefreshInterval = null;
+    }
+}
+
+// Manual refresh function for debugging
+function refreshTimestampNow() {
+    console.log('🔄 Manual timestamp refresh requested');
+    updateLastUpdatedTimestamp();
+}
+
+// Initialize auto-refresh when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startTimestampAutoRefresh);
+} else {
+    startTimestampAutoRefresh();
 }
