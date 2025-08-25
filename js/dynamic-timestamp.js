@@ -18,39 +18,25 @@ async function getLastUpdateTimestamp() {
         
         console.log('🔍 Attempting to fetch last update timestamp...');
         
-        // Try multiple possible column names for timestamp
-        const possibleColumns = ['DATE', 'date', 'created_at', 'updated_at', 'timestamp'];
+        // Query the DATE column (case-sensitive with quotes in your schema)
+        const { data, error } = await supabaseClient
+            .from('raw_chests')
+            .select('DATE')
+            .order('DATE', { ascending: false })
+            .limit(1);
         
-        for (const column of possibleColumns) {
-            try {
-                console.log(`🔍 Trying column: ${column}`);
-                
-                const { data, error } = await supabaseClient
-                    .from('raw_chests')
-                    .select(column)
-                    .order(column, { ascending: false })
-                    .limit(1);
-                
-                if (error) {
-                    console.log(`⚠️ Column ${column} failed:`, error.message);
-                    continue; // Try next column
-                }
-                
-                if (data && data.length > 0 && data[0][column]) {
-                    const timestamp = new Date(data[0][column]);
-                    console.log(`✅ Successfully found timestamp from column ${column}:`, timestamp);
-                    return timestamp;
-                }
-                
-                console.log(`ℹ️ Column ${column} exists but returned no data`);
-                
-            } catch (columnError) {
-                console.log(`⚠️ Error with column ${column}:`, columnError.message);
-                continue; // Try next column
-            }
+        if (error) {
+            console.error(`❌ Error fetching from DATE column:`, error);
+            return null;
         }
         
-        console.log('❌ No valid timestamp column found in raw_chests table');
+        if (data && data.length > 0 && data[0].DATE) {
+            const timestamp = new Date(data[0].DATE);
+            console.log(`✅ Successfully found latest timestamp:`, timestamp);
+            return timestamp;
+        }
+        
+        console.log('❌ No data found in raw_chests table or DATE column is empty');
         return null;
         
     } catch (e) {
