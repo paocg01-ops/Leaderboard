@@ -501,34 +501,34 @@ function calculateWeekCycles() {
     const now = new Date();
     
     // Calculate cycle boundaries in UTC time
-    // Cycle: Sunday 4:00 PM UTC (16:00) - Next Sunday 3:59 PM UTC (15:59)
+    // Cycle: Sunday 5:00 PM UTC (17:00) - Next Sunday 4:59 PM UTC (16:59)
     let currentWeekStart = new Date(now);
     let currentWeekEnd = new Date(now);
     const currentUTCDay = now.getUTCDay();
     const currentUTCHour = now.getUTCHours();
 
     if (currentUTCDay === 0) { // Sunday in UTC
-      if (currentUTCHour < 16) { // Before 4:00 PM UTC
+      if (currentUTCHour < 17) { // Before 5:00 PM UTC
         // We're in the previous week's cycle
         currentWeekStart.setUTCDate(currentWeekStart.getUTCDate() - 7);
-        currentWeekStart.setUTCHours(16, 0, 0, 0);
-        currentWeekEnd.setUTCHours(15, 59, 59, 999);
-      } else { // After 4:00 PM UTC
+        currentWeekStart.setUTCHours(17, 0, 0, 0);
+        currentWeekEnd.setUTCHours(16, 59, 59, 999);
+      } else { // After 5:00 PM UTC
         // New cycle starts today
-        currentWeekStart.setUTCHours(16, 0, 0, 0);
+        currentWeekStart.setUTCHours(17, 0, 0, 0);
         currentWeekEnd.setUTCDate(currentWeekEnd.getUTCDate() + 7);
-        currentWeekEnd.setUTCHours(15, 59, 59, 999);
+        currentWeekEnd.setUTCHours(16, 59, 59, 999);
       }
     } else {
-      // Not Sunday - find the most recent Sunday 4:00 PM UTC
+      // Not Sunday - find the most recent Sunday 5:00 PM UTC
       const daysFromLastSunday = currentUTCDay;
       currentWeekStart.setUTCDate(currentWeekStart.getUTCDate() - daysFromLastSunday);
-      currentWeekStart.setUTCHours(16, 0, 0, 0);
+      currentWeekStart.setUTCHours(17, 0, 0, 0);
       
-      // End is next Sunday 3:59 PM UTC
+      // End is next Sunday 4:59 PM UTC
       const daysUntilNextSunday = 7 - currentUTCDay;
       currentWeekEnd.setUTCDate(currentWeekEnd.getUTCDate() + daysUntilNextSunday);
-      currentWeekEnd.setUTCHours(15, 59, 59, 999);
+      currentWeekEnd.setUTCHours(16, 59, 59, 999);
     }
 
     // Calculate last week's cycle
@@ -571,25 +571,25 @@ function updateCountdown() {
   try {
     const now = new Date();
     
-    // Calculate next cycle end in UTC time (Sunday 3:59 PM UTC)
+    // Calculate next cycle end in UTC time (Sunday 4:59 PM UTC)
     let nextCycleEnd = new Date(now);
     const currentUTCDay = now.getUTCDay();
     const currentUTCHour = now.getUTCHours();
     
     if (currentUTCDay === 0) { // Sunday in UTC
-      if (currentUTCHour < 16) { // Before 4:00 PM UTC (cycle hasn't ended yet)
-        // Current cycle ends today at 3:59 PM UTC
-        nextCycleEnd.setUTCHours(15, 59, 0, 0);
-      } else { // After 4:00 PM UTC (new cycle started)
+      if (currentUTCHour < 17) { // Before 5:00 PM UTC (cycle hasn't ended yet)
+        // Current cycle ends today at 4:59 PM UTC
+        nextCycleEnd.setUTCHours(16, 59, 0, 0);
+      } else { // After 5:00 PM UTC (new cycle started)
         // Next cycle ends in 7 days
         nextCycleEnd.setUTCDate(nextCycleEnd.getUTCDate() + 7);
-        nextCycleEnd.setUTCHours(15, 59, 0, 0);
+        nextCycleEnd.setUTCHours(16, 59, 0, 0);
       }
     } else {
-      // Find next Sunday 3:59 PM UTC
+      // Find next Sunday 4:59 PM UTC
       const daysUntilSunday = 7 - currentUTCDay;
       nextCycleEnd.setUTCDate(nextCycleEnd.getUTCDate() + daysUntilSunday);
-      nextCycleEnd.setUTCHours(15, 59, 0, 0);
+      nextCycleEnd.setUTCHours(16, 59, 0, 0);
     }
 
     const diff = nextCycleEnd.getTime() - now.getTime();
