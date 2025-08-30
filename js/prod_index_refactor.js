@@ -499,38 +499,57 @@ function updateBadgeEarners(players) {
 function calculateWeekCycles() {
   try {
     const now = new Date();
-    const mexicoTime = new Date(now.toLocaleString("en-US", { timeZone: "America/Mexico_City" }));
-    let currentWeekStart = new Date(mexicoTime);
-    let currentWeekEnd = new Date(mexicoTime);
-    const currentDay = mexicoTime.getDay();
-    const currentHour = mexicoTime.getHours();
-    const currentMinute = mexicoTime.getMinutes();
+    
+    // Calculate cycle boundaries in UTC time
+    // Cycle: Sunday 4:00 PM UTC (16:00) - Next Sunday 3:59 PM UTC (15:59)
+    let currentWeekStart = new Date(now);
+    let currentWeekEnd = new Date(now);
+    const currentUTCDay = now.getUTCDay();
+    const currentUTCHour = now.getUTCHours();
 
-    if (currentDay === 0) { // Sunday
-      if (currentHour < 11) {
-        currentWeekStart.setDate(currentWeekStart.getDate() - 7);
-        currentWeekStart.setHours(11, 0, 0, 0);
-        currentWeekEnd.setHours(10, 59, 59, 999);
-      } else {
-        currentWeekStart.setHours(11, 0, 0, 0);
-        currentWeekEnd.setDate(currentWeekEnd.getDate() + 7);
-        currentWeekEnd.setHours(10, 59, 59, 999);
+    if (currentUTCDay === 0) { // Sunday in UTC
+      if (currentUTCHour < 16) { // Before 4:00 PM UTC
+        // We're in the previous week's cycle
+        currentWeekStart.setUTCDate(currentWeekStart.getUTCDate() - 7);
+        currentWeekStart.setUTCHours(16, 0, 0, 0);
+        currentWeekEnd.setUTCHours(15, 59, 59, 999);
+      } else { // After 4:00 PM UTC
+        // New cycle starts today
+        currentWeekStart.setUTCHours(16, 0, 0, 0);
+        currentWeekEnd.setUTCDate(currentWeekEnd.getUTCDate() + 7);
+        currentWeekEnd.setUTCHours(15, 59, 59, 999);
       }
     } else {
-      const daysFromLastSunday = currentDay;
-      currentWeekStart.setDate(currentWeekStart.getDate() - daysFromLastSunday);
-      currentWeekStart.setHours(11, 0, 0, 0);
-      const daysUntilNextSunday = 7 - currentDay;
-      currentWeekEnd.setDate(currentWeekEnd.getDate() + daysUntilNextSunday);
-      currentWeekEnd.setHours(10, 59, 59, 999);
+      // Not Sunday - find the most recent Sunday 4:00 PM UTC
+      const daysFromLastSunday = currentUTCDay;
+      currentWeekStart.setUTCDate(currentWeekStart.getUTCDate() - daysFromLastSunday);
+      currentWeekStart.setUTCHours(16, 0, 0, 0);
+      
+      // End is next Sunday 3:59 PM UTC
+      const daysUntilNextSunday = 7 - currentUTCDay;
+      currentWeekEnd.setUTCDate(currentWeekEnd.getUTCDate() + daysUntilNextSunday);
+      currentWeekEnd.setUTCHours(15, 59, 59, 999);
     }
 
+    // Calculate last week's cycle
     const lastWeekStart = new Date(currentWeekStart.getTime() - (7 * 24 * 60 * 60 * 1000));
     const lastWeekEnd = new Date(currentWeekStart.getTime() - 1);
 
-    const fmtOpt = { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'America/Mexico_City' };
-    const currentCycleText = `${currentWeekStart.toLocaleDateString('en-US', fmtOpt)} - ${currentWeekEnd.toLocaleDateString('en-US', fmtOpt)}`;
-    const lastCycleText = `${lastWeekStart.toLocaleDateString('en-US', fmtOpt)} - ${lastWeekEnd.toLocaleDateString('en-US', fmtOpt)}`;
+    // Get user's timezone for display (same approach as dynamic-timestamp.js)
+    const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    
+    // Format dates in user's local timezone for display
+    const fmtOpt = { 
+      month: 'short', 
+      day: 'numeric', 
+      hour: 'numeric', 
+      minute: '2-digit', 
+      hour12: true, 
+      timeZone: userTimezone 
+    };
+    
+    const currentCycleText = `${currentWeekStart.toLocaleString('en-US', fmtOpt)} - ${currentWeekEnd.toLocaleString('en-US', fmtOpt)}`;
+    const lastCycleText = `${lastWeekStart.toLocaleString('en-US', fmtOpt)} - ${lastWeekEnd.toLocaleString('en-US', fmtOpt)}`;
 
     const currentCycleDates = $('currentCycleDates');
     const lastCycleDates = $('lastCycleDates');
@@ -551,33 +570,40 @@ function calculateWeekCycles() {
 function updateCountdown() {
   try {
     const now = new Date();
-    const mexicoTime = new Date(now.toLocaleString("en-US", { timeZone: "America/Mexico_City" }));
-    let nextSunday = new Date(mexicoTime);
-    const currentDay = mexicoTime.getDay();
-    if (currentDay === 0) {
-      const h = mexicoTime.getHours();
-      const m = mexicoTime.getMinutes();
-      if (h < 10 || (h === 10 && m < 59)) {
-        nextSunday.setHours(10, 59, 0, 0);
-      } else {
-        nextSunday.setDate(nextSunday.getDate() + 7);
-        nextSunday.setHours(10, 59, 0, 0);
+    
+    // Calculate next cycle end in UTC time (Sunday 3:59 PM UTC)
+    let nextCycleEnd = new Date(now);
+    const currentUTCDay = now.getUTCDay();
+    const currentUTCHour = now.getUTCHours();
+    
+    if (currentUTCDay === 0) { // Sunday in UTC
+      if (currentUTCHour < 16) { // Before 4:00 PM UTC (cycle hasn't ended yet)
+        // Current cycle ends today at 3:59 PM UTC
+        nextCycleEnd.setUTCHours(15, 59, 0, 0);
+      } else { // After 4:00 PM UTC (new cycle started)
+        // Next cycle ends in 7 days
+        nextCycleEnd.setUTCDate(nextCycleEnd.getUTCDate() + 7);
+        nextCycleEnd.setUTCHours(15, 59, 0, 0);
       }
     } else {
-      const daysUntilSunday = 7 - currentDay;
-      nextSunday.setDate(nextSunday.getDate() + daysUntilSunday);
-      nextSunday.setHours(10, 59, 0, 0);
+      // Find next Sunday 3:59 PM UTC
+      const daysUntilSunday = 7 - currentUTCDay;
+      nextCycleEnd.setUTCDate(nextCycleEnd.getUTCDate() + daysUntilSunday);
+      nextCycleEnd.setUTCHours(15, 59, 0, 0);
     }
 
-    const diff = nextSunday.getTime() - mexicoTime.getTime();
+    const diff = nextCycleEnd.getTime() - now.getTime();
+    
     // Support two UIs: a single #countdown element or a segmented #countdownDisplay with #days/#hours/#minutes/#seconds
     const single = document.getElementById('countdown');
     const segmented = document.getElementById('countdownDisplay');
+    
     if (diff > 0) {
       const d = Math.floor(diff / (24*60*60*1000));
       const h = Math.floor((diff % (24*60*60*1000)) / (60*60*1000));
       const m = Math.floor((diff % (60*60*1000)) / (60*1000));
       const s = Math.floor((diff % (60*1000)) / 1000);
+      
       if (single) single.textContent = `${d}d ${h}h ${m}m ${s}s`;
       if (segmented) {
         const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = String(val).padStart(2, '0'); };
