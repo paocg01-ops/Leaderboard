@@ -420,11 +420,29 @@ async function loadCryptBreakdown(playerName, isCurrentWeek = true) {
   content.innerHTML = '<div class="crypt-breakdown-loading">Loading crypt data...</div>';
   
   try {
-    // Get week date ranges
-    const weekCycles = window.__weekCycles || calculateWeekCycles();
+    // Get week date ranges - ensure weekCycles is properly initialized
+    let weekCycles = window.__weekCycles;
+    if (!weekCycles) {
+      weekCycles = calculateWeekCycles();
+      window.__weekCycles = weekCycles;
+    }
+    
+    if (!weekCycles || !weekCycles.currentWeekStart || !weekCycles.currentWeekEnd) {
+      console.error('Week cycles not properly initialized:', weekCycles);
+      content.innerHTML = '<div class="crypt-breakdown-loading">Error: Week cycles not available</div>';
+      return;
+    }
+    
     const dateRange = isCurrentWeek ? 
       { start: weekCycles.currentWeekStart, end: weekCycles.currentWeekEnd } :
       { start: weekCycles.lastWeekStart, end: weekCycles.lastWeekEnd };
+    
+    // Validate date range objects
+    if (!dateRange.start || !dateRange.end || typeof dateRange.start.toISOString !== 'function') {
+      console.error('Invalid date range:', dateRange);
+      content.innerHTML = '<div class="crypt-breakdown-loading">Error: Invalid date range</div>';
+      return;
+    }
     
     // Fetch raw chest data for the player within the date range
     const { data, error } = await sb
