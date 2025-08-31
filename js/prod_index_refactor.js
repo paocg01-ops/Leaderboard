@@ -364,6 +364,10 @@ function showPlayerModal(rank, playerName, score, chests, badges, badgeProgress,
   
   modal.classList.add('active');
   document.body.style.overflow = 'hidden'; // UX
+  
+  // Load crypt breakdown data for the appropriate week
+  const isCurrentWeek = (context !== 'last');
+  loadCryptBreakdown(playerName, isCurrentWeek);
 }
 
 function closePlayerModal() {
@@ -371,6 +375,15 @@ function closePlayerModal() {
   if (!modal) return;
   modal.classList.remove('active');
   document.body.style.overflow = '';
+  
+  // Reset crypt breakdown to collapsed state
+  const content = $('cryptBreakdownContent');
+  const toggle = $('cryptToggle');
+  if (content) content.style.display = 'none';
+  if (toggle) {
+    toggle.textContent = '▼';
+    toggle.classList.remove('rotated');
+  }
 }
 
 // click outside to close
@@ -378,6 +391,130 @@ addEventListener('click', (e) => {
   const modal = $('playerModal');
   if (e.target === modal) closePlayerModal();
 });
+
+// ===== 4B) CRYPT BREAKDOWN FUNCTIONALITY =====
+function toggleCryptBreakdown() {
+  const content = $('cryptBreakdownContent');
+  const toggle = $('cryptToggle');
+  
+  if (!content || !toggle) return;
+  
+  const isVisible = content.style.display !== 'none';
+  
+  if (isVisible) {
+    content.style.display = 'none';
+    toggle.textContent = '▼';
+    toggle.classList.remove('rotated');
+  } else {
+    content.style.display = 'block';
+    toggle.textContent = '▲';
+    toggle.classList.add('rotated');
+  }
+}
+
+async function loadCryptBreakdown(playerName, isCurrentWeek = true) {
+  const content = $('cryptBreakdownContent');
+  if (!content) return;
+  
+  // Show loading state
+  content.innerHTML = '<div class="crypt-breakdown-loading">Loading crypt data...</div>';
+  
+  try {
+    // Get week date ranges - ensure weekCycles is properly initialized
+    let weekCycles = window.__weekCycles;
+    
+    // Check if weekCycles exists and has valid date objects
+    if (!weekCycles || !weekCycles.current || !weekCycles.current.start || 
+        typeof weekCycles.current.start.toISOString !== 'function') {
+      
+      console.log('Week cycles not ready, calculating...');
+      weekCycles = calculateWeekCycles();
+      window.__weekCycles = weekCycles;
+      
+      // If still invalid after calculation, show error
+      if (!weekCycles || !weekCycles.current) {
+        console.error('Unable to calculate week cycles:', weekCycles);
+        content.innerHTML = '<div class="crypt-breakdown-loading">Unable to determine week cycle dates</div>';
+        return;
+      }
+    }
+    
+    const dateRange = isCurrentWeek ? 
+      { start: weekCycles.current.start, end: weekCycles.current.end } :
+      { start: weekCycles.last.start, end: weekCycles.last.end };
+    
+    // Validate that we have proper Date objects before using toISOString()
+    if (!(dateRange.start instanceof Date) || !(dateRange.end instanceof Date)) {
+      console.error('Invalid date objects:', dateRange);
+      content.innerHTML = '<div class="crypt-breakdown-loading">Error: Invalid date range</div>';
+      return;
+    }
+    
+    // Final check that Date methods are available
+    if (typeof dateRange.start.toISOString !== 'function' || typeof dateRange.end.toISOString !== 'function') {
+      console.error('Date objects missing toISOString method:', dateRange);
+      content.innerHTML = '<div class="crypt-breakdown-loading">Error: Invalid date range</div>';
+      return;
+    }
+    
+    // Fetch raw chest data for the player within the date range
+    const { data, error } = await sb
+      .from('raw_chests')
+      .select('SOURCE, DATE')
+      .eq('PLAYER', playerName)
+      .gte('DATE', dateRange.start.toISOString().split('T')[0])
+      .lte('DATE', dateRange.end.toISOString().split('T')[0]);
+    
+    if (error) {
+      console.error('Crypt breakdown error:', error);
+      content.innerHTML = '<div class="crypt-breakdown-loading">Error loading crypt data</div>';
+      return;
+    }
+    
+    if (!data || data.length === 0) {
+      content.innerHTML = '<div class="crypt-breakdown-loading">No crypt data found</div>';
+      return;
+    }
+    
+    // Group by source and count
+    const cryptCounts = {};
+    data.forEach(row => {
+      const source = row.SOURCE || 'Unknown';
+      cryptCounts[source] = (cryptCounts[source] || 0) + 1;
+    });
+    
+    // Sort by chest count (descending)
+    const sortedCrypts = Object.entries(cryptCounts)
+      .sort((a, b) => b[1] - a[1])
+      .map(([source, count]) => ({ source, count }));
+    
+    // Generate table HTML
+    const tableHTML = `
+      <table class="crypt-breakdown-table">
+        <thead>
+          <tr>
+            <th>Crypt Source</th>
+            <th>Chests</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${sortedCrypts.map(item => `
+            <tr>
+              <td>${item.source}</td>
+              <td>${item.count}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    `;
+    
+    content.innerHTML = tableHTML;
+    
+  } catch (err) {
+    console.error('Crypt breakdown exception:', err);
+    content.innerHTML = '<div class="crypt-breakdown-loading">Error loading crypt data</div>';
+  }
+}
 
 // ===== 5) DATA LOADERS =====
 async function loadCurrentWeek() {
