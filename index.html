@@ -1583,6 +1583,114 @@
             text-align: center;
         }
         
+        /* Crypt Breakdown Section */
+        .crypt-breakdown-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .crypt-breakdown-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding: 5px 0;
+            transition: all 0.2s ease;
+        }
+        
+        .crypt-breakdown-header:hover {
+            color: #F5B642;
+        }
+        
+        .crypt-breakdown-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #F5B642;
+        }
+        
+        .crypt-breakdown-toggle {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            color: #F5B642;
+        }
+        
+        .crypt-breakdown-toggle.rotated {
+            transform: rotate(180deg);
+        }
+        
+        .crypt-breakdown-content {
+            margin-top: 10px;
+            animation: slideDown 0.3s ease-out;
+        }
+        
+        .crypt-breakdown-loading {
+            text-align: center;
+            color: #FFD700;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .crypt-breakdown-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        .crypt-breakdown-table th {
+            background: rgba(245, 182, 66, 0.2);
+            color: #F5B642;
+            padding: 8px;
+            text-align: left;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .crypt-breakdown-table td {
+            padding: 6px 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+        }
+        
+        .crypt-breakdown-table tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Mobile responsive table with horizontal scroll */
+        @media (max-width: 480px) {
+            .crypt-breakdown-content {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .crypt-breakdown-table {
+                min-width: 250px;
+            }
+            
+            .crypt-breakdown-table th,
+            .crypt-breakdown-table td {
+                white-space: nowrap;
+                padding: 6px;
+                font-size: 0.75rem;
+            }
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+            to {
+                opacity: 1;
+                max-height: 300px;
+            }
+        }
+        
         .progress-item {
             margin-bottom: 8px;
             padding: 8px 12px;
@@ -2772,6 +2880,17 @@ body {
             
             <div class="badge-progress-section" id="modalProgress">
                 <!-- Progress info will be inserted here -->
+            </div>
+            
+            <!-- Crypt Breakdown Section -->
+            <div class="crypt-breakdown-section">
+                <div class="crypt-breakdown-header" onclick="toggleCryptBreakdown()">
+                    <span class="crypt-breakdown-title">📊 Crypt Participation</span>
+                    <span class="crypt-breakdown-toggle" id="cryptToggle">▼</span>
+                </div>
+                <div class="crypt-breakdown-content" id="cryptBreakdownContent" style="display: none;">
+                    <div class="crypt-breakdown-loading">Loading...</div>
+                </div>
             </div>
         </div>
     </div>
