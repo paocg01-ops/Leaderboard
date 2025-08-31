@@ -1,0 +1,15 @@
+Elven Citadel Chest
+From : Jukinos
+Source : Level 10 Citadel
+Bone Chest
+From : tledil
+Source : Level 15 Crypt
+Infernal Chest
+From : Marching Turnip
+Source : Level 10 Crypt
+Cobra Chest
+From : Marching Turnip
+Source : Level 10 Crypt
+Stone Chest
+From : tledil
+Source : Level 15 Crypt

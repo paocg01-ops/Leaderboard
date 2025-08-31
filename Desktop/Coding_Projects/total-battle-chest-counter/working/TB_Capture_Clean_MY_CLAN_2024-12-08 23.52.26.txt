@@ -1,0 +1,300 @@
+Elegant Chest
+From : Adoragar
+Source : Level 5 Crypt
+Elven Citadel Chest
+From : Railfiring
+Source : Level 10 Citadel
+Ore Chest
+From : Adoragar
+Source : Level 5 Crypt
+Rare Dragon Chest
+From : Railfiring
+Source : Level 10 rare Crypt
+Cobra Chest
+From : Adoragar
+Source : Level 5 Crypt
+Stone Chest
+From : Adoragar
+Source : Level 5 Crypt
+Cobra Chest
+From : Akigrel
+Source : Level 5 Crypt
+Forgotten Chest
+From : Akigrel
+Source : Level 5 Crypt
+Elegant Chest
+From : Maedfanir
+Source : Level 5 Crypt
+Bone Chest
+From : Railfiring
+Source : Level 5 Crypt
+Cobra Chest
+From : Guyren
+Source : Level 5 Crypt
+Sand Chest
+From : Adoragar
+Source : Level 5 Crypt
+Fire Chest
+From : VooDoo
+Source : Level 35-39 Vault of the Ancients
+Stone Chest
+From : Enzo
+Source : Level 5 Crypt
+Fire Chest
+From : VooDoo
+Source : Level 20-24 Vault of the Ancients
+Fire Chest
+From : Railfiring
+Source : Level 5 Crypt
+Barbarian Chest
+From : Guyren
+Source : Level 10 Crypt
+Mayan Chest
+From : eye
+Source : Level 10 Crypt
+Goon Citadel Chest
+From : Glorgolan
+Source : Level 10 Citadel
+Goon Citadel Chest
+From : Glorgolan
+Source : Level 15 Citadel
+Elven Citadel Chest
+From : Railfiring
+Source : Level 15 Citadel
+Ore Chest
+From : Guyren
+Source : Level 15 Crypt
+Cobra Chest
+From : Vudor
+Source : Level 15 Crypt
+Goon Citadel Chest
+From : Glorgolan
+Source : Level 10 Citadel
+Mayan Chest
+From : cat lady
+Source : Level 15 Crypt
+House of Horrors Chest
+From : cat lady
+Source : Level 15 epic Crypt
+Elegant Chest
+From : Maedfanir
+Source : Level 10 Crypt
+Ore Chest
+From : Lorlot
+Source : Level 15 Crypt
+Cobra Chest
+From : cat lady
+Source : Level 15 Crypt
+Infernal Chest
+From : Lorlot
+Source : Level 15 Crypt
+Fire Chest
+From : Lorlot
+Source : Level 25-29 Vault of the Ancients
+Fire Chest
+From : Lorlot
+Source : Level 20-24 Vault of the Ancients
+Elegant Chest
+From : Maedfanir
+Source : Level 10 Crypt
+Gear Citadel Chest
+From : Glorgolan
+Source : Level 15 Citadel
+Fire Chest
+From : Skull Hammer
+Source : Level 20-24 Vault of the Ancients
+Fire Chest
+From : Lorlot
+Source : Level 20-24 Vault of the Ancients
+Stone Chest
+From : Maedfanir
+Source : Level 5 Crypt
+Fire Chest
+From : Beraferyl
+Source : Level 20-24 Vault of the Ancients
+Fire Chest
+From : Lorlot
+Source : Level 25-29 Vault of the Ancients
+Fire Chest
+From : Lorlot
+Source : Level 15-19 Vault of the Ancients
+Stone Chest
+From : Maedfanir
+Source : Level 10 Crypt
+Sand Chest
+From : Targash
+Source : Level 15 Crypt
+Fire Chest
+From : Lorlot
+Source : Level 20-24 Vault of the Ancients
+Sand Chest
+From : Targash
+Source : Level 15 Crypt
+Bone Chest
+From : Targash
+Source : Level 15 Crypt
+Fire Chest
+From : Lorlot
+Source : Level 20-24 Vault of the Ancients
+Sand Chest
+From : Serdriilas
+Source : Level 15 Crypt
+Sand Chest
+From : Serdriilas
+Source : Level 10 Crypt
+Elegant Chest
+From : Maedfanir
+Source : Level 10 Crypt
+Gear Citadel Chest
+From : Targash
+Source : Level 15 Citadel
+Fire Chest
+From : Beraferyl
+Source : Level 25-29 Vault of the Ancients
+Sand Chest
+From : Dementus
+Source : Level 15 Crypt
+Mayan Chest
+From : Targie
+Source : Level 10 Crypt
+Fire Chest
+From : Lorlot
+Source : Level 20-24 Vault of the Ancients
+Forgotten Chest
+From : Targie
+Source : Level 10 Crypt
+Infernal Chest
+From : eye
+Source : Level 10 Crypt
+Barbarian Chest
+From : Dementus
+Source : Level 15 Crypt
+Fire Chest
+From : Beraferyl
+Source : Level 25-29 Vault of the Ancients
+Cobra Chest
+From : Targie
+Source : Level 10 Crypt
+Cobra Chest
+From : Targie
+Source : Level 10 Crypt
+Rare Dragon Chest
+From : Targie
+Source : Level 10 rare Crypt
+Gladiator's Chest
+From : eye
+Source : Arena
+Fire Chest
+From : Beraferyl
+Source : Level 20-24 Vault of the Ancients
+Rare Dragon Chest
+From : Maedfanir
+Source : Level 15 rare Crypt
+Fire Chest
+From : Dementus
+Source : Level 15 Crypt
+Elven Citadel Chest
+From : Tagoal
+Source : Level 20 Citadel
+Forgotten Chest
+From : Dementus
+Source : Level 20 Crypt
+Stone Chest
+From : Maedfanir
+Source : Level 10 Crypt
+Union Chest
+From : Lively Peach
+Source : Union of Triumph personal reward
+Union Chest
+From : Lively Peach
+Source : Union of Triumph personal reward
+Union Chest
+From : Lively Peach
+Source : Union of Triumph personal reward
+Union Chest
+From : Lively Peach
+Source : Union of Triumph personal reward
+Union Chest
+From : Lively Peach
+Source : Union of Triumph personal reward
+Stone Chest
+From : ammar
+Source : Level 5 Crypt
+Pacified Mimic Chest
+From : Lively Peach
+Source : Mimic Chest
+Goon Citadel Chest
+From : Tagoal
+Source : Level 20 Citadel
+Pacified Mimic Chest
+From : Lively Peach
+Source : Mimic Chest
+Gear Citadel Chest
+From : Railfiring
+Source : Level 15 Citadel
+Gnome Workshop Chest
+From : Lively Peach
+Source : Level 10 Crypt
+Gladiator's Chest
+From : eye
+Source : Arena
+Pacified Mimic Chest
+From : Sharra
+Source : Mimic Chest
+Orc Chest
+From : ammar
+Source : Level 5 Crypt
+Elegant Chest
+From : cat lady
+Source : Level 15 Crypt
+Union Chest
+From : Kiin
+Source : Union of Triumph personal reward
+Stone Chest
+From : Maedfanir
+Source : Level 5 Crypt
+Pacified Mimic Chest
+From : Hotmess
+Source : Mimic Chest
+Ancient Bastion Chest
+From : cat lady
+Source : Level 20 epic Crypt
+Mayan Chest
+From : Lively Peach
+Source : Level 10 Crypt
+Orc Chest
+From : Maedfanir
+Source : Level 10 Crypt
+Inferno Chest
+From : Skull Hammer
+Source : Level 20 heroic Monster
+Gnome Workshop Chest
+From : Sharra
+Source : Level 10 Crypt
+Elven Chest
+From : Skull Hammer
+Source : Level 22 heroic Monster
+Elegant Chest
+From : cat lady
+Source : Level 10 Crypt
+Orc Chest
+From : Maedfanir
+Source : Level 10 Crypt
+Stone Chest
+From : cat lady
+Source : Level 15 Crypt
+Rare Dragon Chest
+From : cat lady
+Source : Level 15 rare Crypt
+Undead Chest
+From : Skull Hammer
+Source : Level 21 heroic Monster
+Inferno Chest
+From : Skull Hammer
+Source : Level 20 heroic Monster
+Infernal Chest
+From : cat lady
+Source : Level 10 Crypt
+ean Citadel Chest
+From : tledil
+Source : Level 10 Citadel

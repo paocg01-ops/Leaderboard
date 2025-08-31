@@ -1,0 +1,4 @@
+2025-08-26 09:00:35,616 - INFO - Starting EOD upload to Supabase
+2025-08-26 09:00:35,619 - INFO - Processing CSV file: ../final/TB_Chests_Strike_for_Cake_2025-08-26_09.00.30_FINAL.csv
+2025-08-26 09:00:36,459 - INFO - Successfully connected to Supabase
+2025-08-26 09:00:36,479 - ERROR - CSV validation failed: 'utf-8' codec can't decode byte 0xe9 in position 5: invalid continuation byte

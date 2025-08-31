@@ -1,0 +1,494 @@
+--------------- 2024-12-23 00:31:29 --------------------------
+Bone Chest
+From: Briar
+Source: Level 10 Crypt
+aie Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Infernal Chest
+From: Briar
+Source: Level 10 Crypt
+Infernal Chest
+From: Girtheous Maximus
+Source: Level 10 Crypt
+--------------- 2024-12-23 00:31:33 --------------------------
+Bone Chest
+From: Briar
+Source: Level 10 Crypt
+Union Chest
+From: Tagoal
+Source: Union of Triumph personal reward
+Stone Chest
+From: Orodfed
+Source: Level 10 Crypt
+Fire Chest
+From: Marching Turnip
+Source: Level 15 Crypt
+--------------- 2024-12-23 00:31:37 --------------------------
+Fire Chest
+From: Marching Turnip
+Source: Level 15 Crypt
+Gnome Workshop Chest
+From: Agarus
+Source: Level 10 Crypt
+Barbarian Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Mayan Chest
+From: RG
+Source: Level 10 Crypt
+--------------- 2024-12-23 00:31:42 --------------------------
+Sand Chest
+From: RG
+Source: Level 10 Crypt
+Elegant Chest
+From: RG
+Source: Level 5 Crypt
+Stone Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Gnome Workshop Chest
+From: Adolbine
+Source: Level 5 Crypt
+--------------- 2024-12-23 00:31:46 --------------------------
+Fire Chest
+From: Adolbine
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: Tagoal
+Source: Level 15 rare Crypt
+Barbarian Chest
+From: Hledil
+Source: Level 5 Crypt
+Cobalt Chest
+From: Adolbine
+Source: Level 15 epic Crypt
+--------------- 2024-12-23 00:31:50 --------------------------
+Orc Chest
+From: Tagoal
+Source: Level 15 Crypt
+Bone Chest
+From: Marching Turnip
+Source: Level 15 Crypt
+Mayan Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Cobra Chest
+From: TomasS
+Source: Level 5 Crypt
+--------------- 2024-12-23 00:31:54 --------------------------
+Cobra Chest
+From: ledil
+Source: Level 10 Crypt
+Bone Chest
+From: Marching Turnip
+Source: Level 15 Crypt
+Infernal Chest
+From: TomasS
+Source: Level 5 Crypt
+Elegant Chest
+From: Adolbine
+Source: Level 5 Crypt
+--------------- 2024-12-23 00:31:58 --------------------------
+Gnome Workshop Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Stone Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Barbarian Chest
+From: Hledil
+Source: Level 10 Crypt
+Fire Chest
+From: tledil
+Source: Level 10 Crypt
+--------------- 2024-12-23 00:32:02 --------------------------
+Barbarian Chest
+From: ledil
+Source: Level 10 Crypt
+Cobra Chest
+From: tledil
+Source: Level 5 Crypt
+Fire Chest
+From: Hledil
+Source: Level 5 Crypt
+Ba rbarian Chest
+From: tledil
+Source: Level 10 Crypt
+--------------- 2024-12-23 00:32:06 --------------------------
+Bone Chest
+From: ledil
+Source: Level 5 Crypt
+Sand Chest
+From: Marching Turnip
+Source: Level 15 Crypt
+Fire Chest
+From: Elbrinan
+Source: Level 10 Crypt
+Barbarian Chest
+From: tledil
+Source: Level 15 Crypt
+--------------- 2024-12-23 00:32:11 --------------------------
+Elven Citadel Chest
+From: ledil
+Source: Level 10 Citadel
+Fire Chest
+From: Elbrinan
+Source: Level 10 Crypt
+Cobra Chest
+From: Niin
+Source: Level 15 Crypt
+Elven Citadel Chest
+From: tledil
+Source: Level 10 Citadel
+--------------- 2024-12-23 00:32:15 --------------------------
+Fire Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+sand Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Forgotten Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Elven Citadel Chest
+From: tledil
+Source: Level 15 Citadel
+--------------- 2024-12-23 00:32:19 --------------------------
+Elven Citadel Chest
+From: ledil
+Source: Level 15 Citadel
+Bone Chest
+From: Marching Turnip
+Source: Level 15 Crypt
+Bone Chest
+From: Jukinos
+Source: Level 5 Crypt
+Fire Chest
+From: Jukinos
+Source: Level 10 Crypt
+--------------- 2024-12-23 00:32:23 --------------------------
+Elven Citadel Chest
+From: ledil
+Source: Level 15 Citadel
+Bone Chest
+From: Niin
+Source: Level 10 Crypt
+Barbarian Chest
+From: Jukinos
+Source: Level 5 Crypt
+imal Chest
+From: Jukinos
+Source: Level 5 Crypt
+--------------- 2024-12-23 00:32:28 --------------------------
+Cobra Chest
+From: ledil
+Source: Level 15 Crypt
+Fire Chest
+From: Marching Turnip
+Source: Level 15 Crypt
+Gladiator's Chest
+From: Marching Turnip
+Source: Arena
+Bone Chest
+From: Marching Turnip
+Source: Level 15 Crypt
+--------------- 2024-12-23 00:32:32 --------------------------
+Stone Chest
+From: Marching Turnip
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: tledil
+Source: Level 15 rare Crypt
+Orc Chest
+From: Mark Fish
+Source: Level 15 Crypt
+Bone Chest
+From: Marching Turnip
+Source: Level 15 Crypt
+--------------- 2024-12-23 00:32:36 --------------------------
+Rare Dragon Chest
+From: ledil
+Source: Level 15 rare Crypt
+Mayan Chest
+From: Mark Fish
+Source: Level 15 Crypt
+Barbarian Chest
+From: Hledil
+Source: Level 10 Crypt
+Barbarian Chest
+From: tledil
+Source: Level 5 Crypt
+--------------- 2024-12-23 00:32:40 --------------------------
+Elegant Chest
+From: ledil
+Source: Level 10 Crypt
+Elegant Chest
+From: tledil
+Source: Level 5 Crypt
+Elven Chest
+From: Beraferyl
+Source: Level 17 heroic Monster
+Elegant Chest
+From: ammar
+Source: Level 5 Crypt
+--------------- 2024-12-23 00:32:45 --------------------------
+House of Horrors Chest
+From: Mark Fish
+Source: Level 15 epic Crypt
+Snowman chest
+From: Girtheous Maximus
+Source: Snowman
+ean Citadel Chest
+From: Marond
+Source: Level 10 Citadel
+Infernal Chest
+From: ammar
+Source: Level 10 Crypt
+--------------- 2024-12-23 00:32:49 --------------------------
+Rare Dragon Chest
+From: Girtheous Maximus
+Source: Level 10 rare Crypt
+Gear Citadel Chest
+From: Skull Hammer
+Source: Level 15 Citadel
+Sand Chest
+From: Girtheous Maximus
+Source: Level 10 Crypt
+Cobra Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+--------------- 2024-12-23 00:32:54 --------------------------
+Snowman chest
+From: Skull Hammer
+Source; Snowman
+Gnome Workshop Chest
+From: Sir Malacage
+Source: Level 15 Crypt
+Forgotten Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Snowman chest
+From: Moogukus
+Source: Snowman
+--------------- 2024-12-23 00:32:58 --------------------------
+Elegant Chest
+From: Marching Turnip
+Source: Level 15 Crypt
+Elegant Chest
+From: Gujind
+Source: Level 10 Crypt
+Braided Chest
+From: Sir Malacage
+Source: Level 15 epic Crypt
+Snowman chest
+From: Girtheous Maximus
+Source: Snowman
+--------------- 2024-12-23 00:33:03 --------------------------
+Snowman chest
+From: Girtheous Maximus
+Source: Christmas Ritual tournament
+Forgotten Chest
+From: Sir Malacage
+Source: Level 15 Crypt
+Snowman chest
+From: Marching Turnip
+Source: Christmas Ritual tournament
+Rare Dragon Chest
+From: Girtheous Maximus
+Source: Level 15 rare Crypt
+--------------- 2024-12-23 00:33:07 --------------------------
+Bone Chest
+From: Sharra
+Source: Level 10 Crypt
+Stone Chest
+From: Sharra
+Source: Level 10 Crypt
+Sand Chest
+From: Gujind
+Source: Level 10 Crypt
+f Sand Chest
+From: Sharra
+Source: Level 10 Crypt
+--------------- 2024-12-23 00:33:11 --------------------------
+Elven Citadel Chest
+From: Beraferyl
+Source: Level 20 Citadel
+Titansteel Chest
+From: Sharra
+Source: Level 15 epic Crypt
+Forgotten Chest
+From: Sir Malacage
+Source: Level 5 Crypt
+sand Chest
+From: Sir Malacage
+Source: Level 5 Crypt
+--------------- 2024-12-23 00:33:15 --------------------------
+Common Chest of Wealth
+From: Beraferyl
+Source: Clan wealth
+Uncommon Chest of Wealth
+From: Beraferyl
+Source: Clan wealth
+oe Chest of Wealth
+From: Beraferyl
+Source: Clan wealth
+Snowman chest
+From: Sharra
+Source: Snowman
+--------------- 2024-12-23 00:33:20 --------------------------
+Snowman chest
+From: Sir Malacage
+Source: Christmas Ritual tournament
+Snowman chest
+From: Sharra
+Source: Snowman
+Stone Chest
+From: Felix
+Source: Level 10 Crypt
+Stone Chest
+From: Felix
+Source: Level 10 Crypt
+--------------- 2024-12-23 00:33:24 --------------------------
+Gnome Workshop Chest
+From: Sir Malacage
+Source: Level 15 Crypt
+Snowman chest
+From: Sir Malacage
+Source: Snowman
+Goon Citadel Chest
+From: Sir Malacage
+Source: Level 10 Citadel
+Ore Chest
+From: Sir Malacage
+Source: Level 5 Crypt
+--------------- 2024-12-23 00:33:29 --------------------------
+Infernal Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Bone Chest
+From: Girtheous Maximus
+Source: Level 10 Crypt
+Fire Chest
+From: Cen.
+Source: Level 10 Crypt
+Fire Chest
+From: Girtheous Maximus
+Source: Level 10 Crypt
+--------------- 2024-12-23 00:33:33 --------------------------
+Barbarian Chest
+From: Girtheous Maximus
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: Girtheous Maximus
+Source: Level 10 rare Crypt
+Rare Dragon Chest
+From: Beraferyl
+Source: Level 20 rare Crypt
+Sand Chest
+From: Beraferyl
+Source: Level 15 Crypt
+--------------- 2024-12-23 00:33:37 --------------------------
+Rare Dragon Chest
+From: Girtheous Maximus
+Source: Level 10 rare Crypt
+Turtle Chest
+From: Beraferyl
+Source: Level 15 epic Crypt
+Priest's Chest
+From: Beraferyl
+Source: Level 15 epic Crypt
+Barbarian Chest
+From: Beraferyl
+Source: Level 15 epic Crypt
+--------------- 2024-12-23 00:33:42 --------------------------
+Titansteel Chest
+From: Beraferyl
+Source: Level 20 epic Crypt
+Greve
+From: Skull Hammer
+Source: Level 25 Crypt
+Ancient Warrior's Chest
+From: Skull Hammer
+Source: Level 25 epic Crypt
+Elegant Chest
+From: Serdriilas
+Source: Level 10 Crypt
+--------------- 2024-12-23 00:33:46 --------------------------
+Elven Citadel Chest
+From: Sir Malacage
+Source: Level 10 Citadel
+Rare Dragon Chest
+From: Sir Malacage
+Source: Level 10 rare Crypt
+Elegant Chest
+From: Serdriilas
+Source: Level 15 Crypt
+Gladiator's Chest
+From: Gujind
+Source: Arena
+--------------- 2024-12-23 00:33:50 --------------------------
+Barbarian Chest
+From: Gujind
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: Sir Malacage
+Source: Level 10 rare Crypt
+Orc Chest
+From: Gujind
+Source: Level 10 Crypt
+Bone Chest
+From: Gujind
+Source: Level 10 Crypt
+--------------- 2024-12-23 00:33:54 --------------------------
+Cobra Chest
+From: Gujind
+Source: Level 5 Crypt
+Barbarian Chest
+From: Gujind
+Source: Level 5 Crypt
+Fire Chest
+From: Gujind
+Source: Level 10 Crypt
+Stone Chest
+From: Gujind
+Source: Level 10 Crypt
+--------------- 2024-12-23 00:33:58 --------------------------
+Infernal Chest
+From: eye
+Source: Level 10 Crypt
+Bone Chest
+From: Gujind
+Source: Level 5 Crypt
+Orc Chest
+From: Maedfanir
+Source: Level 5 Crypt
+Rare Dragon Chest
+From: Sharra
+Source; Level 10 rare Crypt
+--------------- 2024-12-23 00:34:03 --------------------------
+Stone Chest
+From: Sharra
+Source: Level 10 Crypt
+Orc Chest
+From: Sharra
+Source: Level 10 Crypt
+Mayan Chest
+From: Sharra
+Source: Level 10 Crypt
+Cobra Chest
+From: Railfiring
+Source: Level 10 Crypt
+--------------- 2024-12-23 00:34:07 --------------------------
+Cobra Chest
+From: Maedfanir
+Source: Level 5 Crypt
+Stone Chest
+From: Maedfanir
+Source: Level 10 Crypt
+Elegant Chest
+From: Freya
+Source: Level 20 Crypt
+Mayan Chest
+From: Maedfanir
+Source: Level 5 Crypt

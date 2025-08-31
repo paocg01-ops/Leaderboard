@@ -1,0 +1,75 @@
+--------------- 2025-08-16 11:27:36 --------------------------
+Mayan Chest
+From: Kigam
+Source: Level 20 Crypt
+Cursed Citadel Chest
+From: Kosak
+Source: Level 20 Citadel
+Mayan Chest
+From: Shoyon
+Source: Level 15 Crypt
+Fire Chest
+From: Gazius
+Source: Level 15 Crypt
+--------------- 2025-08-16 11:27:40 --------------------------
+Barbarian Chest
+From: Gazius
+Source: Level 20 Crypt
+Mayan Chest
+From: Gazius
+Source: Level 20 Crypt
+Cursed Citadel Chest
+From: Kosak
+Source: Level 20 Citadel
+Infernal Chest
+From: Shoyon
+Source: Level 10 Crypt
+--------------- 2025-08-16 11:27:44 --------------------------
+Fire Chest
+From: Shoyon
+Source: Level 10 Crypt
+Barbarian Chest
+From: Kigam
+Source: Level 20 Crypt
+Fire Chest
+From: Cedora
+Source: Level 15 Crypt
+Elven Citadel Chest
+From: Lava Lynx Zius
+Source: Level 15 Citadel
+--------------- 2025-08-16 11:27:49 --------------------------
+Infernal Chest
+From: Cedora
+Source: Level 15 Crypt
+Mayan Chest
+From: Cedora
+Source: Level 15 Crypt
+Trillium Chest
+From: Ciditoo
+Source: Level 20 epic Crypt
+Mayan Chest
+From: Lava Lynx Zius
+Source: Level 20 Crypt
+--------------- 2025-08-16 11:27:53 --------------------------
+Gnome Workshop Chest
+From: Lava Lynx Zius
+Source: Level 20 Crypt
+Cobra Chest
+From: Art
+Source: Level 10 Crypt
+Gnome Workshop Chest
+From: Lava Lynx Zius
+Source: Level 20 Crypt
+Sapphire Chest
+From: Art
+Source: Level 25-29 Vault of the Ancients
+--------------- 2025-08-16 11:27:57 --------------------------
+Gnome Workshop Chest
+From: Taugal
+Source: Level 15 Crypt
+Gnome Workshop Chest
+From: Art
+Source: Level 15 Crypt
+Infernal Chest
+From: Enneen
+Source: Level 15 Crypt

@@ -1,0 +1,564 @@
+--------------- 2024-12-06 01:03:44 --------------------------
+Elegant Chest
+From: Railfiring
+Source: Level 5 Crypt
+Sand Chest
+From: Railfiring
+Source: Level 5 Crypt
+Gee Citadel Chest
+From: Railfiring
+Source: Level 10 Citadel
+Stone Chest
+From: ammar
+Source: Level 15 Crypt
+--------------- 2024-12-06 01:03:48 --------------------------
+Stone Chest
+From: Guyren
+Source: Level 15 Crypt
+Forgotten Chest
+From: Railfiring
+Source: Level 5 Crypt
+oe
+Stone Chest
+From: ammar
+Source: Level 10 Crypt
+oe
+Gladiator's Chest
+From: TomasS
+Source: Arena
+--------------- The above segment might not be present in the archive file due to processing errors
+--------------- 2024-12-06 01:04:21 --------------------------
+Stone Chest
+From: Guyren
+Source: Level 15 Crypt
+Forgotten Chest
+From: Railfiring
+Source: Level 5 Crypt
+Stone Chest
+From: ammar
+Source: Level 10 Crypt
+Gladiator's Chest
+From: TomasS
+Source: Arena
+--------------- 2024-12-06 01:04:25 --------------------------
+Fire Chest
+From: Guyren
+Source: Level 5 Crypt
+Stone Chest
+From: ammar
+Source: Level 10 Crypt
+oe
+Infernal Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+oe
+Rare Dragon Chest
+From: Sir Malacage
+Source; Level 10 rare Crypt
+--------------- The above segment might not be present in the archive file due to processing errors
+--------------- 2024-12-06 01:05:36 --------------------------
+Fire Chest
+From: Guyren
+Source: Level 5 Crypt
+Stone Chest
+From: ammar
+Source: Level 10 Crypt
+Infernal Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: Sir Malacage
+Source: Level 10 rare Crypt
+--------------- 2024-12-06 01:05:39 --------------------------
+Bone Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Bone Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Fire Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+oe
+Orc Chest
+From: Girtheous Maximus
+Source: Level 10 Crypt
+--------------- The above segment might not be present in the archive file due to processing errors
+--------------- 2024-12-06 01:06:02 --------------------------
+Bone Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Bone Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+re Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Ore Chest
+From: Girtheous Maximus
+Source: Level 10 Crypt
+--------------- 2024-12-06 01:06:06 --------------------------
+Forgotten Chest
+From: Serdriilas
+Source: Level 10 Crypt
+Elegant Chest
+From: Skull Hammer
+Source: Level 25 Crypt
+oe
+Stone Chest
+From: ammar
+Source: Level 10 Crypt
+oe
+Stone Chest
+From: Slayer
+Source: Level 5 Crypt
+--------------- The above segment might not be present in the archive file due to processing errors
+--------------- 2024-12-06 01:06:35 --------------------------
+Forgotten Chest
+From: Serdriilas
+Source: Level 10 Crypt
+Elegant Chest
+From: Skull Hammer
+Source: Level 25 Crypt
+Stone Chest
+From: ammar
+Source: Level 10 Crypt
+Stone Chest
+From: Slayer
+Source: Level 5 Crypt
+--------------- 2024-12-06 01:06:39 --------------------------
+Fire Chest
+From: Skull Hammer
+Source: Level 25 Crypt
+Infernal Chest
+From: Slayer
+Source: Level 10 Crypt
+White Wood Chest
+From: Skull Hammer
+Source: Level 25 epic Crypt
+sand Chest
+From: Serdriilas
+Source: Level 10 Crypt
+--------------- 2024-12-06 01:06:43 --------------------------
+Orc Chest
+From: Guyren
+Source: Level 10 Crypt
+Bone Chest
+From: Skull Hammer
+Source: Level 25 Crypt
+Forgotten Chest
+From: Slayer
+Source: Level 5 Crypt
+Bone Chest
+From: Slayer
+Source: Level 5 Crypt
+--------------- 2024-12-06 01:06:47 --------------------------
+Cobra Chest
+From: Slayer
+Source: Level 5 Crypt
+Fire Chest
+From: Skull Hammer
+Source: Level 25 Crypt
+Gnome Workshop Chest
+From: Slayer
+Source: Level 10 Crypt
+Cobra Chest
+From: Felix
+Source: Level 10 Crypt
+--------------- 2024-12-06 01:06:51 --------------------------
+Sand Chest
+From: Skull Hammer
+Source: Level 15 Crypt
+Infernal Chest
+From: Slayer
+Source: Level 10 Crypt
+oe
+Infernal Chest
+From: Slayer
+Source: Level 10 Crypt
+oe
+Mayan Chest
+From: Slayer
+Source: Level 5 Crypt
+--------------- The above segment might not be present in the archive file due to processing errors
+--------------- 2024-12-06 01:07:24 --------------------------
+Sand Chest
+From: Skull Hammer
+Source: Level 15 Crypt
+Infernal Chest
+From: Slayer
+Source: Level 10 Crypt
+Infernal Chest
+From: Slayer
+Source: Level 10 Crypt
+Mayan Chest
+From: Slayer
+Source: Level 5 Crypt
+--------------- 2024-12-06 01:07:28 --------------------------
+Sand Chest
+From: Skull Hammer
+Source: Level 20 Crypt
+Fire Chest
+From: Slayer
+Source: Level 5 Crypt
+Barbarian Chest
+From: Serdriilas
+Source: Level 10 Crypt
+Union Chest
+From: Beraferyl
+Source: Union of Triumph personal reward
+--------------- 2024-12-06 01:08:14 --------------------------
+Union Chest
+From: Beraferyl
+Source: Union of Triumph personal reward
+Union Chest
+From: Beraferyl
+Source: Union of Triumph personal reward
+Bone Chest
+From: Slayer
+Source: Level 5 Crypt
+Union Chest
+From: Beraferyl
+Source: Union of Triumph personal reward
+--------------- 2024-12-06 01:08:18 --------------------------
+Union Chest
+From: Beraferyl
+Source: Union of Triumph personal reward
+Union Chest
+From: Beraferyl
+Source: Union of Triumph personal reward
+Forgotten Chest
+From: Girtheous Maximus
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: Guyren
+Source: Level 15 rare Crypt
+--------------- 2024-12-06 01:08:22 --------------------------
+Forgotten Chest
+From: Serdriilas
+Source: Level 10 Crypt
+Barbarian Chest
+From: Cen.
+Source: Level 10 Crypt
+Cobra Chest
+From: Slayer
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: Serdriilas
+Source; Level 10 rare Crypt
+--------------- 2024-12-06 01:08:26 --------------------------
+Elegant Chest
+From: Serdriilas
+Source: Level 10 Crypt
+Forgotten Chest
+From: Slayer
+Source: Level 5 Crypt
+oe
+Fire Chest
+From: Slayer
+Source: Level 10 Crypt
+Gnome Workshop Chest
+From: Slayer
+Source: Level 10 Crypt
+--------------- The above segment might not be present in the archive file due to processing errors
+--------------- 2024-12-06 01:08:53 --------------------------
+Elegant Chest
+From: Serdriilas
+Source: Level 10 Crypt
+Forgotten Chest
+From: Slayer
+Source: Level 5 Crypt
+re Chest
+From: Slayer
+Source: Level 10 Crypt
+Gnome Workshop Chest
+From: Slayer
+Source: Level 10 Crypt
+--------------- 2024-12-06 01:08:57 --------------------------
+Mayan Chest
+From: Serdriilas
+Source: Level 10 Crypt
+Fire Chest
+From: Slayer
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: Serdriilas
+Source: Level 10 rare Crypt
+Barbarian Chest
+From: Serdriilas
+Source: Level 5 Crypt
+--------------- 2024-12-06 01:09:01 --------------------------
+Cobra Chest
+From: Serdriilas
+Source: Level 10 Crypt
+Cobra Chest
+From: Serdriilas
+Source: Level 10 Crypt
+Gear Citadel Chest
+From: Serdriilas
+Source: Level 10 Citadel
+Rare Dragon Chest
+From: Serdriilas
+Source; Level 10 rare Crypt
+--------------- 2024-12-06 01:09:05 --------------------------
+Elven Citadel Chest
+From: Serdriilas
+Source: Level 15 Citadel
+Rare Dragon Chest
+From: Serdriilas
+Source: Level 15 rare Crypt
+Infernal Chest
+From: Vessler
+Source: Level 10 Crypt
+Forgotten Chest
+From: Lorlot
+Source: Level 15 Crypt
+--------------- 2024-12-06 01:09:09 --------------------------
+Orc Chest
+From: Lorlot
+Source: Level 15 Crypt
+Ore Chest
+From: Lorlot
+Source: Level 15 Crypt
+Mayan Chest
+From: Goldenknight
+Source: Level 10 Crypt
+Infernal Chest
+From: Goldenknight
+Source: Level 15 Crypt
+--------------- 2024-12-06 01:09:12 --------------------------
+Forgotten Chest
+From: Hotmess
+Source: Level 15 Crypt
+Infernal Chest
+From: Goldenknight
+Source: Level 15 Crypt
+Gear Citadel Chest
+From: Lorlot
+Source: Level 20 Citadel
+Union Chest
+From: Sharra
+Source: Union of Triumph personal reward
+--------------- 2024-12-06 01:09:16 --------------------------
+Gnome Workshop Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Barbarian Chest
+From: Melchizedek
+Source: Level 5 Crypt
+Bone Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Mayan Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+--------------- 2024-12-06 01:09:20 --------------------------
+Sand Chest
+From: Melchizedek
+Source: Level 5 Crypt
+Infernal Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Ore Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Gnome Workshop Chest
+From: Melchizedek
+Source: Level 10 Crypt
+--------------- 2024-12-06 01:09:24 --------------------------
+Sand Chest
+From: eye
+Source: Level 10 Crypt
+Bone Chest
+From: Tagoal
+Source: Level 15 Crypt
+oe
+Stone Chest
+From: ammar
+Source: Level 10 Crypt
+oe
+Barbarian Chest
+From: Melchizedek
+Source: Level 10 Crypt
+--------------- The above segment might not be present in the archive file due to processing errors
+--------------- 2024-12-06 01:09:59 --------------------------
+Sand Chest
+From: eye
+Source: Level 10 Crypt
+Bone Chest
+From: Tagoal
+Source: Level 15 Crypt
+Stone Chest
+From: ammar
+Source: Level 10 Crypt
+Barbarian Chest
+From: Melchizedek
+Source: Level 10 Crypt
+--------------- 2024-12-06 01:10:03 --------------------------
+Stone Chest
+From: ammar
+Source: Level 5 Crypt
+Orc Chest
+From: Lorlot
+Source: Level 15 Crypt
+Stone Chest
+From: Lorlot
+Source: Level 20 Crypt
+Fire Chest
+From: Briar Beag
+Source: Level 10 Crypt
+--------------- 2024-12-06 01:10:07 --------------------------
+Stone Chest
+From: 3antar86
+Source: Level 5 Crypt
+Rare Dragon Chest
+From: Lorlot
+Source: Level 20 rare Crypt
+House of Horrors Chest
+From: Lorlot
+Source: Level 20 epic Crypt
+Harpy Chest
+From: Lorlot
+Source; Level 20 epic Crypt
+--------------- 2024-12-06 01:10:11 --------------------------
+Bone Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Trillium Chest
+From: Lorlot
+Source: Level 25 epic Crypt
+Forgotten Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Stone Chest
+From: Lorlot
+Source: Level 15 Crypt
+--------------- 2024-12-06 01:10:15 --------------------------
+Fire Chest
+From: Cen
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: Sir Malacage
+Source: Level 15 rare Crypt
+Barbarian Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+Stone Chest
+From: Sir Malacage
+Source: Level 10 Crypt
+--------------- 2024-12-06 01:10:19 --------------------------
+Sand Chest
+From: Cen
+Source: Level 10 Crypt
+Forgotten Chest
+From: Noli
+Source: Level 15 Crypt
+oe
+Infernal Chest
+From: Noli
+Source: Level 15 Crypt
+oe
+Gladiator's Chest
+From: Guyren
+Source: Arena
+--------------- The above segment might not be present in the archive file due to processing errors
+--------------- 2024-12-06 01:10:40 --------------------------
+Sand Chest
+From: Cen
+Source: Level 10 Crypt
+Forgotten Chest
+From: Noli
+Source: Level 15 Crypt
+Infernal Chest
+From: Noli
+Source: Level 15 Crypt
+Gladiator's Chest
+From: Guyren
+Source: Arena
+--------------- 2024-12-06 01:10:44 --------------------------
+Turtle Chest
+From: Noli
+Source: Level 15 epic Crypt
+Elven Citadel Chest
+From: Elbrinan
+Source: Level 15 Citadel
+Rare Dragon Chest
+From: Noli
+Source: Level 15 rare Crypt
+Ore Chest
+From: Lorlot
+Source: Level 15 Crypt
+--------------- 2024-12-06 01:10:48 --------------------------
+Rare Dragon Chest
+From: Mark Fish
+Source: Level 20 rare Crypt
+Ancient Warrior's Chest
+From: Anya
+Source: Level 15 epic Crypt
+Chest of the Cursed
+From: Anya
+Source: Level 15 epic Crypt
+Greve
+From: Goldenknight
+Source: Level 15 Crypt
+--------------- 2024-12-06 01:10:52 --------------------------
+Rare Dragon Chest
+From: Anya
+Source: Level 15 rare Crypt
+Gear Citadel Chest
+From: Briar Beag
+Source: Level 10 Citadel
+Rare Dragon Chest
+From: Anya
+Source: Level 15 rare Crypt
+Barbarian Chest
+From: Targie
+Source: Level 10 Crypt
+--------------- 2024-12-06 01:10:56 --------------------------
+Elegant Chest
+From: Targash
+Source: Level 15 Crypt
+Forgotten Chest
+From: Targie
+Source: Level 10 Crypt
+oe
+Fire Chest
+From: Targash
+Source: Level 15 Crypt
+oe
+Mayan Chest
+From: TapSumBong
+Source: Level 10 Crypt
+--------------- The above segment might not be present in the archive file due to processing errors
+--------------- 2024-12-06 01:11:10 --------------------------
+Elegant Chest
+From: Targash
+Source: Level 15 Crypt
+Forgotten Chest
+From: Targie
+Source: Level 10 Crypt
+oe
+Fire Chest
+From: Targash
+Source: Level 15 Crypt
+oe
+Mayan Chest
+From: TapSumBong
+Source: Level 10 Crypt
+--------------- The above segment might not be present in the archive file due to processing errors
+--------------- 2024-12-06 01:11:20 --------------------------
+Elegant Chest
+From: Targash
+Source: Level 15 Crypt
+Forgotten Chest
+From: Targie
+Source: Level 10 Crypt
+oe
+Fire Chest
+From: Targash
+Source: Level 15 Crypt
+oe
+Mayan Chest
+From: TapSumBong
+Source: Level 10 Crypt
+--------------- The above segment might not be present in the archive file due to processing errors

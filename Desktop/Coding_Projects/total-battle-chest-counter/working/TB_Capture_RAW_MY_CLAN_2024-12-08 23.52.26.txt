@@ -1,0 +1,325 @@
+--------------- 2024-12-08 23:52:32 --------------------------
+Elegant Chest
+From: Adoragar
+Source: Level 5 Crypt
+Elven Citadel Chest
+From: Railfiring
+Source: Level 10 Citadel
+Ore Chest
+From: Adoragar
+Source: Level 5 Crypt
+Rare Dragon Chest
+From: Railfiring
+Source: Level 10 rare Crypt
+--------------- 2024-12-08 23:52:37 --------------------------
+Cobra Chest
+From: Adoragar
+Source: Level 5 Crypt
+Stone Chest
+From: Adoragar
+Source: Level 5 Crypt
+Cobra Chest
+From: Akigrel
+Source: Level 5 Crypt
+Forgotten Chest
+From: Akigrel
+Source: Level 5 Crypt
+--------------- 2024-12-08 23:52:41 --------------------------
+Elegant Chest
+From: Maedfanir
+Source: Level 5 Crypt
+Bone Chest
+From: Railfiring
+Source: Level 5 Crypt
+Cobra Chest
+From: Guyren
+Source: Level 5 Crypt
+Sand Chest
+From: Adoragar
+Source: Level 5 Crypt
+--------------- 2024-12-08 23:52:45 --------------------------
+Sapphire Chest
+From: VooDoo
+Source: Level 35-39 Vault of the Ancients
+Stone Chest
+From: Enzo
+Source: Level 5 Crypt
+Sapphire Chest
+From: VooDoo
+Source: Level 20-24 Vault of the Ancients
+Fire Chest
+From: Railfiring
+Source: Level 5 Crypt
+--------------- 2024-12-08 23:52:49 --------------------------
+Barbarian Chest
+From: Guyren
+Source: Level 10 Crypt
+Mayan Chest
+From: eye
+Source: Level 10 Crypt
+Goon Citadel Chest
+From: Glorgolan
+Source: Level 10 Citadel
+Goon Citadel Chest
+From: Glorgolan
+Source: Level 15 Citadel
+--------------- 2024-12-08 23:52:53 --------------------------
+Elven Citadel Chest
+From: Railfiring
+Source: Level 15 Citadel
+Ore Chest
+From: Guyren
+Source: Level 15 Crypt
+Cobra Chest
+From: Vudor
+Source: Level 15 Crypt
+Goon Citadel Chest
+From: Glorgolan
+Source: Level 10 Citadel
+--------------- 2024-12-08 23:52:57 --------------------------
+Mayan Chest
+From: cat lady
+Source: Level 15 Crypt
+House of Horrors Chest
+From: cat lady
+Source: Level 15 epic Crypt
+Elegant Chest
+From: Maedfanir
+Source: Level 10 Crypt
+Ore Chest
+From: Lorlot
+Source: Level 15 Crypt
+--------------- 2024-12-08 23:53:02 --------------------------
+Cobra Chest
+From: cat lady
+Source: Level 15 Crypt
+Infernal Chest
+From: Lorlot
+Source: Level 15 Crypt
+sapphire Chest
+From: Lorlot
+Source: Level 25-29 Vault of the Ancients
+sapphire Chest
+From: Lorlot
+Source: Level 20-24 Vault of the Ancients
+--------------- 2024-12-08 23:53:06 --------------------------
+Elegant Chest
+From: Maedfanir
+Source: Level 10 Crypt
+Gear Citadel Chest
+From: Glorgolan
+Source: Level 15 Citadel
+Sapphire Chest
+From: Skull Hammer
+Source: Level 20-24 Vault of the Ancients
+Sapphire Chest
+From: Lorlot
+Source: Level 20-24 Vault of the Ancients
+--------------- 2024-12-08 23:53:10 --------------------------
+Stone Chest
+From: Maedfanir
+Source: Level 5 Crypt
+sapphire Chest
+From: Beraferyl
+Source: Level 20-24 Vault of the Ancients
+sapphire Chest
+From: Lorlot
+Source: Level 25-29 Vault of the Ancients
+sapphire Chest
+From: Lorlot
+Source: Level 15-19 Vault of the Ancients
+--------------- 2024-12-08 23:53:14 --------------------------
+Stone Chest
+From: Maedfanir
+Source: Level 10 Crypt
+Sand Chest
+From: Targash
+Source: Level 15 Crypt
+Sapphire Chest
+From: Lorlot
+Source: Level 20-24 Vault of the Ancients
+Sand Chest
+From: Targash
+Source: Level 15 Crypt
+--------------- 2024-12-08 23:53:19 --------------------------
+Bone Chest
+From: Targash
+Source: Level 15 Crypt
+Sapphire Chest
+From: Lorlot
+Source: Level 20-24 Vault of the Ancients
+Sand Chest
+From: Serdriilas
+Source: Level 15 Crypt
+Sand Chest
+From: Serdriilas
+Source: Level 10 Crypt
+--------------- 2024-12-08 23:53:23 --------------------------
+Elegant Chest
+From: Maedfanir
+Source: Level 10 Crypt
+Gear Citadel Chest
+From: Targash
+Source: Level 15 Citadel
+Sapphire Chest
+From: Beraferyl
+Source: Level 25-29 Vault of the Ancients
+Sand Chest
+From: Dementus
+Source: Level 15 Crypt
+--------------- 2024-12-08 23:53:27 --------------------------
+Mayan Chest
+From: Targie
+Source: Level 10 Crypt
+sapphire Chest
+From: Lorlot
+Source: Level 20-24 Vault of the Ancients
+Forgotten Chest
+From: Targie
+Source: Level 10 Crypt
+Infernal Chest
+From: eye
+Source: Level 10 Crypt
+--------------- 2024-12-08 23:53:31 --------------------------
+Barbarian Chest
+From: Dementus
+Source: Level 15 Crypt
+sapphire Chest
+From: Beraferyl
+Source: Level 25-29 Vault of the Ancients
+Cobra Chest
+From: Targie
+Source: Level 10 Crypt
+Cobra Chest
+From: Targie
+Source: Level 10 Crypt
+--------------- 2024-12-08 23:53:36 --------------------------
+Rare Dragon Chest
+From: Targie
+Source: Level 10 rare Crypt
+Gladiator's Chest
+From: eye
+Source: Arena
+sapphire Chest
+From: Beraferyl
+Source: Level 20-24 Vault of the Ancients
+Rare Dragon Chest
+From: Maedfanir
+Source: Level 15 rare Crypt
+--------------- 2024-12-08 23:53:40 --------------------------
+Fire Chest
+From: Dementus
+Source: Level 15 Crypt
+Elven Citadel Chest
+From: Tagoal
+Source: Level 20 Citadel
+Forgotten Chest
+From: Dementus
+Source: Level 20 Crypt
+Stone Chest
+From: Maedfanir
+Source: Level 10 Crypt
+--------------- 2024-12-08 23:53:44 --------------------------
+Union Chest
+From: Lively Peach
+Source: Union of Triumph personal reward
+Union Chest
+From: Lively Peach
+Source: Union of Triumph personal reward
+Union Chest
+From: Lively Peach
+Source: Union of Triumph personal reward
+Union Chest
+From: Lively Peach
+Source: Union of Triumph personal reward
+--------------- 2024-12-08 23:53:48 --------------------------
+Union Chest
+From: Lively Peach
+Source: Union of Triumph personal reward
+Stone Chest
+From: ammar
+Source: Level 5 Crypt
+Pacified Mimic Chest
+From: Lively Peach
+Source: Mimic Chest
+Goon Citadel Chest
+From: Tagoal
+Source: Level 20 Citadel
+--------------- 2024-12-08 23:53:52 --------------------------
+Pacified Mimic Chest.
+From: Lively Peach
+Source: Mimic Chest
+Gear Citadel Chest
+From: Railfiring
+Source: Level 15 Citadel
+Gnome Workshop Chest
+From: Lively Peach
+Source: Level 10 Crypt
+Gladiator's Chest
+From: eye
+Source: Arena
+--------------- 2024-12-08 23:53:56 --------------------------
+Pacified Mimic Chest.
+From: Sharra
+Source: Mimic Chest
+Orc Chest
+From: ammar
+Source: Level 5 Crypt
+Elegant Chest
+From: cat lady
+Source: Level 15 Crypt
+Union Chest
+From: Kiin
+Source: Union of Triumph personal reward
+--------------- 2024-12-08 23:54:01 --------------------------
+Stone Chest
+From: Maedfanir
+Source: Level 5 Crypt
+Pacified Mimic Chest
+From: Hotmess
+Source: Mimic Chest
+Ancient Bastion Chest
+From: cat lady
+Source: Level 20 epic Crypt
+Mayan Chest
+From: Lively Peach
+Source: Level 10 Crypt
+--------------- 2024-12-08 23:54:05 --------------------------
+Orc Chest
+From: Maedfanir
+Source: Level 10 Crypt
+Inferno Chest
+From: Skull Hammer
+Source: Level 20 heroic Monster
+Gnome Workshop Chest
+From: Sharra
+Source: Level 10 Crypt
+Elven Chest
+From: Skull Hammer
+Source: Level 22 heroic Monster
+--------------- 2024-12-08 23:54:09 --------------------------
+Elegant Chest
+From: cat lady
+Source: Level 10 Crypt
+Orc Chest
+From: Maedfanir
+Source: Level 10 Crypt
+Stone Chest
+From: cat lady
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: cat lady
+Source: Level 15 rare Crypt
+--------------- 2024-12-08 23:54:13 --------------------------
+Undead Chest
+From: Skull Hammer
+Source: Level 21 heroic Monster
+Inferno Chest
+From: Skull Hammer
+Source: Level 20 heroic Monster
+Infernal Chest
+From: cat lady
+Source: Level 10 Crypt
+ean Citadel Chest
+From: tledil
+Source: Level 10 Citadel

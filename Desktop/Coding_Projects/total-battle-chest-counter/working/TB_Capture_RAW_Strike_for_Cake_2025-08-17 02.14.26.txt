@@ -1,0 +1,2418 @@
+--------------- 2025-08-17 02:14:32 --------------------------
+Bone Chest
+From: Enneen
+Source: Level 15 Crypt
+Forgotten Chest
+From: Art
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Eyrondef
+Source: Level 15 rare Crypt
+Forgotten Chest
+From: Ciditoo
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:14:36 --------------------------
+Gnome Workshop Chest
+From: Taugal
+Source: Level 20 Crypt
+Stone Chest
+From: Ironsinger
+Source: Level 5 Crypt
+Barbarian Chest
+From: aghaté tyché
+Source: Level 15 Crypt
+Orc Chest
+From: Ironsinger
+Source: Level 10 Crypt
+--------------- 2025-08-17 02:14:41 --------------------------
+Sand Chest
+From: Eyrondef
+Source: Level 15 Crypt
+Forgotten Chest
+From: Ironsinger
+Source: Level 10 Crypt
+Orc Chest
+From: Souffleblue
+Source: Level 15 Crypt
+Gnome Workshop Chest
+From: aghaté tyché
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:14:45 --------------------------
+Mayan Chest
+From: Eyrondef
+Source: Level 15 Crypt
+Sand Chest
+From: Souffleblue
+Source: Level 15 Crypt
+Infernal Chest
+From: Ironsinger
+Source: Level 10 Crypt
+Sand Chest
+From: Souffleblue
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:14:50 --------------------------
+Gnome Workshop Chest
+From: Eyrondef
+Source: Level 15 Crypt
+Gladiator's Chest
+From: Enneen
+Source: Arena
+Fire Chest
+From: Eyrondef
+Source: Level 15 Crypt
+Mayan Chest
+From: Ciditoo
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:14:54 --------------------------
+Sand Chest
+From: aghaté tyché
+Source: Level 15 Crypt
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Cobra Chest
+From: Eyar Fiery
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: aghaté tyché
+Source: Level 15 rare Crypt
+--------------- 2025-08-17 02:14:58 --------------------------
+Sand Chest
+From: Ciditoo
+Source: Level 20 Crypt
+Rare Dragon Chest
+From: aghaté tyché
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: Sabar
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: Ciditoo
+Source: Level 20 rare Crypt
+--------------- 2025-08-17 02:15:03 --------------------------
+Harpy Chest
+From: Kigam
+Source: Level 15 epic Crypt
+Sapphire Chest
+From: Sweet Queen Bera
+Source: Level 25-29 Vault of the Ancients
+Sapphire Chest
+From: Lava Lynx Zius
+Source: Level 30-34 Vault of the Ancients
+Forgotten Chest
+From: Sabar
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:15:07 --------------------------
+Stone Chest
+From: Sabar
+Source: Level 15 Crypt
+Fire Chest
+From: Magepick
+Source: Level 15 Crypt
+Gladiator's Chest
+From: Showman
+Source: Arena
+Sapphire Chest
+From: Gazius
+Source: Level 25-29 Vault of the Ancients
+--------------- 2025-08-17 02:15:12 --------------------------
+Fire Chest
+From: Magepick
+Source: Level 15 Crypt
+Scarab Chest
+From: Art
+Source: Level 15 epic Crypt
+Sapphire Chest
+From: LanZius
+Source: Level 30-34 Vault of the Ancients
+Infernal Chest
+From: Ghodred
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:15:16 --------------------------
+Elegant Chest
+From: LanZius
+Source: Level 20 Crypt
+Elegant Chest
+From: Ghodred
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: wiking
+Source: Level 10 rare Crypt
+Sapphire Chest
+From: Souffleblue
+Source: Level 20-24 Vault of the Ancients
+--------------- 2025-08-17 02:15:20 --------------------------
+Cobra Chest
+From: LanZius
+Source: Level 20 Crypt
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Elegant Chest
+From: Taugal
+Source: Level 15 Crypt
+Sand Chest
+From: Ghodred
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:15:24 --------------------------
+Sapphire Chest
+From: Taugal
+Source: Level 25-29 Vault of the Ancients
+Gnome Workshop Chest
+From: LanZius
+Source: Level 20 Crypt
+Elegant Chest
+From: Magepick
+Source: Level 15 Crypt
+Stone Chest
+From: Klaudia
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:15:29 --------------------------
+Bone Chest
+From: Showman
+Source: Level 20 Crypt
+Sapphire Chest
+From: LanZius
+Source: Level 30-34 Vault of the Ancients
+Cobra Chest
+From: Mabrinod
+Source: Level 10 Crypt
+Infernal Chest
+From: Ironsinger
+Source: Level 5 Crypt
+--------------- 2025-08-17 02:15:33 --------------------------
+Sapphire Chest
+From: Taugal
+Source: Level 25-29 Vault of the Ancients
+Elven Citadel Chest
+From: Sudoki
+Source: Level 20 Citadel
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Cobra Chest
+From: Eyar Fiery
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:15:37 --------------------------
+Gladiator's Chest
+From: wiking
+Source: Arena
+Orc Chest
+From: Showman
+Source: Level 20 Crypt
+Sand Chest
+From: Taugal
+Source: Level 25 Crypt
+Forgotten Chest
+From: Eyar Fiery
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:15:41 --------------------------
+Sapphire Chest
+From: LanZius
+Source: Level 30-34 Vault of the Ancients
+Cobra Chest
+From: Showman
+Source: Level 20 Crypt
+Ancient Warrior's Chest
+From: Taugal
+Source: Level 20 epic Crypt
+Sapphire Chest
+From: IPollo
+Source: Level 25-29 Vault of the Ancients
+--------------- 2025-08-17 02:15:46 --------------------------
+Turtle Chest
+From: Klaudia
+Source: Level 15 epic Crypt
+Chest of the Cursed
+From: Klaudia
+Source: Level 15 epic Crypt
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Rare Dragon Chest
+From: Sabar
+Source: Level 15 rare Crypt
+--------------- 2025-08-17 02:15:50 --------------------------
+Fire Chest
+From: Klaudia
+Source: Level 15 Crypt
+Orc Chest
+From: Klaudia
+Source: Level 15 Crypt
+Elegant Chest
+From: wiking
+Source: Level 20 Crypt
+Infernal Chest
+From: wiking
+Source: Level 10 Crypt
+--------------- 2025-08-17 02:15:54 --------------------------
+Mayan Chest
+From: Klaudia
+Source: Level 15 Crypt
+Bone Chest
+From: Sabar
+Source: Level 15 Crypt
+Gnome Workshop Chest
+From: Kamil
+Source: Level 15 Crypt
+Barbarian Chest
+From: Kamil
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:15:59 --------------------------
+Cobra Chest
+From: Mabrinod
+Source: Level 10 Crypt
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Elegant Chest
+From: Kamil
+Source: Level 15 Crypt
+Sapphire Chest
+From: IPollo
+Source: Level 20-24 Vault of the Ancients
+--------------- 2025-08-17 02:16:03 --------------------------
+Sand Chest
+From: Klaudia
+Source: Level 15 Crypt
+Mayan Chest
+From: Thorgal
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: Sudoki
+Source: Level 20 rare Crypt
+Mayan Chest
+From: PanekPL
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:16:07 --------------------------
+Elegant Chest
+From: Sabar
+Source: Level 15 Crypt
+Barbarian Chest
+From: Thorgal
+Source: Level 10 Crypt
+Barbarian Chest
+From: Fiorella
+Source: Level 20 Crypt
+Rare Dragon Chest
+From: Thorgal
+Source: Level 15 rare Crypt
+--------------- 2025-08-17 02:16:11 --------------------------
+Stone Chest
+From: Thorgal
+Source: Level 10 Crypt
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Gladiator's Chest
+From: Jarven
+Source: Arena
+Cobra Chest
+From: Mabrinod
+Source: Level 10 Crypt
+--------------- 2025-08-17 02:16:16 --------------------------
+Sapphire Chest
+From: Souffleblue
+Source: Level 25-29 Vault of the Ancients
+Forgotten Chest
+From: Eddy
+Source: Level 20 Crypt
+Rare Dragon Chest
+From: Jarven
+Source: Level 15 rare Crypt
+Fire Chest
+From: Eddy
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:16:20 --------------------------
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Fire Chest
+From: Eddy
+Source: Level 20 Crypt
+Gnome Workshop Chest
+From: Fiorella
+Source: Level 15 Crypt
+Elven Citadel Chest
+From: Showman
+Source: Level 15 Citadel
+--------------- 2025-08-17 02:16:24 --------------------------
+Bone Chest
+From: Fiorella
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Jarven
+Source: Level 15 rare Crypt
+Sapphire Chest
+From: Eddy
+Source: Level 20-24 Vault of the Ancients
+Rare Dragon Chest
+From: Eddy
+Source: Level 20 rare Crypt
+--------------- 2025-08-17 02:16:29 --------------------------
+Elven Citadel Chest
+From: Captain LemonBars
+Source: Level 20 Citadel
+Infernal Chest
+From: Jarven
+Source: Level 15 Crypt
+Abandoned Chest
+From: Fiorella
+Source: Level 15 epic Crypt
+Cobra Chest
+From: Captain LemonBars
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:16:33 --------------------------
+Cobra Chest
+From: Captain LemonBars
+Source: Level 20 Crypt
+Elven Citadel Chest
+From: Showman
+Source: Level 15 Citadel
+Scorpion Chest
+From: Klaudia
+Source: Level 20 epic Crypt
+Turtle Chest
+From: Klaudia
+Source: Level 25 epic Crypt
+--------------- 2025-08-17 02:16:38 --------------------------
+Rare Dragon Chest
+From: Eddy
+Source: Level 20 rare Crypt
+Barbarian Chest
+From: Moogujora
+Source: Level 20 Crypt
+Rare Dragon Chest
+From: Klaudia
+Source: Level 20 rare Crypt
+Sapphire Chest
+From: Kamil
+Source: Level 25-29 Vault of the Ancients
+--------------- 2025-08-17 02:16:42 --------------------------
+Cobra Chest
+From: Moogujora
+Source: Level 20 Crypt
+Barbarian Chest
+From: Captain LemonBars
+Source: Level 20 epic Crypt
+Rare Dragon Chest
+From: Captain LemonBars
+Source: Level 15 rare Crypt
+Elegant Chest
+From: Moogujora
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:16:47 --------------------------
+Barbarian Chest
+From: Moogujora
+Source: Level 20 Crypt
+Rare Dragon Chest
+From: Captain LemonBars
+Source: Level 15 rare Crypt
+Cobra Chest
+From: Captain LemonBars
+Source: Level 20 Crypt
+Sapphire Chest
+From: Kamil
+Source: Level 25-29 Vault of the Ancients
+--------------- 2025-08-17 02:16:51 --------------------------
+Fire Chest
+From: uzun shapalak
+Source: Level 15 Crypt
+Barbarian Chest
+From: Moogujora
+Source: Level 20 Crypt
+Elegant Chest
+From: Andi
+Source: Level 25 Crypt
+Stone Chest
+From: Moogujora
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:16:55 --------------------------
+White Wood Chest
+From: uzun shapalak
+Source: Level 20 epic Crypt
+Cobra Chest
+From: Andi
+Source: Level 25 Crypt
+Sand Chest
+From: Andi
+Source: Level 25 Crypt
+Gnome Workshop Chest
+From: uzun shapalak
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:16:59 --------------------------
+Sapphire Chest
+From: Showman
+Source: Level 25-29 Vault of the Ancients
+Cobalt Chest
+From: Moogujora
+Source: Level 20 epic Crypt
+Rare Dragon Chest
+From: Showman
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: Showman
+Source: Level 15 rare Crypt
+--------------- 2025-08-17 02:17:04 --------------------------
+Rare Dragon Chest
+From: Showman
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: Showman
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: Showman
+Source: Level 15 rare Crypt
+Scorpion Chest
+From: Moogujora
+Source: Level 20 epic Crypt
+--------------- 2025-08-17 02:17:08 --------------------------
+Elegant Chest
+From: uzun shapalak
+Source: Level 15 Crypt
+Barbarian Chest
+From: uzun shapalak
+Source: Level 15 Crypt
+Sapphire Chest
+From: Mag Ualghairg
+Source: Level 20-24 Vault of the Ancients
+Priest's Chest
+From: Showman
+Source: Level 15 epic Crypt
+--------------- 2025-08-17 02:17:12 --------------------------
+Gnome Workshop Chest
+From: uzun shapalak
+Source: Level 20 Crypt
+Forgotten Chest
+From: Moogujora
+Source: Level 20 Crypt
+Rare Dragon Chest
+From: Showman
+Source: Level 15 rare Crypt
+Titansteel Chest
+From: Moogujora
+Source: Level 20 epic Crypt
+--------------- 2025-08-17 02:17:17 --------------------------
+Rare Dragon Chest
+From: Mag Ualghairg
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Klaudia
+Source: Level 20 rare Crypt
+Barbarian Chest
+From: Brianna
+Source: Level 20 Crypt
+Bone Chest
+From: Satoru Gojo
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:17:21 --------------------------
+Bone Chest
+From: Brianna
+Source: Level 20 Crypt
+Barbarian Chest
+From: Mag Ualghairg
+Source: Level 25 Crypt
+Orc Chest
+From: Brianna
+Source: Level 20 Crypt
+Infernal Chest
+From: Mag Ualghairg
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:17:25 --------------------------
+Common Chest of Wealth
+From: Gazius
+Source: Clan wealth
+Uncommon Chest of Wealth
+From: Gazius
+Source: Clan wealth
+Rare Chest of Wealth
+From: Gazius
+Source: Clan wealth
+Epic Chest of Wealth
+From: Gazius
+Source: Clan wealth
+--------------- 2025-08-17 02:17:29 --------------------------
+Elegant Chest
+From: Mag Ualghairg
+Source: Level 25 Crypt
+Sand Chest
+From: Satoru Gojo
+Source: Level 15 Crypt
+Elegant Chest
+From: Mag Ualghairg
+Source: Level 25 Crypt
+Ancient Bastion Chest
+From: Mag Ualghairg
+Source: Level 20 epic Crypt
+--------------- 2025-08-17 02:17:33 --------------------------
+Mayan Chest
+From: Tygonris
+Source: Level 15 Crypt
+Elegant Chest
+From: Tygonris
+Source: Level 15 Crypt
+Mayan Chest
+From: Angie
+Source: Level 25 Crypt
+Stone Chest
+From: Angie
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:17:38 --------------------------
+Gnome Workshop Chest
+From: Tygonris
+Source: Level 15 Crypt
+Forgotten Chest
+From: Angie
+Source: Level 25 Crypt
+Gnome Workshop Chest
+From: Chirikawa
+Source: Level 20 Crypt
+Fire Chest
+From: Marcelo lord of war
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:17:42 --------------------------
+Sand Chest
+From: Ra
+Source: Level 20 Crypt
+Stone Chest
+From: Marcelo lord of war
+Source: Level 15 Crypt
+Elegant Chest
+From: Marcelo lord of war
+Source: Level 15 Crypt
+Scorpion Chest
+From: Marcelo lord of war
+Source: Level 15 epic Crypt
+--------------- 2025-08-17 02:17:46 --------------------------
+Rare Dragon Chest
+From: Marcelo lord of war
+Source: Level 15 rare Crypt
+Titansteel Chest
+From: Mejas
+Source: Level 20 epic Crypt
+House of Horrors Chest
+From: Mejas
+Source: Level 20 epic Crypt
+Scorpion Chest
+From: Mejas
+Source: Level 20 epic Crypt
+--------------- 2025-08-17 02:17:51 --------------------------
+Turtle Chest
+From: Mejas
+Source: Level 20 epic Crypt
+Forgotten Chest
+From: Marcelo lord of war
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Marilune
+Source: Level 20 rare Crypt
+Sand Chest
+From: Mejas
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:17:55 --------------------------
+Rare Dragon Chest
+From: Marilune
+Source: Level 20 rare Crypt
+Sand Chest
+From: Mejas
+Source: Level 20 Crypt
+Elegant Chest
+From: Marcelo lord of war
+Source: Level 15 Crypt
+Infernal Chest
+From: Mejas
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:17:59 --------------------------
+Scorpion Chest
+From: Marilune
+Source: Level 15 epic Crypt
+Scarab Chest
+From: Marilune
+Source: Level 20 epic Crypt
+Rare Dragon Chest
+From: Marilune
+Source: Level 20 rare Crypt
+Elven Citadel Chest
+From: Ciditoo
+Source: Level 15 Citadel
+--------------- 2025-08-17 02:18:03 --------------------------
+Orc Chest
+From: Servenen
+Source: Level 15 Crypt
+Barbarian Chest
+From: Servenen
+Source: Level 15 Crypt
+Cobra Chest
+From: Servenen
+Source: Level 15 Crypt
+Orc Chest
+From: Servenen
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:18:07 --------------------------
+Stone Chest
+From: Servenen
+Source: Level 15 Crypt
+Stone Chest
+From: Jarven
+Source: Level 15 Crypt
+Barbarian Chest
+From: zhasur
+Source: Level 20 Crypt
+Bone Chest
+From: zhasur
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:18:11 --------------------------
+Bone Chest
+From: zhasur
+Source: Level 20 Crypt
+Elven Citadel Chest
+From: Jarven
+Source: Level 20 Citadel
+Elven Citadel Chest
+From: Ciditoo
+Source: Level 15 Citadel
+Elven Citadel Chest
+From: Jarven
+Source: Level 20 Citadel
+--------------- 2025-08-17 02:18:15 --------------------------
+Fire Chest
+From: Magepick
+Source: Level 15 Crypt
+Infernal Chest
+From: Brianna
+Source: Level 20 Crypt
+Elegant Chest
+From: Magepick
+Source: Level 15 Crypt
+Gnome Workshop Chest
+From: Brianna
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:18:20 --------------------------
+Bone Chest
+From: Lebrim
+Source: Level 20 Crypt
+Mayan Chest
+From: Brianna
+Source: Level 20 Crypt
+Fire Chest
+From: Magepick
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Lebrim
+Source: Level 20 rare Crypt
+--------------- 2025-08-17 02:18:24 --------------------------
+Forgotten Chest
+From: Jarven
+Source: Level 15 Crypt
+Elegant Chest
+From: Magepick
+Source: Level 15 Crypt
+Infernal Chest
+From: Brianna
+Source: Level 20 Crypt
+Stone Chest
+From: Jack Oswald
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:18:28 --------------------------
+Fire Chest
+From: Brianna
+Source: Level 20 Crypt
+Barbarian Chest
+From: Jack Oswald
+Source: Level 20 Crypt
+Rare Dragon Chest
+From: Satoru Gojo
+Source: Level 10 rare Crypt
+Sand Chest
+From: Jack Oswald
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:18:32 --------------------------
+Bone Chest
+From: Marcelo lord of war
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Satoru Gojo
+Source: Level 15 rare Crypt
+Cobra Chest
+From: Zombie Tony
+Source: Level 20 Crypt
+Rare Dragon Chest
+From: Ragnar
+Source: Level 15 rare Crypt
+--------------- 2025-08-17 02:18:36 --------------------------
+Rare Dragon Chest
+From: Satoru Gojo
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: Ragnar
+Source: Level 10 rare Crypt
+Gnome Workshop Chest
+From: Gririm
+Source: Level 15 Crypt
+White Wood Chest
+From: Zombie Tony
+Source: Level 20 epic Crypt
+--------------- 2025-08-17 02:18:41 --------------------------
+Bone Chest
+From: Gririm
+Source: Level 15 Crypt
+Bone Chest
+From: Gririm
+Source: Level 15 Crypt
+Stone Chest
+From: Satoru Gojo
+Source: Level 15 Crypt
+Elven Citadel Chest
+From: Sabar
+Source: Level 15 Citadel
+--------------- 2025-08-17 02:18:45 --------------------------
+Infernal Chest
+From: Gririm
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 20 rare Crypt
+Sapphire Chest
+From: Andi
+Source: Level 30-34 Vault of the Ancients
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 20 rare Crypt
+--------------- 2025-08-17 02:18:49 --------------------------
+Cobra Chest
+From: Zombie Tony
+Source: Level 20 Crypt
+Infernal Chest
+From: Gririm
+Source: Level 15 Crypt
+Barbarian Chest
+From: Prince Charming
+Source: Level 15 Crypt
+Barbarian Chest
+From: Prince Charming
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:18:54 --------------------------
+Cobra Chest
+From: Zombie Tony
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 15 rare Crypt
+Infernal Chest
+From: Prince Charming
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:18:58 --------------------------
+Sapphire Chest
+From: Angie
+Source: Level 30-34 Vault of the Ancients
+Rare Dragon Chest
+From: higgowoman
+Source: Level 15 rare Crypt
+White Wood Chest
+From: Prince Charming
+Source: Level 15 epic Crypt
+Barbarian Chest
+From: Chrisbreezy
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:19:02 --------------------------
+Gnome Workshop Chest
+From: Satoru Gojo
+Source: Level 15 Crypt
+Fire Chest
+From: Chrisbreezy
+Source: Level 20 Crypt
+Elegant Chest
+From: Chrisbreezy
+Source: Level 20 Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 15 rare Crypt
+--------------- 2025-08-17 02:19:06 --------------------------
+Orc Chest
+From: Chrisbreezy
+Source: Level 20 Crypt
+Orc Chest
+From: Johnny B Goode
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 15 rare Crypt
+Sand Chest
+From: Chrisbreezy
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:19:11 --------------------------
+Forgotten Chest
+From: Johnny B Goode
+Source: Level 20 Crypt
+Fire Chest
+From: Chrisbreezy
+Source: Level 20 Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+Orc Chest
+From: Morg
+Source: Level 10 Crypt
+--------------- 2025-08-17 02:19:15 --------------------------
+Elegant Chest
+From: Johnny B Goode
+Source: Level 20 Crypt
+Elegant Chest
+From: Chrisbreezy
+Source: Level 20 Crypt
+Gnome Workshop Chest
+From: Morg
+Source: Level 5 Crypt
+Sapphire Chest
+From: Andi
+Source: Level 35-39 Vault of the Ancients
+--------------- 2025-08-17 02:19:19 --------------------------
+Sand Chest
+From: Morg
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+Sapphire Chest
+From: Andi
+Source: Level 30-34 Vault of the Ancients
+Bone Chest
+From: Gririm
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:19:24 --------------------------
+Infernal Chest
+From: Satoru Gojo
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+Stone Chest
+From: Gririm
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:19:28 --------------------------
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+Gnome Workshop Chest
+From: Gririm
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+Elven Citadel Chest
+From: Gririm
+Source: Level 20 Citadel
+--------------- 2025-08-17 02:19:32 --------------------------
+Sapphire Chest
+From: Andi
+Source: Level 25-29 Vault of the Ancients
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+Cobra Chest
+From: Gririm
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+--------------- 2025-08-17 02:19:37 --------------------------
+Trillium Chest
+From: Johnny B Goode
+Source: Level 20 epic Crypt
+Forgotten Chest
+From: Satoru Gojo
+Source: Level 15 Crypt
+Sapphire Chest
+From: Andi
+Source: Level 25-29 Vault of the Ancients
+Bone Chest
+From: Prince Charming
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:19:41 --------------------------
+Elegant Chest
+From: Apollo Jr
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: Johnny B Goode
+Source: Level 20 rare Crypt
+--------------- 2025-08-17 02:19:45 --------------------------
+Barbarian Chest
+From: Gririm
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Andi
+Source: Level 30 rare Crypt
+Elven Citadel Chest
+From: Sabar
+Source: Level 15 Citadel
+Rare Dragon Chest
+From: Andi
+Source: Level 30 rare Crypt
+--------------- 2025-08-17 02:19:49 --------------------------
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+Elven Citadel Chest
+From: Gririm
+Source: Level 20 Citadel
+Cobra Chest
+From: Andi
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:19:53 --------------------------
+Sapphire Chest
+From: Andi
+Source: Level 30-34 Vault of the Ancients
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 20 rare Crypt
+Infernal Chest
+From: Andi
+Source: Level 25 Crypt
+Fire Chest
+From: Andi
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:19:58 --------------------------
+Barbarian Chest
+From: Zombie Tony
+Source: Level 15 epic Crypt
+Stone Chest
+From: Satoru Gojo
+Source: Level 15 Crypt
+White Wood Chest
+From: Zombie Tony
+Source: Level 15 epic Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+--------------- 2025-08-17 02:20:02 --------------------------
+White Wood Chest
+From: Zombie Tony
+Source: Level 15 epic Crypt
+Orc Chest
+From: Andi
+Source: Level 25 Crypt
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+Gnome Workshop Chest
+From: Andi
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:20:06 --------------------------
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+Sapphire Chest
+From: Andi
+Source: Level 30-34 Vault of the Ancients
+--------------- 2025-08-17 02:20:10 --------------------------
+Rare Dragon Chest
+From: Andi
+Source: Level 25 rare Crypt
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+Orc Chest
+From: Monte
+Source: Level 15 Crypt
+Stone Chest
+From: Gririm
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:20:14 --------------------------
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Mayan Chest
+From: Andi
+Source: Level 25 Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+--------------- 2025-08-17 02:20:19 --------------------------
+Orc Chest
+From: Monte
+Source: Level 15 Crypt
+Mayan Chest
+From: Satoru Gojo
+Source: Level 15 Crypt
+Orc Chest
+From: Monte
+Source: Level 15 Crypt
+Stone Chest
+From: Andi
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:20:23 --------------------------
+Fire Chest
+From: Andi
+Source: Level 20 Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+Cobra Chest
+From: Tera
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+--------------- 2025-08-17 02:20:27 --------------------------
+Bone Chest
+From: Beydeland
+Source: Level 20 Crypt
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Braided Chest
+From: Beydeland
+Source: Level 15 epic Crypt
+Gnome Workshop Chest
+From: Andi
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:20:31 --------------------------
+Stone Chest
+From: Andi
+Source: Level 25 Crypt
+Bone Chest
+From: Ahhhmeddd
+Source: Level 15 Crypt
+Bone Chest
+From: Andi
+Source: Level 25 Crypt
+Ancient Bastion Chest
+From: Beydeland
+Source: Level 15 epic Crypt
+--------------- 2025-08-17 02:20:36 --------------------------
+Gnome Workshop Chest
+From: Kigam
+Source: Level 15 Crypt
+Sand Chest
+From: Ahhhmeddd
+Source: Level 15 Crypt
+Cobalt Chest
+From: Beydeland
+Source: Level 15 epic Crypt
+Orc Chest
+From: Andi
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:20:40 --------------------------
+Infernal Chest
+From: Ahhhmeddd
+Source: Level 15 Crypt
+Sand Chest
+From: Kigam
+Source: Level 15 Crypt
+Stone Chest
+From: Andi
+Source: Level 25 Crypt
+Bone Chest
+From: Andi
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:20:44 --------------------------
+Mayan Chest
+From: Andi
+Source: Level 25 Crypt
+Sand Chest
+From: Andi
+Source: Level 25 Crypt
+Scorpion Chest
+From: Sudoki
+Source: Level 20 epic Crypt
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+--------------- 2025-08-17 02:20:48 --------------------------
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+Elven Citadel Chest
+From: Sudoki
+Source: Level 20 Citadel
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+Cobra Chest
+From: Andi
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:20:53 --------------------------
+Sapphire Chest
+From: Andi
+Source: Level 25-29 Vault of the Ancients
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+Bone Chest
+From: Sudoki
+Source: Level 20 Crypt
+Elven Citadel Chest
+From: Sabar
+Source: Level 15 Citadel
+--------------- 2025-08-17 02:20:57 --------------------------
+Sand Chest
+From: Andi
+Source: Level 25 Crypt
+Stone Chest
+From: Filor
+Source: Level 15 Crypt
+Stone Chest
+From: Filor
+Source: Level 15 Crypt
+Stone Chest
+From: Andi
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:21:01 --------------------------
+Elegant Chest
+From: Filor
+Source: Level 15 Crypt
+Sapphire Chest
+From: Sudoki
+Source: Level 25-29 Vault of the Ancients
+Gnome Workshop Chest
+From: Andi
+Source: Level 20 Crypt
+Infernal Chest
+From: Andi
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:21:05 --------------------------
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Fire Chest
+From: Andi
+Source: Level 25 Crypt
+Stone Chest
+From: Sudoki
+Source: Level 20 Crypt
+Mayan Chest
+From: Beydeland
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:21:10 --------------------------
+Mayan Chest
+From: Andi
+Source: Level 25 Crypt
+Mayan Chest
+From: Beydeland
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Andi
+Source: Level 25 rare Crypt
+Fire Chest
+From: Andi
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:21:14 --------------------------
+Fire Chest
+From: Andi
+Source: Level 25 Crypt
+Elegant Chest
+From: Andi
+Source: Level 25 Crypt
+Sapphire Chest
+From: Andi
+Source: Level 25-29 Vault of the Ancients
+Bone Chest
+From: Andi
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:21:18 --------------------------
+Elven Chest
+From: Filor
+Source: Level 17 heroic Monster
+Fire Chest
+From: Andi
+Source: Level 25 Crypt
+Harpy Chest
+From: Andi
+Source: Level 20 epic Crypt
+Elven Citadel Chest
+From: Filor
+Source: Level 15 Citadel
+--------------- 2025-08-17 02:21:22 --------------------------
+Fire Chest
+From: Andi
+Source: Level 25 Crypt
+Elegant Chest
+From: Satoru Gojo
+Source: Level 15 Crypt
+Elven Chest
+From: Filor
+Source: Level 17 heroic Monster
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+--------------- 2025-08-17 02:21:26 --------------------------
+Forgotten Chest
+From: Kigam
+Source: Level 15 Crypt
+Elven Citadel Chest
+From: Tera
+Source: Level 15 Citadel
+Elven Citadel Chest
+From: Sabar
+Source: Level 15 Citadel
+Sapphire Chest
+From: TuTo Il
+Source: Level 25-29 Vault of the Ancients
+--------------- 2025-08-17 02:21:30 --------------------------
+Barbarian Chest
+From: Satoru Gojo
+Source: Level 15 Crypt
+Cobra Chest
+From: TuTo Il
+Source: Level 20 Crypt
+Elven Citadel Chest
+From: Sabar
+Source: Level 15 Citadel
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+--------------- 2025-08-17 02:21:35 --------------------------
+Elven Citadel Chest
+From: Tera
+Source: Level 20 Citadel
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+--------------- 2025-08-17 02:21:39 --------------------------
+Rare Dragon Chest
+From: higgowoman
+Source: Level 20 rare Crypt
+Infernal Chest
+From: Chrisbreezy
+Source: Level 20 Crypt
+Barbarian Chest
+From: Satoru Gojo
+Source: Level 15 Crypt
+Orc Chest
+From: Chrisbreezy
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:21:43 --------------------------
+Mayan Chest
+From: Chrisbreezy
+Source: Level 20 Crypt
+Sand Chest
+From: Chrisbreezy
+Source: Level 20 Crypt
+Barbarian Chest
+From: Chrisbreezy
+Source: Level 20 epic Crypt
+Ancient Warrior's Chest
+From: Chrisbreezy
+Source: Level 20 epic Crypt
+--------------- 2025-08-17 02:21:47 --------------------------
+Rare Dragon Chest
+From: Chrisbreezy
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Chrisbreezy
+Source: Level 20 rare Crypt
+Elven Citadel Chest
+From: Sabar
+Source: Level 15 Citadel
+Barbarian Chest
+From: Chrisbreezy
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:21:52 --------------------------
+Gnome Workshop Chest
+From: Chrisbreezy
+Source: Level 20 Crypt
+Bone Chest
+From: Chrisbreezy
+Source: Level 20 Crypt
+Gnome Workshop Chest
+From: Satoru Gojo
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+--------------- 2025-08-17 02:21:56 --------------------------
+Orc Chest
+From: Chrisbreezy
+Source: Level 20 Crypt
+Mayan Chest
+From: Chrisbreezy
+Source: Level 20 Crypt
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+Fire Chest
+From: BigT
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:22:00 --------------------------
+Sapphire Chest
+From: Chrisbreezy
+Source: Level 25-29 Vault of the Ancients
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+Sand Chest
+From: Shoyon
+Source: Level 15 Crypt
+Elven Citadel Chest
+From: Sabar
+Source: Level 15 Citadel
+--------------- 2025-08-17 02:22:04 --------------------------
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+Fire Chest
+From: Abisai
+Source: Level 20 Crypt
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+Sapphire Chest
+From: Zombie Tony
+Source: Level 25-29 Vault of the Ancients
+--------------- 2025-08-17 02:22:08 --------------------------
+Cobra Chest
+From: Abisai
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 20 rare Crypt
+Elegant Chest
+From: Abisai
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:22:13 --------------------------
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 20 rare Crypt
+Elegant Chest
+From: Abisai
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+--------------- 2025-08-17 02:22:17 --------------------------
+Sapphire Chest
+From: Zombie Tony
+Source: Level 25-29 Vault of the Ancients
+Elegant Chest
+From: guicarde
+Source: Level 20 Crypt
+Fire Chest
+From: guicarde
+Source: Level 15 Crypt
+Sapphire Chest
+From: Zombie Tony
+Source: Level 25-29 Vault of the Ancients
+--------------- 2025-08-17 02:22:21 --------------------------
+Bone Chest
+From: Taugal
+Source: Level 25 Crypt
+Sapphire Chest
+From: Zombie Tony
+Source: Level 20-24 Vault of the Ancients
+Barbarian Chest
+From: Taugal
+Source: Level 15 Crypt
+Chest of the Cursed
+From: GAVILAN
+Source: Level 15 epic Crypt
+--------------- 2025-08-17 02:22:25 --------------------------
+Sapphire Chest
+From: Zombie Tony
+Source: Level 25-29 Vault of the Ancients
+Bone Chest
+From: GAVILAN
+Source: Level 15 Crypt
+Sand Chest
+From: GAVILAN
+Source: Level 15 Crypt
+Sapphire Chest
+From: guicarde
+Source: Level 20-24 Vault of the Ancients
+--------------- 2025-08-17 02:22:30 --------------------------
+Infernal Chest
+From: Taugal
+Source: Level 15 Crypt
+Infernal Chest
+From: Taugal
+Source: Level 15 Crypt
+Barbarian Chest
+From: guicarde
+Source: Level 15 Crypt
+Orc Chest
+From: GAVILAN
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:22:34 --------------------------
+Sand Chest
+From: guicarde
+Source: Level 15 Crypt
+Bone Chest
+From: Taugal
+Source: Level 20 Crypt
+Sapphire Chest
+From: Sudoki
+Source: Level 25-29 Vault of the Ancients
+Elven Citadel Chest
+From: Sabar
+Source: Level 15 Citadel
+--------------- 2025-08-17 02:22:38 --------------------------
+Fire Chest
+From: Taugal
+Source: Level 15 Crypt
+Infernal Chest
+From: Taugal
+Source: Level 15 Crypt
+Sapphire Chest
+From: Sudoki
+Source: Level 20-24 Vault of the Ancients
+Sapphire Chest
+From: Mag Ualghairg
+Source: Level 30-34 Vault of the Ancients
+--------------- 2025-08-17 02:22:43 --------------------------
+Elven Citadel Chest
+From: Sabar
+Source: Level 15 Citadel
+Sand Chest
+From: Taugal
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Nice n Spicy Sers
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Nice n Spicy Sers
+Source: Level 20 rare Crypt
+--------------- 2025-08-17 02:22:47 --------------------------
+Sapphire Chest
+From: Mag Ualghairg
+Source: Level 25-29 Vault of the Ancients
+Infernal Chest
+From: Mag Ualghairg
+Source: Level 25 Crypt
+Sapphire Chest
+From: Sudoki
+Source: Level 25-29 Vault of the Ancients
+Rare Dragon Chest
+From: Nice n Spicy Sers
+Source: Level 20 rare Crypt
+--------------- 2025-08-17 02:22:51 --------------------------
+Gnome Workshop Chest
+From: Mag Ualghairg
+Source: Level 20 Crypt
+Bone Chest
+From: Nice n Spicy Sers
+Source: Level 15 Crypt
+Sapphire Chest
+From: BigT
+Source: Level 25-29 Vault of the Ancients
+Fire Chest
+From: Nice n Spicy Sers
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:22:56 --------------------------
+Fire Chest
+From: Nice n Spicy Sers
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Taugal
+Source: Level 15 rare Crypt
+Sapphire Chest
+From: Sudoki
+Source: Level 25-29 Vault of the Ancients
+Rare Dragon Chest
+From: Taugal
+Source: Level 20 rare Crypt
+--------------- 2025-08-17 02:23:00 --------------------------
+Turtle Chest
+From: Nice n Spicy Sers
+Source: Level 15 epic Crypt
+Fire Chest
+From: Nice n Spicy Sers
+Source: Level 20 Crypt
+Orc Chest
+From: Nice n Spicy Sers
+Source: Level 20 Crypt
+Rare Dragon Chest
+From: Nice n Spicy Sers
+Source: Level 20 rare Crypt
+--------------- 2025-08-17 02:23:04 --------------------------
+Sapphire Chest
+From: Sudoki
+Source: Level 30-34 Vault of the Ancients
+Rare Dragon Chest
+From: Nice n Spicy Sers
+Source: Level 20 rare Crypt
+Sapphire Chest
+From: Sudoki
+Source: Level 30-34 Vault of the Ancients
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 20 rare Crypt
+--------------- 2025-08-17 02:23:09 --------------------------
+Infernal Chest
+From: Masa Madre Momuro
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+Sapphire Chest
+From: Sudoki
+Source: Level 25-29 Vault of the Ancients
+Mayan Chest
+From: Masa Madre Momuro
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:23:13 --------------------------
+Sapphire Chest
+From: Sudoki
+Source: Level 20-24 Vault of the Ancients
+Cobra Chest
+From: Zombie Tony
+Source: Level 20 Crypt
+Cobra Chest
+From: Zombie Tony
+Source: Level 20 Crypt
+Cobra Chest
+From: Zombie Tony
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:23:17 --------------------------
+Abandoned Chest
+From: Nice n Spicy Sers
+Source: Level 20 epic Crypt
+Common Chest of Wealth
+From: Tera
+Source: Clan wealth
+Uncommon Chest of Wealth
+From: Tera
+Source: Clan wealth
+Rare Chest of Wealth
+From: Tera
+Source: Clan wealth
+--------------- 2025-08-17 02:23:22 --------------------------
+Epic Chest of Wealth
+From: Tera
+Source: Clan wealth
+Elven Citadel Chest
+From: Nice n Spicy Sers
+Source: Level 20 Citadel
+Mayan Chest
+From: Chirikawa
+Source: Level 20 Crypt
+Forgotten Chest
+From: Chirikawa
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:23:26 --------------------------
+Rare Dragon Chest
+From: Nice n Spicy Sers
+Source: Level 20 rare Crypt
+Sand Chest
+From: Filor
+Source: Level 15 Crypt
+Infernal Chest
+From: Filor
+Source: Level 15 Crypt
+Harpy Chest
+From: Filor
+Source: Level 15 epic Crypt
+--------------- 2025-08-17 02:23:30 --------------------------
+Scarab Chest
+From: Filor
+Source: Level 15 epic Crypt
+Bone Chest
+From: Filor
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Taugal
+Source: Level 20 rare Crypt
+Fire Chest
+From: Filor
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:23:34 --------------------------
+Harpy Chest
+From: Nice n Spicy Sers
+Source: Level 20 epic Crypt
+Infernal Chest
+From: Filor
+Source: Level 15 Crypt
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Elven Citadel Chest
+From: Zombie Tony
+Source: Level 20 Citadel
+--------------- 2025-08-17 02:23:38 --------------------------
+Elven Citadel Chest
+From: Zombie Tony
+Source: Level 20 Citadel
+Elven Citadel Chest
+From: zhasur
+Source: Level 20 Citadel
+Elven Citadel Chest
+From: zhasur
+Source: Level 20 Citadel
+Bone Chest
+From: Mag Ualghairg
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:23:43 --------------------------
+Fire Chest
+From: Mag Ualghairg
+Source: Level 20 Crypt
+Bone Chest
+From: Mag Ualghairg
+Source: Level 20 Crypt
+Stone Chest
+From: Mag Ualghairg
+Source: Level 25 Crypt
+Infernal Chest
+From: Mag Ualghairg
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:23:47 --------------------------
+Barbarian Chest
+From: Mag Ualghairg
+Source: Level 20 Crypt
+Mayan Chest
+From: Mag Ualghairg
+Source: Level 20 Crypt
+Barbarian Chest
+From: Mag Ualghairg
+Source: Level 20 Crypt
+Elegant Chest
+From: Mag Ualghairg
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:23:51 --------------------------
+Mayan Chest
+From: Mag Ualghairg
+Source: Level 25 Crypt
+Cobra Chest
+From: Mag Ualghairg
+Source: Level 25 Crypt
+Elven Citadel Chest
+From: Chirikawa
+Source: Level 20 Citadel
+Elven Citadel Chest
+From: Chirikawa
+Source: Level 20 Citadel
+--------------- 2025-08-17 02:23:55 --------------------------
+Rare Dragon Chest
+From: Chirikawa
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Chirikawa
+Source: Level 20 rare Crypt
+Orc Chest
+From: Kantrius
+Source: Level 10 Crypt
+Mayan Chest
+From: Kantrius
+Source: Level 10 Crypt
+--------------- 2025-08-17 02:23:59 --------------------------
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Cursed Citadel Chest
+From: Zombie Tony
+Source: Level 20 Citadel
+Cursed Citadel Chest
+From: Zombie Tony
+Source: Level 20 Citadel
+Governor's Chest
+From: Thorgal
+Source: Story
+--------------- 2025-08-17 02:24:04 --------------------------
+Cursed Citadel Chest
+From: Zombie Tony
+Source: Level 20 Citadel
+Rare Dragon Chest
+From: Breadandroses
+Source: Level 15 rare Crypt
+Sand Chest
+From: Breadandroses
+Source: Level 15 Crypt
+Elven Citadel Chest
+From: Zombie Tony
+Source: Level 20 Citadel
+--------------- 2025-08-17 02:24:08 --------------------------
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Barbarian Chest
+From: Breadandroses
+Source: Level 15 Crypt
+Bone Chest
+From: Breadandroses
+Source: Level 15 Crypt
+Bone Chest
+From: Lebrim
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:24:12 --------------------------
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 20 rare Crypt
+Barbarian Chest
+From: Breadandroses
+Source: Level 20 Crypt
+Mayan Chest
+From: Breadandroses
+Source: Level 15 Crypt
+Orc Chest
+From: Thorgal
+Source: Level 10 Crypt
+--------------- 2025-08-17 02:24:16 --------------------------
+Gnome Workshop Chest
+From: ouragan
+Source: Level 5 Crypt
+Orc Chest
+From: Breadandroses
+Source: Level 15 Crypt
+Elegant Chest
+From: Nimvenilas
+Source: Level 15 Crypt
+Elegant Chest
+From: ouragan
+Source: Level 10 Crypt
+--------------- 2025-08-17 02:24:21 --------------------------
+Infernal Chest
+From: Breadandroses
+Source: Level 15 Crypt
+Fire Chest
+From: ouragan
+Source: Level 10 Crypt
+Cobra Chest
+From: Zombie Tony
+Source: Level 20 Crypt
+Elegant Chest
+From: Breadandroses
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:24:25 --------------------------
+Rare Dragon Chest
+From: Breadandroses
+Source: Level 15 rare Crypt
+Elegant Chest
+From: Breadandroses
+Source: Level 15 Crypt
+Forgotten Chest
+From: ouragan
+Source: Level 20 Crypt
+Cobra Chest
+From: Nimvenilas
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:24:30 --------------------------
+Cobra Chest
+From: Nimvenilas
+Source: Level 15 Crypt
+Elven Citadel Chest
+From: Showman
+Source: Level 15 Citadel
+Rare Dragon Chest
+From: Breadandroses
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Breadandroses
+Source: Level 20 rare Crypt
+--------------- 2025-08-17 02:24:34 --------------------------
+Rare Dragon Chest
+From: Breadandroses
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Nimvenilas
+Source: Level 15 rare Crypt
+Cobra Chest
+From: Zombie Tony
+Source: Level 20 Crypt
+Sapphire Chest
+From: Souffleblue
+Source: Level 25-29 Vault of the Ancients
+--------------- 2025-08-17 02:24:38 --------------------------
+Gladiator's Chest
+From: Showman
+Source: Arena
+Sand Chest
+From: Souffleblue
+Source: Level 15 Crypt
+Barbarian Chest
+From: Showman
+Source: Level 15 Crypt
+Bone Chest
+From: Ragnar
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:24:42 --------------------------
+Elven Citadel Chest
+From: Showman
+Source: Level 15 Citadel
+Sand Chest
+From: Souffleblue
+Source: Level 15 Crypt
+Orc Chest
+From: Showman
+Source: Level 15 Crypt
+Stone Chest
+From: Ragnar
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:24:46 --------------------------
+Orc Chest
+From: Souffleblue
+Source: Level 15 Crypt
+Orc Chest
+From: Souffleblue
+Source: Level 15 Crypt
+Fire Chest
+From: Ragnar
+Source: Level 15 Crypt
+Cobra Chest
+From: Showman
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:24:51 --------------------------
+Stone Chest
+From: Ragnar
+Source: Level 15 Crypt
+Elegant Chest
+From: Showman
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Ragnar
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: Ragnar
+Source: Level 15 rare Crypt
+--------------- 2025-08-17 02:24:55 --------------------------
+Infernal Chest
+From: Kigam
+Source: Level 15 Crypt
+Gnome Workshop Chest
+From: ouragan
+Source: Level 20 Crypt
+Elven Citadel Chest
+From: Souffleblue
+Source: Level 20 Citadel
+Sand Chest
+From: Nimvenilas
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:24:59 --------------------------
+Elven Citadel Chest
+From: Souffleblue
+Source: Level 20 Citadel
+Elven Citadel Chest
+From: Kigam
+Source: Level 15 Citadel
+Elven Citadel Chest
+From: Kigam
+Source: Level 15 Citadel
+Rare Dragon Chest
+From: Souffleblue
+Source: Level 20 rare Crypt
+--------------- 2025-08-17 02:25:03 --------------------------
+Rare Dragon Chest
+From: Souffleblue
+Source: Level 20 rare Crypt
+Braided Chest
+From: ouragan
+Source: Level 15 epic Crypt
+Sand Chest
+From: Souffleblue
+Source: Level 15 Crypt
+Scorpion Chest
+From: ouragan
+Source: Level 15 epic Crypt
+--------------- 2025-08-17 02:25:07 --------------------------
+Fire Chest
+From: Adoragar
+Source: Level 15 Crypt
+Orc Chest
+From: Chrisw333
+Source: Level 20 Crypt
+Barbarian Chest
+From: Adoragar
+Source: Level 15 Crypt
+Cobra Chest
+From: BigT
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:25:12 --------------------------
+Orc Chest
+From: Chrisw333
+Source: Level 20 Crypt
+Bone Chest
+From: Adoragar
+Source: Level 15 Crypt
+Stone Chest
+From: BigT
+Source: Level 25 Crypt
+Orc Chest
+From: Chrisw333
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:25:16 --------------------------
+Rare Dragon Chest
+From: BigT
+Source: Level 25 rare Crypt
+Rare Dragon Chest
+From: Chrisw333
+Source: Level 20 rare Crypt
+Scarab Chest
+From: Art
+Source: Level 15 epic Crypt
+Rare Dragon Chest
+From: BigT
+Source: Level 25 rare Crypt
+--------------- 2025-08-17 02:25:20 --------------------------
+Rare Dragon Chest
+From: BigT
+Source: Level 25 rare Crypt
+Sapphire Chest
+From: BigT
+Source: Level 30-34 Vault of the Ancients
+Forgotten Chest
+From: AnyaBlu2
+Source: Level 20 Crypt
+Elven Citadel Chest
+From: Gazius
+Source: Level 10 Citadel
+--------------- 2025-08-17 02:25:25 --------------------------
+Forgotten Chest
+From: AnyaBlu2
+Source: Level 15 Crypt
+Infernal Chest
+From: AnyaBlu2
+Source: Level 15 Crypt
+Mayan Chest
+From: LanZius
+Source: Level 25 Crypt
+Infernal Chest
+From: LanZius
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:25:29 --------------------------
+Undead Chest
+From: Kigam
+Source: Level 16 heroic Monster
+Sand Chest
+From: LanZius
+Source: Level 25 Crypt
+Rare Dragon Chest
+From: Tygonris
+Source: Level 15 rare Crypt
+Sapphire Chest
+From: LanZius
+Source: Level 30-34 Vault of the Ancients
+--------------- 2025-08-17 02:25:33 --------------------------
+Rare Dragon Chest
+From: BigT
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Tygonris
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: Kigam
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: Kigam
+Source: Level 15 rare Crypt
+--------------- 2025-08-17 02:25:38 --------------------------
+Sapphire Chest
+From: BigT
+Source: Level 25-29 Vault of the Ancients
+Sapphire Chest
+From: LanZius
+Source: Level 30-34 Vault of the Ancients
+Rare Dragon Chest
+From: Chrisw333
+Source: Level 20 rare Crypt
+Sapphire Chest
+From: Breadandroses
+Source: Level 25-29 Vault of the Ancients
+--------------- 2025-08-17 02:25:42 --------------------------
+Elegant Chest
+From: VallesDH
+Source: Level 15 Crypt
+Stone Chest
+From: LanZius
+Source: Level 25 Crypt
+Orc Chest
+From: LanZius
+Source: Level 25 Crypt
+Sand Chest
+From: VallesDH
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:25:46 --------------------------
+Sapphire Chest
+From: LanZius
+Source: Level 30-34 Vault of the Ancients
+Barbarian Chest
+From: LanZius
+Source: Level 25 Crypt
+Gnome Workshop Chest
+From: VallesDH
+Source: Level 15 Crypt
+Sand Chest
+From: LanZius
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:25:50 --------------------------
+Fire Chest
+From: LanZius
+Source: Level 25 Crypt
+Cobra Chest
+From: Periwyn
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: BigT
+Source: Level 20 rare Crypt
+Minotaur Chest
+From: LanZius
+Source: Level 25 epic Crypt
+--------------- 2025-08-17 02:25:54 --------------------------
+Sapphire Chest
+From: LanZius
+Source: Level 25-29 Vault of the Ancients
+Orc Chest
+From: Periwyn
+Source: Level 15 Crypt
+Priest's Chest
+From: Chrisw333
+Source: Level 20 epic Crypt
+Braided Chest
+From: LanZius
+Source: Level 25 epic Crypt
+--------------- 2025-08-17 02:25:59 --------------------------
+Orc Chest
+From: Souffleblue
+Source: Level 15 Crypt
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Gnome Workshop Chest
+From: Periwyn
+Source: Level 15 Crypt
+Titansteel Chest
+From: LanZius
+Source: Level 25 epic Crypt
+--------------- 2025-08-17 02:26:03 --------------------------
+Orc Chest
+From: Souffleblue
+Source: Level 15 Crypt
+Minotaur Chest
+From: LanZius
+Source: Level 25 epic Crypt
+Rare Dragon Chest
+From: BigT
+Source: Level 20 rare Crypt
+Cobalt Chest
+From: LanZius
+Source: Level 25 epic Crypt
+--------------- 2025-08-17 02:26:07 --------------------------
+Sand Chest
+From: Souffleblue
+Source: Level 15 Crypt
+Sapphire Chest
+From: LanZius
+Source: Level 30-34 Vault of the Ancients
+Scarab Chest
+From: LanZius
+Source: Level 25 epic Crypt
+Orc Chest
+From: Souffleblue
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:26:11 --------------------------
+Rare Dragon Chest
+From: Kosak
+Source: Level 25 rare Crypt
+Titansteel Chest
+From: LanZius
+Source: Level 25 epic Crypt
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Cobalt Chest
+From: Kosak
+Source: Level 25 epic Crypt
+--------------- 2025-08-17 02:26:15 --------------------------
+Orc Chest
+From: Souffleblue
+Source: Level 15 Crypt
+Priest's Chest
+From: Kosak
+Source: Level 25 epic Crypt
+Sapphire Chest
+From: Andi
+Source: Level 35-39 Vault of the Ancients
+Orc Chest
+From: Souffleblue
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:26:19 --------------------------
+Rare Dragon Chest
+From: Kosak
+Source: Level 20 rare Crypt
+Orc Chest
+From: Souffleblue
+Source: Level 15 Crypt
+Forgotten Chest
+From: Kosak
+Source: Level 25 Crypt
+Sand Chest
+From: Souffleblue
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:26:24 --------------------------
+Sapphire Chest
+From: Andi
+Source: Level 25-29 Vault of the Ancients
+Barbarian Chest
+From: Kosak
+Source: Level 20 Crypt
+Chest of the Cursed
+From: LanZius
+Source: Level 25 epic Crypt
+Gnome Workshop Chest
+From: Kosak
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:26:28 --------------------------
+Orc Chest
+From: Souffleblue
+Source: Level 15 Crypt
+Sand Chest
+From: Souffleblue
+Source: Level 15 Crypt
+Sand Chest
+From: Yotanka
+Source: Level 20 Crypt
+Orc Chest
+From: Souffleblue
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:26:32 --------------------------
+Sapphire Chest
+From: Andi
+Source: Level 30-34 Vault of the Ancients
+Sand Chest
+From: Souffleblue
+Source: Level 15 Crypt
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Bone Chest
+From: Kosak
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:26:37 --------------------------
+Ancient Warrior's Chest
+From: Yotanka
+Source: Level 15 epic Crypt
+Sapphire Chest
+From: Souffleblue
+Source: Level 20-24 Vault of the Ancients
+Cobra Chest
+From: Lord Crumble
+Source: Level 15 Crypt
+Stone Chest
+From: Lord Crumble
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:26:41 --------------------------
+Sand Chest
+From: Lord Crumble
+Source: Level 15 Crypt
+Sapphire Chest
+From: Andi
+Source: Level 30-34 Vault of the Ancients
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Sapphire Chest
+From: Andi
+Source: Level 30-34 Vault of the Ancients
+--------------- 2025-08-17 02:26:45 --------------------------
+Sapphire Chest
+From: Andi
+Source: Level 30-34 Vault of the Ancients
+Cursed Citadel Chest
+From: Monte
+Source: Level 20 Citadel
+Barbarian Chest
+From: Satoru Gojo
+Source: Level 15 Crypt
+Sapphire Chest
+From: Andi
+Source: Level 20-24 Vault of the Ancients
+--------------- 2025-08-17 02:26:49 --------------------------
+Forgotten Chest
+From: Yotanka
+Source: Level 15 Crypt
+Mayan Chest
+From: Satoru Gojo
+Source: Level 15 Crypt
+Infernal Chest
+From: AKH
+Source: Level 20 Crypt
+Stone Chest
+From: AKH
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:26:53 --------------------------
+Sapphire Chest
+From: Andi
+Source: Level 30-34 Vault of the Ancients
+Mayan Chest
+From: AKH
+Source: Level 20 Crypt
+Sapphire Chest
+From: Andi
+Source: Level 25-29 Vault of the Ancients
+Gnome Workshop Chest
+From: Satoru Gojo
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:26:58 --------------------------
+Barbarian Chest
+From: Diabolik zius
+Source: Level 20 Crypt
+Cobra Chest
+From: Diabolik zius
+Source: Level 15 Crypt
+Sapphire Chest
+From: Andi
+Source: Level 25-29 Vault of the Ancients
+Barbarian Chest
+From: Diabolik zius
+Source: Level 25 Crypt
+--------------- 2025-08-17 02:27:02 --------------------------
+Barbarian Chest
+From: Jarven
+Source: Level 15 Crypt
+Fire Chest
+From: Jarven
+Source: Level 20 Crypt
+Sapphire Chest
+From: Andi
+Source: Level 20-24 Vault of the Ancients
+Gnome Workshop Chest
+From: Satoru Gojo
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:27:06 --------------------------
+Barbarian Chest
+From: Jarven
+Source: Level 15 Crypt
+Infernal Chest
+From: Jarven
+Source: Level 20 Crypt
+Sapphire Chest
+From: Andi
+Source: Level 25-29 Vault of the Ancients
+Rare Dragon Chest
+From: Jarven
+Source: Level 20 rare Crypt
+--------------- 2025-08-17 02:27:10 --------------------------
+Cobra Chest
+From: Jarven
+Source: Level 15 Crypt
+Sapphire Chest
+From: Andi
+Source: Level 25-29 Vault of the Ancients
+Mayan Chest
+From: Jarven
+Source: Level 15 Crypt
+Elven Citadel Chest
+From: Chrisw333
+Source: Level 15 Citadel
+--------------- 2025-08-17 02:27:14 --------------------------
+Gnome Workshop Chest
+From: Jarven
+Source: Level 20 Crypt
+Barbarian Chest
+From: Jarven
+Source: Level 15 Crypt
+Elegant Chest
+From: Fankayel
+Source: Level 25 Crypt
+Bone Chest
+From: Jarven
+Source: Level 20 Crypt
+--------------- 2025-08-17 02:27:19 --------------------------
+Elven Citadel Chest
+From: Chrisw333
+Source: Level 15 Citadel
+Infernal Chest
+From: Jarven
+Source: Level 20 Crypt
+Mayan Chest
+From: Fankayel
+Source: Level 25 Crypt
+Cobra Chest
+From: Jarven
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:27:23 --------------------------
+Fire Chest
+From: Jarven
+Source: Level 15 Crypt
+Mayan Chest
+From: Fankayel
+Source: Level 15 Crypt
+Sapphire Chest
+From: Chirikawa
+Source: Level 30-34 Vault of the Ancients
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+--------------- 2025-08-17 02:27:27 --------------------------
+Fire Chest
+From: Enzo
+Source: Level 20 Crypt
+Sapphire Chest
+From: Andi
+Source: Level 25-29 Vault of the Ancients
+Cobra Chest
+From: Gririm
+Source: Level 15 Crypt
+Gnome Workshop Chest
+From: Enzo
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:27:31 --------------------------
+Rare Dragon Chest
+From: Zombie Tony
+Source: Level 15 rare Crypt
+Cobra Chest
+From: Enzo
+Source: Level 15 Crypt
+Elven Citadel Chest
+From: Gririm
+Source: Level 15 Citadel
+Orc Chest
+From: Gririm
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:27:35 --------------------------
+Rare Dragon Chest
+From: Ragnar
+Source: Level 10 rare Crypt
+Sapphire Chest
+From: Andi
+Source: Level 30-34 Vault of the Ancients
+Rare Dragon Chest
+From: Ragnar
+Source: Level 10 rare Crypt
+Forgotten Chest
+From: Gririm
+Source: Level 15 Crypt
+--------------- 2025-08-17 02:27:39 --------------------------
+Elegant Chest
+From: Gririm
+Source: Level 15 Crypt
+Gnome Workshop Chest
+From: Gririm
+Source: Level 15 Crypt
+Elven Chest
+From: Gririm
+Source: Level 17 heroic Monster
+Cobra Chest
+From: Zombie Tony
+Source: Level 20 Crypt

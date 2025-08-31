@@ -1,0 +1,936 @@
+--------------- 2025-01-10 03:39:01 --------------------------
+Barbarian Chest
+From: Guyren
+Source: Level 10 Crypt
+Gladiator's Chest
+From: Illedil
+Source: Arena
+Fire Chest
+From: Targash
+Source: Level 20 Crypt
+Barbarian Chest
+From: Targash
+Source: Level 20 Crypt
+--------------- 2025-01-10 03:39:06 --------------------------
+Rare Dragon Chest
+From: Gralbine
+Source: Level 15 rare Crypt
+Stone Chest
+From: Illedil
+Source: Level 15 Crypt
+Fire Chest
+From: Miss Gralbine
+Source: Level 5 Crypt
+Minotaur Chest
+From: Targash
+Source: Level 20 epic Crypt
+--------------- 2025-01-10 03:39:11 --------------------------
+Orc Chest
+From: Gralbine
+Source: Level 10 Crypt
+Orc Chest
+From: Gralbine
+Source: Level 10 Crypt
+Orc Chest
+From: Gralbine
+Source: Level 15 Crypt
+Orc Chest
+From: Gralbine
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:39:16 --------------------------
+Elven Citadel Chest
+From: Guyren
+Source: Level 15 Citadel
+Orc Chest
+From: Gralbine
+Source: Level 15 Crypt
+Orc Chest
+From: Gralbine
+Source: Level 10 Crypt
+Orc Chest
+From: Gralbine
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:39:21 --------------------------
+Elegant Chest
+From: ammar
+Source: Level 15 Crypt
+Orc Chest
+From: Gralbine
+Source: Level 10 Crypt
+Barbarian Chest
+From: Iledil
+Source: Level 15 Crypt
+Orc Chest
+From: Gralbine
+Source: Level 15 Crypt
+--------------- 2025-01-10 03:39:25 --------------------------
+Orc Chest
+From: Gralbine
+Source: Level 15 Crypt
+Orc Chest
+From: Gralbine
+Source: Level 15 Crypt
+Sand Chest
+From: ammar
+Source: Level 10 Crypt
+Orc Chest
+From: Gralbine
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:39:30 --------------------------
+Orc Chest
+From: Gralbine
+Source: Level 15 Crypt
+Orc Chest
+From: Gralbine
+Source: Level 15 Crypt
+Barbarian Chest
+From: Iledil
+Source: Level 15 Crypt
+Orc Chest
+From: Gralbine
+Source: Level 15 Crypt
+--------------- 2025-01-10 03:39:35 --------------------------
+Fire Chest
+From: Gralbine
+Source: Level 10 Crypt
+Infernal Chest
+From: Maedfanir
+Source: Level 10 Crypt
+Gnome Workshop Chest
+From: ammar
+Source: Level 10 Crypt
+Elegant Chest
+From: Maedfanir
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:39:39 --------------------------
+Gladiator's Chest
+From: Targie
+Source: Arena
+Gladiator's Chest
+From: Targie
+Source: Arena
+Forgotten Chest
+From: Vessler
+Source: Level 15 Crypt
+Gladiator's Chest
+From: Targash
+Source: Arena
+--------------- 2025-01-10 03:39:44 --------------------------
+Gnome Workshop Chest
+From: Illedil
+Source: Level 15 Crypt
+Forgotten Chest
+From: Maedfanir
+Source: Level 10 Crypt
+Union Chest
+From: Targie
+Source: Union of Triumph personal reward
+Union Chest
+From: Targie
+Source: Union of Triumph personal reward
+--------------- 2025-01-10 03:39:49 --------------------------
+Union Chest
+From: Targie
+Source: Union of Triumph personal reward
+Union Chest
+From: Targie
+Source: Union of Triumph personal reward
+Union Chest
+From: Targie
+Source: Union of Triumph personal reward
+Union Chest
+From: Targash
+Source: Union of Triumph personal reward
+--------------- 2025-01-10 03:39:53 --------------------------
+Union Chest
+From: Targash
+Source: Union of Triumph personal reward
+Union Chest
+From: Targash
+Source: Union of Triumph personal reward
+Union Chest
+From: Targash
+Source: Union of Triumph personal reward
+Union Chest
+From: Targash
+Source: Union of Triumph personal reward
+--------------- 2025-01-10 03:39:58 --------------------------
+Cobra Chest
+From: Targie
+Source: Level 15 Crypt
+Cobra Chest
+From: Targie
+Source: Level 15 Crypt
+Orc Chest
+From: Targie
+Source: Level 15 Crypt
+Common Chest of Wealth
+From: Curly
+Source: Clan wealth
+--------------- 2025-01-10 03:40:03 --------------------------
+Uncommon Chest of Wealth
+From: Curly
+Source: Clan wealth
+Rare Chest of Wealth
+From: Curly
+Source: Clan wealth
+Cobra Chest
+From: Targie
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Maedfanir
+Source: Level 15 rare Crypt
+--------------- 2025-01-10 03:40:07 --------------------------
+Cobra Chest
+From: Illedil
+Source: Level 5 Crypt
+Cobra Chest
+From: Targie
+Source: Level 15 Crypt
+Cobra Chest
+From: Targie
+Source: Level 15 Crypt
+Cobra Chest
+From: Targie
+Source: Level 15 Crypt
+--------------- 2025-01-10 03:40:12 --------------------------
+Orc Chest
+From: Targie
+Source: Level 15 Crypt
+Cobra Chest
+From: Illedil
+Source: Level 20 Crypt
+Orc Chest
+From: Targie
+Source: Level 15 Crypt
+Cobra Chest
+From: Targie
+Source: Level 15 Crypt
+--------------- 2025-01-10 03:40:16 --------------------------
+Cobra Chest
+From: Targie
+Source: Level 15 Crypt
+Sand Chest
+From: Illedil
+Source: Level 15 Crypt
+Orc Chest
+From: Targie
+Source: Level 15 Crypt
+Elegant Chest
+From: IIledil
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:40:20 --------------------------
+Orc Chest
+From: Targie
+Source: Level 15 Crypt
+Elegant Chest
+From: Illedil
+Source: Level 15 Crypt
+Cobra Chest
+From: Targie
+Source: Level 15 Crypt
+Forgotten Chest
+From: Maedfanir
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:40:24 --------------------------
+Sand Chest
+From: Illedil
+Source: Level 5 Crypt
+Cobra Chest
+From: Illedil
+Source: Level 20 Crypt
+Infernal Chest
+From: Iledil
+Source: Level 5 Crypt
+Sand Chest
+From: IIledil
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:40:29 --------------------------
+Sand Chest
+From: Illedil
+Source: Level 20 Crypt
+Sand Chest
+From: Felix
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Orodfed
+Source: Level 10 rare Crypt
+Rare Dragon Chest
+From: Orodfed
+Source: Level 10 rare Crypt
+--------------- 2025-01-10 03:40:33 --------------------------
+Orc Chest
+From: Orodfed
+Source: Level 10 Crypt
+Cobra Chest
+From: Orodfed
+Source: Level 10 Crypt
+Gnome Workshop Chest
+From: Orodfed
+Source: Level 10 Crypt
+Stone Chest
+From: dAbell
+Source: Level 25 Crypt
+--------------- 2025-01-10 03:40:37 --------------------------
+Rare Dragon Chest
+From: dAbell
+Source: Level 25 rare Crypt
+Forgotten Chest
+From: dAbell
+Source: Level 20 Crypt
+Fire Chest
+From: Elbrinan
+Source: Level 5 Crypt
+Rare Dragon Chest
+From: Gralbine
+Source: Level 15 rare Crypt
+--------------- 2025-01-10 03:40:42 --------------------------
+Rare Dragon Chest
+From: Beraferyl
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Beraferyl
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Beraferyl
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Mark Fish
+Source: Level 20 rare Crypt
+--------------- 2025-01-10 03:40:46 --------------------------
+Rare Dragon Chest
+From: Beraferyl
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Beraferyl
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Beraferyl
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Mark Fish
+Source: Level 20 rare Crypt
+--------------- 2025-01-10 03:40:51 --------------------------
+Rare Dragon Chest
+From: Beraferyl
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Beraferyl
+Source: Level 20 rare Crypt
+Elegant Chest
+From: Elbrinan
+Source: Level 5 Crypt
+Rare Dragon Chest
+From: Beraferyl
+Source: Level 20 rare Crypt
+--------------- 2025-01-10 03:40:56 --------------------------
+Rare Dragon Chest
+From: Beraferyl
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: Beraferyl
+Source: Level 20 rare Crypt
+Elegant Chest
+From: Orodfed
+Source: Level 15 Crypt
+Abandoned Chest
+From: Mark Fish
+Source: Level 20 epic Crypt
+--------------- 2025-01-10 03:41:00 --------------------------
+Infernal Chest
+From: Orodfed
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Beraferyl
+Source: Level 20 rare Crypt
+White Wood Chest
+From: Mark Fish
+Source: Level 20 epic Crypt
+White Wood Chest
+From: Mark Fish
+Source: Level 20 epic Crypt
+--------------- 2025-01-10 03:41:05 --------------------------
+Rare Dragon Chest
+From: Beraferyl
+Source: Level 20 rare Crypt
+Cobra Chest
+From: Marching Turnip
+Source: Level 10 Crypt
+Cobra Chest
+From: dAbell
+Source: Level 25 Crypt
+Infernal Chest
+From: Maedfanir
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:41:10 --------------------------
+Elven Citadel Chest
+From: Orodfed
+Source: Level 10 Citadel
+Rare Dragon Chest
+From: dAbell
+Source: Level 25 rare Crypt
+Cobra Chest
+From: Marching Turnip
+Source: Level 5 Crypt
+Stone Chest
+From: Maedfanir
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:41:14 --------------------------
+Infernal Chest
+From: TomasS
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: Cenn
+Source: Level 15 rare Crypt
+Sand Chest
+From: Cenn
+Source: Level 10 Crypt
+Elven Citadel Chest
+From: Melchizedek
+Source: Level 10 Citadel
+--------------- 2025-01-10 03:41:19 --------------------------
+Rare Dragon Chest
+From: Melchizedek
+Source: Level 10 rare Crypt
+Gnome Workshop Chest
+From: Railfiring
+Source: Level 10 Crypt
+Stone Chest
+From: Railfiring
+Source: Level 10 Crypt
+Bone Chest
+From: Grazius
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:41:23 --------------------------
+Bone Chest
+From: Grazius
+Source: Level 10 Crypt
+Infernal Chest
+From: Grazius
+Source: Level 10 Crypt
+Gnome Workshop Chest
+From: Grazius
+Source: Level 10 Crypt
+Stone Chest
+From: Moogukus
+Source: Level 15 Crypt
+--------------- 2025-01-10 03:41:28 --------------------------
+Mayan Chest
+From: Moogukus
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Moogukus
+Source: Level 15 rare Crypt
+Sand Chest
+From: Moogukus
+Source: Level 15 Crypt
+Mayan Chest
+From: Grazius
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:41:32 --------------------------
+Bone Chest
+From: Grazius
+Source: Level 10 Crypt
+Orc Chest
+From: Grazius
+Source: Level 10 Crypt
+Bone Chest
+From: Grazius
+Source: Level 10 Crypt
+Sand Chest
+From: Grazius
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:41:36 --------------------------
+Fire Chest
+From: Grazius
+Source: Level 10 Crypt
+Orc Chest
+From: Railfiring
+Source: Level 10 Crypt
+Mayan Chest
+From: eye
+Source: Level 10 Crypt
+Gnome Workshop Chest
+From: eye
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:41:41 --------------------------
+Sand Chest
+From: eye
+Source: Level 5 Crypt
+Forgotten Chest
+From: Adoragar
+Source: Level 5 Crypt
+Gnome Workshop Chest
+From: Sharra
+Source: Level 15 Crypt
+Cobra Chest
+From: Jukinos
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:41:45 --------------------------
+Stone Chest
+From: TuTo
+Source: Level 10 Crypt
+Mayan Chest
+From: Moogukus
+Source: Level 15 Crypt
+Sand Chest
+From: TuTo
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: Moogukus
+Source: Level 20 rare Crypt
+--------------- 2025-01-10 03:41:50 --------------------------
+Barbarian Chest
+From: TuTo
+Source: Level 15 Crypt
+Orc Chest
+From: Moogukus
+Source: Level 20 Crypt
+Forgotten Chest
+From: Maedfanir
+Source: Level 10 Crypt
+Elven Citadel Chest
+From: Maedfanir
+Source: Level 15 Citadel
+--------------- 2025-01-10 03:41:54 --------------------------
+Mayan Chest
+From: TomasS
+Source: Level 10 Crypt
+Ancient Warrior's Chest
+From: TuTo
+Source: Level 15 epic Crypt
+Infernal Chest
+From: AnyaBlu2
+Source: Level 5 Crypt
+Rare Dragon Chest
+From: TuTo
+Source: Level 10 rare Crypt
+--------------- 2025-01-10 03:41:58 --------------------------
+Infernal Chest
+From: AnyaBlu2
+Source: Level 10 Crypt
+Infernal Chest
+From: Anya Blu 90
+Source: Level 10 Crypt
+Forgotten Chest
+From: AnyaBlu2
+Source: Level 5 Crypt
+Fire Chest
+From: Anya Blu 90
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:42:03 --------------------------
+Elegant Chest
+From: AnyaBlu2
+Source: Level 5 Crypt
+Stone Chest
+From: Anya Blu 90
+Source: Level 10 Crypt
+Barbarian Chest
+From: Maedfanir
+Source: Level 10 Crypt
+Gnome Workshop Chest
+From: AnyaBlu2
+Source: Level 5 Crypt
+--------------- 2025-01-10 03:42:07 --------------------------
+Mayan Chest
+From: Anya Blu 90
+Source: Level 10 Crypt
+Cobra Chest
+From: AnyaBlu2
+Source: Level 5 Crypt
+Barbarian Chest
+From: Jukinos
+Source: Level 5 Crypt
+Cobra Chest
+From: Jukinos
+Source: Level 5 Crypt
+--------------- 2025-01-10 03:42:11 --------------------------
+Fire Chest
+From: AnyaBlu2
+Source: Level 5 Crypt
+Infernal Chest
+From: Anya Blu 90
+Source: Level 10 Crypt
+Forgotten Chest
+From: AnyaBlu2
+Source: Level 5 Crypt
+Cobra Chest
+From: Anya Blu 90
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:42:15 --------------------------
+Fire Chest
+From: AnyaBlu2
+Source: Level 5 Crypt
+Infernal Chest
+From: AnyaBlu2
+Source: Level 5 Crypt
+Gnome Workshop Chest
+From: Anya Blu 90
+Source: Level 10 Crypt
+Stone Chest
+From: AnyaBlu2
+Source: Level 5 Crypt
+--------------- 2025-01-10 03:42:19 --------------------------
+Fire Chest
+From: Anya Blu 90
+Source: Level 10 Crypt
+Infernal Chest
+From: AnyaBlu2
+Source: Level 5 Crypt
+Elven Citadel Chest
+From: TuTo
+Source: Level 10 Citadel
+Fire Chest
+From: Anya Blu 90
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:42:23 --------------------------
+Rare Dragon Chest
+From: Anya Blu 90
+Source: Level 10 rare Crypt
+Rare Dragon Chest
+From: Anya Blu 90
+Source: Level 10 rare Crypt
+Bone Chest
+From: Anya Blu 90
+Source: Level 10 Crypt
+Barbarian Chest
+From: AnyaBlu2
+Source: Level 5 Crypt
+--------------- 2025-01-10 03:42:27 --------------------------
+Cobra Chest
+From: Anya Blu 90
+Source: Level 10 Crypt
+Barbarian Chest
+From: AnyaBlu2
+Source: Level 5 Crypt
+Gnome Workshop Chest
+From: Anya Blu 90
+Source: Level 10 Crypt
+Infernal Chest
+From: AnyaBlu2
+Source: Level 5 Crypt
+--------------- 2025-01-10 03:42:31 --------------------------
+Orc Chest
+From: Jukinos
+Source: Level 5 Crypt
+Barbarian Chest
+From: Anya Blu 90
+Source: Level 10 Crypt
+Infernal Chest
+From: Jukinos
+Source: Level 10 Crypt
+Cobra Chest
+From: Jukinos
+Source: Level 15 Crypt
+--------------- 2025-01-10 03:42:35 --------------------------
+Gladiator's Chest
+From: Anya Blu 90
+Source: Arena
+Stone Chest
+From: Jukinos
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: Numenor
+Source: Level 20 rare Crypt
+Fire Chest
+From: Adolbine
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:42:39 --------------------------
+Chest of the Cursed
+From: Kiama
+Source: Level 15 epic Crypt
+Cobra Chest
+From: TomasS
+Source: Level 10 Crypt
+Infernal Chest
+From: Noli
+Source: Level 15 Crypt
+Mayan Chest
+From: Noli
+Source: Level 15 Crypt
+--------------- 2025-01-10 03:42:43 --------------------------
+Cobra Chest
+From: Marching Turnip
+Source: Level 10 Crypt
+Cobra Chest
+From: Marching Turnip
+Source: Level 10 Crypt
+Cobra Chest
+From: Niin
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: Moogukus
+Source: Level 15 rare Crypt
+--------------- 2025-01-10 03:42:47 --------------------------
+Bone Chest
+From: Moogukus
+Source: Level 15 Crypt
+Sand Chest
+From: Moogukus
+Source: Level 15 Crypt
+Mayan Chest
+From: Moogukus
+Source: Level 15 Crypt
+Elven Citadel Chest
+From: Moogukus
+Source: Level 15 Citadel
+--------------- 2025-01-10 03:42:51 --------------------------
+Elegant Chest
+From: Moogukus
+Source: Level 15 Crypt
+Barbarian Chest
+From: Moogukus
+Source: Level 15 Crypt
+Mayan Chest
+From: Moogukus
+Source: Level 15 Crypt
+Forgotten Chest
+From: Moogukus
+Source: Level 15 Crypt
+--------------- 2025-01-10 03:42:55 --------------------------
+Mayan Chest
+From: Moogukus
+Source: Level 15 Crypt
+Elegant Chest
+From: Moogukus
+Source: Level 15 Crypt
+Barbarian Chest
+From: Moogukus
+Source: Level 15 Crypt
+Elegant Chest
+From: Moogukus
+Source: Level 15 Crypt
+--------------- 2025-01-10 03:42:59 --------------------------
+Barbarian Chest
+From: Moogukus
+Source: Level 15 Crypt
+Braided Chest
+From: Moogukus
+Source: Level 15 epic Crypt
+Fire Chest
+From: Kiin
+Source: Level 15 Crypt
+Stone Chest
+From: Kiin
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:43:03 --------------------------
+Gnome Workshop Chest
+From: Kiin
+Source: Level 10 Crypt
+Mayan Chest
+From: Kiin
+Source: Level 15 Crypt
+Infernal Chest
+From: Kiin
+Source: Level 10 Crypt
+Orc Chest
+From: Kiin
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:43:08 --------------------------
+Common Chest of Wealth
+From: Curly
+Source: Clan wealth
+Uncommon Chest of Wealth
+From: Curly
+Source: Clan wealth
+Rare Chest of Wealth
+From: Curly
+Source: Clan wealth
+Orc Chest
+From: Kiin
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:43:12 --------------------------
+Rare Dragon Chest
+From: Kiin
+Source: Level 10 rare Crypt
+Rare Dragon Chest
+From: Kiin
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: cat lady
+Source: Level 20 rare Crypt
+Infernal Chest
+From: cat lady
+Source: Level 15 Crypt
+--------------- 2025-01-10 03:43:16 --------------------------
+Forgotten Chest
+From: cat lady
+Source: Level 15 Crypt
+Bone Chest
+From: cat lady
+Source: Level 15 Crypt
+Sand Chest
+From: cat lady
+Source: Level 10 Crypt
+Bone Chest
+From: cat lady
+Source: Level 15 Crypt
+--------------- 2025-01-10 03:43:20 --------------------------
+Gnome Workshop Chest
+From: cat lady
+Source: Level 15 Crypt
+Elegant Chest
+From: cat lady
+Source: Level 10 Crypt
+Bone Chest
+From: cat lady
+Source: Level 10 Crypt
+Orc Chest
+From: cat lady
+Source: Level 20 Crypt
+--------------- 2025-01-10 03:43:24 --------------------------
+Sand Chest
+From: cat lady
+Source: Level 20 Crypt
+Elegant Chest
+From: cat lady
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: cat lady
+Source: Level 20 rare Crypt
+Elegant Chest
+From: Kiin
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:43:28 --------------------------
+Rare Dragon Chest
+From: cat lady
+Source: Level 10 rare Crypt
+Mayan Chest
+From: cat lady
+Source: Level 15 Crypt
+Mayan Chest
+From: cat lady
+Source: Level 15 Crypt
+Bone Chest
+From: cat lady
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:43:32 --------------------------
+Rare Dragon Chest
+From: cat lady
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: cat lady
+Source: Level 20 rare Crypt
+Rare Dragon Chest
+From: cat lady
+Source: Level 15 rare Crypt
+Scarab Chest
+From: Moogukus
+Source: Level 15 epic Crypt
+--------------- 2025-01-10 03:43:36 --------------------------
+Elegant Chest
+From: Kiin
+Source: Level 10 Crypt
+Elegant Chest
+From: cat lady
+Source: Level 15 Crypt
+Rare Dragon Chest
+From: cat lady
+Source: Level 15 rare Crypt
+Forgotten Chest
+From: cat lady
+Source: Level 15 Crypt
+--------------- 2025-01-10 03:43:41 --------------------------
+Rare Dragon Chest
+From: cat lady
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: cat lady
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: cat lady
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: cat lady
+Source: Level 15 rare Crypt
+--------------- 2025-01-10 03:43:45 --------------------------
+Rare Dragon Chest
+From: cat lady
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: cat lady
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: cat lady
+Source: Level 15 rare Crypt
+Priest's Chest
+From: cat lady
+Source: Level 15 epic Crypt
+--------------- 2025-01-10 03:43:49 --------------------------
+Harpy Chest
+From: cat lady
+Source: Level 15 epic Crypt
+Minotaur Chest
+From: cat lady
+Source: Level 20 epic Crypt
+Trillium Chest
+From: cat lady
+Source: Level 15 epic Crypt
+Barbarian Chest
+From: cat lady
+Source: Level 20 epic Crypt
+--------------- 2025-01-10 03:43:53 --------------------------
+Elven Citadel Chest
+From: cat lady
+Source: Level 15 Citadel
+Elven Citadel Chest
+From: cat lady
+Source: Level 10 Citadel
+Elven Citadel Chest
+From: cat lady
+Source: Level 15 Citadel
+Rare Dragon Chest
+From: Niin
+Source: Level 15 rare Crypt
+--------------- 2025-01-10 03:43:57 --------------------------
+Rare Dragon Chest
+From: Niin
+Source: Level 15 rare Crypt
+Elven Citadel Chest
+From: cat lady
+Source: Level 10 Citadel
+Rare Dragon Chest
+From: Niin
+Source: Level 15 rare Crypt
+Elven Citadel Chest
+From: cat lady
+Source: Level 15 Citadel
+--------------- 2025-01-10 03:44:01 --------------------------
+Rare Dragon Chest
+From: Niin
+Source: Level 15 rare Crypt
+Rare Dragon Chest
+From: Niin
+Source: Level 15 rare Crypt
+Elven Citadel Chest
+From: cat lady
+Source: Level 10 Citadel
+Rare Dragon Chest
+From: Niin
+Source: Level 15 rare Crypt
+--------------- 2025-01-10 03:44:05 --------------------------
+Elven Citadel Chest
+From: cat lady
+Source: Level 10 Citadel
+Cobra Chest
+From: Niin
+Source: Level 10 Crypt
+Cobra Chest
+From: Ballazan
+Source: Level 10 Crypt
+Barbarian Chest
+From: Ballazan
+Source: Level 10 Crypt
+--------------- 2025-01-10 03:44:10 --------------------------
+Elven Citadel Chest
+From: cat lady
+Source: Level 15 Citadel
+Elven Citadel Chest
+From: cat lady
+Source: Level 15 Citadel
+Elven Citadel Chest
+From: cat lady
+Source: Level 10 Citadel
+Elven Citadel Chest
+From: cat lady
+Source: Level 15 Citadel

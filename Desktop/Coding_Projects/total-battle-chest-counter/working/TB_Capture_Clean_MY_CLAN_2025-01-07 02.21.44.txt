@@ -1,0 +1,360 @@
+Elven Citadel Chest
+From : Marching Turnip
+Source : Level 15 Citadel
+Mayan Chest
+From : Grazius
+Source : Level 10 Crypt
+Cobra Chest
+From : ELOHIM
+Source : Level 5 Crypt
+Elegant Chest
+From : Grazius
+Source : Level 10 Crypt
+Fire Chest
+From : Kiama
+Source : Level 20-24 Vault of the Ancients
+Elegant Chest
+From : Maedfanir
+Source : Level 10 Crypt
+Fire Chest
+From : Ballazan
+Source : Level 10 Crypt
+Barbarian Chest
+From : Ballazan
+Source : Level 10 Crypt
+Sand Chest
+From : Girtheous Maximus
+Source : Level 10 Crypt
+Cobra Chest
+From : Serdriilas
+Source : Level 15 Crypt
+Infernal Chest
+From : Maedfanir
+Source : Level 10 Crypt
+Bone Chest
+From : Ballazan
+Source : Level 10 Crypt
+Fire Chest
+From : ELOHIM
+Source : Level 20-24 Vault of the Ancients
+Cobra Chest
+From : Marching Turnip
+Source : Level 10 Crypt
+Forgotten Chest
+From : Noli
+Source : Level 20 Crypt
+Forgotten Chest
+From : ammar
+Source : Level 10 Crypt
+Cobra Chest
+From : tledil
+Source : Level 10 Crypt
+Elegant Chest
+From : Adolbine
+Source : Level 15 Crypt
+Mayan Chest
+From : Gralbine
+Source : Level 15 Crypt
+Fire Chest
+From : Girtheous Maximus
+Source : Level 20-24 Vault of the Ancients
+Rare Dragon Chest
+From : ammar
+Source : Level 10 rare Crypt
+Barbarian Chest
+From : tledil
+Source : Level 10 Crypt
+Infernal Chest
+From : tledil
+Source : Level 15 Crypt
+Mayan Chest
+From : Kiama
+Source : Level 15 Crypt
+Rare Dragon Chest
+From : cat lady
+Source : Level 20 rare Crypt
+Fire Chest
+From : Adolbine
+Source : Level 15 Crypt
+Rare Dragon Chest
+From : Marching Turnip
+Source : Level 15 rare Crypt
+Mayan Chest
+From : cat lady
+Source : Level 20 Crypt
+Fire Chest
+From : Girtheous Maximus
+Source : Level 15-19 Vault of the Ancients
+Rare Dragon Chest
+From : cat lady
+Source : Level 20 rare Crypt
+Fire Chest
+From : cat lady
+Source : Level 20 Crypt
+Elegant Chest
+From : Pinto
+Source : Level 10 Crypt
+Bone Chest
+From : Girtheous Maximus
+Source : Level 15 Crypt
+Gnome Workshop Chest
+From : Elbrinan
+Source : Level 5 Crypt
+Fire Chest
+From : Elbrinan
+Source : Level 5 Crypt
+Fire Chest
+From : ELOHIM
+Source : Level 20-24 Vault of the Ancients
+Gladiator's Chest
+From : Guyren
+Source : Arena
+Fire Chest
+From : Railfiring
+Source : Level 10 Crypt
+Stone Chest
+From : Railfiring
+Source : Level 10 Crypt
+Mayan Chest
+From : Melchizedek
+Source : Level 15 Crypt
+Elven Citadel Chest
+From : Nordman
+Source : Level 10 Citadel
+Cobra Chest
+From : Elbrinan
+Source : Level 5 Crypt
+Elven Citadel Chest
+From : Nordman
+Source : Level 10 Citadel
+Rare Dragon Chest
+From : Marching Turnip
+Source : Level 15 rare Crypt
+Bone Chest
+From : Guyren
+Source : Level 10 Crypt
+Fire Chest
+From : dAbell
+Source : Level 25-29 Vault of the Ancients
+Barbarian Chest
+From : Don Dahron
+Source : Level 5 Crypt
+Elven Citadel Chest
+From : Nordman
+Source : Level 15 Citadel
+Mayan Chest
+From : Don Dahron
+Source : Level 5 Crypt
+Mayan Chest
+From : Guyren
+Source : Level 10 Crypt
+Fire Chest
+From : Railfiring
+Source : Level 10 Crypt
+Rare Dragon Chest
+From : Gralbine
+Source : Level 15 rare Crypt
+Bone Chest
+From : Guyren
+Source : Level 15 Crypt
+Infernal Chest
+From : Pinto
+Source : Level 10 Crypt
+Rare Dragon Chest
+From : Marching Turnip
+Source : Level 15 rare Crypt
+Fire Chest
+From : Gralbine
+Source : Level 15 Crypt
+Rare Dragon Chest
+From : Orodfed
+Source : Level 10 rare Crypt
+Bone Chest
+From : Elbrinan
+Source : Level 5 Crypt
+Fire Chest
+From : ELOHIM
+Source : Level 20-24 Vault of the Ancients
+Bone Chest
+From : Marching Turnip
+Source : Level 10 Crypt
+Fire Chest
+From : Pinto
+Source : Level 10 Crypt
+Elven Citadel Chest
+From : Nordman
+Source : Level 10 Citadel
+Barbarian Chest
+From : Don Dahron
+Source : Level 10 Crypt
+Rare Dragon Chest
+From : Marching Turnip
+Source : Level 10 rare Crypt
+Sand Chest
+From : dAbell
+Source : Level 20 Crypt
+Elven Citadel Chest
+From : Nordman
+Source : Level 10 Citadel
+Elegant Chest
+From : Gralbine
+Source : Level 15 Crypt
+Stone Chest
+From : Don Dahron
+Source : Level 5 Crypt
+Fire Chest
+From : ELOHIM
+Source : Level 20-24 Vault of the Ancients
+Bone Chest
+From : Orodfed
+Source : Level 10 Crypt
+Mayan Chest
+From : Guyren
+Source : Level 10 Crypt
+Sand Chest
+From : Marching Turnip
+Source : Level 10 Crypt
+Stone Chest
+From : Orodfed
+Source : Level 10 Crypt
+Elven Citadel Chest
+From : Nordman
+Source : Level 10 Citadel
+Orc Chest
+From : Guyren
+Source : Level 15 Crypt
+Fire Chest
+From : cat lady
+Source : Level 20-24 Vault of the Ancients
+Sand Chest
+From : Orodfed
+Source : Level 10 Crypt
+Stone Chest
+From : Agarus
+Source : Level 10 Crypt
+Orc Chest
+From : Pinto
+Source : Level 10 Crypt
+Gnome Workshop Chest
+From : Agarus
+Source : Level 10 Crypt
+Stone Chest
+From : Agarus
+Source : Level 10 Crypt
+Orc Chest
+From : dAbell
+Source : Level 20 Crypt
+Orc Chest
+From : dAbell
+Source : Level 20 Crypt
+Stone Chest
+From : Agarus
+Source : Level 10 Crypt
+Sand Chest
+From : Marching Turnip
+Source : Level 15 Crypt
+Infernal Chest
+From : ammar
+Source : Level 5 Crypt
+Sand Chest
+From : Guyren
+Source : Level 15 Crypt
+Fire Chest
+From : ELOHIM
+Source : Level 20-24 Vault of the Ancients
+Rare Dragon Chest
+From : ammar
+Source : Level 15 rare Crypt
+Common Chest of Wealth
+From : Curly
+Source : Clan wealth
+Uncommon Chest of Wealth
+From : Curly
+Source : Clan wealth
+Rare Chest of Wealth
+From : Curly
+Source : Clan wealth
+Rare Dragon Chest
+From : dAbell
+Source : Level 20 rare Crypt
+Stone Chest
+From : dAbell
+Source : Level 25 Crypt
+Elven Citadel Chest
+From : Melchizedek
+Source : Level 10 Citadel
+Cobra Chest
+From : Marching Turnip
+Source : Level 10 Crypt
+Elven Citadel Chest
+From : Nordman
+Source : Level 15 Citadel
+Elven Citadel Chest
+From : Guyren
+Source : Level 10 Citadel
+Runic Chest
+From : ELOHIM
+Source : Lvl 25-29 Raid Runic squad
+Elven Citadel Chest
+From : Nordman
+Source : Level 15 Citadel
+Orc Chest
+From : DingDong 2
+Source : Level 15 Crypt
+Forgotten Chest
+From : DingDong 2
+Source : Level 15 Crypt
+Runic Chest
+From : dAbell
+Source : Lvl 25-29 Raid Runic squad
+Elven Citadel Chest
+From : Nordman
+Source : Level 15 Citadel
+Mayan Chest
+From : DingDong 2
+Source : Level 15 Crypt
+Gladiator's Chest
+From : dAbell
+Source : Arena
+Elegant Chest
+From : Orodfed
+Source : Level 10 Crypt
+Barbarian Chest
+From : Orodfed
+Source : Level 10 Crypt
+Mayan Chest
+From : Lady F
+Source : Level 20 Crypt
+Orc Chest
+From : Lady F
+Source : Level 25 Crypt
+Mayan Chest
+From : Lady F
+Source : Level 25 Crypt
+Stone Chest
+From : Marching Turnip
+Source : Level 10 Crypt
+Fire Chest
+From : Lady F
+Source : Level 30-34 Vault of the Ancients
+Ancient Warrior's Chest
+From : Lady F
+Source : Level 25 epic Crypt
+Ancient Warrior's Chest
+From : Lady F
+Source : Level 20 epic Crypt
+Elven Citadel Chest
+From : DingDong 2
+Source : Level 10 Citadel
+Rare Dragon Chest
+From : Lady F
+Source : Level 30 rare Crypt
+Sand Chest
+From : Marching Turnip
+Source : Level 20 Crypt
+Elven Citadel Chest
+From : DingDong 2
+Source : Level 10 Citadel
+Fire Chest
+From : Lady F
+Source : Level 25-29 Vault of the Ancients

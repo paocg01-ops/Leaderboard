@@ -1,0 +1,59 @@
+--------------- 2025-02-03 23:06:03 --------------------------
+Barbarian Chest
+From: Monte
+Source: Level 5 Crypt
+Elven Citadel Chest
+From: Monte
+Source: Level 10 Citadel
+Fire Chest
+From: Niin
+Source: Level 5 Crypt
+Forgotten Chest
+From: Susie
+Source: Level 10 Crypt
+--------------- 2025-02-03 23:06:12 --------------------------
+Barbarian Chest
+From: Niin
+Source: Level 5 Crypt
+Elven Citadel Chest
+From: Monte
+Source: Level 10 Citadel
+Fire Chest
+From: Niin
+Source: Level 5 Crypt
+Forgotten Chest
+From: Susie
+Source: Level 10 Crypt
+--------------- 2025-02-03 23:06:16 --------------------------
+Stone Chest
+From: Queen Sofia
+Source: Level 5 Crypt
+Elven Citadel Chest
+From: Monte
+Source: Level 10 Citadel
+Fire Chest
+From: Niin
+Source: Level 5 Crypt
+Forgotten Chest
+From: Susie
+Source: Level 10 Crypt
+--------------- 2025-02-03 23:06:21 --------------------------
+Infernal Chest
+From: Queen Sofia
+Source: Level 5 Crypt
+Elven Citadel Chest
+From: Monte
+Source: Level 10 Citadel
+Fire Chest
+From: Niin
+Source: Level 5 Crypt
+Forgotten Chest
+From: Susie
+Source: Level 10 Crypt
+--------------- 2025-02-03 23:06:25 --------------------------
+Fire Chest
+From: Niin
+Source: Level 5 Crypt
+Forgotten Chest
+From: Susie
+Source: Level 10 Crypt

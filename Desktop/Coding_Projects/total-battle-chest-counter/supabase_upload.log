@@ -1,0 +1,320 @@
+2025-08-26 08:24:04,682 - INFO - Starting EOD upload to Supabase
+2025-08-26 08:24:04,683 - INFO - Processing CSV file: final\TB_Chests_Strike_for_Cake_2025-08-25_20_22_17_FINAL.csv
+2025-08-26 08:24:05,242 - INFO - Successfully connected to Supabase
+2025-08-26 08:24:05,251 - INFO - CSV loaded: 655 rows from final\TB_Chests_Strike_for_Cake_2025-08-25_20_22_17_FINAL.csv
+2025-08-26 08:24:05,332 - INFO - CSV validation passed
+2025-08-26 08:24:05,339 - INFO - Prepared 655 records for upload
+2025-08-26 08:24:05,339 - INFO - Sample record: {'DATE': '2025-08-25 20:22:17', 'PLAYER': 'Kalabar', 'SOURCE': 'Level 16 heroic Monster', 'CHEST': 'Undead Chest', 'SCORE': 20, 'CLAN': 'Strike_for_Cake'}
+2025-08-26 08:24:05,340 - INFO - Uploading to 'raw_chests' in 7 batches of 100
+2025-08-26 08:24:06,740 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22SCORE%22%2C%22CLAN%22%2C%22CHEST%22%2C%22PLAYER%22%2C%22DATE%22 "HTTP/2 401 Unauthorized"
+2025-08-26 08:24:06,742 - ERROR - Error uploading batch 1: {'message': 'new row violates row-level security policy for table "raw_chests"', 'code': '42501', 'hint': None, 'details': None}
+2025-08-26 08:24:06,742 - ERROR - Upload failed
+2025-08-26 08:26:19,667 - INFO - Starting EOD upload to Supabase
+2025-08-26 08:26:19,667 - INFO - Processing CSV file: final\TB_Chests_Strike_for_Cake_2025-08-25_20_22_17_FINAL.csv
+2025-08-26 08:26:20,236 - INFO - Successfully connected to Supabase
+2025-08-26 08:26:20,242 - INFO - CSV loaded: 655 rows from final\TB_Chests_Strike_for_Cake_2025-08-25_20_22_17_FINAL.csv
+2025-08-26 08:26:20,244 - INFO - CSV validation passed
+2025-08-26 08:26:20,249 - INFO - Prepared 655 records for upload
+2025-08-26 08:26:20,249 - INFO - Sample record: {'DATE': '2025-08-25 20:22:17', 'PLAYER': 'Kalabar', 'SOURCE': 'Level 16 heroic Monster', 'CHEST': 'Undead Chest', 'SCORE': 20, 'CLAN': 'Strike_for_Cake'}
+2025-08-26 08:26:20,250 - INFO - Uploading to 'raw_chests' in 7 batches of 100
+2025-08-26 08:26:21,463 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22DATE%22%2C%22CLAN%22%2C%22SCORE%22%2C%22CHEST%22%2C%22PLAYER%22 "HTTP/2 400 Bad Request"
+2025-08-26 08:26:21,464 - ERROR - Error uploading batch 1: {'message': 'UPDATE requires a WHERE clause', 'code': '21000', 'hint': None, 'details': None}
+2025-08-26 08:26:21,465 - ERROR - Upload failed
+2025-08-26 08:35:04,360 - INFO - Starting EOD upload to Supabase
+2025-08-26 08:35:04,361 - INFO - Processing CSV file: final\TB_Chests_Strike_for_Cake_2025-08-25_20_22_17_FINAL.csv
+2025-08-26 08:35:04,935 - INFO - Successfully connected to Supabase
+2025-08-26 08:35:04,942 - INFO - CSV loaded: 655 rows from final\TB_Chests_Strike_for_Cake_2025-08-25_20_22_17_FINAL.csv
+2025-08-26 08:35:05,026 - INFO - CSV validation passed
+2025-08-26 08:35:05,032 - INFO - Prepared 655 records for upload
+2025-08-26 08:35:05,032 - INFO - Sample record: {'DATE': '2025-08-25 20:22:17', 'PLAYER': 'Kalabar', 'SOURCE': 'Level 16 heroic Monster', 'CHEST': 'Undead Chest', 'SCORE': 20, 'CLAN': 'Strike_for_Cake'}
+2025-08-26 08:35:05,032 - INFO - Uploading to 'raw_chests' in 7 batches of 100
+2025-08-26 08:35:05,907 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22PLAYER%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22CHEST%22%2C%22SCORE%22 "HTTP/2 400 Bad Request"
+2025-08-26 08:35:05,914 - ERROR - Error uploading batch 1: {'message': 'UPDATE requires a WHERE clause', 'code': '21000', 'hint': None, 'details': None}
+2025-08-26 08:35:05,914 - ERROR - Upload failed
+2025-08-26 08:36:33,522 - INFO - Starting EOD upload to Supabase
+2025-08-26 08:36:33,523 - INFO - Processing CSV file: final\TB_Chests_Strike_for_Cake_2025-08-25_20_22_17_FINAL.csv
+2025-08-26 08:36:34,077 - INFO - Successfully connected to Supabase
+2025-08-26 08:36:34,083 - INFO - CSV loaded: 655 rows from final\TB_Chests_Strike_for_Cake_2025-08-25_20_22_17_FINAL.csv
+2025-08-26 08:36:34,085 - INFO - CSV validation passed
+2025-08-26 08:36:34,091 - INFO - Prepared 655 records for upload
+2025-08-26 08:36:34,091 - INFO - Sample record: {'DATE': '2025-08-25 20:22:17', 'PLAYER': 'Kalabar', 'SOURCE': 'Level 16 heroic Monster', 'CHEST': 'Undead Chest', 'SCORE': 20, 'CLAN': 'Strike_for_Cake'}
+2025-08-26 08:36:34,091 - INFO - Uploading to 'raw_chests' in 7 batches of 100
+2025-08-26 08:36:34,891 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-26 08:36:34,981 - INFO - Batch 1/7: 100 records uploaded successfully
+2025-08-26 08:36:35,121 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-26 08:36:35,123 - INFO - Batch 2/7: 100 records uploaded successfully
+2025-08-26 08:36:35,261 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-26 08:36:35,263 - INFO - Batch 3/7: 100 records uploaded successfully
+2025-08-26 08:36:35,493 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-26 08:36:35,496 - INFO - Batch 4/7: 100 records uploaded successfully
+2025-08-26 08:36:35,678 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-26 08:36:35,680 - INFO - Batch 5/7: 100 records uploaded successfully
+2025-08-26 08:36:35,815 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-26 08:36:35,817 - INFO - Batch 6/7: 100 records uploaded successfully
+2025-08-26 08:36:35,936 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-26 08:36:35,937 - INFO - Batch 7/7: 55 records uploaded successfully
+2025-08-26 08:36:35,938 - INFO - Successfully uploaded 655 records to raw_chests
+2025-08-26 08:36:36,260 - INFO - HTTP Request: GET https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?select=%2A&updated_at=gte.2025-08-26+08%3A00%3A00 "HTTP/2 206 Partial Content"
+2025-08-26 08:36:36,350 - INFO - Recent records in database: 12455
+2025-08-26 08:36:36,351 - INFO - Expected upload count: 655
+2025-08-26 08:36:36,351 - INFO - Upload verification successful
+2025-08-26 08:36:36,351 - INFO - Sample uploaded records:
+2025-08-26 08:36:36,351 - INFO -   Record 1: {'DATE': '2025-08-23 00:00:00', 'PLAYER': 'aghaté tyché', 'SOURCE': 'Union of Triumph personal reward', 'CHEST': 'Union Chest', 'SCORE': 5, 'CLAN': 'Strike_for_Cake'}
+2025-08-26 08:36:36,352 - INFO -   Record 2: {'DATE': '2025-08-23 00:00:00', 'PLAYER': 'aghaté tyché', 'SOURCE': 'Union of Triumph personal reward', 'CHEST': 'Union Chest', 'SCORE': 5, 'CLAN': 'Strike_for_Cake'}
+2025-08-26 08:36:36,352 - INFO -   Record 3: {'DATE': '2025-08-23 00:00:00', 'PLAYER': 'aghaté tyché', 'SOURCE': 'Union of Triumph personal reward', 'CHEST': 'Union Chest', 'SCORE': 5, 'CLAN': 'Strike_for_Cake'}
+2025-08-26 08:36:36,352 - INFO - EOD upload completed successfully: 655 records
+2025-08-26 10:27:20,146 - INFO - Starting EOD upload to Supabase
+2025-08-26 10:27:20,147 - INFO - Processing CSV file: final\TB_Chests_Strike_for_Cake_2025-08-26_09.00.30_FINAL.csv
+2025-08-26 10:27:20,953 - INFO - Successfully connected to Supabase
+2025-08-26 10:27:20,982 - INFO - CSV loaded with windows-1252 encoding: 381 rows from final\TB_Chests_Strike_for_Cake_2025-08-26_09.00.30_FINAL.csv
+2025-08-26 10:27:21,002 - INFO - CSV validation passed
+2025-08-26 10:27:21,007 - INFO - Prepared 381 records for upload
+2025-08-26 10:27:21,007 - INFO - Sample record: {'DATE': '2025-08-26 09:00:30', 'PLAYER': 'BigT', 'SOURCE': 'Level 20 epic Crypt', 'CHEST': 'Braided Chest', 'SCORE': 25, 'CLAN': 'Strike_for_Cake'}
+2025-08-26 10:27:21,008 - INFO - Uploading to 'raw_chests' in 4 batches of 100
+2025-08-26 10:27:22,816 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22SCORE%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22DATE%22 "HTTP/2 201 Created"
+2025-08-26 10:27:22,916 - INFO - Batch 1/4: 100 records uploaded successfully
+2025-08-26 10:27:23,381 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22SCORE%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22DATE%22 "HTTP/2 201 Created"
+2025-08-26 10:27:23,383 - INFO - Batch 2/4: 100 records uploaded successfully
+2025-08-26 10:27:23,837 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22SCORE%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22DATE%22 "HTTP/2 201 Created"
+2025-08-26 10:27:23,838 - INFO - Batch 3/4: 100 records uploaded successfully
+2025-08-26 10:27:24,122 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22SCORE%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22DATE%22 "HTTP/2 201 Created"
+2025-08-26 10:27:24,123 - INFO - Batch 4/4: 81 records uploaded successfully
+2025-08-26 10:27:24,124 - INFO - Successfully uploaded 381 records to raw_chests
+2025-08-26 10:27:24,625 - INFO - HTTP Request: GET https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?select=%2A&updated_at=gte.2025-08-26+10%3A00%3A00 "HTTP/2 206 Partial Content"
+2025-08-26 10:27:24,636 - INFO - Recent records in database: 12836
+2025-08-26 10:27:24,636 - INFO - Expected upload count: 381
+2025-08-26 10:27:24,636 - INFO - Upload verification successful
+2025-08-26 10:27:24,637 - INFO - Sample uploaded records:
+2025-08-26 10:27:24,637 - INFO -   Record 1: {'DATE': '2025-08-23 00:00:00', 'PLAYER': 'aghaté tyché', 'SOURCE': 'Union of Triumph personal reward', 'CHEST': 'Union Chest', 'SCORE': 5, 'CLAN': 'Strike_for_Cake'}
+2025-08-26 10:27:24,637 - INFO -   Record 2: {'DATE': '2025-08-23 00:00:00', 'PLAYER': 'aghaté tyché', 'SOURCE': 'Union of Triumph personal reward', 'CHEST': 'Union Chest', 'SCORE': 5, 'CLAN': 'Strike_for_Cake'}
+2025-08-26 10:27:24,638 - INFO -   Record 3: {'DATE': '2025-08-23 00:00:00', 'PLAYER': 'aghaté tyché', 'SOURCE': 'Union of Triumph personal reward', 'CHEST': 'Union Chest', 'SCORE': 5, 'CLAN': 'Strike_for_Cake'}
+2025-08-26 10:27:24,638 - INFO - EOD upload completed successfully: 381 records
+2025-08-28 02:55:58,232 - INFO - Starting EOD upload to Supabase
+2025-08-28 02:55:58,234 - INFO - Processing CSV file: final/TB_Chests_Strike_for_Cake_2025-08-28_02.54.46_FINAL.csv
+2025-08-28 02:55:58,965 - INFO - Successfully connected to Supabase
+2025-08-28 02:55:59,004 - INFO - CSV loaded with utf-8 encoding: 738 rows from final/TB_Chests_Strike_for_Cake_2025-08-28_02.54.46_FINAL.csv
+2025-08-28 02:55:59,022 - INFO - CSV validation passed
+2025-08-28 02:55:59,029 - INFO - Prepared 738 records for upload
+2025-08-28 02:55:59,029 - INFO - Sample record: {'DATE': '2025-08-28 02:54:46', 'PLAYER': 'Beydeland', 'SOURCE': 'Level 20 epic Crypt', 'CHEST': "Priest's Chest", 'SCORE': 25, 'CLAN': 'Strike_for_Cake'}
+2025-08-28 02:55:59,030 - INFO - Uploading to 'raw_chests' in 8 batches of 100
+2025-08-28 02:56:00,284 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22PLAYER%22%2C%22CLAN%22%2C%22SCORE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22DATE%22 "HTTP/2 201 Created"
+2025-08-28 02:56:00,292 - INFO - Batch 1/8: 100 records uploaded successfully
+2025-08-28 02:56:00,690 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22PLAYER%22%2C%22CLAN%22%2C%22SCORE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22DATE%22 "HTTP/2 201 Created"
+2025-08-28 02:56:00,692 - INFO - Batch 2/8: 100 records uploaded successfully
+2025-08-28 02:56:00,980 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22PLAYER%22%2C%22CLAN%22%2C%22SCORE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22DATE%22 "HTTP/2 201 Created"
+2025-08-28 02:56:00,981 - INFO - Batch 3/8: 100 records uploaded successfully
+2025-08-28 02:56:01,323 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22PLAYER%22%2C%22CLAN%22%2C%22SCORE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22DATE%22 "HTTP/2 201 Created"
+2025-08-28 02:56:01,325 - INFO - Batch 4/8: 100 records uploaded successfully
+2025-08-28 02:56:01,567 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22PLAYER%22%2C%22CLAN%22%2C%22SCORE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22DATE%22 "HTTP/2 201 Created"
+2025-08-28 02:56:01,587 - INFO - Batch 5/8: 100 records uploaded successfully
+2025-08-28 02:56:01,925 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22PLAYER%22%2C%22CLAN%22%2C%22SCORE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22DATE%22 "HTTP/2 201 Created"
+2025-08-28 02:56:01,926 - INFO - Batch 6/8: 100 records uploaded successfully
+2025-08-28 02:56:02,156 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22PLAYER%22%2C%22CLAN%22%2C%22SCORE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22DATE%22 "HTTP/2 201 Created"
+2025-08-28 02:56:02,158 - INFO - Batch 7/8: 100 records uploaded successfully
+2025-08-28 02:56:02,414 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22PLAYER%22%2C%22CLAN%22%2C%22SCORE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22DATE%22 "HTTP/2 201 Created"
+2025-08-28 02:56:02,416 - INFO - Batch 8/8: 38 records uploaded successfully
+2025-08-28 02:56:02,417 - INFO - Successfully uploaded 738 records to raw_chests
+2025-08-28 02:56:02,703 - INFO - HTTP Request: GET https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?select=%2A&updated_at=gte.2025-08-28+02%3A00%3A00 "HTTP/2 200 OK"
+2025-08-28 02:56:02,784 - INFO - Recent records in database: 738
+2025-08-28 02:56:02,784 - INFO - Expected upload count: 738
+2025-08-28 02:56:02,784 - INFO - Upload verification successful
+2025-08-28 02:56:02,785 - INFO - Sample uploaded records:
+2025-08-28 02:56:02,785 - INFO -   Record 1: {'DATE': '2025-08-28 02:54:46', 'PLAYER': 'Beydeland', 'SOURCE': 'Level 20 epic Crypt', 'CHEST': "Priest's Chest", 'SCORE': 25, 'CLAN': 'Strike_for_Cake'}
+2025-08-28 02:56:02,785 - INFO -   Record 2: {'DATE': '2025-08-28 02:54:46', 'PLAYER': 'higgowoman', 'SOURCE': 'Level 15 Citadel', 'CHEST': 'Elven Citadel Chest', 'SCORE': 10, 'CLAN': 'Strike_for_Cake'}
+2025-08-28 02:56:02,786 - INFO -   Record 3: {'DATE': '2025-08-28 02:54:46', 'PLAYER': 'Sabar', 'SOURCE': 'Tartaros Crypt', 'CHEST': 'Tartaros Chest', 'SCORE': 25, 'CLAN': 'Strike_for_Cake'}
+2025-08-28 02:56:02,787 - INFO - Source file backed up to: data/Strike_for_Cake.txt.backup.20250828_025602
+2025-08-28 02:56:02,791 - INFO - Source file cleared: data/Strike_for_Cake.txt
+2025-08-28 02:56:02,791 - INFO - Source file cleared successfully
+2025-08-28 02:56:02,791 - INFO - EOD upload completed successfully: 738 records
+2025-08-28 14:03:52,621 - INFO - Starting EOD upload to Supabase
+2025-08-28 14:03:52,625 - INFO - Processing CSV file: final/TB_Chests_Strike_for_Cake_2025-08-28_14.03.49_FINAL.csv
+2025-08-28 14:03:53,848 - INFO - Successfully connected to Supabase
+2025-08-28 14:03:53,924 - INFO - CSV loaded with windows-1252 encoding: 1261 rows from final/TB_Chests_Strike_for_Cake_2025-08-28_14.03.49_FINAL.csv
+2025-08-28 14:03:53,948 - INFO - CSV validation passed
+2025-08-28 14:03:53,961 - INFO - Prepared 1261 records for upload
+2025-08-28 14:03:53,962 - INFO - Sample record: {'DATE': '2025-08-28 14:03:49', 'PLAYER': 'Nimvenilas', 'SOURCE': 'Tartaros Crypt', 'CHEST': 'Tartaros Chest', 'SCORE': 25, 'CLAN': 'Strike_for_Cake'}
+2025-08-28 14:03:53,963 - INFO - Uploading to 'raw_chests' in 13 batches of 100
+2025-08-28 14:03:55,389 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-28 14:03:55,401 - INFO - Batch 1/13: 100 records uploaded successfully
+2025-08-28 14:03:55,785 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-28 14:03:55,790 - INFO - Batch 2/13: 100 records uploaded successfully
+2025-08-28 14:03:56,200 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-28 14:03:56,201 - INFO - Batch 3/13: 100 records uploaded successfully
+2025-08-28 14:03:56,736 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-28 14:03:56,740 - INFO - Batch 4/13: 100 records uploaded successfully
+2025-08-28 14:03:57,228 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-28 14:03:57,231 - INFO - Batch 5/13: 100 records uploaded successfully
+2025-08-28 14:03:57,665 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-28 14:03:57,668 - INFO - Batch 6/13: 100 records uploaded successfully
+2025-08-28 14:03:57,915 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-28 14:03:57,918 - INFO - Batch 7/13: 100 records uploaded successfully
+2025-08-28 14:03:58,270 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-28 14:03:58,275 - INFO - Batch 8/13: 100 records uploaded successfully
+2025-08-28 14:03:58,593 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-28 14:03:58,595 - INFO - Batch 9/13: 100 records uploaded successfully
+2025-08-28 14:03:58,894 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-28 14:03:58,896 - INFO - Batch 10/13: 100 records uploaded successfully
+2025-08-28 14:03:59,116 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-28 14:03:59,119 - INFO - Batch 11/13: 100 records uploaded successfully
+2025-08-28 14:03:59,337 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-28 14:03:59,390 - INFO - Batch 12/13: 100 records uploaded successfully
+2025-08-28 14:03:59,574 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22DATE%22%2C%22CHEST%22%2C%22SOURCE%22%2C%22CLAN%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-28 14:03:59,576 - INFO - Batch 13/13: 61 records uploaded successfully
+2025-08-28 14:03:59,576 - INFO - Successfully uploaded 1261 records to raw_chests
+2025-08-28 14:03:59,974 - INFO - HTTP Request: GET https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?select=%2A&updated_at=gte.2025-08-28+14%3A00%3A00 "HTTP/2 206 Partial Content"
+2025-08-28 14:04:00,058 - INFO - Recent records in database: 1261
+2025-08-28 14:04:00,059 - INFO - Expected upload count: 1261
+2025-08-28 14:04:00,059 - INFO - Upload verification successful
+2025-08-28 14:04:00,060 - INFO - Sample uploaded records:
+2025-08-28 14:04:00,061 - INFO -   Record 1: {'DATE': '2025-08-28 14:03:49', 'PLAYER': 'Nimvenilas', 'SOURCE': 'Tartaros Crypt', 'CHEST': 'Tartaros Chest', 'SCORE': 25, 'CLAN': 'Strike_for_Cake'}
+2025-08-28 14:04:00,061 - INFO -   Record 2: {'DATE': '2025-08-28 14:03:49', 'PLAYER': 'Enneen', 'SOURCE': 'Level 15 Crypt', 'CHEST': 'Orc Chest', 'SCORE': 15, 'CLAN': 'Strike_for_Cake'}
+2025-08-28 14:04:00,062 - INFO -   Record 3: {'DATE': '2025-08-28 14:03:49', 'PLAYER': 'Nimvenilas', 'SOURCE': 'Tartaros Crypt', 'CHEST': 'Tartaros Chest', 'SCORE': 25, 'CLAN': 'Strike_for_Cake'}
+2025-08-28 14:04:00,065 - ERROR - Failed to clear source file: [WinError 32] El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso: 'data/Strike_for_Cake.txt' -> 'data/Strike_for_Cake.txt.backup.20250828_140400'
+2025-08-28 14:04:00,065 - WARNING - Failed to clear source file, but upload was successful
+2025-08-28 14:04:00,065 - INFO - EOD upload completed successfully: 1261 records
+2025-08-29 02:58:27,570 - INFO - Starting EOD upload to Supabase
+2025-08-29 02:58:27,577 - INFO - Processing CSV file: final/TB_Chests_Strike_for_Cake_2025-08-29_02.58.25_FINAL.csv
+2025-08-29 02:58:28,855 - INFO - Successfully connected to Supabase
+2025-08-29 02:58:28,929 - INFO - CSV loaded with windows-1252 encoding: 1613 rows from final/TB_Chests_Strike_for_Cake_2025-08-29_02.58.25_FINAL.csv
+2025-08-29 02:58:28,957 - INFO - CSV validation passed
+2025-08-29 02:58:28,979 - INFO - Prepared 1613 records for upload
+2025-08-29 02:58:28,979 - INFO - Sample record: {'DATE': '2025-08-29 02:58:25', 'PLAYER': 'Nimvenilas', 'SOURCE': 'Tartaros Crypt', 'CHEST': 'Tartaros Chest', 'SCORE': 25, 'CLAN': 'Strike_for_Cake'}
+2025-08-29 02:58:28,980 - INFO - Uploading to 'raw_chests' in 17 batches of 100
+2025-08-29 02:58:30,524 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:30,547 - INFO - Batch 1/17: 100 records uploaded successfully
+2025-08-29 02:58:30,893 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:30,898 - INFO - Batch 2/17: 100 records uploaded successfully
+2025-08-29 02:58:31,248 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:31,250 - INFO - Batch 3/17: 100 records uploaded successfully
+2025-08-29 02:58:31,483 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:31,485 - INFO - Batch 4/17: 100 records uploaded successfully
+2025-08-29 02:58:31,710 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:31,714 - INFO - Batch 5/17: 100 records uploaded successfully
+2025-08-29 02:58:32,022 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:32,025 - INFO - Batch 6/17: 100 records uploaded successfully
+2025-08-29 02:58:32,231 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:32,247 - INFO - Batch 7/17: 100 records uploaded successfully
+2025-08-29 02:58:32,539 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:32,542 - INFO - Batch 8/17: 100 records uploaded successfully
+2025-08-29 02:58:32,743 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:32,746 - INFO - Batch 9/17: 100 records uploaded successfully
+2025-08-29 02:58:32,950 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:32,952 - INFO - Batch 10/17: 100 records uploaded successfully
+2025-08-29 02:58:33,219 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:33,222 - INFO - Batch 11/17: 100 records uploaded successfully
+2025-08-29 02:58:33,423 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:33,426 - INFO - Batch 12/17: 100 records uploaded successfully
+2025-08-29 02:58:33,615 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:33,619 - INFO - Batch 13/17: 100 records uploaded successfully
+2025-08-29 02:58:33,802 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:33,804 - INFO - Batch 14/17: 100 records uploaded successfully
+2025-08-29 02:58:33,988 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:33,990 - INFO - Batch 15/17: 100 records uploaded successfully
+2025-08-29 02:58:34,160 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:34,164 - INFO - Batch 16/17: 100 records uploaded successfully
+2025-08-29 02:58:34,273 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22PLAYER%22%2C%22CHEST%22%2C%22DATE%22%2C%22SCORE%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-29 02:58:34,275 - INFO - Batch 17/17: 13 records uploaded successfully
+2025-08-29 02:58:34,276 - INFO - Successfully uploaded 1613 records to raw_chests
+2025-08-29 02:58:34,579 - INFO - HTTP Request: GET https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?select=%2A&updated_at=gte.2025-08-29+02%3A00%3A00 "HTTP/2 206 Partial Content"
+2025-08-29 02:58:34,666 - INFO - Recent records in database: 1613
+2025-08-29 02:58:34,667 - INFO - Expected upload count: 1613
+2025-08-29 02:58:34,667 - INFO - Upload verification successful
+2025-08-29 02:58:34,668 - INFO - Sample uploaded records:
+2025-08-29 02:58:34,668 - INFO -   Record 1: {'DATE': '2025-08-29 02:58:25', 'PLAYER': 'Nimvenilas', 'SOURCE': 'Tartaros Crypt', 'CHEST': 'Tartaros Chest', 'SCORE': 25, 'CLAN': 'Strike_for_Cake'}
+2025-08-29 02:58:34,668 - INFO -   Record 2: {'DATE': '2025-08-29 02:58:25', 'PLAYER': 'Enneen', 'SOURCE': 'Level 15 Crypt', 'CHEST': 'Orc Chest', 'SCORE': 15, 'CLAN': 'Strike_for_Cake'}
+2025-08-29 02:58:34,669 - INFO -   Record 3: {'DATE': '2025-08-29 02:58:25', 'PLAYER': 'Nimvenilas', 'SOURCE': 'Tartaros Crypt', 'CHEST': 'Tartaros Chest', 'SCORE': 25, 'CLAN': 'Strike_for_Cake'}
+2025-08-29 02:58:34,670 - ERROR - Failed to clear source file: [WinError 32] El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso: 'data/Strike_for_Cake.txt' -> 'data/Strike_for_Cake.txt.backup.20250829_025834'
+2025-08-29 02:58:34,670 - WARNING - Failed to clear source file, but upload was successful
+2025-08-29 02:58:34,671 - INFO - EOD upload completed successfully: 1613 records
+2025-08-30 00:00:14,015 - INFO - Starting source file clearing process: data/Strike_for_Cake_TEST.txt
+2025-08-30 00:00:14,100 - INFO - Source file before clearing: 9 lines, 181 bytes
+2025-08-30 00:00:14,102 - INFO - Source file backed up to: data/Strike_for_Cake_TEST.txt.backup.20250830_000014
+2025-08-30 00:00:14,103 - INFO - Source file cleared successfully: data/Strike_for_Cake_TEST.txt (now 0 bytes)
+2025-08-30 00:45:01,796 - INFO - Starting EOD upload to Supabase
+2025-08-30 00:45:01,805 - INFO - Processing CSV file: final/TB_Chests_Strike_for_Cake_2025-08-30_00.44.58_FINAL.csv
+2025-08-30 00:45:01,809 - ERROR - Missing Supabase credentials
+2025-08-30 00:45:01,810 - ERROR - Set SUPABASE_URL and SUPABASE_ANON_KEY environment variables
+2025-08-30 00:54:05,287 - INFO - Starting EOD upload to Supabase
+2025-08-30 00:55:06,035 - INFO - Starting EOD upload to Supabase
+2025-08-30 00:55:06,035 - INFO - Processing CSV file: final/TB_Chests_Strike_for_Cake_2025-08-30_00.44.58_FINAL.csv
+2025-08-30 00:55:06,035 - INFO - Loaded credentials from .env file
+2025-08-30 00:55:06,912 - INFO - Successfully connected to Supabase
+2025-08-30 00:55:06,966 - INFO - CSV loaded with windows-1252 encoding: 1721 rows from final/TB_Chests_Strike_for_Cake_2025-08-30_00.44.58_FINAL.csv
+2025-08-30 00:55:06,982 - INFO - CSV validation passed
+2025-08-30 00:55:06,996 - INFO - Prepared 1721 records for upload
+2025-08-30 00:55:06,996 - INFO - Sample record: {'DATE': '2025-08-30 00:44:58', 'PLAYER': 'Satoru Gojo', 'SOURCE': 'Level 15 Citadel', 'CHEST': 'Elven Citadel Chest', 'SCORE': 10, 'CLAN': 'Strike_for_Cake'}
+2025-08-30 00:55:06,996 - INFO - Uploading to 'raw_chests' in 18 batches of 100
+2025-08-30 00:55:08,365 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:08,372 - INFO - Batch 1/18: 100 records uploaded successfully
+2025-08-30 00:55:08,771 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:08,773 - INFO - Batch 2/18: 100 records uploaded successfully
+2025-08-30 00:55:09,198 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:09,200 - INFO - Batch 3/18: 100 records uploaded successfully
+2025-08-30 00:55:09,581 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:09,582 - INFO - Batch 4/18: 100 records uploaded successfully
+2025-08-30 00:55:09,994 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:09,996 - INFO - Batch 5/18: 100 records uploaded successfully
+2025-08-30 00:55:10,340 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:10,341 - INFO - Batch 6/18: 100 records uploaded successfully
+2025-08-30 00:55:10,605 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:10,623 - INFO - Batch 7/18: 100 records uploaded successfully
+2025-08-30 00:55:10,992 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:10,994 - INFO - Batch 8/18: 100 records uploaded successfully
+2025-08-30 00:55:11,354 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:11,357 - INFO - Batch 9/18: 100 records uploaded successfully
+2025-08-30 00:55:11,684 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:11,685 - INFO - Batch 10/18: 100 records uploaded successfully
+2025-08-30 00:55:11,983 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:11,984 - INFO - Batch 11/18: 100 records uploaded successfully
+2025-08-30 00:55:12,293 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:12,295 - INFO - Batch 12/18: 100 records uploaded successfully
+2025-08-30 00:55:12,517 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:12,519 - INFO - Batch 13/18: 100 records uploaded successfully
+2025-08-30 00:55:12,716 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:12,718 - INFO - Batch 14/18: 100 records uploaded successfully
+2025-08-30 00:55:12,921 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:12,922 - INFO - Batch 15/18: 100 records uploaded successfully
+2025-08-30 00:55:13,111 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:13,113 - INFO - Batch 16/18: 100 records uploaded successfully
+2025-08-30 00:55:13,292 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:13,294 - INFO - Batch 17/18: 100 records uploaded successfully
+2025-08-30 00:55:13,422 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22CHEST%22%2C%22CLAN%22%2C%22SOURCE%22%2C%22DATE%22%2C%22PLAYER%22%2C%22SCORE%22 "HTTP/2 201 Created"
+2025-08-30 00:55:13,422 - INFO - Batch 18/18: 21 records uploaded successfully
+2025-08-30 00:55:13,423 - INFO - Successfully uploaded 1721 records to raw_chests
+2025-08-30 00:55:13,627 - INFO - HTTP Request: GET https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?select=%2A&updated_at=gte.2025-08-30+00%3A00%3A00 "HTTP/2 206 Partial Content"
+2025-08-30 00:55:13,634 - INFO - Recent records in database: 1721
+2025-08-30 00:55:13,634 - INFO - Expected upload count: 1721
+2025-08-30 00:55:13,634 - INFO - Upload verification successful
+2025-08-30 00:55:13,634 - INFO - Sample uploaded records:
+2025-08-30 00:55:13,634 - INFO -   Record 1: {'DATE': '2025-08-30 00:44:58', 'PLAYER': 'Satoru Gojo', 'SOURCE': 'Level 15 Citadel', 'CHEST': 'Elven Citadel Chest', 'SCORE': 10, 'CLAN': 'Strike_for_Cake'}
+2025-08-30 00:55:13,634 - INFO -   Record 2: {'DATE': '2025-08-30 00:44:58', 'PLAYER': 'Satoru Gojo', 'SOURCE': 'Level 15 Citadel', 'CHEST': 'Elven Citadel Chest', 'SCORE': 10, 'CLAN': 'Strike_for_Cake'}
+2025-08-30 00:55:13,635 - INFO -   Record 3: {'DATE': '2025-08-30 00:44:58', 'PLAYER': 'Satoru Gojo', 'SOURCE': 'Level 15 Citadel', 'CHEST': 'Elven Citadel Chest', 'SCORE': 10, 'CLAN': 'Strike_for_Cake'}
+2025-08-30 00:55:13,635 - INFO - Starting source file clearing process: --source
+2025-08-30 00:55:13,635 - WARNING - Source file not found: --source
+2025-08-30 00:55:13,635 - WARNING - Failed to clear source file, but upload was successful
+2025-08-30 00:55:13,635 - INFO - EOD upload completed successfully: 1721 records
+2025-08-30 00:58:52,987 - INFO - Starting EOD upload to Supabase
+2025-08-30 00:58:52,989 - INFO - Processing CSV file: final/TB_Chests_Strike_for_Cake_2025-08-30_00.58.40_FINAL.csv
+2025-08-30 00:58:52,989 - INFO - Loaded credentials from .env file
+2025-08-30 00:58:54,083 - INFO - Successfully connected to Supabase
+2025-08-30 00:58:54,123 - INFO - CSV loaded with utf-8 encoding: 18 rows from final/TB_Chests_Strike_for_Cake_2025-08-30_00.58.40_FINAL.csv
+2025-08-30 00:58:54,128 - INFO - CSV validation passed
+2025-08-30 00:58:54,133 - INFO - Prepared 18 records for upload
+2025-08-30 00:58:54,134 - INFO - Sample record: {'DATE': '2025-08-30 00:58:40', 'PLAYER': 'Nice n Spicy Sers', 'SOURCE': 'Level 15 Citadel', 'CHEST': 'Elven Citadel Chest', 'SCORE': 10, 'CLAN': 'Strike_for_Cake'}
+2025-08-30 00:58:54,135 - INFO - Uploading to 'raw_chests' in 1 batches of 100
+2025-08-30 00:58:55,254 - INFO - HTTP Request: POST https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?columns=%22SOURCE%22%2C%22SCORE%22%2C%22PLAYER%22%2C%22DATE%22%2C%22CHEST%22%2C%22CLAN%22 "HTTP/2 201 Created"
+2025-08-30 00:58:55,261 - INFO - Batch 1/1: 18 records uploaded successfully
+2025-08-30 00:58:55,261 - INFO - Successfully uploaded 18 records to raw_chests
+2025-08-30 00:58:55,449 - INFO - HTTP Request: GET https://dcxljettjctekbhxcyrw.supabase.co/rest/v1/raw_chests?select=%2A&updated_at=gte.2025-08-30+00%3A00%3A00 "HTTP/2 206 Partial Content"
+2025-08-30 00:58:55,465 - INFO - Recent records in database: 1739
+2025-08-30 00:58:55,465 - INFO - Expected upload count: 18
+2025-08-30 00:58:55,465 - INFO - Upload verification successful
+2025-08-30 00:58:55,466 - INFO - Sample uploaded records:
+2025-08-30 00:58:55,467 - INFO -   Record 1: {'DATE': '2025-08-30 00:44:58', 'PLAYER': 'Satoru Gojo', 'SOURCE': 'Level 15 Citadel', 'CHEST': 'Elven Citadel Chest', 'SCORE': 10, 'CLAN': 'Strike_for_Cake'}
+2025-08-30 00:58:55,467 - INFO -   Record 2: {'DATE': '2025-08-30 00:44:58', 'PLAYER': 'Satoru Gojo', 'SOURCE': 'Level 15 Citadel', 'CHEST': 'Elven Citadel Chest', 'SCORE': 10, 'CLAN': 'Strike_for_Cake'}
+2025-08-30 00:58:55,467 - INFO -   Record 3: {'DATE': '2025-08-30 00:44:58', 'PLAYER': 'Satoru Gojo', 'SOURCE': 'Level 15 Citadel', 'CHEST': 'Elven Citadel Chest', 'SCORE': 10, 'CLAN': 'Strike_for_Cake'}
+2025-08-30 00:58:55,469 - INFO - Starting source file clearing process: data/Strike_for_Cake.txt
+2025-08-30 00:58:55,471 - INFO - Source file before clearing: 54 lines, 1147 bytes
+2025-08-30 00:58:55,472 - ERROR - Failed to clear source file: [WinError 32] El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso: 'data/Strike_for_Cake.txt' -> 'data/Strike_for_Cake.txt.backup.20250830_005855'
+2025-08-30 00:58:55,473 - WARNING - Failed to clear source file, but upload was successful
+2025-08-30 00:58:55,474 - INFO - EOD upload completed successfully: 18 records

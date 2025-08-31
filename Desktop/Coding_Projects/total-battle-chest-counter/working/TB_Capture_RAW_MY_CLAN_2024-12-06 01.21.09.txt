@@ -1,0 +1,232 @@
+--------------- 2024-12-06 01:21:16 --------------------------
+Mayan Chest
+From: Targash
+Source: Level 15 Crypt
+Infernal Chest
+From: Guyren
+Source: Level 5 Crypt
+Forgotten Chest
+From: Targash
+Source: Level 15 Crypt
+Ore Chest
+From: Targie
+Source: Level 10 Crypt
+--------------- 2024-12-06 01:21:20 --------------------------
+Orc Chest
+From: Niin
+Source: Level 10 Crypt
+Barbarian Chest
+From: Lorlot
+Source: Level 15 Crypt
+Cobra Chest
+From: TapSumBong
+Source: Level 5 Crypt
+sand Chest
+From: Targash
+Source: Level 15 Crypt
+--------------- 2024-12-06 01:21:24 --------------------------
+Barbarian Chest
+From: Targie
+Source: Level 10 Crypt
+Sand Chest
+From: Targie
+Source: Level 10 Crypt
+Cobra Chest
+From: Niin
+Source: Level 10 Crypt
+oe
+Stone Chest
+From: Lorlot
+Source: Level 15 Crypt
+--------------- The above segment might not be present in the archive file due to processing errors
+--------------- 2024-12-06 01:22:43 --------------------------
+Barbarian Chest
+From: Targie
+Source: Level 10 Crypt
+Sand Chest
+From: Targie
+Source: Level 10 Crypt
+Cobra Chest
+From: Niin
+Source: Level 10 Crypt
+Stone Chest
+From: Lorlot
+Source: Level 15 Crypt
+--------------- 2024-12-06 01:22:47 --------------------------
+Bone Chest
+From: Targash
+Source: Level 15 Crypt
+Forgotten Chest
+From: Targie
+Source: Level 10 Crypt
+Mayan Chest
+From: Lorlot
+Source: Level 15 Crypt
+Fire Chest
+From: Guyren
+Source: Level 5 Crypt
+--------------- 2024-12-06 01:22:51 --------------------------
+Bone Chest
+From: Targash
+Source: Level 15 Crypt
+Stone Chest
+From: TuTo
+Source: Level 15 Crypt
+Union Chest
+From: Kiin
+Source: Union of Triumph personal reward
+Cobra Chest
+From: Lorlot
+Source: Level 15 Crypt
+--------------- 2024-12-06 01:22:56 --------------------------
+Fire Chest
+From: Targie
+Source: Level 10 Crypt
+Forgotten Chest
+From: Maedfanir
+Source: Level 5 Crypt
+Union Chest
+From: Slayer
+Source: Union of Triumph personal reward
+Union Chest
+From: Slayer
+Source; Union of Triumph personal reward
+--------------- 2024-12-06 01:23:00 --------------------------
+Union Chest
+From: Slayer
+Source: Union of Triumph personal reward
+Union Chest
+From: Slayer
+Source: Union of Triumph personal reward
+Union Chest
+From: Slayer
+Source: Union of Triumph personal reward
+Union Chest
+From: Slayer
+Source: Union of Triumph personal reward
+--------------- 2024-12-06 01:23:04 --------------------------
+Barbarian Chest
+From: Lorlot
+Source: Level 15 Crypt
+Stone Chest
+From: Targie
+Source: Level 10 Crypt
+Infernal Chest
+From: Targash
+Source: Level 15 Crypt
+Mayan Chest
+From: Targie
+Source: Level 10 Crypt
+--------------- 2024-12-06 01:23:08 --------------------------
+Elegant Chest
+From: Targash
+Source: Level 15 Crypt
+Stone Chest
+From: Kiin
+Source: Level 10 Crypt
+Gnome Workshop Chest
+From: Targash
+Source: Level 15 Crypt
+Braided Chest
+From: Slayer
+Source: Level 15 epic Crypt
+--------------- 2024-12-06 01:23:12 --------------------------
+Abandoned Chest
+From: Slayer
+Source: Level 15 epic Crypt
+Sand Chest
+From: Targie
+Source: Level 10 Crypt
+Scorpion Chest
+From: Slayer
+Source: Level 15 epic Crypt
+Gnome Workshop Chest
+From: Targash
+Source: Level 15 Crypt
+--------------- 2024-12-06 01:23:15 --------------------------
+Elegant Chest
+From: Lorlot
+Source: Level 15 Crypt
+Sand Chest
+From: Vudor
+Source: Level 10 Crypt
+Scorpion Chest
+From: Slayer
+Source: Level 15 epic Crypt
+oe
+Fire Chest
+From: Targie
+Source: Level 10 Crypt
+--------------- The above segment might not be present in the archive file due to processing errors
+--------------- 2024-12-06 01:23:21 --------------------------
+Elegant Chest
+From: Lorlot
+Source: Level 15 Crypt
+Sand Chest
+From: Vudor
+Source: Level 10 Crypt
+Scorpion Chest
+From: Slayer
+Source: Level 15 epic Crypt
+Fire Chest
+From: Targie
+Source: Level 10 Crypt
+--------------- 2024-12-06 01:23:28 --------------------------
+Fire Chest
+From: Adoragar
+Source: Level 5 Crypt
+Infernal Chest
+From: Targash
+Source: Level 15 Crypt
+oe
+Stone Chest
+From: Targie
+Source: Level 10 Crypt
+oe
+Infernal Chest
+From: Slayer
+Source: Level 5 Crypt
+--------------- The above segment might not be present in the archive file due to processing errors
+--------------- 2024-12-06 01:23:33 --------------------------
+Fire Chest
+From: Adoragar
+Source: Level 5 Crypt
+Infernal Chest
+From: Targash
+Source: Level 15 Crypt
+Stone Chest
+From: Targie
+Source: Level 10 Crypt
+Infernal Chest
+From: Slayer
+Source: Level 5 Crypt
+--------------- 2024-12-06 01:23:36 --------------------------
+Bone Chest
+From: Adoragar
+Source: Level 5 Crypt
+Stone Chest
+From: Slayer
+Source: Level 10 Crypt
+oe
+Elegant Chest
+From: Targash
+Source: Level 15 Crypt
+Gnome Workshop Chest
+From: Slayer
+Source: Level 10 Crypt
+--------------- The above segment might not be present in the archive file due to processing errors
+--------------- 2024-12-06 01:23:43 --------------------------
+Bone Chest
+From: Adoragar
+Source: Level 5 Crypt
+Stone Chest
+From: Slayer
+Source: Level 10 Crypt
+oe
+Elegant Chest
+From: Targash
+Source: Level 15 Crypt
+Gnome Workshop Chest
+From: Slayer
+Source: Level 10 Crypt
+--------------- The above segment might not be present in the archive file due to processing errors

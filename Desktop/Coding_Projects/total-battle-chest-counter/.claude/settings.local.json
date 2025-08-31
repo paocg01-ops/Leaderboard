@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir data)",
+      "Bash(python:*)",
+      "Bash(chcp:*)",
+      "Read(/C:\\Users\\paoco\\Desktop\\Coding_Projects/**)",
+      "Read(/C:\\Users\\paoco\\Desktop\\Leaderboard Canva\\Canva Version/**)",
+      "Read(/C:\\Users\\paoco\\Desktop\\Leaderboard Canva\\Canva Version/**)",
+      "Read(/C:\\Users\\paoco\\Desktop\\Leaderboard Canva\\Canva Version\\js/**)",
+      "Read(/C:\\Users\\paoco\\Desktop\\Leaderboard Canva\\Canva Version\\js/**)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

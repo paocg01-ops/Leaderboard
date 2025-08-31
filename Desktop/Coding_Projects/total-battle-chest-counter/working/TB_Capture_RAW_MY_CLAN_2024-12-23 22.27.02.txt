@@ -1,0 +1,494 @@
+--------------- 2024-12-23 22:27:08 --------------------------
+Rare Dragon Chest
+From: Ferry
+Source: Level 20 rare Crypt
+Stone Chest
+From: Adoragar
+Source: Level 10 Crypt
+Bone Chest
+From: Maedfanir
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: Ferry
+Source: Level 20 rare Crypt
+--------------- 2024-12-23 22:27:12 --------------------------
+Orc Chest
+From: TomasS
+Source: Level 5 Crypt
+Infernal Chest
+From: Adoragar
+Source: Level 10 Crypt
+Elven Chest
+From: Ferry
+Source: Level 17 heroic Monster
+Elegant Chest
+From: tledil
+Source: Level 10 Crypt
+--------------- 2024-12-23 22:27:16 --------------------------
+Mayan Chest
+From: Lerlin
+Source: Level 10 Crypt
+Forgotten Chest
+From: Lerlin
+Source: Level 10 Crypt
+Pacified Mimic Chest
+From: Maedfanir
+Source: Mimic Chest
+Snowman chest
+From: Maedfanir
+Source: Snowman
+--------------- 2024-12-23 22:27:20 --------------------------
+Barbarian Chest
+From: Moogukus
+Source: Level 15 Crypt
+Elegant Chest
+From: Serdriilas
+Source: Level 10 Crypt
+Elegant Chest
+From: Lerlin
+Source: Level 10 Crypt
+Elegant Chest
+From: Moogukus
+Source: Level 15 Crypt
+--------------- 2024-12-23 22:27:24 --------------------------
+Fire Chest
+From: Lerlin
+Source: Level 10 Crypt
+Cobra Chest
+From: Moogukus
+Source: Level 15 Crypt
+Stone Chest
+From: Lerlin
+Source: Level 5 Crypt
+Bone Chest
+From: Lerlin
+Source: Level 5 Crypt
+--------------- 2024-12-23 22:27:28 --------------------------
+Fire Chest
+From: Moogukus
+Source: Level 15 Crypt
+Mayan Chest
+From: Moogukus
+Source: Level 15 Crypt
+Stone Chest
+From: Lerlin
+Source: Level 10 Crypt
+Chest of the Cursed
+From: Serdriilas
+Source: Level 15 epic Crypt
+--------------- 2024-12-23 22:27:33 --------------------------
+Forgotten Chest
+From: Moogukus
+Source: Level 15 Crypt
+Infernal Chest
+From: Girtheous Maximus
+Source: Level 10 Crypt
+Snowman chest
+From: Briar
+Source: Christmas Ritual tournament
+Fire Chest
+From: Mark Fish
+Source: Level 15 Crypt
+--------------- 2024-12-23 22:27:37 --------------------------
+Stone Chest
+From: Girtheous Maximus
+Source: Level 10 Crypt
+Elegant Chest
+From: Moogukus
+Source: Level 15 Crypt
+Stone Chest
+From: Briar
+Source: Level 10 Crypt
+Cobra Chest
+From: Girtheous Maximus
+Source: Level 10 Crypt
+--------------- 2024-12-23 22:27:41 --------------------------
+Forgotten Chest
+From: Briar
+Source: Level 10 Crypt
+Bone Chest
+From: Moogukus
+Source: Level 15 Crypt
+Orc Chest
+From: Mark Fish
+Source: Level 10 Crypt
+f Stone Chest
+From: Briar
+Source: Level 10 Crypt
+--------------- 2024-12-23 22:27:45 --------------------------
+Rare Dragon Chest
+From: Serdriilas
+Source: Level 10 rare Crypt
+Ore Chest
+From: Mark Fish
+Source: Level 10 Crypt
+Snowman chest
+From: Serdriilas
+Source: Snowman
+Rare Dragon Chest
+From: Serdriilas
+Source; Level 10 rare Crypt
+--------------- 2024-12-23 22:27:49 --------------------------
+Cobra Chest
+From: Lerlin
+Source: Level 5 Crypt
+Orc Chest
+From: Mark Fish
+Source: Level 10 Crypt
+Mayan Chest
+From: Mark Fish
+Source: Level 10 Crypt
+Infernal Chest
+From: Marond
+Source: Level 10 Crypt
+--------------- 2024-12-23 22:27:53 --------------------------
+Cobra Chest
+From: Lerlin
+Source: Level 5 Crypt
+Elegant Chest
+From: Girtheous Maximus
+Source: Level 10 Crypt
+Fire Chest
+From: Targie
+Source: Level 10 Crypt
+Forgotten Chest
+From: Briar
+Source: Level 10 Crypt
+--------------- 2024-12-23 22:27:57 --------------------------
+Bone Chest
+From: Targie
+Source: Level 10 Crypt
+Sand Chest
+From: Briar
+Source: Level 10 Crypt
+Bone Chest
+From: Targie
+Source: Level 10 Crypt
+Bone Chest
+From: Adolbine
+Source: Level 5 Crypt
+--------------- 2024-12-23 22:28:01 --------------------------
+Sand Chest
+From: Briar
+Source: Level 10 Crypt
+Gladiator's Chest
+From: Guyren
+Source: Arena
+Scarab Chest
+From: Targash
+Source: Level 15 epic Crypt
+Rare Dragon Chest
+From: Targash
+Source: Level 20 rare Crypt
+--------------- 2024-12-23 22:28:05 --------------------------
+Fire Chest
+From: Targash
+Source: Level 15 Crypt
+Bone Chest
+From: Targash
+Source: Level 15 Crypt
+Elegant Chest
+From: Hledil
+Source: Level 15 Crypt
+Forgotten Chest
+From: Targash
+Source: Level 15 Crypt
+--------------- 2024-12-23 22:28:10 --------------------------
+Snowman chest
+From: Adoragar
+Source: Christmas Ritual tournament
+Snowman chest
+From: Guyren
+Source: Snowman
+Snowman chest
+From: Guyren
+Source: Snowman
+Snowman chest
+From: Targash
+Source: Snowman
+--------------- 2024-12-23 22:28:14 --------------------------
+Snowman chest
+From: Glorgolan
+Source: Snowman
+Rare Dragon Chest
+From: Maedfanir
+Source: Level 10 rare Crypt
+Snowman chest
+From: Noli
+Source: Christmas Ritual tournament
+Snowman chest
+From: Numenor
+Source: Snowman
+--------------- 2024-12-23 22:28:18 --------------------------
+Gnome Workshop Chest
+From: ammar
+Source: Level 15 Crypt
+Mayan Chest
+From: Kiin
+Source: Level 10 Crypt
+Mayan Chest
+From: Dani
+Source: Level 10 Crypt
+Bone Chest
+From: Dani
+Source: Level 15 Crypt
+--------------- 2024-12-23 22:28:22 --------------------------
+Fire Chest
+From: ammar
+Source: Level 5 Crypt
+Fire Chest
+From: Dani
+Source: Level 10 Crypt
+Sand Chest
+From: Pinto
+Source: Level 10 Crypt
+Mayan Chest
+From: Dani
+Source: Level 5 Crypt
+--------------- 2024-12-23 22:28:26 --------------------------
+Snowman chest
+From: Serdriilas
+Source: Christmas Ritual tournament
+Snowman chest
+From: tledil
+Source: Christmas Ritual tournament
+Rare Dragon Chest
+From: Serdriilas
+Source: Level 10 rare Crypt
+Snowman chest
+From: Numenor
+Source: Christmas Ritual tournament
+--------------- 2024-12-23 22:28:30 --------------------------
+Snowman chest
+From: Targie
+Source: Christmas Ritual tournament
+Snowman chest
+From: Targash
+Source: Christmas Ritual tournament
+Snowman chest
+From: Maedfanir
+Source: Christmas Ritual tournament
+Snowman chest
+From: Pinto
+Source: Snowman
+--------------- 2024-12-23 22:28:35 --------------------------
+Cobra Chest
+From: Kaiababpear
+Source: Level 20 Crypt
+Gladiator's Chest
+From: Kiin
+Source: Arena
+Gnome Workshop Chest
+From: Kaiababpear
+Source: Level 15 Crypt
+Stone Chest
+From: Kaiababpear
+Source: Level 20 Crypt
+--------------- 2024-12-23 22:28:39 --------------------------
+Sand Chest
+From: Ferry
+Source: Level 10 Crypt
+Cobra Chest
+From: Ferry
+Source: Level 15 Crypt
+Chest of the Cursed
+From: Ferry
+Source: Level 15 epic Crypt
+Rare Dragon Chest
+From: Ferry
+Source: Level 20 rare Crypt
+--------------- 2024-12-23 22:28:43 --------------------------
+Orc Chest
+From: Elbrinan
+Source: Level 5 Crypt
+Mayan Chest
+From: Ferry
+Source: Level 15 Crypt
+Fire Chest
+From: Ferry
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: Maedfanir
+Source; Level 15 rare Crypt
+--------------- 2024-12-23 22:28:47 --------------------------
+Snowman chest
+From: Adoragar
+Source; Snowman
+Mayan Chest
+From: Ferry
+Source: Level 5 Crypt
+Infernal Chest
+From: Elbrinan
+Source: Level 5 Crypt
+Cobra Chest
+From: Ferry
+Source: Level 5 Crypt
+--------------- 2024-12-23 22:28:51 --------------------------
+Mayan Chest
+From: Ferry
+Source: Level 10 Crypt
+Stone Chest
+From: Ferry
+Source: Level 5 Crypt
+Mayan Chest
+From: Ferry
+Source: Level 5 Crypt
+Mayan Chest
+From: Ferry
+Source: Level 5 Crypt
+--------------- 2024-12-23 22:28:55 --------------------------
+Cobra Chest
+From: Ferry
+Source: Level 10 Crypt
+Fire Chest
+From: Ferry
+Source: Level 15 Crypt
+Snowman chest
+From: Pinto
+Source: Christmas Ritual tournament
+Snowman chest
+From: Kiin
+Source: Snowman
+--------------- 2024-12-23 22:28:59 --------------------------
+Fire Chest
+From: Enzo
+Source: Level 5 Crypt
+Orc Chest
+From: Enzo
+Source: Level 5 Crypt
+Barbarian Chest
+From: Enzo
+Source: Level 5 Crypt
+Fire Chest
+From: Enzo
+Source: Level 5 Crypt
+--------------- 2024-12-23 22:29:04 --------------------------
+Sand Chest
+From: Enzo
+Source: Level 5 Crypt
+Snowman chest
+From: Elbrinan
+Source: Christmas Ritual tournament
+Snowman chest
+From: Niin
+Source: Christmas Ritual tournament
+Fire Chest
+From: Enzo
+Source: Level 5 Crypt
+--------------- 2024-12-23 22:29:08 --------------------------
+Snowman chest
+From: Ferry
+Source: Christmas Ritual tournament
+Stone Chest
+From: Enzo
+Source: Level 5 Crypt
+Snowman chest
+From: Ferry
+Source: Snowman
+Bone Chest
+From: Enzo
+Source: Level 5 Crypt
+--------------- 2024-12-23 22:29:12 --------------------------
+Mayan Chest
+From: Enzo
+Source: Level 5 Crypt
+Cobra Chest
+From: Enzo
+Source: Level 5 Crypt
+Elegant Chest
+From: Ferry
+Source: Level 15 Crypt
+Stone Chest
+From: Enzo
+Source: Level 5 Crypt
+--------------- 2024-12-23 22:29:16 --------------------------
+Bone Chest
+From: Ferry
+Source: Level 15 Crypt
+Bone Chest
+From: Enzo
+Source: Level 5 Crypt
+Gnome Workshop Chest
+From: Enzo
+Source: Level 5 Crypt
+Orc Chest
+From: Slayer
+Source: Level 10 Crypt
+--------------- 2024-12-23 22:29:20 --------------------------
+Rare Dragon Chest
+From: Maedfanir
+Source: Level 10 rare Crypt
+Cobra Chest
+From: Niin
+Source: Level 10 Crypt
+Elegant Chest
+From: Enzo
+Source: Level 5 Crypt
+Gnome Workshop Chest
+From: Ferry
+Source: Level 15 Crypt
+--------------- 2024-12-23 22:29:24 --------------------------
+Fire Chest
+From: Ferry
+Source: Level 5 Crypt
+Barbarian Chest
+From: Enzo
+Source: Level 5 Crypt
+Forgotten Chest
+From: Niin
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: Skull Hammer
+Source: Level 25 rare Crypt
+--------------- 2024-12-23 22:29:28 --------------------------
+Rare Dragon Chest
+From: Skull Hammer
+Source: Level 25 rare Crypt
+Fire Chest
+From: Slayer
+Source: Level 10 Crypt
+Rare Dragon Chest
+From: Niin
+Source: Level 10 rare Crypt
+White Wood Chest
+From: Kiin
+Source: Level 15 epic Crypt
+--------------- 2024-12-23 22:29:33 --------------------------
+Rare Dragon Chest
+From: Skull Hammer
+Source: Level 25 rare Crypt
+White Wood Chest
+From: Kiin
+Source: Level 15 epic Crypt
+Ancient Bastion Chest
+From: Anya
+Source: Level 15 epic Crypt
+echea
+From: Adolbine
+Source: Level 10 Crypt
+--------------- 2024-12-23 22:29:37 --------------------------
+Undead Chest
+From: Ferry
+Source: Level 16 heroic Monster
+Sand Chest
+From: Adolbine
+Source: Level 10 Crypt
+White Wood Chest
+From: Kiin
+Source: Level 15 epic Crypt
+Elegant Chest
+From: Pinto
+Source: Level 10 Crypt
+--------------- 2024-12-23 22:29:41 --------------------------
+Orc Chest
+From: Pinto
+Source: Level 10 Crypt
+Mayan Chest
+From: Kiin
+Source: Level 15 Crypt
+Barbarian Chest
+From: Pinto
+Source: Level 10 Crypt
+Mayan Chest
+From: Niin
+Source: Level 10 Crypt
