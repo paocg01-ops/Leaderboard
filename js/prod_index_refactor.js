@@ -422,24 +422,37 @@ async function loadCryptBreakdown(playerName, isCurrentWeek = true) {
   try {
     // Get week date ranges - ensure weekCycles is properly initialized
     let weekCycles = window.__weekCycles;
-    if (!weekCycles) {
+    
+    // Check if weekCycles exists and has valid date objects
+    if (!weekCycles || !weekCycles.current || !weekCycles.current.start || 
+        typeof weekCycles.current.start.toISOString !== 'function') {
+      
+      console.log('Week cycles not ready, calculating...');
       weekCycles = calculateWeekCycles();
       window.__weekCycles = weekCycles;
-    }
-    
-    if (!weekCycles || !weekCycles.currentWeekStart || !weekCycles.currentWeekEnd) {
-      console.error('Week cycles not properly initialized:', weekCycles);
-      content.innerHTML = '<div class="crypt-breakdown-loading">Error: Week cycles not available</div>';
-      return;
+      
+      // If still invalid after calculation, show error
+      if (!weekCycles || !weekCycles.current) {
+        console.error('Unable to calculate week cycles:', weekCycles);
+        content.innerHTML = '<div class="crypt-breakdown-loading">Unable to determine week cycle dates</div>';
+        return;
+      }
     }
     
     const dateRange = isCurrentWeek ? 
-      { start: weekCycles.currentWeekStart, end: weekCycles.currentWeekEnd } :
-      { start: weekCycles.lastWeekStart, end: weekCycles.lastWeekEnd };
+      { start: weekCycles.current.start, end: weekCycles.current.end } :
+      { start: weekCycles.last.start, end: weekCycles.last.end };
     
-    // Validate date range objects
-    if (!dateRange.start || !dateRange.end || typeof dateRange.start.toISOString !== 'function') {
-      console.error('Invalid date range:', dateRange);
+    // Validate that we have proper Date objects before using toISOString()
+    if (!(dateRange.start instanceof Date) || !(dateRange.end instanceof Date)) {
+      console.error('Invalid date objects:', dateRange);
+      content.innerHTML = '<div class="crypt-breakdown-loading">Error: Invalid date range</div>';
+      return;
+    }
+    
+    // Final check that Date methods are available
+    if (typeof dateRange.start.toISOString !== 'function' || typeof dateRange.end.toISOString !== 'function') {
+      console.error('Date objects missing toISOString method:', dateRange);
       content.innerHTML = '<div class="crypt-breakdown-loading">Error: Invalid date range</div>';
       return;
     }
