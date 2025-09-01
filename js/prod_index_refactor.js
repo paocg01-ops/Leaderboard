@@ -37,13 +37,15 @@ function deriveBadges(p) {
   const chestHero = (p.treats || 0) >= 100;
   const legend = (p.score || 0) >= 2000;
   const consistent = (p.treats || 0) >= 70 && (p.score || 0) >= 1000;
+  const epicKiller = p.epic_killer === true;
   
   let badges = '';
   if (chestHero)  badges += '<span class="achievement-badge chest-hero">Chest Hero</span>';
   if (legend)     badges += '<span class="achievement-badge score-legend">Legend</span>';
   if (consistent) badges += '<span class="achievement-badge consistent-warrior">Consistent</span>';
+  if (epicKiller) badges += '<span class="achievement-badge epic-killer">🐉 Epic Killer</span>';
   
-  return { badges, chestHero, legend, consistent };
+  return { badges, chestHero, legend, consistent, epicKiller };
 }
 
 function getActiveTabContainer() {
@@ -329,6 +331,7 @@ function showPlayerModal(rank, playerName, score, chests, badges, badgeProgress,
     const hasChestHero = (badges || '').includes('Chest Hero');
     const hasLegend = (badges || '').includes('Legend');
     const hasConsistent = (badges || '').includes('Consistent');
+    const hasEpicKiller = (badges || '').includes('Epic Killer');
     
     if (hasChestHero) {
       progressHTML += '<div class="progress-item earned">🍪 <strong>Chest Hero</strong> - ✅ Earned! (100+ chests)</div>';
@@ -359,6 +362,13 @@ function showPlayerModal(rank, playerName, score, chests, badges, badgeProgress,
         progressHTML += `<div class="progress-item needed">🎯 <strong>Consistent</strong> - Need ${chN} chests AND ${ptN} points (currently ${fmt(chests)}/70, ${fmt(score)}/1000)</div>`;
       }
     }
+    
+    if (hasEpicKiller) {
+      progressHTML += '<div class="progress-item earned">🐉 <strong>Epic Killer</strong> - ✅ Earned! (Killed at least 1 Epic Monster)</div>';
+    } else {
+      progressHTML += '<div class="progress-item needed">🐉 <strong>Epic Killer</strong> - Kill at least 1 Epic Monster in the World Map (Arachne\'s Swarm, Epic Inferno, Epic Undead, Shadow City, Epic Yokai, Epic Jormungandr, or Epic Fenrir squad)</div>';
+    }
+    
     modalProgress.innerHTML = progressHTML;
   }
   
@@ -518,6 +528,7 @@ async function loadCryptBreakdown(playerName, isCurrentWeek = true) {
 
 // ===== 5) DATA LOADERS =====
 async function loadCurrentWeek() {
+  // Get main leaderboard data
   const { data, error } = await sb
     .from('players_current')
     .select('name, score, treats, rank')
@@ -525,7 +536,24 @@ async function loadCurrentWeek() {
   
   if (error) { console.error('players_current error', error); return; }
   
+  // Get Epic Killer data separately
+  const { data: epicKillers, error: epicError } = await sb
+    .from('epic_killers_current')
+    .select('player, epic_killer');
+    
+  if (epicError) { 
+    console.error('epic_killers_current error', epicError); 
+  } else {
+    console.log('epic_killers_current data:', epicKillers);
+  }
+  
   const rows = (data || []).slice();
+  
+  // Create Epic Killer lookup map
+  const epicKillerMap = {};
+  (epicKillers || []).forEach(ek => {
+    epicKillerMap[ek.player] = ek.epic_killer;
+  });
   
   // decorate ranks + trophies
   rows.sort((a,b)=> (b.score||0) - (a.score||0))
@@ -533,6 +561,9 @@ async function loadCurrentWeek() {
   
   // derive badges for CURRENT WEEK (so modal shows Earned and rows show chips)
   rows.forEach(p => {
+    // Set epic_killer flag from lookup map
+    p.epic_killer = epicKillerMap[p.name] === true;
+    
     const d = deriveBadges(p);
     p.badgesHTML = d.badges;     // show chips
     p.badgeProgress = '';        // keep rows/cards clean; progress only in modal
@@ -550,6 +581,7 @@ async function loadCurrentWeek() {
 }
 
 async function loadLastWeek() {
+  // Get main leaderboard data
   const { data, error } = await sb
     .from('players_last')
     .select('name, score, treats, rank')
@@ -557,10 +589,30 @@ async function loadLastWeek() {
   
   if (error) { console.error('players_last error', error); return; }
   
+  // Get Epic Killer data separately
+  const { data: epicKillers, error: epicError } = await sb
+    .from('epic_killers_last')
+    .select('player, epic_killer');
+    
+  if (epicError) { 
+    console.error('epic_killers_last error', epicError); 
+  } else {
+    console.log('epic_killers_last data:', epicKillers);
+  }
+  
   const rows = (data || []).slice();
+  
+  // Create Epic Killer lookup map
+  const epicKillerMap = {};
+  (epicKillers || []).forEach(ek => {
+    epicKillerMap[ek.player] = ek.epic_killer;
+  });
   
   // ONLY earned badges; no motivational copy for last week
   rows.forEach(p => {
+    // Set epic_killer flag from lookup map
+    p.epic_killer = epicKillerMap[p.name] === true;
+                    
     const d = deriveBadges(p);
     p.badgesHTML = d.badges;
     p.badgeProgress = '';
@@ -594,6 +646,8 @@ function updateBadgeEarners(players) {
     setText('lastWeekLegendNames', 'No one earned this badge');
     setText('lastWeekConsistent', '0 warriors');
     setText('lastWeekConsistentNames', 'No one earned this badge');
+    setText('lastWeekEpicKillers', '0 warriors');
+    setText('lastWeekEpicKillerNames', 'No one earned this badge');
     return;
   }
 
@@ -601,6 +655,7 @@ function updateBadgeEarners(players) {
   const chestHeroes = [];
   const legends = [];
   const consistentWarriors = [];
+  const epicKillers = [];
   
   players.forEach(player => {
     const badges = deriveBadges(player);
@@ -613,6 +668,9 @@ function updateBadgeEarners(players) {
     }
     if (badges.consistent) {
       consistentWarriors.push(player.name);
+    }
+    if (badges.epicKiller) {
+      epicKillers.push(player.name);
     }
   });
 
@@ -630,6 +688,11 @@ function updateBadgeEarners(players) {
   const consistentCount = consistentWarriors.length;
   setText('lastWeekConsistent', `${consistentCount} ${consistentCount === 1 ? 'warrior' : 'warriors'}`);
   setText('lastWeekConsistentNames', consistentWarriors.length > 0 ? consistentWarriors.join(', ') : 'No one earned this badge');
+
+  // Update Epic Killers
+  const epicKillerCount = epicKillers.length;
+  setText('lastWeekEpicKillers', `${epicKillerCount} ${epicKillerCount === 1 ? 'warrior' : 'warriors'}`);
+  setText('lastWeekEpicKillerNames', epicKillers.length > 0 ? epicKillers.join(', ') : 'No one earned this badge');
 }
 
 // ===== 6) WEEK CYCLES + COUNTDOWN + PROGRESS =====

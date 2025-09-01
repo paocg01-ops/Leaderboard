@@ -712,6 +712,13 @@
             font-weight: 600;
         }
         
+        .epic-killer {
+            background: linear-gradient(45deg, #FF6B6B, #8B0000);
+            color: white;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
         .motivational-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -2498,6 +2505,14 @@ body {
                             </div>
                             <div class="achievement-names" id="lastWeekConsistentNames">TBD</div>
                         </div>
+                        
+                        <div class="achievement-category">
+                            <div class="achievement-header">
+                                <span class="achievement-badge epic-killer">🐉 Epic Killer</span>
+                                <span class="achievement-count" id="lastWeekEpicKillers">0 warriors</span>
+                            </div>
+                            <div class="achievement-names" id="lastWeekEpicKillerNames">TBD</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2529,6 +2544,13 @@ body {
                         <div class="badge-requirement">70+ chests AND 1000+ points</div>
                         <div class="badge-description">The backbone of our clan! These reliable pancakes balance both chest collection and point scoring consistently.</div>
                     </div>
+                    
+                    <div class="badge-card">
+                        <div class="badge-icon">🐉</div>
+                        <div class="badge-name epic-killer">Epic Killer</div>
+                        <div class="badge-requirement">Kill at least 1 Epic in the World Map</div>
+                        <div class="badge-description">For brave warriors who face the mightiest foes! These fearless pancakes take on Epic Monsters like Arachne's Swarm, Epic Inferno, Epic Undead, Shadow City, Epic Yokai, Epic Jormungandr, and Epic Fenrir squads.</div>
+                    </div>
                 </div>
                 
                 <div class="badge-tips">
@@ -2551,11 +2573,19 @@ body {
                 
                 <div class="scoring-categories">
                     <div class="scoring-category">
-                        <h3 class="category-title">🏛️ Epic Squads & Special</h3>
+                        <h3 class="category-title">🏛️ Epic Monster (200 points each)</h3>
                         <div class="scoring-table">
                             <div class="scoring-row header">
-                                <div>Chest Type</div>
+                                <div>Epic Squad Type</div>
                                 <div>Points</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Arachne's Swarm Epic squad</div>
+                                <div class="points-value">200</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Epic Inferno squad</div>
+                                <div class="points-value">200</div>
                             </div>
                             <div class="scoring-row">
                                 <div>Epic Undead squad</div>
@@ -2566,49 +2596,41 @@ body {
                                 <div class="points-value">200</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Magic Chest</div>
-                                <div class="points-value">100</div>
+                                <div>Epic Yokai squad</div>
+                                <div class="points-value">200</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Epic Ancient squad</div>
-                                <div class="points-value">50</div>
+                                <div>Epic Jormungandr squad</div>
+                                <div class="points-value">200</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Hermes' Store</div>
-                                <div class="points-value">50</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Jormungandr Shop</div>
-                                <div class="points-value">50</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Precious Chest</div>
-                                <div class="points-value">50</div>
+                                <div>Epic Fenrir squad</div>
+                                <div class="points-value">200</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="scoring-category">
-                        <h3 class="category-title">🐉 Heroic Monsters</h3>
+                        <h3 class="category-title">🐉 Heroic Monster</h3>
                         <div class="scoring-table">
                             <div class="scoring-row header">
                                 <div>Monster Level</div>
                                 <div>Points</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Level 31-45 heroic Monster</div>
+                                <div>Heroic Monster level 31-45</div>
                                 <div class="points-value">100</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Level 26-30 heroic Monster</div>
+                                <div>Heroic Monster level 26-30</div>
                                 <div class="points-value">60</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Level 21-25 heroic Monster</div>
+                                <div>Heroic Monster level 21-25</div>
                                 <div class="points-value">25</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Level 16-20 heroic Monster</div>
+                                <div>Heroic Monster level 16-20</div>
                                 <div class="points-value">20</div>
                             </div>
                         </div>
@@ -2618,7 +2640,7 @@ body {
                         <h3 class="category-title">🏰 Citadels</h3>
                         <div class="scoring-table">
                             <div class="scoring-row header">
-                                <div>Citadel Type</div>
+                                <div>Citadel Level</div>
                                 <div>Points</div>
                             </div>
                             <div class="scoring-row">
@@ -2630,15 +2652,7 @@ body {
                                 <div class="points-value">25</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Level 25 cursed Citadel</div>
-                                <div class="points-value">25</div>
-                            </div>
-                            <div class="scoring-row">
                                 <div>Level 20 Citadel</div>
-                                <div class="points-value">15</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Level 20 cursed Citadel</div>
                                 <div class="points-value">15</div>
                             </div>
                             <div class="scoring-row">
@@ -2653,47 +2667,15 @@ body {
                     </div>
 
                     <div class="scoring-category">
-                        <h3 class="category-title">🗝️ Crypts</h3>
+                        <h3 class="category-title">🗝️ Crypts - Common</h3>
                         <div class="scoring-table">
                             <div class="scoring-row header">
-                                <div>Crypt Type</div>
+                                <div>Crypt Level</div>
                                 <div>Points</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Level 35 epic Crypt</div>
-                                <div class="points-value">70</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Level 30 rare Crypt</div>
-                                <div class="points-value">60</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Level 25 rare Crypt</div>
-                                <div class="points-value">50</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Level 30 epic Crypt</div>
-                                <div class="points-value">50</div>
                             </div>
                             <div class="scoring-row">
                                 <div>Level 25 Crypt</div>
                                 <div class="points-value">36</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Level 25 epic Crypt</div>
-                                <div class="points-value">36</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Level 20 rare Crypt</div>
-                                <div class="points-value">35</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Level 20 epic Crypt</div>
-                                <div class="points-value">25</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Tartaros Crypt</div>
-                                <div class="points-value">25</div>
                             </div>
                             <div class="scoring-row">
                                 <div>Level 20 Crypt</div>
@@ -2701,19 +2683,7 @@ body {
                             </div>
                             <div class="scoring-row">
                                 <div>Level 15 Crypt</div>
-                                <div class="points-value">15</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Level 15 epic Crypt</div>
                                 <div class="points-value">10</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Level 15 rare Crypt</div>
-                                <div class="points-value">5</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Level 10 rare Crypt</div>
-                                <div class="points-value">3</div>
                             </div>
                             <div class="scoring-row">
                                 <div>Level 10 Crypt</div>
@@ -2727,95 +2697,201 @@ body {
                     </div>
 
                     <div class="scoring-category">
-                        <h3 class="category-title">🏺 Vault of the Ancients</h3>
+                        <h3 class="category-title">🗝️ Crypts - Rare</h3>
                         <div class="scoring-table">
                             <div class="scoring-row header">
-                                <div>Vault Level</div>
+                                <div>Rare Crypt Level</div>
                                 <div>Points</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Level 40-44 Vault</div>
+                                <div>Level 30 rare Crypt</div>
+                                <div class="points-value">60</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 25 rare Crypt</div>
+                                <div class="points-value">50</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 20 rare Crypt</div>
+                                <div class="points-value">35</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 15 rare Crypt</div>
+                                <div class="points-value">10</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 10 rare Crypt</div>
+                                <div class="points-value">3</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scoring-category">
+                        <h3 class="category-title">🗝️ Crypts - Epic</h3>
+                        <div class="scoring-table">
+                            <div class="scoring-row header">
+                                <div>Epic Crypt Level</div>
+                                <div>Points</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 35 epic Crypt</div>
+                                <div class="points-value">70</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 30 epic Crypt</div>
+                                <div class="points-value">50</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 25 epic Crypt</div>
+                                <div class="points-value">36</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 20 epic Crypt</div>
+                                <div class="points-value">25</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Level 15 epic Crypt</div>
+                                <div class="points-value">15</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scoring-category">
+                        <h3 class="category-title">🏺 Olympus</h3>
+                        <div class="scoring-table">
+                            <div class="scoring-row header">
+                                <div>Olympus Activity</div>
+                                <div>Points</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Hermes' Store</div>
+                                <div class="points-value">50</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Tartaros Crypt level 35</div>
                                 <div class="points-value">40</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Level 35-39 Vault</div>
+                                <div>Tartaros Crypt level 30</div>
                                 <div class="points-value">35</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Level 30-34 Vault</div>
+                                <div>Tartaros Crypt level 25</div>
                                 <div class="points-value">30</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Level 25-29 Vault</div>
+                                <div>Tartaros Crypt level 20</div>
                                 <div class="points-value">25</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Level 20-24 Vault</div>
+                                <div>Tartaros Crypt level 15</div>
                                 <div class="points-value">20</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Level 15-19 Vault</div>
-                                <div class="points-value">15</div>
+                                <div>Event "Trials of Olympus"</div>
+                                <div class="points-value">20</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Level 10-14 Vault</div>
-                                <div class="points-value">10</div>
+                                <div>Tartaros Crypt level 10</div>
+                                <div class="points-value">15</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="scoring-category">
-                        <h3 class="category-title">⚔️ Raid & Events</h3>
+                        <h3 class="category-title">🏺 Rise of the Ancients</h3>
                         <div class="scoring-table">
                             <div class="scoring-row header">
-                                <div>Activity Type</div>
+                                <div>Ancients Activity</div>
                                 <div>Points</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Lvl 35-39 Raid Runic squad</div>
+                                <div>Epic Ancient squad (Defeating Melvin)</div>
+                                <div class="points-value">50</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Vault of the Ancients level 45</div>
+                                <div class="points-value">50</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Vault of the Ancients level 40-44</div>
+                                <div class="points-value">40</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Vault of the Ancients level 35-39</div>
                                 <div class="points-value">35</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Lvl 30-34 Raid Runic squad</div>
+                                <div>Rise of the Ancients Personal Goals Chests</div>
                                 <div class="points-value">30</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Rise of the Ancients event</div>
+                                <div>Vault of the Ancients level 30-34</div>
                                 <div class="points-value">30</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Authority Rush tournament</div>
+                                <div>Vault of the Ancients level 25-29</div>
                                 <div class="points-value">25</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Lvl 25-29 Raid Runic squad</div>
+                                <div>Vault of the Ancients level 20-24</div>
                                 <div class="points-value">20</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Snowman</div>
-                                <div class="points-value">20</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Lvl 20-24 Raid Runic squad</div>
-                                <div class="points-value">10</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Sacred Rituals tournament</div>
-                                <div class="points-value">5</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>The Great Hunt tournament</div>
-                                <div class="points-value">5</div>
+                                <div>Vault of the Ancients level 15-19</div>
+                                <div class="points-value">15</div>
                             </div>
                         </div>
                     </div>
 
                     <div class="scoring-category">
-                        <h3 class="category-title">📦 Treasure Chests</h3>
+                        <h3 class="category-title">⚔️ Runic Squads</h3>
+                        <div class="scoring-table">
+                            <div class="scoring-row header">
+                                <div>Runic Squad Level</div>
+                                <div>Points</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Raid Runic squad level 45</div>
+                                <div class="points-value">45</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Raid Runic squad level 40-44</div>
+                                <div class="points-value">40</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Raid Runic squad level 35-39</div>
+                                <div class="points-value">35</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Raid Runic squad level 30-34</div>
+                                <div class="points-value">30</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Raid Runic squad level 20-24</div>
+                                <div class="points-value">25</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Raid Runic squad level 25-29</div>
+                                <div class="points-value">20</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scoring-category">
+                        <h3 class="category-title">📦 In-game Purchases</h3>
                         <div class="scoring-table">
                             <div class="scoring-row header">
                                 <div>Chest Type</div>
                                 <div>Points</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Magic Chest</div>
+                                <div class="points-value">100</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Precious Chest</div>
+                                <div class="points-value">50</div>
                             </div>
                             <div class="scoring-row">
                                 <div>Golden Chest</div>
@@ -2833,23 +2909,23 @@ body {
                                 <div>Wooden Chest</div>
                                 <div class="points-value">10</div>
                             </div>
-                            <div class="scoring-row">
-                                <div>Conqueror's Chest</div>
-                                <div class="points-value">5</div>
-                            </div>
-                            <div class="scoring-row">
-                                <div>Mimic Chest</div>
-                                <div class="points-value">5</div>
-                            </div>
                         </div>
                     </div>
 
                     <div class="scoring-category">
-                        <h3 class="category-title">🎯 Other Activities</h3>
+                        <h3 class="category-title">🎯 Special</h3>
                         <div class="scoring-table">
                             <div class="scoring-row header">
                                 <div>Activity Type</div>
                                 <div>Points</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Jormungandr Shop</div>
+                                <div class="points-value">50</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Authority Rush tournament</div>
+                                <div class="points-value">25</div>
                             </div>
                             <div class="scoring-row">
                                 <div>Arena</div>
@@ -2860,7 +2936,11 @@ body {
                                 <div class="points-value">5</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Mercenary Exchange</div>
+                                <div>Conqueror's Chest</div>
+                                <div class="points-value">5</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Clash for the Throne tourna</div>
                                 <div class="points-value">5</div>
                             </div>
                             <div class="scoring-row">
@@ -2868,7 +2948,31 @@ body {
                                 <div class="points-value">5</div>
                             </div>
                             <div class="scoring-row">
-                                <div>Union of Triumph personal reward</div>
+                                <div>Union of Triumph personal</div>
+                                <div class="points-value">5</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Alchemy tournament</div>
+                                <div class="points-value">5</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Mercenary Exchange</div>
+                                <div class="points-value">5</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Sakura of Plenty</div>
+                                <div class="points-value">5</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Mimic Chest</div>
+                                <div class="points-value">5</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Sacred Rituals tournament</div>
+                                <div class="points-value">5</div>
+                            </div>
+                            <div class="scoring-row">
+                                <div>Yogwai</div>
                                 <div class="points-value">5</div>
                             </div>
                         </div>
@@ -2878,8 +2982,11 @@ body {
                 <div class="scoring-tips">
                     <h3>💡 Scoring Strategy Tips</h3>
                     <ul>
-                        <li><strong>Focus on Epic Monsters:</strong> 200 points each - the highest value activity! (Try to get the final hit on Doomsday, Armageddon, Ragnarok beasts, etc)</li>
-                        <li><strong>Target Epic and Rare crypts:</strong> Don't ignore medium value, Consistent level 15 crypts or citadels add up quickly.</li>
+                        <li><strong>Focus on Epic Monsters:</strong> 200 points each - the highest value activity! Target Arachne's Swarm, Epic Inferno, Epic Undead, Shadow City, Epic Yokai, Epic Jormungandr, and Epic Fenrir squads.</li>
+                        <li><strong>Prioritize High-Value Heroic Monsters:</strong> Level 31-45 heroic monsters give 100 points - excellent return on investment.</li>
+                        <li><strong>Target Epic and Rare Crypts:</strong> Level 35 epic crypts (70 pts) and level 30 rare crypts (60 pts) provide great value.</li>
+                        <li><strong>Don't ignore Magic Chests:</strong> 100 points each from in-game purchases can boost your score significantly.</li>
+                        <li><strong>Consistent Medium Value:</strong> Level 25 crypts (36 pts), level 30 citadels (60 pts), and Vault of the Ancients add up quickly.</li>
                     </ul>
                 </div>
             </div>
