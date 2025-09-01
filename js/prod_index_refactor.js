@@ -528,17 +528,32 @@ async function loadCryptBreakdown(playerName, isCurrentWeek = true) {
 
 // ===== 5) DATA LOADERS =====
 async function loadCurrentWeek() {
+  // Get main leaderboard data
   const { data, error } = await sb
     .from('players_current')
-    .select(`
-      name, score, treats, rank,
-      epic_killers_current!left(epic_killer)
-    `)
+    .select('name, score, treats, rank')
     .order('score', { ascending: false });
   
   if (error) { console.error('players_current error', error); return; }
   
+  // Get Epic Killer data separately
+  const { data: epicKillers, error: epicError } = await sb
+    .from('epic_killers_current')
+    .select('player, epic_killer');
+    
+  if (epicError) { 
+    console.error('epic_killers_current error', epicError); 
+  } else {
+    console.log('epic_killers_current data:', epicKillers);
+  }
+  
   const rows = (data || []).slice();
+  
+  // Create Epic Killer lookup map
+  const epicKillerMap = {};
+  (epicKillers || []).forEach(ek => {
+    epicKillerMap[ek.player] = ek.epic_killer;
+  });
   
   // decorate ranks + trophies
   rows.sort((a,b)=> (b.score||0) - (a.score||0))
@@ -546,9 +561,8 @@ async function loadCurrentWeek() {
   
   // derive badges for CURRENT WEEK (so modal shows Earned and rows show chips)
   rows.forEach(p => {
-    // Extract epic_killer from nested object if present
-    p.epic_killer = p.epic_killers_current && p.epic_killers_current.length > 0 ? 
-                    p.epic_killers_current[0].epic_killer : false;
+    // Set epic_killer flag from lookup map
+    p.epic_killer = epicKillerMap[p.name] === true;
     
     const d = deriveBadges(p);
     p.badgesHTML = d.badges;     // show chips
@@ -567,23 +581,37 @@ async function loadCurrentWeek() {
 }
 
 async function loadLastWeek() {
+  // Get main leaderboard data
   const { data, error } = await sb
     .from('players_last')
-    .select(`
-      name, score, treats, rank,
-      epic_killers_last!left(epic_killer)
-    `)
+    .select('name, score, treats, rank')
     .order('score', { ascending: false });
   
   if (error) { console.error('players_last error', error); return; }
   
+  // Get Epic Killer data separately
+  const { data: epicKillers, error: epicError } = await sb
+    .from('epic_killers_last')
+    .select('player, epic_killer');
+    
+  if (epicError) { 
+    console.error('epic_killers_last error', epicError); 
+  } else {
+    console.log('epic_killers_last data:', epicKillers);
+  }
+  
   const rows = (data || []).slice();
+  
+  // Create Epic Killer lookup map
+  const epicKillerMap = {};
+  (epicKillers || []).forEach(ek => {
+    epicKillerMap[ek.player] = ek.epic_killer;
+  });
   
   // ONLY earned badges; no motivational copy for last week
   rows.forEach(p => {
-    // Extract epic_killer from nested object if present
-    p.epic_killer = p.epic_killers_last && p.epic_killers_last.length > 0 ? 
-                    p.epic_killers_last[0].epic_killer : false;
+    // Set epic_killer flag from lookup map
+    p.epic_killer = epicKillerMap[p.name] === true;
                     
     const d = deriveBadges(p);
     p.badgesHTML = d.badges;
