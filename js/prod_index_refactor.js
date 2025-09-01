@@ -134,9 +134,17 @@ function renderLeaderboard(list, targetId) {
 
 // ===== 3) SEARCH (data-driven, active-tab, deduped) =====
 function setupSearch(players) {
-  const searchInput = $('nameSearch');
-  const clearBtn = $('clearBtn');
-  const searchResults = $('searchResults');
+  // Detect active tab to use appropriate search elements
+  const activeTab = document.querySelector('.tab-content.active');
+  const isLastWeek = activeTab && activeTab.id === 'lastweek-tab';
+  
+  const searchInputId = isLastWeek ? 'nameSearchLast' : 'nameSearch';
+  const clearBtnId = isLastWeek ? 'clearBtnLast' : 'clearBtn';
+  const searchResultsId = isLastWeek ? 'searchResultsLast' : 'searchResults';
+  
+  const searchInput = $(searchInputId);
+  const clearBtn = $(clearBtnId);
+  const searchResults = $(searchResultsId);
   if (!searchInput || !searchResults) return;
   
   function handle(term) {
@@ -246,9 +254,17 @@ function performSearch(searchTerm, players) {
 }
 
 function clearSearch() {
-  const searchInput = $('nameSearch');
-  const clearBtn = $('clearBtn');
-  const searchResults = $('searchResults');
+  // Detect active tab to use appropriate search elements
+  const activeTab = document.querySelector('.tab-content.active');
+  const isLastWeek = activeTab && activeTab.id === 'lastweek-tab';
+  
+  const searchInputId = isLastWeek ? 'nameSearchLast' : 'nameSearch';
+  const clearBtnId = isLastWeek ? 'clearBtnLast' : 'clearBtn';
+  const searchResultsId = isLastWeek ? 'searchResultsLast' : 'searchResults';
+  
+  const searchInput = $(searchInputId);
+  const clearBtn = $(clearBtnId);
+  const searchResults = $(searchResultsId);
   const container = getActiveTabContainer();
   
   if (searchInput) searchInput.value = '';

@@ -2428,91 +2428,94 @@ body {
         </div>
         
         <div class="tab-content" id="lastweek-tab">
+            
+            <div class="last-week-cycle" id="lastWeekCycle">
+                <div class="cycle-label">📅 Previous Week Cycle</div>
+                <div class="cycle-dates" id="lastCycleDates">
+                    Loading previous cycle...
+                </div>
+            </div>
+            
+            <div class="motivational-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">🏆</div>
+                    <div class="stat-number" id="lastWeekWinner">TBD</div>
+                    <div class="stat-label">Champion</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🥞</div>
+                    <div class="stat-number" id="lastWeekParticipants">0</div>
+                    <div class="stat-label">Active Pancakes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-number" id="lastWeekTopScore">0</div>
+                    <div class="stat-label">Highest Score</div>
+                </div>
+            </div>
+            
+            <div class="leaderboard">
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" id="nameSearchLast" placeholder="🔍 Find your pancake name..." class="search-input">
+                        <button onclick="clearSearch()" class="clear-btn" id="clearBtnLast" style="display: none;">✕</button>
+                    </div>
+                    <div class="search-results" id="searchResultsLast"></div>
+                </div>
+                
+                <div class="leaderboard-header">
+                    <div>RANK</div>
+                    <div>PANCAKE</div>
+                    <div style="color: #FF6F91;">⭐ POINTS</div>
+                    <div style="color: #FFF9F0;">🍪 TREATS</div>
+                </div>
+                
+                <div class="mobile-header">
+                    <div>RANK</div>
+                    <div class="mobile-header-pancake">PANCAKE</div>
+                    <div><span style="color: #FF6F91;">⭐ POINTS</span> / <span style="color: #FFF9F0;">🍪 CHESTS</span></div>
+                </div>
+                
+                <div id="leaderboardContentLast">
+                    <div class="empty-state">
+                        <h3>🍰 Last week standings will appear here</h3>
+                    </div>
+                </div>
+            </div>
+            
             <div class="info-section">
-                <h2 class="section-title">📊 Last Week Results</h2>
-                <div class="last-week-cycle" id="lastWeekCycle">
-                    <div class="cycle-label">📅 Previous Week Cycle</div>
-                    <div class="cycle-dates" id="lastCycleDates">
-                        Loading previous cycle...
-                    </div>
-                </div>
-                
-                <div class="last-week-stats">
-                    <div class="stat-card">
-                        <div class="stat-icon">🏆</div>
-                        <div class="stat-number" id="lastWeekWinner">TBD</div>
-                        <div class="stat-label">Champion</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">🥞</div>
-                        <div class="stat-number" id="lastWeekParticipants">0</div>
-                        <div class="stat-label">Active Pancakes</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">⭐</div>
-                        <div class="stat-number" id="lastWeekTopScore">0</div>
-                        <div class="stat-label">Highest Score</div>
-                    </div>
-                </div>
-                
-                <div class="last-week-leaderboard">
-                    <h3 style="text-align: center; color: #F5B642; margin-bottom: 20px; font-size: 1.5rem;">🏅 Final Rankings</h3>
-                    
-                    <div class="leaderboard-header">
-                        <div>RANK</div>
-                        <div>PANCAKE</div>
-                        <div style="color: #FF6F91;">⭐ POINTS</div>
-                        <div style="color: #FFF9F0;">🍪 TREATS</div>
+                <h3 style="text-align: center; color: #F5B642; margin: 30px 0 20px 0; font-size: 1.5rem;">🏅 Badge Earners</h3>
+                <div class="achievement-summary" id="lastWeekAchievements">
+                    <div class="achievement-category">
+                        <div class="achievement-header">
+                            <span class="achievement-badge chest-hero">Chest Hero</span>
+                            <span class="achievement-count" id="lastWeekChestHeroes">0 pancakes</span>
+                        </div>
+                        <div class="achievement-names" id="lastWeekChestHeroNames">TBD</div>
                     </div>
                     
-                    <div class="mobile-header">
-                        <div>RANK</div>
-                        <div class="mobile-header-pancake">PANCAKE</div>
-                        <div><span style="color: #FF6F91;">⭐ POINTS</span> / <span style="color: #FFF9F0;">🍪 CHESTS</span></div>
+                    <div class="achievement-category">
+                        <div class="achievement-header">
+                            <span class="achievement-badge score-legend">Legend</span>
+                            <span class="achievement-count" id="lastWeekLegends">0 pancakes</span>
+                        </div>
+                        <div class="achievement-names" id="lastWeekLegendNames">TBD</div>
                     </div>
                     
-<div id="leaderboardContentLast">
-  <div class="empty-state">
-    <h3>🍰 Last week standings will appear here</h3>
-  </div>
-</div>
-
-                </div>
-                
-                <div class="last-week-achievements">
-                    <h3 style="text-align: center; color: #F5B642; margin: 30px 0 20px 0; font-size: 1.5rem;">🏅 Badge Earners</h3>
-                    <div class="achievement-summary" id="lastWeekAchievements">
-                        <div class="achievement-category">
-                            <div class="achievement-header">
-                                <span class="achievement-badge chest-hero">Chest Hero</span>
-                                <span class="achievement-count" id="lastWeekChestHeroes">0 pancakes</span>
-                            </div>
-                            <div class="achievement-names" id="lastWeekChestHeroNames">TBD</div>
+                    <div class="achievement-category">
+                        <div class="achievement-header">
+                            <span class="achievement-badge consistent-warrior">Consistent</span>
+                            <span class="achievement-count" id="lastWeekConsistent">0 pancakes</span>
                         </div>
-                        
-                        <div class="achievement-category">
-                            <div class="achievement-header">
-                                <span class="achievement-badge score-legend">Legend</span>
-                                <span class="achievement-count" id="lastWeekLegends">0 pancakes</span>
-                            </div>
-                            <div class="achievement-names" id="lastWeekLegendNames">TBD</div>
+                        <div class="achievement-names" id="lastWeekConsistentNames">TBD</div>
+                    </div>
+                    
+                    <div class="achievement-category">
+                        <div class="achievement-header">
+                            <span class="achievement-badge epic-killer">🐉 Epic Killer</span>
+                            <span class="achievement-count" id="lastWeekEpicKillers">0 warriors</span>
                         </div>
-                        
-                        <div class="achievement-category">
-                            <div class="achievement-header">
-                                <span class="achievement-badge consistent-warrior">Consistent</span>
-                                <span class="achievement-count" id="lastWeekConsistent">0 pancakes</span>
-                            </div>
-                            <div class="achievement-names" id="lastWeekConsistentNames">TBD</div>
-                        </div>
-                        
-                        <div class="achievement-category">
-                            <div class="achievement-header">
-                                <span class="achievement-badge epic-killer">🐉 Epic Killer</span>
-                                <span class="achievement-count" id="lastWeekEpicKillers">0 warriors</span>
-                            </div>
-                            <div class="achievement-names" id="lastWeekEpicKillerNames">TBD</div>
-                        </div>
+                        <div class="achievement-names" id="lastWeekEpicKillerNames">TBD</div>
                     </div>
                 </div>
             </div>
