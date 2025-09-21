@@ -2324,8 +2324,71 @@ body {
 
             <div id="lastUpdatedTimestamp" style="font-size: 0.7rem; opacity: 0.6; margin-top: 4px; text-align: center;">
                 Last Updated: Loading...
-              
+
             </div>
+
+            <!-- REDIRECT NOTICE -->
+            <div class="redirect-notice" style="
+                background: linear-gradient(135deg, #ff4757, #ff6b7a);
+                border: 3px solid #fff;
+                border-radius: 20px;
+                padding: 25px;
+                margin: 20px auto;
+                max-width: 600px;
+                text-align: center;
+                box-shadow: 0 10px 30px rgba(255, 71, 87, 0.3);
+                animation: pulse 2s ease-in-out infinite;
+                position: relative;
+                z-index: 10;
+            ">
+                <div style="font-size: 2rem; margin-bottom: 15px;">🚨 IMPORTANT NOTICE! 🚨</div>
+                <div style="font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; color: #fff;">
+                    HEY! This site has moved to a new location
+                </div>
+                <div style="font-size: 1.1rem; margin-bottom: 20px; color: #fff;">
+                    Please save this new link:
+                </div>
+                <div style="
+                    background: rgba(255,255,255,0.9);
+                    color: #333;
+                    padding: 15px;
+                    border-radius: 10px;
+                    font-family: 'Inter', monospace;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    margin-bottom: 20px;
+                    word-break: break-all;
+                ">
+                    https://tbcounter.netlify.app/?clan=strike-for-cake
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <a href="https://tbcounter.netlify.app/?clan=strike-for-cake" style="
+                        background: #fff;
+                        color: #ff4757;
+                        padding: 12px 30px;
+                        border-radius: 25px;
+                        text-decoration: none;
+                        font-weight: 700;
+                        font-size: 1.1rem;
+                        display: inline-block;
+                        transition: all 0.3s ease;
+                        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                        🚀 GO TO NEW SITE →
+                    </a>
+                </div>
+                <div style="font-size: 0.9rem; opacity: 0.9; color: #fff;">
+                    Redirecting automatically in <span id="redirectCountdown">10</span> seconds...
+                </div>
+            </div>
+
+            <style>
+                @keyframes pulse {
+                    0% { transform: scale(1); box-shadow: 0 10px 30px rgba(255, 71, 87, 0.3); }
+                    50% { transform: scale(1.02); box-shadow: 0 15px 40px rgba(255, 71, 87, 0.5); }
+                    100% { transform: scale(1); box-shadow: 0 10px 30px rgba(255, 71, 87, 0.3); }
+                }
+            </style>
             
             <div class="countdown-container">
                 <div class="countdown-timer">
@@ -3062,6 +3125,27 @@ document.addEventListener('DOMContentLoaded', () => {
             updateLastUpdatedTimestamp();
         }
     }, 500);
+
+    // Redirect countdown functionality
+    let countdown = 10;
+    const countdownElement = document.getElementById('redirectCountdown');
+    const redirectUrl = 'https://tbcounter.netlify.app/?clan=strike-for-cake';
+
+    function updateCountdown() {
+        if (countdownElement) {
+            countdownElement.textContent = countdown;
+        }
+
+        if (countdown <= 0) {
+            window.location.href = redirectUrl;
+        } else {
+            countdown--;
+            setTimeout(updateCountdown, 1000);
+        }
+    }
+
+    // Start countdown after 1 second delay
+    setTimeout(updateCountdown, 1000);
 });
 </script>
 
