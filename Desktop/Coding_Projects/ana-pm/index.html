@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC & Co. - On-Demand Project Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            .modal-options {
+                flex-direction: column;
+            }
+
+            .modal-content {
+                padding: 40px 24px;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Persistent starfield background with varied animations - Optimized */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            will-change: transform, opacity;
+            transform: translateZ(0);
+            background-image:
+                radial-gradient(3px 3px at 10% 20%, white, transparent),
+                radial-gradient(2px 2px at 75% 35%, white, transparent),
+                radial-gradient(2.5px 2.5px at 25% 40%, rgba(255, 255, 255, 0.8), transparent),
+                radial-gradient(1.5px 1.5px at 85% 70%, rgba(255, 255, 255, 0.9), transparent),
+                radial-gradient(2px 2px at 40% 10%, rgba(255, 255, 255, 0.8), transparent),
+                radial-gradient(2.5px 2.5px at 60% 85%, white, transparent);
+            background-size: 200% 200%;
+            background-position: 0% 0%;
+            animation: starDrift 30s linear infinite, starBreathe 6s ease-in-out infinite;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            will-change: transform, opacity;
+            transform: translateZ(0);
+            background-image:
+                radial-gradient(2px 2px at 15% 25%, white, transparent),
+                radial-gradient(3px 3px at 30% 45%, rgba(255, 255, 255, 0.9), transparent),
+                radial-gradient(1.5px 1.5px at 68% 38%, white, transparent),
+                radial-gradient(2px 2px at 18% 72%, rgba(255, 255, 255, 0.9), transparent),
+                radial-gradient(3px 3px at 38% 12%, white, transparent),
+                radial-gradient(1.5px 1.5px at 58% 82%, rgba(255, 255, 255, 0.9), transparent);
+            background-size: 200% 200%;
+            background-position: 0% 0%;
+            animation: starDrift 40s linear infinite reverse, starBreathe2 8s ease-in-out infinite;
+        }
+
+        @keyframes starBreathe {
+            0%, 100% { 
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            25% {
+                opacity: 0.4;
+            }
+            50% { 
+                opacity: 0.9;
+                transform: scale(1);
+            }
+            75% {
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes starBreathe2 {
+            0%, 100% { 
+                opacity: 0.3;
+                transform: scale(0.9);
+            }
+            30% {
+                opacity: 0;
+            }
+            50% { 
+                opacity: 0.8;
+                transform: scale(1.1);
+            }
+            80% {
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes starDrift {
+            0% { 
+                background-position: 0% 0%;
+            }
+            100% { 
+                background-position: -50% 50%;
+            }
+        }
+
+        /* Mouse trail particles */
+        .mouse-particle {
+            position: fixed;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+            animation: mouseParticleFade 1.5s ease-out forwards;
+        }
+
+        @keyframes mouseParticleFade {
+            0% {
+                opacity: 0.8;
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-10px, -15px) scale(0.3);
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 100%);
+            border: 2px solid rgba(200, 160, 255, 0.3);
+            border-radius: 16px;
+            padding: 48px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(200, 160, 255, 0.2);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            font-size: 32px;
+            color: #888;
+            cursor: pointer;
+            background: none;
+            border: none;
+            line-height: 1;
+            transition: color 0.3s;
+        }
+
+        .modal-close:hover {
+            color: #c8a0ff;
+        }
+
+        .modal h2 {
+            font-size: 32px;
+            margin-bottom: 24px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .modal-options {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+        }
+
+        .modal-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 24px;
+            background: rgba(200, 160, 255, 0.1);
+            border: 1px solid rgba(200, 160, 255, 0.3);
+            border-radius: 12px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            transition: all 0.3s;
+            flex: 1;
+            text-align: center;
+        }
+
+        .modal-option:hover {
+            background: rgba(200, 160, 255, 0.2);
+            border-color: rgba(200, 160, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(200, 160, 255, 0.2);
+        }
+
+        .modal-option svg {
+            margin-right: 0;
+            margin-bottom: 12px;
+            width: 32px;
+            height: 32px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(200, 160, 255, 0.1);
+            transition: opacity 0.5s ease;
+        }
+
+        nav.scrolled {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        /* Floating CTA Chip */
+        .floating-cta {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            z-index: 1001;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.5s ease;
+        }
+
+        .floating-cta.visible {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .floating-cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(37, 37, 37, 0.7);
+            backdrop-filter: blur(7px);
+            color: #ffffff;
+            border-radius: 9999px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0px 32px 64px rgba(0, 0, 0, 0.5), 
+                        inset 0px 0px 1px rgba(255, 255, 255, 0.5), 
+                        inset 0px 0px 1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .floating-cta-button:hover {
+            background: rgba(37, 37, 37, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #c8a0ff;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        nav.scrolled .logo {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s, opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .nav-links a:hover {
+            color: #c8a0ff;
+        }
+
+        .nav-cta {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(200, 160, 255, 0.2);
+            backdrop-filter: blur(7px);
+            color: #ffffff;
+            border-radius: 9999px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-cta:hover {
+            background: rgba(200, 160, 255, 0.3);
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(200, 160, 255, 0.12) 0%, transparent 70%);
+            top: -300px;
+            right: -300px;
+            will-change: transform, opacity;
+            transform: translateZ(0);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero-label {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 24px;
+            color: #c8a0ff;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 32px;
+            background: linear-gradient(135deg, #ffffff 0%, #c8a0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            color: #b8b8b8;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #c8a0ff 0%, #9966ff 100%);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            animation: buttonFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes buttonFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #c8a0ff, #9966ff, #c8a0ff, #9966ff);
+            background-size: 300% 300%;
+            border-radius: 8px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+            animation: shimmer 3s ease infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .cta-button:hover::before {
+            opacity: 1;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(200, 160, 255, 0.4), 0 0 40px rgba(200, 160, 255, 0.2);
+            animation: none;
+        }
+
+        /* Particle container */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #c8a0ff;
+            border-radius: 50%;
+            animation: float 3s infinite ease-in-out;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(20px);
+                opacity: 0;
+            }
+        }
+
+        /* Hero starfield - Optimized */
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            will-change: opacity;
+            transform: translateZ(0);
+            background-image:
+                radial-gradient(2px 2px at 20% 30%, rgba(200, 160, 255, 0.4), transparent),
+                radial-gradient(2px 2px at 60% 70%, rgba(200, 160, 255, 0.3), transparent),
+                radial-gradient(1px 1px at 50% 50%, rgba(200, 160, 255, 0.5), transparent),
+                radial-gradient(2px 2px at 90% 60%, rgba(200, 160, 255, 0.3), transparent);
+            background-size: 200% 200%;
+            animation: twinkle 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            border-bottom: 1px solid rgba(200, 160, 255, 0.1);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            color: #b8b8b8;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            color: #c8a0ff;
+            font-weight: 600;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 120px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-label {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            color: #c8a0ff;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: #b8b8b8;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Services Grid */
+        .services-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .service-category {
+            margin-bottom: 80px;
+        }
+
+        .service-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .category-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #c8a0ff;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid rgba(200, 160, 255, 0.2);
+        }
+
+        .service-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .service-item {
+            padding: 24px 28px;
+            border-radius: 8px;
+            border: 1px solid rgba(200, 160, 255, 0.15);
+            background: rgba(255, 255, 255, 0.02);
+            transition: all 0.3s;
+        }
+
+        .service-item:hover {
+            border-color: rgba(200, 160, 255, 0.4);
+            background: rgba(200, 160, 255, 0.05);
+            transform: translateX(8px);
+        }
+
+        .service-item:before {
+            content: "→";
+            color: #c8a0ff;
+            margin-right: 12px;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .service-item {
+            color: #d4d4d4;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Engagement Cards */
+        .engagement-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .engagement-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(200, 160, 255, 0.2);
+            border-radius: 12px;
+            padding: 40px;
+            transition: all 0.3s;
+        }
+
+        .engagement-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(200, 160, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(200, 160, 255, 0.1);
+        }
+
+        .engagement-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .engagement-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .engagement-card p {
+            font-size: 15px;
+            color: #b8b8b8;
+            line-height: 1.7;
+        }
+
+        /* Who Section */
+        .who-section {
+            background: linear-gradient(135deg, rgba(200, 160, 255, 0.05) 0%, rgba(153, 102, 255, 0.05) 100%);
+            border-top: 1px solid rgba(200, 160, 255, 0.2);
+            border-bottom: 1px solid rgba(200, 160, 255, 0.2);
+        }
+
+        .who-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .who-card {
+            background: rgba(10, 10, 10, 0.4);
+            border: 1px solid rgba(200, 160, 255, 0.2);
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.3s;
+        }
+
+        .who-card:hover {
+            border-color: rgba(200, 160, 255, 0.4);
+            background: rgba(10, 10, 10, 0.6);
+        }
+
+        .who-card:before {
+            content: "✓";
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: rgba(200, 160, 255, 0.2);
+            color: #c8a0ff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .who-card p {
+            font-size: 16px;
+            color: #d4d4d4;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #ffffff;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #b8b8b8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .cta-subtext {
+            margin-top: 24px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Footer */
+        footer {
+            padding: 32px 0;
+            background: #0a0a0a;
+            border-top: 1px solid rgba(200, 160, 255, 0.2);
+            text-align: center;
+            font-size: 14px;
+            color: #888;
+        }
+
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .engagement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .who-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .category-title {
+                font-size: 24px;
+            }
+        }
+
+        /* Accessibility: Reduce animations for users who prefer reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            body::before,
+            body::after,
+            .hero::before,
+            .hero::after {
+                animation: none !important;
+                opacity: 0.3;
+            }
+
+            .cta-button {
+                animation: none !important;
+            }
+
+            .mouse-particle,
+            .particle {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function openModal() {
+            document.getElementById('contactModal').classList.add('active');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('contactModal');
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        }
+
+        // Initialize after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('contactModal');
+            
+            // Close modal when clicking outside
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeModal();
+                    }
+                });
+            }
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+
+            // Scroll effect for navigation
+            let lastScrollTop = 0;
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 100) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+            // Add click handlers to all CTA buttons
+            const ctaButtons = document.querySelectorAll('.open-modal');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openModal();
+                });
+            });
+
+            // Button hover particles
+            const buttons = document.querySelectorAll('.cta-button');
+            
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    createParticles(this);
+                });
+            });
+            
+            function createParticles(element) {
+                const particleCount = 4; // Reduced from 8 to 4 for better performance
+                const rect = element.getBoundingClientRect();
+
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+
+                    const startX = Math.random() * rect.width;
+                    const delay = Math.random() * 0.5;
+                    const duration = 2 + Math.random() * 1;
+
+                    particle.style.left = startX + 'px';
+                    particle.style.bottom = '0';
+                    particle.style.animationDelay = delay + 's';
+                    particle.style.animationDuration = duration + 's';
+
+                    element.style.position = 'relative';
+                    element.appendChild(particle);
+
+                    setTimeout(() => {
+                        particle.remove();
+                    }, (duration + delay) * 1000);
+                }
+            }
+
+            // Mouse trail particles
+            let isMouseMoving = false;
+            let mouseMoveTimeout;
+            let lastX = 0;
+            let lastY = 0;
+
+            document.addEventListener('mousemove', function(e) {
+                isMouseMoving = true;
+
+                // Only create particles if mouse actually moved
+                if (Math.abs(e.clientX - lastX) > 5 || Math.abs(e.clientY - lastY) > 5) {
+                    createMouseParticle(e.clientX, e.clientY);
+                    lastX = e.clientX;
+                    lastY = e.clientY;
+                }
+
+                clearTimeout(mouseMoveTimeout);
+                mouseMoveTimeout = setTimeout(() => {
+                    isMouseMoving = false;
+                }, 100);
+            });
+
+            // Page Visibility API: Pause animations when tab is inactive
+            document.addEventListener('visibilitychange', function() {
+                const bodyBefore = document.querySelector('body');
+
+                if (document.hidden) {
+                    // Tab is hidden - pause animations
+                    bodyBefore.style.animationPlayState = 'paused';
+                } else {
+                    // Tab is visible - resume animations
+                    bodyBefore.style.animationPlayState = 'running';
+                }
+            });
+
+            function createMouseParticle(x, y) {
+                if (!isMouseMoving) return;
+
+                const particle = document.createElement('div');
+                particle.className = 'mouse-particle';
+                
+                // Random offset around cursor
+                const offsetX = (Math.random() - 0.5) * 40;
+                const offsetY = (Math.random() - 0.5) * 40;
+                
+                particle.style.left = (x + offsetX) + 'px';
+                particle.style.top = (y + offsetY) + 'px';
+                particle.style.width = (Math.random() * 2 + 1) + 'px';
+                particle.style.height = particle.style.width;
+                
+                document.body.appendChild(particle);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    particle.remove();
+                }, 1500);
+            }
+        });
+    </script>
+
+    <nav>
+        <div class="container">
+            <div class="logo">AC & Co.</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">How I Help</a></li>
+                <li><a href="#engagement">Work With Me</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="nav-cta open-modal">Let's Talk</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Floating CTA (appears on scroll) -->
+    <div class="floating-cta">
+        <button class="floating-cta-button open-modal">Let's Talk</button>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">On-Demand Project Management</div>
+                <h1>Your Projects on Track. Your Team Aligned. Your Execs Informed.</h1>
+                <p class="hero-description">Dynamic teams in fast-paced startups often hit a point where projects feel scattered. I bring calm, clarity, and focus as your trusted on-demand project manager—from planning sessions and leadership dashboards to fun, purposeful team retrospectives.</p>
+                <a href="#" class="cta-button open-modal">Let's Talk</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <p>With over <span class="highlight">12 years of experience</span> managing global programs across MedTech, Cybersecurity, Energy, and SaaS, I understand your domain, I know how to plug in quickly, align stakeholders across time zones, and keep execution moving.</p>
+                <p>Think of me as your <span class="highlight">on-demand trusted project manager</span>—someone who fills operational gaps and tactical tasks when you need it the most, just like an in-house PM, but with the flexibility of a per-hour model that scales with your needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Services</div>
+                <h2 class="section-title">How I Help</h2>
+                <p class="section-description">Some ways I can help your organization</p>
+            </div>
+            
+            <div class="services-container">
+                <div class="service-category">
+                    <h3 class="category-title">Strategic & Tactical Project Management</h3>
+                    <div class="service-list">
+                        <div class="service-item">Define project goals, scope, deliverables, and KPIs</div>
+                        <div class="service-item">Create and manage schedules, milestones, and dependencies</div>
+                        <div class="service-item">Align cross-functional teams around clear priorities</div>
+                        <div class="service-item">Facilitate sprint planning, stand-ups, and retrospectives</div>
+                    </div>
+                </div>
+
+                <div class="service-category">
+                    <h3 class="category-title">Operational Systems & Dashboards</h3>
+                    <div class="service-list">
+                        <div class="service-item">Design dashboards that executives actually want to read—concise, visual, and actionable</div>
+                        <div class="service-item">Build project tracking systems in tools like Jira, Notion, Smartsheet, or Monday</div>
+                        <div class="service-item">Automate recurring PM tasks to save time and reduce follow-up fatigue</div>
+                    </div>
+                </div>
+
+                <div class="service-category">
+                    <h3 class="category-title">Workshops & Team Enablement</h3>
+                    <div class="service-list">
+                        <div class="service-item">Project kickstart sessions to define objectives and workflows</div>
+                        <div class="service-item">Retrospective workshops that turn feedback into tangible improvements</div>
+                        <div class="service-item">Communication rhythm setup (meeting cadence, escalation paths, reporting flows)</div>
+                    </div>
+                </div>
+
+                <div class="service-category">
+                    <h3 class="category-title">AI Enablement</h3>
+                    <div class="service-list">
+                        <div class="service-item">Design workflow automation bots integrated with Slack, Jira, or Notion</div>
+                        <div class="service-item">Create prompt libraries and templates for your team productivity</div>
+                        <div class="service-item">Analyze your current processes and identify ways where AI automation can improve productivity</div>
+                        <div class="service-item">Create tailored end-to-end AI agents for your specific workflows while ensuring the security policies of your company are met</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="engagement" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Engagement Models</div>
+                <h2 class="section-title">Flexible. Scalable. Results-Driven.</h2>
+            </div>
+            <div class="engagement-grid">
+                <div class="engagement-card">
+                    <div class="engagement-icon">⚡</div>
+                    <h3>Hourly Consultation</h3>
+                    <p>On-demand support for startups that need quick help diagnosing issues, improving workflows, or designing dashboards.</p>
+                </div>
+                <div class="engagement-card">
+                    <div class="engagement-icon">🎯</div>
+                    <h3>Project-Based</h3>
+                    <p>Clear scope, milestones, and deliverables. Perfect for launches, process overhauls, or product delivery cycles.</p>
+                </div>
+                <div class="engagement-card">
+                    <div class="engagement-icon">🚀</div>
+                    <h3>Workshops</h3>
+                    <p>Live sessions (remote or in-person) that bring alignment, train teams, or kick off new initiatives with structure and energy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section who-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Who I Work With</div>
+                <h2 class="section-title">Built for Fast-Moving Teams</h2>
+            </div>
+            <div class="who-grid">
+                <div class="who-card">
+                    <p>Startup founders and department heads needing tactical support</p>
+                </div>
+                <div class="who-card">
+                    <p>Project or Product teams needing extra help or are understaffed</p>
+                </div>
+                <div class="who-card">
+                    <p>Companies scaling quickly but lacking in-house PM resources</p>
+                </div>
+                <div class="who-card">
+                    <p>Organizations seeking to improve their productivity with AI automation and custom agents</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2>Ready to Bring Clarity to Your Projects?</h2>
+            <p>Let's discuss how my on-demand project management services can help your team move forward, faster.</p>
+            <a href="#" class="cta-button open-modal">Let's Talk</a>
+            <div class="cta-subtext">Response within 24 hours • No obligation consultation</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 AC & Co.. On-Demand Project Management Services.</p>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2>Let's Connect</h2>
+            <div class="modal-options">
+                <a href="https://www.linkedin.com/in/anacornejo/" target="_blank" rel="noopener noreferrer" class="modal-option">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    Send me a message
+                </a>
+                <a href="mailto:paocg01@gmail.com" class="modal-option">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    Send me an email
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('contactModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('contactModal').classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Add click handlers to all CTA buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctaButtons = document.querySelectorAll('.open-modal');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openModal();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
